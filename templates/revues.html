@@ -58,7 +58,7 @@
                             data-text="{{review.text}}">
                             <div class="reviews_card_head">
                                 <h1>
-                                    {{review.name}}
+                                    {{review.name}} {{review.first_name}}
                                 </h1>
                                 <p>
                                     {{review.create_at}}
@@ -180,24 +180,26 @@
                 </div>
             </div>
             <br><br><br>
-            <form class="revue_form">
+            <form class="revue_form" method="POST">
+                {% csrf_token %}
                 <h1>Оставить отзыв</h1>
                 <div class="flexx">
-                    <input placeholder="Имя" type="text">
-                    <input placeholder="Фамилия" type="text">
+                    <input placeholder="Имя" type="text" name="name" required>
+                    <input placeholder="Фамилия" type="text" name="first_name">
                 </div>
                 <br>
                 <div>
-                    <textarea placeholder="Опишите ваш опыт" name="" id=""></textarea>
+                    <textarea placeholder="Опишите ваш опыт" name="text" id="" required></textarea>
                 </div>
                 <br><br>
-                <button>Отправить<svg xmlns="http://www.w3.org/2000/svg" width="15" height="10" viewBox="0 0 15 10"
+                <button type="submit">Отправить<svg xmlns="http://www.w3.org/2000/svg" width="15" height="10" viewBox="0 0 15 10"
                         fill="none">
                         <path
                             d="M7.56968 0.0749141C7.37592 0.180113 7.25512 0.380149 7.25512 0.597719V3.98559H0.608039C0.272401 3.98559 0 4.25337 0 4.58331C0 4.91325 0.272401 5.18103 0.608039 5.18103H7.25512V8.5689C7.25512 8.78727 7.37592 8.98731 7.56968 9.09171C7.76344 9.19771 8.00017 9.19053 8.18745 9.07497L14.6213 5.08938C14.798 4.9794 14.9051 4.78893 14.9051 4.58331C14.9051 4.3777 14.798 4.18722 14.6213 4.07724L8.18745 0.0916503C8.08854 0.0310814 7.97585 0 7.86316 0C7.76263 0 7.66129 0.0255027 7.56968 0.0749141Z"
                             fill="white" />
                     </svg></button>
             </form>
+            
         </section>
     </main>
     <br><br><br><br>

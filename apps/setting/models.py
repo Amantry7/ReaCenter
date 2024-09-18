@@ -77,22 +77,33 @@ class ServiceState(models.Model):
 class Reviews(models.Model):
     name = models.CharField(
         max_length=255,
-        verbose_name='ФИО'
+        verbose_name='Имя'
+    )
+    first_name = models.CharField(
+        max_length=255,
+        verbose_name='Фамилия',
+        blank=True, null=True
     )
     text = models.TextField(
-        verbose_name='Отзыв'
+        verbose_name='Отзыв',
+        blank=True, null=True
+    )
+    is_approved = models.BooleanField(
+        verbose_name='Одобрен',
+        default=False
     )
     create_at = models.DateField(
         verbose_name='Дата',
-        auto_now_add=True, 
+        auto_now_add=True,
         blank=True, null=True
     )
+
     def __str__(self):
         return self.name
+
     class Meta:
-        verbose_name='Отзыв'
-        verbose_name_plural='Отзывы'
-        
+        verbose_name = 'Отзыв'
+        verbose_name_plural = 'Отзывы'
         
 class Employe(models.Model):
     name = models.CharField(

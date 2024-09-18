@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 
 from apps.setting.models import Treat, Service, Reviews, TreatResult, Employe, VideoReview, WriteReview
 from apps.secondary.models import Consultation
@@ -23,7 +23,24 @@ def emploes_detail(request, id):
     return render(request, 'emploesById.html', locals())
 
 def review(request):
-    review = Reviews.objects.all()
+    if request.method == 'POST':
+        # Получаем данные из POST-запроса
+        name = request.POST.get('name')
+        first_name = request.POST.get('first_name')
+        text = request.POST.get('text')
+
+        # Создаем новый отзыв и сохраняем его в базе данных
+        Reviews.objects.create(
+            name=name,
+            first_name=first_name,
+            text=text
+        )
+
+        # Перенаправление или сообщение об успешном создании
+        return redirect('review')  # Замените на нужный URL
+
+    # Если GET-запрос
+    review = Reviews.objects.filter(is_approved=True)
     video_review = VideoReview.objects.all()
     write_review = WriteReview.objects.all()
     return render(request, 'revues.html', locals())

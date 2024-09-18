@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from apps.secondary.models import About, AboutService, AboutDocument, Consultation, ConsultationProgres, Methods, MethodsEva, MethodsDev, Institution, MethodsEmp
+from apps.secondary.models import About, AboutService, AboutDocument, Consultation, ConsultationProgres, Methods, MethodsEva, MethodsDev, Institution, MethodsEmp, ContactRequest
 # Register your models here.
 
 class AboutServiceTabularInline(admin.TabularInline):
@@ -44,3 +44,5 @@ class MethodsAdmin(admin.ModelAdmin):
 @admin.register(Institution)
 class InstitutionAdmin(admin.ModelAdmin):
     list_display = ('id', 'name')
+    
+admin.site.register(ContactRequest)

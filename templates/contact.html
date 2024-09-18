@@ -23,41 +23,37 @@
         <section class="">
 
             <div class="container">
-                <form class="contact_form">
-
+                <form class="contact_form" method="POST" action="{% url 'contact' %}">
+                    {% csrf_token %}
                     <div class="checked_container">
                         <div class="switch">
-                            <input type="radio" class="switch-input user_radio_btn" name="type" value="user" id="one"
-                                checked>
+                            <input type="radio" class="switch-input user_radio_btn" name="type" value="user" id="one" checked>
                             <label for="one" class="switch-label switch-label-off">
                                 <span>Бишкек</span>
-                            </label>
                             </label>
                             <input type="radio" class="switch-input admin_radio_btn" name="type" value="admin" id="two">
                             <label for="two" class="switch-label switch-label-on">
                                 <span>Ош</span>
-
                             </label>
                             <span class="slider2"></span>
                         </div>
                     </div>
-
+                
                     <div class="form_items">
                         <div class="form_items_left">
                             <h1>Связаться через Whats App</h1>
                             <img src="{% static 'assets/images/Layer 0.svg' %}" alt="">
                         </div>
                         <div class="form_items_right">
-                            <input placeholder="Имя" class="form_input" type="text">
-                            <input placeholder="Фамилия" class="form_input" type="text">
-                            <input placeholder="Дата и время записи" class="form_input" type="text">
-                            <input placeholder="Номер телефона" class="form_input" type="text">
-                            <textarea class="form_textarea" placeholder="Опишите что вы ищете..." name=""
-                                id=""></textarea>
+                            <input placeholder="Имя" class="form_input" type="text" name="name" required>
+                            <input placeholder="Фамилия" class="form_input" type="text" name="last_name" required>
+                            <input placeholder="Дата и время записи" class="form_input" type="text" name="appointment_date" required>
+                            <input placeholder="Номер телефона" class="form_input" type="text" name="phone" required>
+                            <textarea class="form_textarea" placeholder="Опишите что вы ищете..." name="description" required></textarea>
                         </div>
                     </div>
-
-                    <button class="from_button">
+                
+                    <button class="from_button" type="submit">
                         Записаться
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="22" viewBox="0 0 25 22" fill="none">
                             <path
@@ -66,6 +62,7 @@
                         </svg>
                     </button>
                 </form>
+                
             </div>
             <div class="container">
                 <div class="maps">

@@ -188,3 +188,19 @@ class Institution(models.Model):
     class Meta:
         verbose_name = 'Учреждение'
         verbose_name_plural = 'Учреждения'
+        
+class ContactRequest(models.Model):
+    name = models.CharField(max_length=255, verbose_name='Имя')
+    last_name = models.CharField(max_length=255, verbose_name='Фамилия')
+    appointment_date = models.CharField(max_length=255, verbose_name='Дата и время записи')
+    phone = models.CharField(max_length=20, verbose_name='Номер телефона')
+    description = models.TextField(verbose_name='Описание')
+
+    create_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
+
+    def __str__(self):
+        return f"{self.name} {self.last_name}"
+
+    class Meta:
+        verbose_name = 'Запрос на контакт'
+        verbose_name_plural = 'Запросы на контакт'
