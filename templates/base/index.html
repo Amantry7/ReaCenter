@@ -608,18 +608,15 @@
                     <div class="flex">
                         <div class="maps_contact">
                             <div class="contact_item">
-                                <h1>г. Бишкек
+                                <h1>{{setting.address}}
                                 </h1>
-                                <h2>мкр. Джал-23 д.18/2 </h2>
+                                {% for setting in setting.setting_phone.all %}
                                 <a href="">
-                                    <h3>+996 704 353737
+                                    <h3>{{setting.phone}}
                                     </h3>
                                 </a>
-                                <a href="">
-                                    <h3>+996 552 353737
-                                    </h3>
-                                </a>
-
+                                {% endfor %}
+                                
                             </div>
                             <br><br>
                             <div class="contact_item">

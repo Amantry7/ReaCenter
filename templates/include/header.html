@@ -38,7 +38,7 @@
         </button>
         <div class="head_logo">
             <a href="./index.html">
-                <img src="{% static 'assets/images/реа центр.png' %}" alt="">
+                <img src="{{setting.logo.url}}" alt="">
             </a>
         </div>
         <div></div>
@@ -55,19 +55,19 @@
     <div class="bottom_nav_bg">
         <div class="container">
             <nav class="bottom_nav">
-                <h3>Международная сеть клиник Реацентр Кырыгзстан</h3>
+                <h3>{{setting.title}}</h3>
                 <div class="bottom_nav_flex">
                     <div>
                         <img src="{% static 'assets/images/logo_formikro_blue 1.png' %}" alt="">
                     </div>
                     <div class="head_sosial">
-                        <a href="#" class="head_sosial_icon">
+                        <a href="{{setting.youtube}}" class="head_sosial_icon">
                             <img src="{% static 'assets/icon/Social Icons.svg' %}" alt="">
                         </a>
-                        <a href="#" class="head_sosial_icon">
+                        <a href="{{setting.facebook}}" class="head_sosial_icon">
                             <img src="{% static 'assets/icon/Social Icons — копия.svg' %}" alt="">
                         </a>
-                        <a href="#" class="head_sosial_icon">
+                        <a href="{{setting.instagram}}" class="head_sosial_icon">
                             <img src="{% static 'assets/icon/Social Icons — копия 2.svg' %}" alt="">
                         </a>
                     </div>

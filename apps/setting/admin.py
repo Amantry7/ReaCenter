@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from apps.setting.models import Treat, Service, Reviews, TreatResult, Employe, VideoReview, WriteReview, ServiceImage, ServiceState
+from apps.setting.models import Treat, Service, Reviews, TreatResult, Employe, VideoReview, WriteReview, ServiceImage, ServiceState, Setting, SettingPhone
 # Register your models here.
 
 class ServiceImageTaburInline(admin.TabularInline):
@@ -9,6 +9,10 @@ class ServiceImageTaburInline(admin.TabularInline):
     
 class ServiceStateTaburInline(admin.TabularInline):
     model = ServiceState
+    extra = 1
+    
+class SettingPhoneTaburInline(admin.TabularInline):
+    model = SettingPhone
     extra = 1
 
 @admin.register(Treat)
@@ -39,3 +43,8 @@ class VideoReviewAdmin(admin.ModelAdmin):
 @admin.register(WriteReview)
 class WriteReviewAdmin(admin.ModelAdmin):
     list_display = ('name', )
+    
+@admin.register(Setting)
+class SettingAdmin(admin.ModelAdmin):
+    list_display = ('title', 'logo')
+    inlines = [SettingPhoneTaburInline]

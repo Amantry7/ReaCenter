@@ -182,3 +182,51 @@ class WriteReview(models.Model):
         verbose_name='Рукописный отзыв'
         verbose_name_plural='Рукописные отзывы'
         
+class Setting(models.Model):
+    title = models.CharField(
+        max_length=255,
+        verbose_name='Название сайта'
+    )
+    desc = models.TextField(
+        verbose_name='Описание'
+    )
+    logo = models.ImageField(
+        upload_to='logo/',
+        verbose_name='Логотип сайта'
+    )
+    address = models.CharField(
+        max_length=244,
+        verbose_name='Адрес'
+    )
+    schedul = models.CharField(
+        max_length=244,
+        verbose_name='График работы'
+    )
+    youtube = models.URLField(
+        verbose_name='Ссылка на youtube'
+    )
+    facebook = models.URLField(
+        verbose_name='Cсылка на facebook'
+    )
+    instagram = models.URLField(
+        verbose_name='Ссылка на instagram'
+    )
+    def __str__(self):
+        return self.title
+    class Meta:
+        verbose_name='Настройки'
+        verbose_name_plural='Настройки'
+        
+class SettingPhone(models.Model):
+    setting = models.ForeignKey(
+        Setting, related_name='setting_phone',
+        on_delete=models.CASCADE
+    )
+    phone = models.CharField(
+        max_length=255,
+        verbose_name='Номер телефона'
+    )
+    def __str__(self):
+        return self.phone
+    class Meta:
+        verbose_name='Номер телефона'
