@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реацентр</title>
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="./assets/styles/swiper.min.css">
+</head>
+
+<body>
+    <header>
+        <div id="mobile_nav" class="mobile_nav">
+            <ol>
+                <li><a href="./aboutUs.html">О нас</a></li>
+                <li><a href="./metodika.html">Методика</a></li>
+                <li><a class="active" href="./whatWe.html">Что мы лечим</a></li>
+                <li><a href="./emploes.html">Специалисты</a></li>
+                <li><a href="./service.html">Услуги</a></li>
+                <li><a href="./revues.html">Отзывы</a></li>
+                <li><a href="./contact.html">Контакты</a></li>
+            </ol>
+
+            <svg id="closebtn" xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27"
+                fill="none">
+                <path d="M6.5 20.5L13.5 13.5M13.5 13.5L20.5 6.5M13.5 13.5L6.5 6.5M13.5 13.5L20.5 20.5" stroke="#2F7483"
+                    stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+
+        </div>
+
+
+
+
+
+        <nav class="top_nav container">
+
+            <button id="mobilebtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 20" fill="none">
+                    <path d="M4.7998 3.6001H19.1998" stroke="#2F7483" stroke-width="1.6" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M4.7998 10H19.1998" stroke="#2F7483" stroke-width="1.6" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M4.7998 16.3999H19.1998" stroke="#2F7483" stroke-width="1.6" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <div class="head_logo">
+                <a href="./index.html">
+                    <img src="./assets/images/реа центр.png" alt="">
+                </a>
+            </div>
+            <div></div>
+            <ol>
+                <li><a href="./aboutUs.html">О нас</a></li>
+                <li><a href="./metodika.html">Методика</a></li>
+                <li><a href="./whatWe.html">Что мы лечим</a></li>
+                <li><a href="./emploes.html">Специалисты</a></li>
+                <li><a href="./service.html">Услуги</a></li>
+                <li><a href="./revues.html">Отзывы</a></li>
+                <li><a href="./contact.html">Контакты</a></li>
+            </ol>
+        </nav>
+        <div class="bottom_nav_bg">
+            <div class="container">
+                <nav class="bottom_nav">
+                    <h3>Международная сеть клиник Реацентр Кырыгзстан</h3>
+                    <div class="bottom_nav_flex">
+                        <div>
+                            <img src="./assets/images/logo_formikro_blue 1.png" alt="">
+                        </div>
+                        <div class="head_sosial">
+                            <a href="#" class="head_sosial_icon">
+                                <img src="./assets/icon/Social Icons.svg" alt="">
+                            </a>
+                            <a href="#" class="head_sosial_icon">
+                                <img src="./assets/icon/Social Icons — копия.svg" alt="">
+                            </a>
+                            <a href="#" class="head_sosial_icon">
+                                <img src="./assets/icon/Social Icons — копия 2.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+
+    </header>
+    <br><br><br>    <script>
+        const mobilebtn = document.getElementById("mobilebtn");
+        const closebtn = document.getElementById("closebtn");
+        const mobile_nav = document.getElementById("mobile_nav");
+
+        mobilebtn.addEventListener("click", () => {
+            mobile_nav.classList.add("open"); // Открыть меню
+        });
+
+        closebtn.addEventListener("click", () => {
+            mobile_nav.classList.remove("open"); // Закрыть меню
+        });
+
+    </script>
+    <br>
+    <main class="container">
+        <div class="main_title">
+            <h1>
+                Что мы лечим?
+            </h1>
+            <br>
+            <p>
+                Наши пациенты отмечают позитивные изменения уже после первого курса лечения.
+                Применение Микротоковой рефлексотерапии совместно с комплексной
+                реабилитацией позволяет добиться наиболее значимых результатов при лечении следующих патологий:
+            </p>
+        </div>
+        <br><br><br>
+        <div class="what_we_list">
+            <a href="./whtatWeSelect.html" class="what_we_item what_we_item_active">
+                <h1>
+                    РАС
+                </h1>
+                <div>
+                    <p>
+                        Задержки развития с
+                        <br> нарушением коммуникатив...
+                    </p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+                        <path
+                            d="M34 17.499C34 26.5988 26.5981 33.999 17.5 33.999C8.4019 33.999 1 26.5988 1 17.499C1 8.40092 8.4019 0.999023 17.5 0.999023C26.5981 0.999023 34 8.40092 34 17.499Z"
+                            stroke="white" stroke-width="2" />
+                        <path
+                            d="M24.1688 15.13C24.1688 15.4452 24.0484 15.762 23.8075 16.0029L18.082 21.7564C17.8493 21.9891 17.5342 22.1194 17.2042 22.1194C16.8758 22.1194 16.5607 21.9891 16.328 21.7564L10.5992 16.0029C10.1174 15.5194 10.1174 14.7373 10.6025 14.2539C11.0876 13.7721 11.8714 13.7737 12.3532 14.2572L17.2042 19.1296L22.0552 14.2572C22.537 13.7737 23.3191 13.7721 23.8042 14.2539C24.0484 14.4948 24.1688 14.8132 24.1688 15.13Z"
+                            fill="white" />
+                    </svg>
+                </div>
+            </a>
+            <a href="./whtatWeSelect.html" class="what_we_item">
+                <h1>
+                    ЗРР
+                </h1>
+                <div>
+                    <p>
+                        Задержки речевого
+                        <br>
+                        развития
+                    </p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+                        <path
+                            d="M17.5 0.999999C26.5998 0.999999 34 8.4019 34 17.5C34 26.5981 26.5998 34 17.5 34C8.4019 34 1 26.5981 1 17.5C1 8.4019 8.4019 0.999999 17.5 0.999999Z"
+                            stroke="#53ACBF" stroke-width="2" />
+                        <path
+                            d="M15.131 10.8295C15.4462 10.8295 15.763 10.9499 16.0039 11.1908L21.7574 16.9163C21.9901 17.149 22.1204 17.4641 22.1204 17.7941C22.1204 18.1225 21.9901 18.4376 21.7574 18.6703L16.0039 24.3991C15.5204 24.8809 14.7383 24.8809 14.2549 24.3958C13.7731 23.9107 13.7747 23.1269 14.2582 22.6451L19.1306 17.7941L14.2582 12.9431C13.7747 12.4613 13.7731 11.6792 14.2549 11.1941C14.4958 10.9499 14.8142 10.8295 15.131 10.8295Z"
+                            fill="#53ACBF" />
+                    </svg>
+                </div>
+            </a>
+            <a href="./whtatWeSelect.html" class="what_we_item">
+                <h1>
+                    АУ
+                </h1>
+                <div>
+                    <p>
+                        Аутизм </p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+                        <path
+                            d="M17.5 0.999999C26.5998 0.999999 34 8.4019 34 17.5C34 26.5981 26.5998 34 17.5 34C8.4019 34 1 26.5981 1 17.5C1 8.4019 8.4019 0.999999 17.5 0.999999Z"
+                            stroke="#53ACBF" stroke-width="2" />
+                        <path
+                            d="M15.131 10.8295C15.4462 10.8295 15.763 10.9499 16.0039 11.1908L21.7574 16.9163C21.9901 17.149 22.1204 17.4641 22.1204 17.7941C22.1204 18.1225 21.9901 18.4376 21.7574 18.6703L16.0039 24.3991C15.5204 24.8809 14.7383 24.8809 14.2549 24.3958C13.7731 23.9107 13.7747 23.1269 14.2582 22.6451L19.1306 17.7941L14.2582 12.9431C13.7747 12.4613 13.7731 11.6792 14.2549 11.1941C14.4958 10.9499 14.8142 10.8295 15.131 10.8295Z"
+                            fill="#53ACBF" />
+                    </svg>
+                </div>
+            </a>
+            <a href="./whtatWeSelect.html" class="what_we_item">
+                <h1>
+                    ЗПР </h1>
+                <div>
+                    <p>
+                        Задержки психического
+                        <br>
+                        развития
+                    </p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+                        <path
+                            d="M17.5 0.999999C26.5998 0.999999 34 8.4019 34 17.5C34 26.5981 26.5998 34 17.5 34C8.4019 34 1 26.5981 1 17.5C1 8.4019 8.4019 0.999999 17.5 0.999999Z"
+                            stroke="#53ACBF" stroke-width="2" />
+                        <path
+                            d="M15.131 10.8295C15.4462 10.8295 15.763 10.9499 16.0039 11.1908L21.7574 16.9163C21.9901 17.149 22.1204 17.4641 22.1204 17.7941C22.1204 18.1225 21.9901 18.4376 21.7574 18.6703L16.0039 24.3991C15.5204 24.8809 14.7383 24.8809 14.2549 24.3958C13.7731 23.9107 13.7747 23.1269 14.2582 22.6451L19.1306 17.7941L14.2582 12.9431C13.7747 12.4613 13.7731 11.6792 14.2549 11.1941C14.4958 10.9499 14.8142 10.8295 15.131 10.8295Z"
+                            fill="#53ACBF" />
+                    </svg>
+                </div>
+            </a>
+            <a href="./whtatWeSelect.html" class="what_we_item">
+                <h1>
+                    ДЦП
+                </h1>
+                <div>
+                    <p>
+                        Детского <br> церебрального <br> паралича </p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+                        <path
+                            d="M17.5 0.999999C26.5998 0.999999 34 8.4019 34 17.5C34 26.5981 26.5998 34 17.5 34C8.4019 34 1 26.5981 1 17.5C1 8.4019 8.4019 0.999999 17.5 0.999999Z"
+                            stroke="#53ACBF" stroke-width="2" />
+                        <path
+                            d="M15.131 10.8295C15.4462 10.8295 15.763 10.9499 16.0039 11.1908L21.7574 16.9163C21.9901 17.149 22.1204 17.4641 22.1204 17.7941C22.1204 18.1225 21.9901 18.4376 21.7574 18.6703L16.0039 24.3991C15.5204 24.8809 14.7383 24.8809 14.2549 24.3958C13.7731 23.9107 13.7747 23.1269 14.2582 22.6451L19.1306 17.7941L14.2582 12.9431C13.7747 12.4613 13.7731 11.6792 14.2549 11.1941C14.4958 10.9499 14.8142 10.8295 15.131 10.8295Z"
+                            fill="#53ACBF" />
+                    </svg>
+                </div>
+            </a>
+            <a href="./whtatWeSelect.html" class="what_we_item">
+                <h1>
+                    ДС </h1>
+                <div>
+                    <p>
+                        Дислексия, дисграфия <br> (трудности в обучении) </p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+                        <path
+                            d="M17.5 0.999999C26.5998 0.999999 34 8.4019 34 17.5C34 26.5981 26.5998 34 17.5 34C8.4019 34 1 26.5981 1 17.5C1 8.4019 8.4019 0.999999 17.5 0.999999Z"
+                            stroke="#53ACBF" stroke-width="2" />
+                        <path
+                            d="M15.131 10.8295C15.4462 10.8295 15.763 10.9499 16.0039 11.1908L21.7574 16.9163C21.9901 17.149 22.1204 17.4641 22.1204 17.7941C22.1204 18.1225 21.9901 18.4376 21.7574 18.6703L16.0039 24.3991C15.5204 24.8809 14.7383 24.8809 14.2549 24.3958C13.7731 23.9107 13.7747 23.1269 14.2582 22.6451L19.1306 17.7941L14.2582 12.9431C13.7747 12.4613 13.7731 11.6792 14.2549 11.1941C14.4958 10.9499 14.8142 10.8295 15.131 10.8295Z"
+                            fill="#53ACBF" />
+                    </svg>
+                </div>
+            </a>
+
+            <a href="./whtatWeSelect.html" class="what_we_item">
+                <h1>
+                    ГЗ
+                </h1>
+                <div>
+                    <p>
+                        Задержки развития при обменных нарушениях и <br> генетических заболеваниях (синдром Дауна, <br>
+                        Вильямса и
+                        другие) </p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+                        <path
+                            d="M17.5 0.999999C26.5998 0.999999 34 8.4019 34 17.5C34 26.5981 26.5998 34 17.5 34C8.4019 34 1 26.5981 1 17.5C1 8.4019 8.4019 0.999999 17.5 0.999999Z"
+                            stroke="#53ACBF" stroke-width="2" />
+                        <path
+                            d="M15.131 10.8295C15.4462 10.8295 15.763 10.9499 16.0039 11.1908L21.7574 16.9163C21.9901 17.149 22.1204 17.4641 22.1204 17.7941C22.1204 18.1225 21.9901 18.4376 21.7574 18.6703L16.0039 24.3991C15.5204 24.8809 14.7383 24.8809 14.2549 24.3958C13.7731 23.9107 13.7747 23.1269 14.2582 22.6451L19.1306 17.7941L14.2582 12.9431C13.7747 12.4613 13.7731 11.6792 14.2549 11.1941C14.4958 10.9499 14.8142 10.8295 15.131 10.8295Z"
+                            fill="#53ACBF" />
+                    </svg>
+                </div>
+            </a>
+            <a href="./whtatWeSelect.html" class="what_we_item">
+                <h1>
+                    СДВГ
+                </h1>
+                <div>
+                    <p>
+                        Синдром дефицита внимания <br> и гиперактивности, Энурез, <br> нарушение сна </p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+                        <path
+                            d="M17.5 0.999999C26.5998 0.999999 34 8.4019 34 17.5C34 26.5981 26.5998 34 17.5 34C8.4019 34 1 26.5981 1 17.5C1 8.4019 8.4019 0.999999 17.5 0.999999Z"
+                            stroke="#53ACBF" stroke-width="2" />
+                        <path
+                            d="M15.131 10.8295C15.4462 10.8295 15.763 10.9499 16.0039 11.1908L21.7574 16.9163C21.9901 17.149 22.1204 17.4641 22.1204 17.7941C22.1204 18.1225 21.9901 18.4376 21.7574 18.6703L16.0039 24.3991C15.5204 24.8809 14.7383 24.8809 14.2549 24.3958C13.7731 23.9107 13.7747 23.1269 14.2582 22.6451L19.1306 17.7941L14.2582 12.9431C13.7747 12.4613 13.7731 11.6792 14.2549 11.1941C14.4958 10.9499 14.8142 10.8295 15.131 10.8295Z"
+                            fill="#53ACBF" />
+                    </svg>
+                </div>
+            </a>
+            <a href="./whtatWeSelect.html" class="what_we_item">
+                <h1>
+                    ЗРДРН
+                </h1>
+                <div>
+                    <p>
+                        Задержки развития двигательных и речевых <br> навыков при дцп, поражение зрительного <br>
+                        анализатора </p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+                        <path
+                            d="M17.5 0.999999C26.5998 0.999999 34 8.4019 34 17.5C34 26.5981 26.5998 34 17.5 34C8.4019 34 1 26.5981 1 17.5C1 8.4019 8.4019 0.999999 17.5 0.999999Z"
+                            stroke="#53ACBF" stroke-width="2" />
+                        <path
+                            d="M15.131 10.8295C15.4462 10.8295 15.763 10.9499 16.0039 11.1908L21.7574 16.9163C21.9901 17.149 22.1204 17.4641 22.1204 17.7941C22.1204 18.1225 21.9901 18.4376 21.7574 18.6703L16.0039 24.3991C15.5204 24.8809 14.7383 24.8809 14.2549 24.3958C13.7731 23.9107 13.7747 23.1269 14.2582 22.6451L19.1306 17.7941L14.2582 12.9431C13.7747 12.4613 13.7731 11.6792 14.2549 11.1941C14.4958 10.9499 14.8142 10.8295 15.131 10.8295Z"
+                            fill="#53ACBF" />
+                    </svg>
+                </div>
+            </a>
+
+            <a href="./whtatWeSelect.html" class="what_we_item">
+                <h1>
+                    РТ
+                </h1>
+                <div>
+                    <p>
+                        Родовых травм <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35"
+                            fill="none">
+                            <path
+                                d="M17.5 0.999999C26.5998 0.999999 34 8.4019 34 17.5C34 26.5981 26.5998 34 17.5 34C8.4019 34 1 26.5981 1 17.5C1 8.4019 8.4019 0.999999 17.5 0.999999Z"
+                                stroke="#53ACBF" stroke-width="2" />
+                            <path
+                                d="M15.131 10.8295C15.4462 10.8295 15.763 10.9499 16.0039 11.1908L21.7574 16.9163C21.9901 17.149 22.1204 17.4641 22.1204 17.7941C22.1204 18.1225 21.9901 18.4376 21.7574 18.6703L16.0039 24.3991C15.5204 24.8809 14.7383 24.8809 14.2549 24.3958C13.7731 23.9107 13.7747 23.1269 14.2582 22.6451L19.1306 17.7941L14.2582 12.9431C13.7747 12.4613 13.7731 11.6792 14.2549 11.1941C14.4958 10.9499 14.8142 10.8295 15.131 10.8295Z"
+                                fill="#53ACBF" />
+                        </svg>
+                </div>
+            </a>
+            <a href="./whtatWeSelect.html" class="what_we_item">
+                <h1>
+                    ЗПР
+                </h1>
+                <div>
+                    <p>
+                        Задержки <br>психомоторного <br> развития у детей до года <svg
+                            xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+                            <path
+                                d="M17.5 0.999999C26.5998 0.999999 34 8.4019 34 17.5C34 26.5981 26.5998 34 17.5 34C8.4019 34 1 26.5981 1 17.5C1 8.4019 8.4019 0.999999 17.5 0.999999Z"
+                                stroke="#53ACBF" stroke-width="2" />
+                            <path
+                                d="M15.131 10.8295C15.4462 10.8295 15.763 10.9499 16.0039 11.1908L21.7574 16.9163C21.9901 17.149 22.1204 17.4641 22.1204 17.7941C22.1204 18.1225 21.9901 18.4376 21.7574 18.6703L16.0039 24.3991C15.5204 24.8809 14.7383 24.8809 14.2549 24.3958C13.7731 23.9107 13.7747 23.1269 14.2582 22.6451L19.1306 17.7941L14.2582 12.9431C13.7747 12.4613 13.7731 11.6792 14.2549 11.1941C14.4958 10.9499 14.8142 10.8295 15.131 10.8295Z"
+                                fill="#53ACBF" />
+                        </svg>
+                </div>
+            </a>
+            <a href="./whtatWeSelect.html" class="what_we_item">
+                <h1>
+                    НТ
+                </h1>
+                <div>
+                    <p>
+                        Нейросенсорной <br> тугоухости <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+                            viewBox="0 0 35 35" fill="none">
+                            <path
+                                d="M17.5 0.999999C26.5998 0.999999 34 8.4019 34 17.5C34 26.5981 26.5998 34 17.5 34C8.4019 34 1 26.5981 1 17.5C1 8.4019 8.4019 0.999999 17.5 0.999999Z"
+                                stroke="#53ACBF" stroke-width="2" />
+                            <path
+                                d="M15.131 10.8295C15.4462 10.8295 15.763 10.9499 16.0039 11.1908L21.7574 16.9163C21.9901 17.149 22.1204 17.4641 22.1204 17.7941C22.1204 18.1225 21.9901 18.4376 21.7574 18.6703L16.0039 24.3991C15.5204 24.8809 14.7383 24.8809 14.2549 24.3958C13.7731 23.9107 13.7747 23.1269 14.2582 22.6451L19.1306 17.7941L14.2582 12.9431C13.7747 12.4613 13.7731 11.6792 14.2549 11.1941C14.4958 10.9499 14.8142 10.8295 15.131 10.8295Z"
+                                fill="#53ACBF" />
+                        </svg>
+                </div>
+            </a>
+            <a href="./whtatWeSelect.html" class="what_we_item">
+                <h1>
+                    ГД
+                </h1>
+                <div>
+                    <p>
+                        Гидроцефалии <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35"
+                            fill="none">
+                            <path
+                                d="M17.5 0.999999C26.5998 0.999999 34 8.4019 34 17.5C34 26.5981 26.5998 34 17.5 34C8.4019 34 1 26.5981 1 17.5C1 8.4019 8.4019 0.999999 17.5 0.999999Z"
+                                stroke="#53ACBF" stroke-width="2" />
+                            <path
+                                d="M15.131 10.8295C15.4462 10.8295 15.763 10.9499 16.0039 11.1908L21.7574 16.9163C21.9901 17.149 22.1204 17.4641 22.1204 17.7941C22.1204 18.1225 21.9901 18.4376 21.7574 18.6703L16.0039 24.3991C15.5204 24.8809 14.7383 24.8809 14.2549 24.3958C13.7731 23.9107 13.7747 23.1269 14.2582 22.6451L19.1306 17.7941L14.2582 12.9431C13.7747 12.4613 13.7731 11.6792 14.2549 11.1941C14.4958 10.9499 14.8142 10.8295 15.131 10.8295Z"
+                                fill="#53ACBF" />
+                        </svg>
+                </div>
+            </a>
+            <a href="./whtatWeSelect.html" class="what_we_item">
+                <h1>
+                    ВИ
+                </h1>
+                <div>
+                    <p>
+                        Недоношенности и <br> внутриутробной <br> инфекции
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+                            <path
+                                d="M17.5 0.999999C26.5998 0.999999 34 8.4019 34 17.5C34 26.5981 26.5998 34 17.5 34C8.4019 34 1 26.5981 1 17.5C1 8.4019 8.4019 0.999999 17.5 0.999999Z"
+                                stroke="#53ACBF" stroke-width="2" />
+                            <path
+                                d="M15.131 10.8295C15.4462 10.8295 15.763 10.9499 16.0039 11.1908L21.7574 16.9163C21.9901 17.149 22.1204 17.4641 22.1204 17.7941C22.1204 18.1225 21.9901 18.4376 21.7574 18.6703L16.0039 24.3991C15.5204 24.8809 14.7383 24.8809 14.2549 24.3958C13.7731 23.9107 13.7747 23.1269 14.2582 22.6451L19.1306 17.7941L14.2582 12.9431C13.7747 12.4613 13.7731 11.6792 14.2549 11.1941C14.4958 10.9499 14.8142 10.8295 15.131 10.8295Z"
+                                fill="#53ACBF" />
+                        </svg>
+                </div>
+            </a>
+        </div>
+        <br><br><br>
+        <div class="selected_item">
+            <h1>
+                Задержки развития с <br>
+                нарушением коммуникативных функций
+            </h1>
+            <br><br>
+            <div class="swiper-container4 image_list_stambul">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="image_list_item">
+                            <img src="./assets/images/moreaboutservice/Photo (119) 1.png"
+                                alt="">
+                        </div>
+
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="image_list_item">
+                            <img src="./assets/images/moreaboutservice/Photo (83) 1.png"
+                                alt="">
+                        </div>
+
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="image_list_item">
+                            <img src="./assets/images/moreaboutservice/Rectangle.png"
+                                alt="">
+                        </div>
+
+                    </div>
+                    
+
+                </div>
+            </div>
+            <br><br>
+            <p>С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности представляет
+                собой интересный эксперимент проверки систем массового участия. Разнообразный и богатый опыт рамки и
+                место обучения кадров способствует подготовке и реализации направлений прогрессивного развития.
+                Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение нашей
+                деятельности играет важную роль в формировании системы обучения кадров, соответствует насущным
+                потребностям.
+                С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности представляет
+                собой интересный эксперимент проверки систем массового участия. Разнообразный и богатый опыт рамки и
+                место обучения кадров способствует подготовке и реализации направлений прогрессивного развития.
+                Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение нашей
+                деятельности играет важную роль в формировании системы обучения кадров, соответствует насущным
+                потребностям.
+            </p>
+        </div>
+        <br><br><br>
+        <br><br><br>
+        <div class="what_we_after">
+            <h3>В результате комплексной реабилитации <br>
+                в Реацентре Бишкек и Ош:</h3>
+            <br>
+            <br>
+            <div class="what_we_after_list">
+                <div class="what_we_after_list_item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                        <circle cx="11" cy="11" r="11" fill="#4FD97E" />
+                        <path d="M6 10.3571L9.57143 13.9286L16.5 7" stroke="white" stroke-width="2.5"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <p>Появляется понимание <br> обращенной речи</p>
+                </div>
+                <div class="what_we_after_list_item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                        <circle cx="11" cy="11" r="11" fill="#4FD97E" />
+                        <path d="M6 10.3571L9.57143 13.9286L16.5 7" stroke="white" stroke-width="2.5"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <p>Развиваются навыки <br> счета, чтения и письма</p>
+                </div>
+                <div class="what_we_after_list_item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                        <circle cx="11" cy="11" r="11" fill="#4FD97E" />
+                        <path d="M6 10.3571L9.57143 13.9286L16.5 7" stroke="white" stroke-width="2.5"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <p>Снижается возбудимость, <br> агрессия и аутоагрессия</p>
+                </div>
+                <div class="what_we_after_list_item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                        <circle cx="11" cy="11" r="11" fill="#4FD97E" />
+                        <path d="M6 10.3571L9.57143 13.9286L16.5 7" stroke="white" stroke-width="2.5"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <p>Развиваются зрительное,<br> слуховое, тактильное восприятия</p>
+                </div>
+                <div class="what_we_after_list_item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                        <circle cx="11" cy="11" r="11" fill="#4FD97E" />
+                        <path d="M6 10.3571L9.57143 13.9286L16.5 7" stroke="white" stroke-width="2.5"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <p>Расширяется<br> словарный запас</p>
+                </div>
+                <div class="what_we_after_list_item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                        <circle cx="11" cy="11" r="11" fill="#4FD97E" />
+                        <path d="M6 10.3571L9.57143 13.9286L16.5 7" stroke="white" stroke-width="2.5"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <p>Нормализовывается<br> сон</p>
+                </div>
+                <div class="what_we_after_list_item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                        <circle cx="11" cy="11" r="11" fill="#4FD97E" />
+                        <path d="M6 10.3571L9.57143 13.9286L16.5 7" stroke="white" stroke-width="2.5"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <p>Улучшается поведение,<br> появляется самоконтроль</p>
+                </div>
+                <div class="what_we_after_list_item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                        <circle cx="11" cy="11" r="11" fill="#4FD97E" />
+                        <path d="M6 10.3571L9.57143 13.9286L16.5 7" stroke="white" stroke-width="2.5"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <p>Запускается<br>
+                        моторная речь</p>
+                </div>
+                <div class="what_we_after_list_item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                        <circle cx="11" cy="11" r="11" fill="#4FD97E" />
+                        <path d="M6 10.3571L9.57143 13.9286L16.5 7" stroke="white" stroke-width="2.5"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <p>Развиваются мышление, память,<br> внимание, воображение</p>
+                </div>
+            </div>
+            <br><br>
+        </div>
+        <br>
+        <button class="from_button">
+            Записаться
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="22" viewBox="0 0 25 22" fill="none">
+                <path
+                    d="M22.3292 2.36674C21.8081 1.89613 21.037 1.72081 20.3179 1.90536L3.55065 6.19615C2.792 6.38162 2.25428 6.91405 2.10943 7.59042C1.96146 8.2788 2.47833 9.15264 3.15361 9.51805L8.39638 12.3537C8.9341 12.6443 9.62814 12.5714 10.0731 12.1765L16.0766 6.86053C16.3788 6.5837 16.879 6.5837 17.1812 6.86053C17.4834 7.12813 17.4834 7.56182 17.1812 7.83864L11.1673 13.1555C10.7213 13.5495 10.6379 14.1632 10.9662 14.6393L14.1696 19.2992C14.5447 19.8528 15.1908 20.1666 15.8995 20.1666C15.9828 20.1666 16.0766 20.1666 16.16 20.1574C16.9728 20.0651 17.6189 19.576 17.8586 18.884L22.8294 4.14764C23.0482 3.52017 22.8502 2.83734 22.3292 2.36674Z"
+                    fill="white" />
+            </svg>
+        </button>
+        <br><br>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="top_footer">
+                <div><img src="./assets/images/лого_белый.png" alt=""></div>
+                <div>
+                    <p>Международная сеть клиник
+                        Реацентр Кырыгзстан Лечение
+                        детей с задержками развития,нарушениями психической двигательной систем и другими патологиями
+                        ЦНС</p>
+                </div>
+                <div>
+                    <p>
+                        г. Бишкек
+                        <br>
+                        мкр. Джал-23 д.18/2
+                    </p>
+                    <br>
+                    <p><a href="">
+                            +996 704 353737
+
+                        </a></p>
+                    <p><a href="">
+                            +996 552 353737
+
+
+                        </a></p>
+                </div>
+                <div>
+                    <p>Понедельник-Пятница </p>
+                    <p>08:30 - 17:30
+                    </p>
+                    <br>
+                    <p>Выходные дни:</p>
+                    <p>Cуботта, Воскресенье</p>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="./assets/icon/Social Icons.svg" alt=""> reacenter.bishkek
+                    </a>
+                    <br>
+                    <a href="">
+                        <img src="./assets/icon/Social Icons — копия.svg" alt=""> reacenter.bishkek
+                    </a>
+                    <br>
+                    <a href="">
+                        <img src="./assets/icon/Social Icons — копия 2.svg" alt=""> reacenter.bishkek
+                    </a>
+                </div>
+            </div>
+            <br><br>
+            <div class="bottom_footer">
+
+                <div class="bottom_footer_part">
+                    <h1>Наши партнеры:</h1>
+                    <img src="./assets/images/KHTC-01 2.png" alt="">
+                    <img src="./assets/images/Group.png" alt="">
+                    <img src="./assets/images/Group — копия.png" alt="">
+                </div>
+                <div class="bottom_footer_part">
+                    <img src="./assets/images/image 16.png" alt="">
+                    <img src="./assets/images/image 17.png" alt="">
+                    <img src="./assets/images/Logo_Kyrgyz_State_Medical_Academy.svg 2.png" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>

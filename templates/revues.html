@@ -1,0 +1,316 @@
+{% extends 'include/homepage.html' %}
+{% load static %}
+{% block content%}
+
+    {% include 'include/header.html'%}
+    <script>
+        const mobilebtn = document.getElementById("mobilebtn");
+        const closebtn = document.getElementById("closebtn");
+        const mobile_nav = document.getElementById("mobile_nav");
+
+        mobilebtn.addEventListener("click", () => {
+            mobile_nav.classList.add("open"); // Открыть меню
+        });
+
+        closebtn.addEventListener("click", () => {
+            mobile_nav.classList.remove("open"); // Закрыть меню
+        });
+
+    </script>
+    <main>
+        <section class="video_section">
+            <h1>Видео отзывы</h1>
+            <div class="swiper-container2">
+                <div class="swiper-wrapper">
+                    {% for video in video_review %}
+                    <div class="swiper-slide">
+                        <div class="video_card" data-video-id="{{ video.video|slice:'-11:' }}">
+                            <div class="video_card_image">
+                                <img src="{{ video.banner.url }}" alt="">
+                                <svg class="btn_on" xmlns="http://www.w3.org/2000/svg" width="91" height="101"
+                                    viewBox="0 0 91 101" fill="none">
+                                    <path
+                                        d="M84.5329 40.3102C92.5314 44.9293 92.5314 56.4745 84.5328 61.0936L18.6328 99.1503C10.6328 103.77 0.631694 97.9968 0.631694 88.7586L0.631697 12.6452C0.631698 3.40702 10.6328 -2.3664 18.6328 2.25353L84.5329 40.3102Z"
+                                        fill="white" fill-opacity="0.8" />
+                                </svg>
+                            </div>
+                            <br>
+                            <div class="video_card_title">
+                                <h1>{{ video.name }}</h1>
+                                <span>{{ video.create_at }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                
+                </div>
+            </div>
+
+        </section>
+        <section class="video_section">
+            <br><br>
+            <h1>Отзывы</h1>
+            <div class="swiper-container2">
+                <div class="swiper-wrapper">
+                    {% for review in review %}
+                    <div class="swiper-slide">
+                        <div class="reviews_card" data-title="{{review.name}}" data-date="{{review.create_at}}"
+                            data-text="{{review.text}}">
+                            <div class="reviews_card_head">
+                                <h1>
+                                    {{review.name}}
+                                </h1>
+                                <p>
+                                    {{review.create_at}}
+                                </p>
+                            </div>
+                            <div class="reviews_card_des">
+                                <svg class="firstDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
+                                    viewBox="0 0 27 17" fill="none">
+                                    <path
+                                        d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z"
+                                        fill="#53ACBF" />
+                                </svg>
+
+                                <p>{{review.text}}
+                                    <svg class="secondDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
+                                        viewBox="0 0 27 17" fill="none">
+                                        <path
+                                            d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z"
+                                            fill="#53ACBF" />
+                                    </svg>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+            <div id="videoModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div class="custom-video-player">
+                        <iframe id="youtubeVideo" width="100%" height="315" src="" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <!-- Модальное окно -->
+            <div id="reviewModal" class="modal">
+                <div style="
+                max-width: 600px;
+            " class="modal-content  ">
+                    <span class="close-review-modal">&times;</span>
+                    <div style="
+                    padding: 2rem;
+                " class="reviews-card ">
+                        <div class="reviews_card_head">
+                            <h2 id="reviewTitle">
+                                Асаналиева Айзада,
+                                мама Азамата
+                            </h2>
+                            <p id="reviewDate">
+                                01.01.2024
+                            </p>
+                        </div>
+                        <div class="reviews_card_des">
+                            <svg class="firstDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
+                                viewBox="0 0 27 17" fill="none">
+                                <path
+                                    d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z"
+                                    fill="#53ACBF" />
+                            </svg>
+
+                            <p id="reviewText">Отличная клиника! Была с сыном, врачи все отлично разъясняют.
+                                Внимательные
+                                сотрудники, и
+                                настоящие специалисты своего дела. Все было на высшем уровне. Рекомендуем!
+                                <svg class="secondDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
+                                    viewBox="0 0 27 17" fill="none">
+                                    <path
+                                        d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z"
+                                        fill="#53ACBF" />
+                                </svg>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div id="documentModal" class="modal">
+                <div class="real_revue_card">
+                    <span class="close-document-modal">&times;</span>
+
+                    <div style="background: rgba(191, 236, 245);padding-bottom: 1rem;">
+                        <img id="documentImage" src="" style="max-width: 500px;" width="100%"
+                            alt="Изображение документа">
+                        <h1 id="documentTitle">Асаналиева Айзада, мама Азамата</h1>
+                        <span id="documentDate" class="document-date">01.01.2024</span>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <br><br><br><br>
+        </section>
+        <section class="real_revue">
+            <div class="real_revue_title">
+                <h1>Рукописные отзывы</h1>
+            </div>
+            <div class="swiper-container2">
+                <div class="swiper-wrapper">
+                    {% for write in write_review %}
+                    <div class="swiper-slide">
+                        <div class="real_revue_card" data-title="{{write.name}}" data-date="{{write.create_at}}"
+                            data-image="{{write.image.url}}">
+                            <div class="dock_image_block">
+                                <img src="{{write.image.url}}"
+                                    alt="">
+                            </div>
+                            <br>
+                            <h1>{{write.name}}</h1>
+                            <br>
+                            <span>{{write.create_at}}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <br><br><br>
+            <form class="revue_form">
+                <h1>Оставить отзыв</h1>
+                <div class="flexx">
+                    <input placeholder="Имя" type="text">
+                    <input placeholder="Фамилия" type="text">
+                </div>
+                <br>
+                <div>
+                    <textarea placeholder="Опишите ваш опыт" name="" id=""></textarea>
+                </div>
+                <br><br>
+                <button>Отправить<svg xmlns="http://www.w3.org/2000/svg" width="15" height="10" viewBox="0 0 15 10"
+                        fill="none">
+                        <path
+                            d="M7.56968 0.0749141C7.37592 0.180113 7.25512 0.380149 7.25512 0.597719V3.98559H0.608039C0.272401 3.98559 0 4.25337 0 4.58331C0 4.91325 0.272401 5.18103 0.608039 5.18103H7.25512V8.5689C7.25512 8.78727 7.37592 8.98731 7.56968 9.09171C7.76344 9.19771 8.00017 9.19053 8.18745 9.07497L14.6213 5.08938C14.798 4.9794 14.9051 4.78893 14.9051 4.58331C14.9051 4.3777 14.798 4.18722 14.6213 4.07724L8.18745 0.0916503C8.08854 0.0310814 7.97585 0 7.86316 0C7.76263 0 7.66129 0.0255027 7.56968 0.0749141Z"
+                            fill="white" />
+                    </svg></button>
+            </form>
+        </section>
+    </main>
+    <br><br><br><br>
+    <button class="from_button">
+        Записаться
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="22" viewBox="0 0 25 22" fill="none">
+            <path
+                d="M22.3292 2.36674C21.8081 1.89613 21.037 1.72081 20.3179 1.90536L3.55065 6.19615C2.792 6.38162 2.25428 6.91405 2.10943 7.59042C1.96146 8.2788 2.47833 9.15264 3.15361 9.51805L8.39638 12.3537C8.9341 12.6443 9.62814 12.5714 10.0731 12.1765L16.0766 6.86053C16.3788 6.5837 16.879 6.5837 17.1812 6.86053C17.4834 7.12813 17.4834 7.56182 17.1812 7.83864L11.1673 13.1555C10.7213 13.5495 10.6379 14.1632 10.9662 14.6393L14.1696 19.2992C14.5447 19.8528 15.1908 20.1666 15.8995 20.1666C15.9828 20.1666 16.0766 20.1666 16.16 20.1574C16.9728 20.0651 17.6189 19.576 17.8586 18.884L22.8294 4.14764C23.0482 3.52017 22.8502 2.83734 22.3292 2.36674Z"
+                fill="white" />
+        </svg>
+    </button>
+    <br><br><br><br>
+    {% include 'include/footer.html'%}
+
+    <script>// Получаем элементы
+        // Получаем элементы
+        document.querySelectorAll('.video_card').forEach(card => {
+            card.addEventListener('click', () => {
+                const videoId = card.getAttribute('data-video-id');
+                const youtubeVideo = document.getElementById("youtubeVideo");
+                const modal = document.getElementById("videoModal");
+    
+                // Вставляем URL с параметрами автозапуска видео
+                youtubeVideo.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                modal.style.display = "flex";
+            });
+        });
+
+        // Закрываем модальное окно при клике на крестик
+        document.getElementsByClassName("close")[0].addEventListener('click', () => {
+            const modal = document.getElementById("videoModal");
+            const youtubeVideo = document.getElementById("youtubeVideo");
+
+            modal.style.display = "none";
+            youtubeVideo.src = ""; // Очищаем src для остановки видео
+        });
+
+        // Закрываем модальное окно при клике вне его области
+        window.addEventListener("click", (event) => {
+            const modal = document.getElementById("videoModal");
+            const youtubeVideo = document.getElementById("youtubeVideo");
+
+            if (event.target == modal) {
+                modal.style.display = "none";
+                youtubeVideo.src = ""; // Очищаем src для остановки видео
+            }
+        });
+        // Привязываем модалку только к инфо-карточкам
+        // Пример данных отзывов
+        // Привязка модального окна к каждой карточке отзыва
+        document.querySelectorAll('.reviews_card').forEach(card => {
+            card.addEventListener('click', () => {
+                const modal = document.getElementById("reviewModal");
+                const reviewTitle = document.getElementById("reviewTitle");
+                const reviewDate = document.getElementById("reviewDate");
+                const reviewText = document.getElementById("reviewText");
+
+                // Извлечение данных из data-атрибутов
+                reviewTitle.textContent = card.getAttribute('data-title');
+                reviewDate.textContent = card.getAttribute('data-date');
+                reviewText.textContent = card.getAttribute('data-text');
+
+                // Отображаем модальное окно
+                modal.style.display = "flex";
+            });
+        });
+
+        // Закрытие модального окна при клике на крестик
+        document.getElementsByClassName("close-review-modal")[0].addEventListener('click', () => {
+            const modal = document.getElementById("reviewModal");
+            modal.style.display = "none";
+        });
+
+        // Закрытие модального окна при клике вне его области
+        window.addEventListener("click", (event) => {
+            const modal = document.getElementById("reviewModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+
+
+        // Привязка модального окна к каждой карточке документа
+        document.querySelectorAll('.real_revue_card').forEach(card => {
+            card.addEventListener('click', () => {
+                const modal = document.getElementById("documentModal");
+                const documentTitle = document.getElementById("documentTitle");
+                const documentDate = document.getElementById("documentDate");
+                const documentImage = document.getElementById("documentImage");
+
+                // Извлечение данных из data-атрибутов
+                documentTitle.textContent = card.getAttribute('data-title');
+                documentDate.textContent = card.getAttribute('data-date');
+                documentImage.src = card.getAttribute('data-image');
+
+                // Отображаем модальное окно
+                modal.style.display = "flex";
+            });
+        });
+
+        // Закрытие модального окна при клике на крестик
+        document.getElementsByClassName("close-document-modal")[0].addEventListener('click', () => {
+            const modal = document.getElementById("documentModal");
+            modal.style.display = "none";
+        });
+
+        // Закрытие модального окна при клике вне его области
+        window.addEventListener("click", (event) => {
+            const modal = document.getElementById("documentModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+
+    </script>
+{% endblock %}

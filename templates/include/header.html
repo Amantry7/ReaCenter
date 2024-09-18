@@ -1,0 +1,80 @@
+{% load static %}
+<header>
+    <div id="mobile_nav" class="mobile_nav">
+        <ol>
+            <li><a class="active" href="{% url 'about'%}">О нас</a></li>
+            <li><a href="{% url 'methods' %}">Методика</a></li>
+            <li><a href="{% url 'what_we' %}">Что мы лечим</a></li>
+            <li><a href="{% url 'emploes'%}">Специалисты</a></li>
+            <li><a href="{% url 'service'%}">Услуги</a></li>
+            <li><a href="{% url 'review'%}">Отзывы</a></li>
+            <li><a href="{% url 'contact' %}">Контакты</a></li>
+        </ol>
+
+        <svg id="closebtn" xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27"
+            fill="none">
+            <path d="M6.5 20.5L13.5 13.5M13.5 13.5L20.5 6.5M13.5 13.5L6.5 6.5M13.5 13.5L20.5 20.5" stroke="#2F7483"
+                stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+
+
+    </div>
+
+
+
+
+
+    <nav class="top_nav container">
+
+        <button id="mobilebtn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 20" fill="none">
+                <path d="M4.7998 3.6001H19.1998" stroke="#2F7483" stroke-width="1.6" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M4.7998 10H19.1998" stroke="#2F7483" stroke-width="1.6" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M4.7998 16.3999H19.1998" stroke="#2F7483" stroke-width="1.6" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </button>
+        <div class="head_logo">
+            <a href="./index.html">
+                <img src="{% static 'assets/images/реа центр.png' %}" alt="">
+            </a>
+        </div>
+        <div></div>
+        <ol>
+            <li><a href="{% url 'about'%}">О нас</a></li>
+            <li><a href="{% url 'methods' %}">Методика</a></li>
+            <li><a href="{% url 'what_we' %}">Что мы лечим</a></li>
+            <li><a href="{% url 'emploes'%}">Специалисты</a></li>
+            <li><a href="{% url 'service' %}">Услуги</a></li>
+            <li><a href="{% url 'review'%}">Отзывы</a></li>
+            <li><a href="{% url 'contact' %}">Контакты</a></li>
+        </ol>
+    </nav>
+    <div class="bottom_nav_bg">
+        <div class="container">
+            <nav class="bottom_nav">
+                <h3>Международная сеть клиник Реацентр Кырыгзстан</h3>
+                <div class="bottom_nav_flex">
+                    <div>
+                        <img src="{% static 'assets/images/logo_formikro_blue 1.png' %}" alt="">
+                    </div>
+                    <div class="head_sosial">
+                        <a href="#" class="head_sosial_icon">
+                            <img src="{% static 'assets/icon/Social Icons.svg' %}" alt="">
+                        </a>
+                        <a href="#" class="head_sosial_icon">
+                            <img src="{% static 'assets/icon/Social Icons — копия.svg' %}" alt="">
+                        </a>
+                        <a href="#" class="head_sosial_icon">
+                            <img src="{% static 'assets/icon/Social Icons — копия 2.svg' %}" alt="">
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+
+</header>

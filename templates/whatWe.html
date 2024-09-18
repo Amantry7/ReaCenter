@@ -1,0 +1,91 @@
+{% extends 'include/homepage.html' %}
+{% load static %}
+{% block content%}
+    
+    {% include 'include/header.html'%}
+    <br><br><br>    <script>
+        const mobilebtn = document.getElementById("mobilebtn");
+        const closebtn = document.getElementById("closebtn");
+        const mobile_nav = document.getElementById("mobile_nav");
+
+        mobilebtn.addEventListener("click", () => {
+            mobile_nav.classList.add("open"); // Открыть меню
+        });
+
+        closebtn.addEventListener("click", () => {
+            mobile_nav.classList.remove("open"); // Закрыть меню
+        });
+
+    </script>
+    <br>
+    <main class="container">
+        <div class="main_title">
+            <h1>
+                Что мы лечим?
+            </h1>
+            <br>
+            <p>
+                Наши пациенты отмечают позитивные изменения уже после первого курса лечения.
+                Применение Микротоковой рефлексотерапии совместно с комплексной
+                реабилитацией позволяет добиться наиболее значимых результатов при лечении следующих патологий:
+            </p>
+        </div>
+        <br><br><br>
+        <div class="what_we_list">
+            {% for treat in treat %}
+            <a href="" class="what_we_item ">
+                <h1>
+                    {{treat.title}}
+                </h1>
+                <div>
+                    <p>
+                        {{treat.subtitle}}
+                    </p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+                        <path
+                            d="M34 17.499C34 26.5988 26.5981 33.999 17.5 33.999C8.4019 33.999 1 26.5988 1 17.499C1 8.40092 8.4019 0.999023 17.5 0.999023C26.5981 0.999023 34 8.40092 34 17.499Z"
+                            stroke="white" stroke-width="2" />
+                        <path
+                            d="M24.1688 15.13C24.1688 15.4452 24.0484 15.762 23.8075 16.0029L18.082 21.7564C17.8493 21.9891 17.5342 22.1194 17.2042 22.1194C16.8758 22.1194 16.5607 21.9891 16.328 21.7564L10.5992 16.0029C10.1174 15.5194 10.1174 14.7373 10.6025 14.2539C11.0876 13.7721 11.8714 13.7737 12.3532 14.2572L17.2042 19.1296L22.0552 14.2572C22.537 13.7737 23.3191 13.7721 23.8042 14.2539C24.0484 14.4948 24.1688 14.8132 24.1688 15.13Z"
+                            fill="white" />
+                    </svg>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+     <br><br>
+        <div class="what_we_after">
+            <h3>В результате комплексной реабилитации <br>
+                в Реацентре Бишкек и Ош:</h3>
+            <br>
+            <br>
+            
+            <div class="what_we_after_list">
+                {% for result in result %}
+                <div class="what_we_after_list_item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+                        <circle cx="11" cy="11" r="11" fill="#4FD97E" />
+                        <path d="M6 10.3571L9.57143 13.9286L16.5 7" stroke="white" stroke-width="2.5"
+                            stroke-linejoin="round" />
+                    </svg>
+                    <p>{{result.title}}</p>
+                </div>
+                {% endfor %}
+                
+            </div>
+            <br><br>
+        </div>
+        <br>
+        <button class="from_button">
+            Записаться
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="22" viewBox="0 0 25 22" fill="none">
+                <path
+                    d="M22.3292 2.36674C21.8081 1.89613 21.037 1.72081 20.3179 1.90536L3.55065 6.19615C2.792 6.38162 2.25428 6.91405 2.10943 7.59042C1.96146 8.2788 2.47833 9.15264 3.15361 9.51805L8.39638 12.3537C8.9341 12.6443 9.62814 12.5714 10.0731 12.1765L16.0766 6.86053C16.3788 6.5837 16.879 6.5837 17.1812 6.86053C17.4834 7.12813 17.4834 7.56182 17.1812 7.83864L11.1673 13.1555C10.7213 13.5495 10.6379 14.1632 10.9662 14.6393L14.1696 19.2992C14.5447 19.8528 15.1908 20.1666 15.8995 20.1666C15.9828 20.1666 16.0766 20.1666 16.16 20.1574C16.9728 20.0651 17.6189 19.576 17.8586 18.884L22.8294 4.14764C23.0482 3.52017 22.8502 2.83734 22.3292 2.36674Z"
+                    fill="white" />
+            </svg>
+        </button>
+        <br><br>
+    </main>
+    {% include 'include/footer.html'%}
+
+{% endblock %}

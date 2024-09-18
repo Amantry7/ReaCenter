@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реацентр</title>
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="./assets/styles/swiper.min.css">
+</head>
+
+<body>
+    <header>
+        <div id="mobile_nav" class="mobile_nav">
+            <ol>
+                <li><a class="active" href="./aboutUs.html">О нас</a></li>
+                <li><a href="./metodika.html">Методика</a></li>
+                <li><a href="./whatWe.html">Что мы лечим</a></li>
+                <li><a href="./emploes.html">Специалисты</a></li>
+                <li><a href="./service.html">Услуги</a></li>
+                <li><a href="./revues.html">Отзывы</a></li>
+                <li><a href="./contact.html">Контакты</a></li>
+            </ol>
+
+            <svg id="closebtn" xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27"
+                fill="none">
+                <path d="M6.5 20.5L13.5 13.5M13.5 13.5L20.5 6.5M13.5 13.5L6.5 6.5M13.5 13.5L20.5 20.5" stroke="#2F7483"
+                    stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+
+        </div>
+
+
+
+
+
+        <nav class="top_nav container">
+
+            <button id="mobilebtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 20" fill="none">
+                    <path d="M4.7998 3.6001H19.1998" stroke="#2F7483" stroke-width="1.6" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M4.7998 10H19.1998" stroke="#2F7483" stroke-width="1.6" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M4.7998 16.3999H19.1998" stroke="#2F7483" stroke-width="1.6" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <div class="head_logo">
+                <a href="./index.html">
+                    <img src="./assets/images/реа центр.png" alt="">
+                </a>
+            </div>
+            <div></div>
+            <ol>
+                <li><a href="./aboutUs.html">О нас</a></li>
+                <li><a href="./metodika.html">Методика</a></li>
+                <li><a href="./whatWe.html">Что мы лечим</a></li>
+                <li><a href="./emploes.html">Специалисты</a></li>
+                <li><a href="./service.html">Услуги</a></li>
+                <li><a href="./revues.html">Отзывы</a></li>
+                <li><a href="./contact.html">Контакты</a></li>
+            </ol>
+        </nav>
+        <div class="bottom_nav_bg">
+            <div class="container">
+                <nav class="bottom_nav">
+                    <h3>Международная сеть клиник Реацентр Кырыгзстан</h3>
+                    <div class="bottom_nav_flex">
+                        <div>
+                            <img src="./assets/images/logo_formikro_blue 1.png" alt="">
+                        </div>
+                        <div class="head_sosial">
+                            <a href="#" class="head_sosial_icon">
+                                <img src="./assets/icon/Social Icons.svg" alt="">
+                            </a>
+                            <a href="#" class="head_sosial_icon">
+                                <img src="./assets/icon/Social Icons — копия.svg" alt="">
+                            </a>
+                            <a href="#" class="head_sosial_icon">
+                                <img src="./assets/icon/Social Icons — копия 2.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+
+    </header>
+    <script>
+        const mobilebtn = document.getElementById("mobilebtn");
+        const closebtn = document.getElementById("closebtn");
+        const mobile_nav = document.getElementById("mobile_nav");
+
+        mobilebtn.addEventListener("click", () => {
+            mobile_nav.classList.add("open"); // Открыть меню
+        });
+
+        closebtn.addEventListener("click", () => {
+            mobile_nav.classList.remove("open"); // Закрыть меню
+        });
+
+    </script>
+    <main>
+        <section class="head_section container">
+            <div class="top_head_section">
+                <div class="top_head_section_left">
+                    <div class="bottom_head_section_list_item noneINDesk">
+                        <img src="./assets/images/Group.svg" alt="">
+                        <h2>
+                            Метод успешно применяется
+                            при лечении неврологических
+                            нарушений у детей свыше 30 лет
+                        </h2>
+                    </div>
+                    <h1>
+                        Лечение детей <br>
+                        с задержками развития,
+                    </h1>
+                    <h2>
+                        нарушениями психической двигательной систем и другими патологиями ЦНС
+                    </h2>
+                    <button class="button ">
+                        Записаться
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="10" viewBox="0 0 15 10" fill="none">
+                            <path
+                                d="M7.56968 0.0749141C7.37592 0.180113 7.25512 0.380149 7.25512 0.597719V3.98559H0.608039C0.272401 3.98559 0 4.25337 0 4.58331C0 4.91325 0.272401 5.18103 0.608039 5.18103H7.25512V8.5689C7.25512 8.78727 7.37592 8.98731 7.56968 9.09171C7.76344 9.19771 8.00017 9.19053 8.18745 9.07497L14.6213 5.08938C14.798 4.9794 14.9051 4.78893 14.9051 4.58331C14.9051 4.3777 14.798 4.18722 14.6213 4.07724L8.18745 0.0916503C8.08854 0.0310814 7.97585 0 7.86316 0C7.76263 0 7.66129 0.0255027 7.56968 0.0749141Z"
+                                fill="white" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="top_head_section_right">
+                    <div class="swiper">
+                        <img src="./assets/images/slider main.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="bottom_head_section">
+                <div class="bottom_head_section_list">
+                    <div class="bottom_head_section_list_item">
+                        <h1>Почему наши пациенты доверяют нам?</h1>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="21" viewBox="0 0 10 21" fill="none">
+                        <path d="M1 1C1.8 1.8 6.66667 8 9 11L1 20.5" stroke="#53ACBF" stroke-linecap="round" />
+                    </svg>
+                    <div class="bottom_head_section_list_item">
+                        <h2>
+                            Уникальный метод лечения разрешен
+                            Минздравом Кыргызской Республики
+                            и Российкий Федерации
+                        </h2>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="21" viewBox="0 0 10 21" fill="none">
+                        <path d="M1 1C1.8 1.8 6.66667 8 9 11L1 20.5" stroke="#53ACBF" stroke-linecap="round" />
+                    </svg>
+                    <div class="bottom_head_section_list_item">
+                        <img src="./assets/images/Group.svg" alt="">
+                        <h2>
+                            Метод успешно применяется
+                            при лечении неврологических
+                            нарушений у детей свыше 30 лет
+                        </h2>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="21" viewBox="0 0 10 21" fill="none">
+                        <path d="M1 1C1.8 1.8 6.66667 8 9 11L1 20.5" stroke="#53ACBF" stroke-linecap="round" />
+                    </svg>
+                    <div class="bottom_head_section_list_item w100">
+                        <h4>Комплексная реабилитация. Наши пациенты параллельно лечению занимаются с логопедом,
+                            нейропсихологом, АВА-терапевтом, проходят общий массаж, логопедический массаж, АФК, ЛФК.
+                        </h4>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="21" viewBox="0 0 10 21" fill="none">
+                        <path d="M1 1C1.8 1.8 6.66667 8 9 11L1 20.5" stroke="#53ACBF" stroke-linecap="round" />
+                    </svg>
+                    <div class="bottom_head_section_list_item">
+                        <h4>
+                            Результаты лечения видны уже после 1 курса лечения.
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="what_we">
+            <div class="what_we_news">
+                <div>
+                    <h1>новости</h1>
+                    <p>
+                        Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение
+                        нашей
+                        деятельности играет важную роль в формировании системы обучения кадров...</p>
+                </div>
+                <button class="white_btn">
+                    Читать подробнее <svg xmlns="http://www.w3.org/2000/svg" width="11" height="19" viewBox="0 0 11 19"
+                        fill="none">
+                        <path
+                            d="M1.65346 0C2.0749 0 2.49854 0.164282 2.82068 0.492849L10.5146 8.30192C10.8257 8.61923 11 9.04907 11 9.49916C11 9.947 10.8257 10.3768 10.5146 10.6941L2.82068 18.5077C2.17419 19.1648 1.12833 19.1648 0.481837 18.5032C-0.162447 17.8416 -0.160241 16.7726 0.48625 16.1155L7.00191 9.49916L0.48625 2.88283C-0.160241 2.2257 -0.162447 1.15898 0.481837 0.497351C0.80398 0.164284 1.22983 0 1.65346 0Z"
+                            fill="#24BEE0" />
+                    </svg>
+                </button>
+            </div>
+
+            <br><br><br><br><br><br>
+            <div class="stambul container">
+                <h1>Поездка в Стамбул</h1>
+                <br><br>
+                <!-- <div class="image_list_stambul">
+                    <div class="image_list_item">
+                        <img src="https://s3-alpha-sig.figma.com/img/4cb7/458c/9c43c6fcf68b1c041de8901b345ac4ae?Expires=1725235200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=oVjGbjW1f8WQkEdoaV~mjAh78-kIS-Npgdxd9DWAwrVD1cL-gopO8uspk0g~8c3thUsZzHu-n1DQZ5wJHlnSwXTmcU~zcNahwTUDDBX0QN0b338131a~X2Pk4BdQqxlgLILuJPL1nf6bpaTL-cg~AtO6RvGdRMN3zCQltdptHCRHP0GpxRF6QkMvTST720qYrl6kbwgz6pZ0cgn4pzNsYXEMhmCD4p3iOYN60hd9b9M0toLdqo~58wzYSXVrGCMi7T8fQjTK4PaWvOZuTzym4pMZ5GZhgfx5u8pAMLurHjz6UNVJedNqZIOu7OtAKc1mJsydVQSydrdJdcuHmowYQg__"
+                            alt="">
+                    </div>
+                    <div class="image_list_item">
+                        <img src="https://s3-alpha-sig.figma.com/img/dd28/9608/784c2b98b6c6e1448f161ef9ade081a8?Expires=1725235200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=O1meaJnfe~Cx62ZfHOsmLSfW1HPDIYJIruwG62I07nBwoWOpLRQuetW~YF8xclNHgYFJuKeVJKhUgqpw-aFUv~VmmDs~goyJGwNxpRnVjrIYkAcTvOX~8YCmzRdM9aPXh5pPXfZRwRe47JVl2rZYIfcXjWrPH8gSjjoH2REI5In6cCdXIZ3zPhEzQ59b4qyJScGLioEDfev03d5q9WENqk1a-y7cN1whDunXDc~yDsy2KvxnqsxjrRU0SlqJIJNRr5YPXXFptzfAxaRV-jdaYibeEmtdvzKRxBoZeU-NlN9VrESM5Jr9RzzXMBWA0JkkcBbf1VVhcUZNL0tfF8s5SA__"
+                            alt="">
+                    </div>
+                    <div class="image_list_item">
+                        <img src="https://s3-alpha-sig.figma.com/img/4ebd/f485/6af1bd91a12ebc988e7dee619052978a?Expires=1725235200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ia~SDjpWP83IPWjplIzP-SZXkTsBzppzj2SY-~gwD2DAsaffLioWytLIc8WuSdZGPRofHBPc1y-6jK3CoO64TIxoQiYoR-D6zr7eA78ea-s5JaRmhBYR2qGC5aBf3bJJXMsWspmxRjcZ-rJs1Z2ZWWwuG9NoWQ3oNs~xEFXyatoDUHkNOPn8cSnkwsTQ8DlxDRZzf4JwFCBv61rfwilpD6s1DwNBFuQLW6z7f-jtKAavdTRBZDsiFE1SJCZ-eRV7xZMUv-fzFoJAun-l6MWlwYzYZF8eNKHuFW0dYtL0dPt9ePlMDlG3uh8QO78pFJ4U4PAIlfMC5941VvA4U-9s2A__"
+                            alt="">
+                    </div>
+                    <div class="image_list_item">
+                        <img src="https://s3-alpha-sig.figma.com/img/92d1/4fca/3abd63cab11a6b6e258c7001af3e8d34?Expires=1725235200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=q8ySeEUp~uk4gBodzHe8UeU6hF92Bnye44NjfNTdhde-oqRCZXhWCXvy7wIoCwsTaZeP9XaTxQR83IBPAVQnsGytUSpMYkPpE6gOiXhR~sLmk2gEwWH7j6-YoGekFiWBLghzmHkLEvjegNSXus-Nnr8czG8Wj5y8B5WBBMlqW66xNkzpsh2Ma7KCYJp5PZYBSfFfMnyqQKhmgTehT~Dno5Ua~uGYPWs7Ni56Usi9Taarm6DMiEJBN3w0JnyX53y1Dyf0bpsz0XXWrRUGQIKANRC4g6WQoi~YQpKVhuwXNeSBxcfdFtt2DD6P~CeVvU5jJ4UhvAKM2E1gL-hz49xuzw__"
+                            alt="">
+                    </div>
+                </div> -->
+                <div class="swiper-container4 image_list_stambul">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="image_list_item">
+                                <img src="./assets/images/newsSwiper/aerial-drone-view-blue-mosque-istanbul-sunset-turkey.png"
+                                    alt="">
+                            </div>
+
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="image_list_item">
+                                <img src="./assets/images/newsSwiper/doctors-nurse-discussing-report 1.png" alt="">
+                            </div>
+
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="image_list_item">
+                                <img src="./assets/images/newsSwiper/landscape-turkish-flag-blue-mosque-far-away.png"
+                                    alt="">
+                            </div>
+
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="image_list_item">
+                                <img src="./assets/images/newsSwiper/medium-shot-docctor-with-stethoscope.png" alt="">
+                            </div>
+
+                        </div>
+                     
+
+                    </div>
+                </div>
+                <br><br>
+                <div class="stambul_text">
+                    <p>
+                        Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение
+                        нашей
+                        деятельности играет важную роль в формировании системы обучения кадров, соответствует насущным
+                        потребностям.
+                        Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение
+                        нашей
+                        деятельности играет важную роль в формировании системы обучения кадров, соответствует насущным
+                        потребностям.
+                        Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение
+                        нашей
+                        деятельности играет важную роль в формировании системы обучения кадров, соответствует насущным
+                        потребностям.
+                    </p>
+                    <br>
+                    <p>
+                        С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности
+                        представляет собой интересный эксперимент проверки систем массового участия. Разнообразный и
+                        богатый
+                        опыт рамки и место обучения кадров способствует подготовке и реализации направлений
+                        прогрессивного
+                        развития.Повседневная практика показывает, что постоянное информационно-пропагандистское
+                        обеспечение
+                        нашей деятельности играет важную роль в формировании системы обучения кадров, соответствует
+                        насущным
+                        потребностям.
+                    </p>
+                </div>
+
+            </div>
+            <br><br><br><br><br><br>
+            <div class="container">
+                <div class="what_we_head">
+                    <h1> Что мы лечим?</h1>
+                    <h2>
+                        Наши пациенты отмечают позитивные изменения уже после первого курса лечения.
+                        Применение Микротоковой рефлексотерапии совместно с комплексной
+                        реабилитацией позволяет добиться наиболее значимых результатов при лечении следующих патологий:
+                    </h2>
+                </div>
+                <br><br>
+                <div class="disease_list">
+                    <div class="disease_card">
+                        <div>
+                            <h1>
+                                ЗРР
+                            </h1>
+                            <h2>
+                                Задержка речевого
+                                развития (ЗРР)
+                            </h2>
+                        </div>
+                        <button class="next_btn"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+                                viewBox="0 0 35 35" fill="none">
+                                <path
+                                    d="M17.5 0.999999C26.5998 0.999999 34 8.4019 34 17.5C34 26.5981 26.5998 34 17.5 34C8.4019 34 1 26.5981 1 17.5C1 8.4019 8.4019 0.999999 17.5 0.999999Z"
+                                    stroke="#53ACBF" stroke-width="2" />
+                                <path
+                                    d="M15.131 10.8292C15.4462 10.8292 15.763 10.9497 16.0039 11.1906L21.7574 16.9161C21.9901 17.1487 22.1204 17.4639 22.1204 17.7939C22.1204 18.1222 21.9901 18.4374 21.7574 18.67L16.0039 24.3988C15.5204 24.8806 14.7383 24.8806 14.2549 24.3955C13.7731 23.9104 13.7747 23.1267 14.2582 22.6449L19.1306 17.7939L14.2582 12.9429C13.7747 12.4611 13.7731 11.679 14.2549 11.1939C14.4958 10.9497 14.8142 10.8292 15.131 10.8292Z"
+                                    fill="#53ACBF" />
+                            </svg></button>
+                    </div>
+                    <div class="disease_card">
+                        <div>
+                            <h1>
+                                ЗПР
+                            </h1>
+                            <h2>
+                                Задержка психического развития (ЗПР)
+                            </h2>
+                        </div>
+                        <button class="next_btn"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+                                viewBox="0 0 35 35" fill="none">
+                                <path
+                                    d="M17.5 0.999999C26.5998 0.999999 34 8.4019 34 17.5C34 26.5981 26.5998 34 17.5 34C8.4019 34 1 26.5981 1 17.5C1 8.4019 8.4019 0.999999 17.5 0.999999Z"
+                                    stroke="#53ACBF" stroke-width="2" />
+                                <path
+                                    d="M15.131 10.8292C15.4462 10.8292 15.763 10.9497 16.0039 11.1906L21.7574 16.9161C21.9901 17.1487 22.1204 17.4639 22.1204 17.7939C22.1204 18.1222 21.9901 18.4374 21.7574 18.67L16.0039 24.3988C15.5204 24.8806 14.7383 24.8806 14.2549 24.3955C13.7731 23.9104 13.7747 23.1267 14.2582 22.6449L19.1306 17.7939L14.2582 12.9429C13.7747 12.4611 13.7731 11.679 14.2549 11.1939C14.4958 10.9497 14.8142 10.8292 15.131 10.8292Z"
+                                    fill="#53ACBF" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="disease_card">
+                        <div>
+                            <h1>
+                                ДЦП
+                            </h1>
+                            <h2>
+                                Детского церебрального паралича (ДЦП)
+                            </h2>
+                        </div>
+                        <button class="next_btn"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+                                viewBox="0 0 35 35" fill="none">
+                                <path
+                                    d="M17.5 0.999999C26.5998 0.999999 34 8.4019 34 17.5C34 26.5981 26.5998 34 17.5 34C8.4019 34 1 26.5981 1 17.5C1 8.4019 8.4019 0.999999 17.5 0.999999Z"
+                                    stroke="#53ACBF" stroke-width="2" />
+                                <path
+                                    d="M15.131 10.8292C15.4462 10.8292 15.763 10.9497 16.0039 11.1906L21.7574 16.9161C21.9901 17.1487 22.1204 17.4639 22.1204 17.7939C22.1204 18.1222 21.9901 18.4374 21.7574 18.67L16.0039 24.3988C15.5204 24.8806 14.7383 24.8806 14.2549 24.3955C13.7731 23.9104 13.7747 23.1267 14.2582 22.6449L19.1306 17.7939L14.2582 12.9429C13.7747 12.4611 13.7731 11.679 14.2549 11.1939C14.4958 10.9497 14.8142 10.8292 15.131 10.8292Z"
+                                    fill="#53ACBF" />
+                            </svg></button>
+                    </div>
+                    <div class="disease_card">
+                        <div>
+                            <h1>
+                                ЗПР
+                            </h1>
+                            <h2>
+                                Задержка речевого
+                                развития (ЗРР)
+                            </h2>
+                        </div>
+                        <button class="next_btn"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+                                viewBox="0 0 35 35" fill="none">
+                                <path
+                                    d="M17.5 0.999999C26.5998 0.999999 34 8.4019 34 17.5C34 26.5981 26.5998 34 17.5 34C8.4019 34 1 26.5981 1 17.5C1 8.4019 8.4019 0.999999 17.5 0.999999Z"
+                                    stroke="#53ACBF" stroke-width="2" />
+                                <path
+                                    d="M15.131 10.8292C15.4462 10.8292 15.763 10.9497 16.0039 11.1906L21.7574 16.9161C21.9901 17.1487 22.1204 17.4639 22.1204 17.7939C22.1204 18.1222 21.9901 18.4374 21.7574 18.67L16.0039 24.3988C15.5204 24.8806 14.7383 24.8806 14.2549 24.3955C13.7731 23.9104 13.7747 23.1267 14.2582 22.6449L19.1306 17.7939L14.2582 12.9429C13.7747 12.4611 13.7731 11.679 14.2549 11.1939C14.4958 10.9497 14.8142 10.8292 15.131 10.8292Z"
+                                    fill="#53ACBF" />
+                            </svg></button>
+                    </div>
+                    <div class="disease_card">
+                        <div>
+                            <h1>
+                                НТ
+                            </h1>
+                            <h2>
+                                Нейросенсорной тугоухости (НТ)
+                            </h2>
+                        </div>
+                        <button class="next_btn"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+                                viewBox="0 0 35 35" fill="none">
+                                <path
+                                    d="M17.5 0.999999C26.5998 0.999999 34 8.4019 34 17.5C34 26.5981 26.5998 34 17.5 34C8.4019 34 1 26.5981 1 17.5C1 8.4019 8.4019 0.999999 17.5 0.999999Z"
+                                    stroke="#53ACBF" stroke-width="2" />
+                                <path
+                                    d="M15.131 10.8292C15.4462 10.8292 15.763 10.9497 16.0039 11.1906L21.7574 16.9161C21.9901 17.1487 22.1204 17.4639 22.1204 17.7939C22.1204 18.1222 21.9901 18.4374 21.7574 18.67L16.0039 24.3988C15.5204 24.8806 14.7383 24.8806 14.2549 24.3955C13.7731 23.9104 13.7747 23.1267 14.2582 22.6449L19.1306 17.7939L14.2582 12.9429C13.7747 12.4611 13.7731 11.679 14.2549 11.1939C14.4958 10.9497 14.8142 10.8292 15.131 10.8292Z"
+                                    fill="#53ACBF" />
+                            </svg></button>
+                    </div>
+                    <div class="disease_card">
+                        <div>
+                            <h1>
+                                РАС
+                            </h1>
+                            <h2>
+                                Задержки развития с нарушением коммуникатив...
+                            </h2>
+                        </div>
+                        <button class="next_btn"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+                                viewBox="0 0 35 35" fill="none">
+                                <path
+                                    d="M17.5 0.999999C26.5998 0.999999 34 8.4019 34 17.5C34 26.5981 26.5998 34 17.5 34C8.4019 34 1 26.5981 1 17.5C1 8.4019 8.4019 0.999999 17.5 0.999999Z"
+                                    stroke="#53ACBF" stroke-width="2" />
+                                <path
+                                    d="M15.131 10.8292C15.4462 10.8292 15.763 10.9497 16.0039 11.1906L21.7574 16.9161C21.9901 17.1487 22.1204 17.4639 22.1204 17.7939C22.1204 18.1222 21.9901 18.4374 21.7574 18.67L16.0039 24.3988C15.5204 24.8806 14.7383 24.8806 14.2549 24.3955C13.7731 23.9104 13.7747 23.1267 14.2582 22.6449L19.1306 17.7939L14.2582 12.9429C13.7747 12.4611 13.7731 11.679 14.2549 11.1939C14.4958 10.9497 14.8142 10.8292 15.131 10.8292Z"
+                                    fill="#53ACBF" />
+                            </svg></button>
+                    </div>
+                </div>
+
+                <br><br><br>
+                <a href="./whatWe.html">
+                    <button class="bordered_btn">
+                        Подробнее <svg xmlns="http://www.w3.org/2000/svg" width="17" height="11" viewBox="0 0 17 11"
+                            fill="none">
+                            <path
+                                d="M8.62379 0.76616C8.41904 0.876618 8.2914 1.08666 8.2914 1.31511V4.87237H1.26751C0.912843 4.87237 0.625 5.15354 0.625 5.49998C0.625 5.84642 0.912843 6.12758 1.26751 6.12758H8.2914V9.68485C8.2914 9.91413 8.41904 10.1242 8.62379 10.2338C8.82854 10.3451 9.07868 10.3376 9.27658 10.2162L16.0752 6.03135C16.2619 5.91587 16.375 5.71587 16.375 5.49998C16.375 5.28408 16.2619 5.08408 16.0752 4.96861L9.27658 0.783733C9.17206 0.720135 9.05299 0.6875 8.93391 0.6875C8.82768 0.6875 8.72059 0.714278 8.62379 0.76616Z"
+                                fill="#2F7483" />
+                        </svg>
+                    </button>
+                </a>
+            </div>
+        </section>
+        <section class="service_section container">
+            <h1 class="section_title">
+                Наши услуги
+            </h1>
+            <div class="service_list">
+                <div class="service_card">
+                    <div class="service_card_image">
+                        <img src="./assets/images/Rectangle.png" alt="">
+                    </div>
+                    <div class="service_card_desc">
+                        <div>
+                            <h1>ЭЭГ
+                                (Электроэнцефалограмма) </h1>
+                            <p>Микротоковая рефлексотерапия (далее МТРТ) - авторский метод лечения... </p>
+                        </div>
+                        <button class="next_btn"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                viewBox="0 0 40 40" fill="none">
+                                <path
+                                    d="M20 0C31.03 0 40 8.972 40 20C40 31.028 31.03 40 20 40C8.972 40 0 31.028 0 20C0 8.972 8.972 0 20 0Z"
+                                    fill="#A3EEFF" />
+                                <path
+                                    d="M17.1277 11.9143C17.5097 11.9143 17.8937 12.0603 18.1857 12.3523L25.1597 19.2923C25.4417 19.5743 25.5997 19.9563 25.5997 20.3563C25.5997 20.7543 25.4417 21.1363 25.1597 21.4183L18.1857 28.3623C17.5997 28.9463 16.6517 28.9463 16.0657 28.3583C15.4817 27.7703 15.4837 26.8203 16.0697 26.2363L21.9757 20.3563L16.0697 14.4763C15.4837 13.8923 15.4817 12.9443 16.0657 12.3563C16.3577 12.0603 16.7437 11.9143 17.1277 11.9143Z"
+                                    fill="white" />
+                            </svg></button>
+                    </div>
+                </div>
+                <div class="service_card">
+                    <div class="service_card_image">
+                        <img src="./assets/images/news/news-2.jpg" alt="">
+                    </div>
+                    <div class="service_card_desc">
+                        <div>
+                            <h1>СИ 
+                                (Сенсорная интеграция)</h1>
+                            <p>Микротоковая рефлексотерапия (далее МТРТ) - авторский метод лечения... </p>
+                        </div>
+                        <button class="next_btn"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                viewBox="0 0 40 40" fill="none">
+                                <path
+                                    d="M20 0C31.03 0 40 8.972 40 20C40 31.028 31.03 40 20 40C8.972 40 0 31.028 0 20C0 8.972 8.972 0 20 0Z"
+                                    fill="#A3EEFF" />
+                                <path
+                                    d="M17.1277 11.9143C17.5097 11.9143 17.8937 12.0603 18.1857 12.3523L25.1597 19.2923C25.4417 19.5743 25.5997 19.9563 25.5997 20.3563C25.5997 20.7543 25.4417 21.1363 25.1597 21.4183L18.1857 28.3623C17.5997 28.9463 16.6517 28.9463 16.0657 28.3583C15.4817 27.7703 15.4837 26.8203 16.0697 26.2363L21.9757 20.3563L16.0697 14.4763C15.4837 13.8923 15.4817 12.9443 16.0657 12.3563C16.3577 12.0603 16.7437 11.9143 17.1277 11.9143Z"
+                                    fill="white" />
+                            </svg></button>
+                    </div>
+                </div>
+                <div class="service_card">
+                    <div class="service_card_image">
+                        <img src="./assets/images/news/news-3.jpg" alt="">
+                    </div>
+                    <div class="service_card_desc">
+                        <div>
+                            <h1>Микротоковая 
+                                рефлексотерапия </h1>
+                            <p>Микротоковая рефлексотерапия (далее МТРТ) - авторский метод лечения...  </p>
+                        </div>
+                        <button class="next_btn"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                viewBox="0 0 40 40" fill="none">
+                                <path
+                                    d="M20 0C31.03 0 40 8.972 40 20C40 31.028 31.03 40 20 40C8.972 40 0 31.028 0 20C0 8.972 8.972 0 20 0Z"
+                                    fill="#A3EEFF" />
+                                <path
+                                    d="M17.1277 11.9143C17.5097 11.9143 17.8937 12.0603 18.1857 12.3523L25.1597 19.2923C25.4417 19.5743 25.5997 19.9563 25.5997 20.3563C25.5997 20.7543 25.4417 21.1363 25.1597 21.4183L18.1857 28.3623C17.5997 28.9463 16.6517 28.9463 16.0657 28.3583C15.4817 27.7703 15.4837 26.8203 16.0697 26.2363L21.9757 20.3563L16.0697 14.4763C15.4837 13.8923 15.4817 12.9443 16.0657 12.3563C16.3577 12.0603 16.7437 11.9143 17.1277 11.9143Z"
+                                    fill="white" />
+                            </svg></button>
+                    </div>
+                </div>
+                <div class="service_card">
+                    <div class="service_card_image">
+                        <img src="./assets/images/news/news-4.jpg" alt="">
+                    </div>
+                    <div class="service_card_desc">
+                        <div>
+                            <h1>АВА
+                                терапия</h1>
+                            <p>Микротоковая рефлексотерапия (далее МТРТ) - авторский метод лечения... </p>
+                        </div>
+                        <button class="next_btn"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                viewBox="0 0 40 40" fill="none">
+                                <path
+                                    d="M20 0C31.03 0 40 8.972 40 20C40 31.028 31.03 40 20 40C8.972 40 0 31.028 0 20C0 8.972 8.972 0 20 0Z"
+                                    fill="#A3EEFF" />
+                                <path
+                                    d="M17.1277 11.9143C17.5097 11.9143 17.8937 12.0603 18.1857 12.3523L25.1597 19.2923C25.4417 19.5743 25.5997 19.9563 25.5997 20.3563C25.5997 20.7543 25.4417 21.1363 25.1597 21.4183L18.1857 28.3623C17.5997 28.9463 16.6517 28.9463 16.0657 28.3583C15.4817 27.7703 15.4837 26.8203 16.0697 26.2363L21.9757 20.3563L16.0697 14.4763C15.4837 13.8923 15.4817 12.9443 16.0657 12.3563C16.3577 12.0603 16.7437 11.9143 17.1277 11.9143Z"
+                                    fill="white" />
+                            </svg></button>
+                    </div>
+                </div>
+                <div class="service_card">
+                    <div class="service_card_image">
+                        <img src="./assets/images/news/news-5.jpg" alt="">
+                    </div>
+                    <div class="service_card_desc">
+                        <div>
+                            <h1>Занятия с логопедом</h1>
+                            <p>Микротоковая рефлексотерапия (далее МТРТ) - авторский метод лечения... </p>
+                        </div>
+                        <button class="next_btn"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                viewBox="0 0 40 40" fill="none">
+                                <path
+                                    d="M20 0C31.03 0 40 8.972 40 20C40 31.028 31.03 40 20 40C8.972 40 0 31.028 0 20C0 8.972 8.972 0 20 0Z"
+                                    fill="#A3EEFF" />
+                                <path
+                                    d="M17.1277 11.9143C17.5097 11.9143 17.8937 12.0603 18.1857 12.3523L25.1597 19.2923C25.4417 19.5743 25.5997 19.9563 25.5997 20.3563C25.5997 20.7543 25.4417 21.1363 25.1597 21.4183L18.1857 28.3623C17.5997 28.9463 16.6517 28.9463 16.0657 28.3583C15.4817 27.7703 15.4837 26.8203 16.0697 26.2363L21.9757 20.3563L16.0697 14.4763C15.4837 13.8923 15.4817 12.9443 16.0657 12.3563C16.3577 12.0603 16.7437 11.9143 17.1277 11.9143Z"
+                                    fill="white" />
+                            </svg></button>
+                    </div>
+                </div>
+                <div class="service_card">
+                    <div class="service_card_image">
+                        <img src="./assets/images/news/news-6.jpg" alt="">
+                    </div>
+                    <div class="service_card_desc">
+                        <div>
+                            <h1>Занятия с дефектологом</h1>
+                            <p>Микротоковая рефлексотерапия (далее МТРТ) - авторский метод лечения... </p>
+                        </div>
+                        <button class="next_btn"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                viewBox="0 0 40 40" fill="none">
+                                <path
+                                    d="M20 0C31.03 0 40 8.972 40 20C40 31.028 31.03 40 20 40C8.972 40 0 31.028 0 20C0 8.972 8.972 0 20 0Z"
+                                    fill="#A3EEFF" />
+                                <path
+                                    d="M17.1277 11.9143C17.5097 11.9143 17.8937 12.0603 18.1857 12.3523L25.1597 19.2923C25.4417 19.5743 25.5997 19.9563 25.5997 20.3563C25.5997 20.7543 25.4417 21.1363 25.1597 21.4183L18.1857 28.3623C17.5997 28.9463 16.6517 28.9463 16.0657 28.3583C15.4817 27.7703 15.4837 26.8203 16.0697 26.2363L21.9757 20.3563L16.0697 14.4763C15.4837 13.8923 15.4817 12.9443 16.0657 12.3563C16.3577 12.0603 16.7437 11.9143 17.1277 11.9143Z"
+                                    fill="white" />
+                            </svg></button>
+                    </div>
+                </div>
+            </div>
+
+            <a href="./service.html">
+                <button class="bordered_btn">
+                    Все услуги <svg xmlns="http://www.w3.org/2000/svg" width="17" height="11" viewBox="0 0 17 11"
+                        fill="none">
+                        <path
+                            d="M8.62379 0.76616C8.41904 0.876618 8.2914 1.08666 8.2914 1.31511V4.87237H1.26751C0.912843 4.87237 0.625 5.15354 0.625 5.49998C0.625 5.84642 0.912843 6.12758 1.26751 6.12758H8.2914V9.68485C8.2914 9.91413 8.41904 10.1242 8.62379 10.2338C8.82854 10.3451 9.07868 10.3376 9.27658 10.2162L16.0752 6.03135C16.2619 5.91587 16.375 5.71587 16.375 5.49998C16.375 5.28408 16.2619 5.08408 16.0752 4.96861L9.27658 0.783733C9.17206 0.720135 9.05299 0.6875 8.93391 0.6875C8.82768 0.6875 8.72059 0.714278 8.62379 0.76616Z"
+                            fill="#2F7483" />
+                    </svg>
+                </button>
+            </a>
+        </section>
+        <div class="service_mobile">
+            <br><br>
+            <h1 class="section_title">
+                Наши услуги
+            </h1>
+            <br><br>
+            <div class="swiper-container3">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="service_card">
+                            <div class="service_card_image">
+                                <img src="./assets/images/Rectangle.png" alt="">
+                            </div>
+                            <div class="service_card_desc">
+                                <div>
+                                    <h1>ЭЭГ
+                                        (Электроэнцефалограмма) </h1>
+                                    <p>Микротоковая рефлексотерапия (далее МТРТ) - авторский метод лечения... </p>
+                                </div>
+                                <button class="next_btn"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                        viewBox="0 0 40 40" fill="none">
+                                        <path
+                                            d="M20 0C31.03 0 40 8.972 40 20C40 31.028 31.03 40 20 40C8.972 40 0 31.028 0 20C0 8.972 8.972 0 20 0Z"
+                                            fill="#A3EEFF" />
+                                        <path
+                                            d="M17.1277 11.9143C17.5097 11.9143 17.8937 12.0603 18.1857 12.3523L25.1597 19.2923C25.4417 19.5743 25.5997 19.9563 25.5997 20.3563C25.5997 20.7543 25.4417 21.1363 25.1597 21.4183L18.1857 28.3623C17.5997 28.9463 16.6517 28.9463 16.0657 28.3583C15.4817 27.7703 15.4837 26.8203 16.0697 26.2363L21.9757 20.3563L16.0697 14.4763C15.4837 13.8923 15.4817 12.9443 16.0657 12.3563C16.3577 12.0603 16.7437 11.9143 17.1277 11.9143Z"
+                                            fill="white" />
+                                    </svg></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="service_card">
+                            <div class="service_card_image">
+                                <img src="./assets/images/news/news-2.jpg" alt="">
+                            </div>
+                            <div class="service_card_desc">
+                                <div>
+                                    <h1>СИ 
+                                        (Сенсорная интеграция) </h1>
+                                    <p>Микротоковая рефлексотерапия (далее МТРТ) - авторский метод лечения... </p>
+                                </div>
+                                <button class="next_btn"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                        viewBox="0 0 40 40" fill="none">
+                                        <path
+                                            d="M20 0C31.03 0 40 8.972 40 20C40 31.028 31.03 40 20 40C8.972 40 0 31.028 0 20C0 8.972 8.972 0 20 0Z"
+                                            fill="#A3EEFF" />
+                                        <path
+                                            d="M17.1277 11.9143C17.5097 11.9143 17.8937 12.0603 18.1857 12.3523L25.1597 19.2923C25.4417 19.5743 25.5997 19.9563 25.5997 20.3563C25.5997 20.7543 25.4417 21.1363 25.1597 21.4183L18.1857 28.3623C17.5997 28.9463 16.6517 28.9463 16.0657 28.3583C15.4817 27.7703 15.4837 26.8203 16.0697 26.2363L21.9757 20.3563L16.0697 14.4763C15.4837 13.8923 15.4817 12.9443 16.0657 12.3563C16.3577 12.0603 16.7437 11.9143 17.1277 11.9143Z"
+                                            fill="white" />
+                                    </svg></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="service_card">
+                            <div class="service_card_image">
+                                <img src="./assets/images/news/news-3.jpg" alt="">
+                            </div>
+                            <div class="service_card_desc">
+                                <div>
+                                    <h1>Микротоковая 
+                                        рефлексотерапия</h1>
+                                    <p>Микротоковая рефлексотерапия (далее МТРТ) - авторский метод лечения... </p>
+                                </div>
+                                <button class="next_btn"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                        viewBox="0 0 40 40" fill="none">
+                                        <path
+                                            d="M20 0C31.03 0 40 8.972 40 20C40 31.028 31.03 40 20 40C8.972 40 0 31.028 0 20C0 8.972 8.972 0 20 0Z"
+                                            fill="#A3EEFF" />
+                                        <path
+                                            d="M17.1277 11.9143C17.5097 11.9143 17.8937 12.0603 18.1857 12.3523L25.1597 19.2923C25.4417 19.5743 25.5997 19.9563 25.5997 20.3563C25.5997 20.7543 25.4417 21.1363 25.1597 21.4183L18.1857 28.3623C17.5997 28.9463 16.6517 28.9463 16.0657 28.3583C15.4817 27.7703 15.4837 26.8203 16.0697 26.2363L21.9757 20.3563L16.0697 14.4763C15.4837 13.8923 15.4817 12.9443 16.0657 12.3563C16.3577 12.0603 16.7437 11.9143 17.1277 11.9143Z"
+                                            fill="white" />
+                                    </svg></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="service_card">
+                            <div class="service_card_image">
+                                <img src="./assets/images/news/news-4.jpg" alt="">
+                            </div>
+                            <div class="service_card_desc">
+                                <div>
+                                    <h1>АВА
+                                        терапия</h1>
+                                    <p>Микротоковая рефлексотерапия (далее МТРТ) - авторский метод лечения... </p>
+                                </div>
+                                <button class="next_btn"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                        viewBox="0 0 40 40" fill="none">
+                                        <path
+                                            d="M20 0C31.03 0 40 8.972 40 20C40 31.028 31.03 40 20 40C8.972 40 0 31.028 0 20C0 8.972 8.972 0 20 0Z"
+                                            fill="#A3EEFF" />
+                                        <path
+                                            d="M17.1277 11.9143C17.5097 11.9143 17.8937 12.0603 18.1857 12.3523L25.1597 19.2923C25.4417 19.5743 25.5997 19.9563 25.5997 20.3563C25.5997 20.7543 25.4417 21.1363 25.1597 21.4183L18.1857 28.3623C17.5997 28.9463 16.6517 28.9463 16.0657 28.3583C15.4817 27.7703 15.4837 26.8203 16.0697 26.2363L21.9757 20.3563L16.0697 14.4763C15.4837 13.8923 15.4817 12.9443 16.0657 12.3563C16.3577 12.0603 16.7437 11.9143 17.1277 11.9143Z"
+                                            fill="white" />
+                                    </svg></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="service_card">
+                            <div class="service_card_image">
+                                <img src="./assets/images/news/news-5.jpg" alt="">
+                            </div>
+                            <div class="service_card_desc">
+                                <div>
+                                    <h1>Занятия с логопедом</h1>
+                                    <p>Микротоковая рефлексотерапия (далее МТРТ) - авторский метод лечения... </p>
+                                </div>
+                                <button class="next_btn"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                        viewBox="0 0 40 40" fill="none">
+                                        <path
+                                            d="M20 0C31.03 0 40 8.972 40 20C40 31.028 31.03 40 20 40C8.972 40 0 31.028 0 20C0 8.972 8.972 0 20 0Z"
+                                            fill="#A3EEFF" />
+                                        <path
+                                            d="M17.1277 11.9143C17.5097 11.9143 17.8937 12.0603 18.1857 12.3523L25.1597 19.2923C25.4417 19.5743 25.5997 19.9563 25.5997 20.3563C25.5997 20.7543 25.4417 21.1363 25.1597 21.4183L18.1857 28.3623C17.5997 28.9463 16.6517 28.9463 16.0657 28.3583C15.4817 27.7703 15.4837 26.8203 16.0697 26.2363L21.9757 20.3563L16.0697 14.4763C15.4837 13.8923 15.4817 12.9443 16.0657 12.3563C16.3577 12.0603 16.7437 11.9143 17.1277 11.9143Z"
+                                            fill="white" />
+                                    </svg></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="service_card">
+                            <div class="service_card_image">
+                                <img src="./assets/images/news/news-6.jpg" alt="">
+                            </div>
+                            <div class="service_card_desc">
+                                <div>
+                                    <h1>Занятия с дефектологом</h1>
+                                    <p>Микротоковая рефлексотерапия (далее МТРТ) - авторский метод лечения... </p>
+                                </div>
+                                <button class="next_btn"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                        viewBox="0 0 40 40" fill="none">
+                                        <path
+                                            d="M20 0C31.03 0 40 8.972 40 20C40 31.028 31.03 40 20 40C8.972 40 0 31.028 0 20C0 8.972 8.972 0 20 0Z"
+                                            fill="#A3EEFF" />
+                                        <path
+                                            d="M17.1277 11.9143C17.5097 11.9143 17.8937 12.0603 18.1857 12.3523L25.1597 19.2923C25.4417 19.5743 25.5997 19.9563 25.5997 20.3563C25.5997 20.7543 25.4417 21.1363 25.1597 21.4183L18.1857 28.3623C17.5997 28.9463 16.6517 28.9463 16.0657 28.3583C15.4817 27.7703 15.4837 26.8203 16.0697 26.2363L21.9757 20.3563L16.0697 14.4763C15.4837 13.8923 15.4817 12.9443 16.0657 12.3563C16.3577 12.0603 16.7437 11.9143 17.1277 11.9143Z"
+                                            fill="white" />
+                                    </svg></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <a href="./service.html">
+                <button class="bordered_btn">
+                    Все услуги <svg xmlns="http://www.w3.org/2000/svg" width="17" height="11" viewBox="0 0 17 11"
+                        fill="none">
+                        <path
+                            d="M8.62379 0.76616C8.41904 0.876618 8.2914 1.08666 8.2914 1.31511V4.87237H1.26751C0.912843 4.87237 0.625 5.15354 0.625 5.49998C0.625 5.84642 0.912843 6.12758 1.26751 6.12758H8.2914V9.68485C8.2914 9.91413 8.41904 10.1242 8.62379 10.2338C8.82854 10.3451 9.07868 10.3376 9.27658 10.2162L16.0752 6.03135C16.2619 5.91587 16.375 5.71587 16.375 5.49998C16.375 5.28408 16.2619 5.08408 16.0752 4.96861L9.27658 0.783733C9.17206 0.720135 9.05299 0.6875 8.93391 0.6875C8.82768 0.6875 8.72059 0.714278 8.62379 0.76616Z"
+                            fill="#2F7483" />
+                    </svg>
+                </button>
+            </a>
+            <br><br>
+        </div>
+        <section class="reviews">
+            <h1 class="section_title">
+                Отзывы
+            </h1>
+            <br><br>
+            <div class="hidden">
+                <div class="swiper-container3">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="reviews_card">
+                                <div class="reviews_card_head">
+                                    <h1>
+                                        Асаналиева Айзада,
+                                        мама Азамата
+                                    </h1>
+                                    <p>
+                                        01.01.2024
+                                    </p>
+                                </div>
+                                <div class="reviews_card_des">
+                                    <svg class="firstDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
+                                        viewBox="0 0 27 17" fill="none">
+                                        <path
+                                            d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z"
+                                            fill="#53ACBF" />
+                                    </svg>
+
+                                    <p>Отличная клиника! Была с сыном, врачи все отлично разъясняют. Внимательные
+                                        сотрудники, и
+                                        настоящие специалисты своего дела. Все было на высшем уровне. Рекомендуем!
+                                        <svg class="secondDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
+                                            viewBox="0 0 27 17" fill="none">
+                                            <path
+                                                d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z"
+                                                fill="#53ACBF" />
+                                        </svg>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="reviews_card">
+                                <div class="reviews_card_head">
+                                    <h1>
+                                        Асаналиева Айзада,
+                                        мама Азамата
+                                    </h1>
+                                    <p>
+                                        01.01.2024
+                                    </p>
+                                </div>
+                                <div class="reviews_card_des">
+                                    <svg class="firstDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
+                                        viewBox="0 0 27 17" fill="none">
+                                        <path
+                                            d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z"
+                                            fill="#53ACBF" />
+                                    </svg>
+
+                                    <p>Отличная клиника! Была с сыном, врачи все отлично разъясняют. Внимательные
+                                        сотрудники, и
+                                        настоящие специалисты своего дела. Все было на высшем уровне. Рекомендуем!
+                                        <svg class="secondDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
+                                            viewBox="0 0 27 17" fill="none">
+                                            <path
+                                                d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z"
+                                                fill="#53ACBF" />
+                                        </svg>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="reviews_card">
+                                <div class="reviews_card_head">
+                                    <h1>
+                                        Асаналиева Айзада,
+                                        мама Азамата
+                                    </h1>
+                                    <p>
+                                        01.01.2024
+                                    </p>
+                                </div>
+                                <div class="reviews_card_des">
+                                    <svg class="firstDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
+                                        viewBox="0 0 27 17" fill="none">
+                                        <path
+                                            d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z"
+                                            fill="#53ACBF" />
+                                    </svg>
+
+                                    <p>Отличная клиника! Была с сыном, врачи все отлично разъясняют. Внимательные
+                                        сотрудники, и
+                                        настоящие специалисты своего дела. Все было на высшем уровне. Рекомендуем!
+                                        <svg class="secondDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
+                                            viewBox="0 0 27 17" fill="none">
+                                            <path
+                                                d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z"
+                                                fill="#53ACBF" />
+                                        </svg>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="reviews_card">
+                                <div class="reviews_card_head">
+                                    <h1>
+                                        Асаналиева Айзада,
+                                        мама Азамата
+                                    </h1>
+                                    <p>
+                                        01.01.2024
+                                    </p>
+                                </div>
+                                <div class="reviews_card_des">
+                                    <svg class="firstDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
+                                        viewBox="0 0 27 17" fill="none">
+                                        <path
+                                            d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z"
+                                            fill="#53ACBF" />
+                                    </svg>
+
+                                    <p>Отличная клиника! Была с сыном, врачи все отлично разъясняют. Внимательные
+                                        сотрудники, и
+                                        настоящие специалисты своего дела. Все было на высшем уровне. Рекомендуем!
+                                        <svg class="secondDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
+                                            viewBox="0 0 27 17" fill="none">
+                                            <path
+                                                d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z"
+                                                fill="#53ACBF" />
+                                        </svg>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="reviews_card">
+                                <div class="reviews_card_head">
+                                    <h1>
+                                        Асаналиева Айзада,
+                                        мама Азамата
+                                    </h1>
+                                    <p>
+                                        01.01.2024
+                                    </p>
+                                </div>
+                                <div class="reviews_card_des">
+                                    <svg class="firstDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
+                                        viewBox="0 0 27 17" fill="none">
+                                        <path
+                                            d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z"
+                                            fill="#53ACBF" />
+                                    </svg>
+
+                                    <p>Отличная клиника! Была с сыном, врачи все отлично разъясняют. Внимательные
+                                        сотрудники, и
+                                        настоящие специалисты своего дела. Все было на высшем уровне. Рекомендуем!
+                                        <svg class="secondDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
+                                            viewBox="0 0 27 17" fill="none">
+                                            <path
+                                                d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z"
+                                                fill="#53ACBF" />
+                                        </svg>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="reviews_card">
+                                <div class="reviews_card_head">
+                                    <h1>
+                                        Асаналиева Айзада,
+                                        мама Азамата
+                                    </h1>
+                                    <p>
+                                        01.01.2024
+                                    </p>
+                                </div>
+                                <div class="reviews_card_des">
+                                    <svg class="firstDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
+                                        viewBox="0 0 27 17" fill="none">
+                                        <path
+                                            d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z"
+                                            fill="#53ACBF" />
+                                    </svg>
+
+                                    <p>Отличная клиника! Была с сыном, врачи все отлично разъясняют. Внимательные
+                                        сотрудники, и
+                                        настоящие специалисты своего дела. Все было на высшем уровне. Рекомендуем!
+                                        <svg class="secondDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
+                                            viewBox="0 0 27 17" fill="none">
+                                            <path
+                                                d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z"
+                                                fill="#53ACBF" />
+                                        </svg>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="reviews_list">
+
+                <div class="reviews_card">
+                    <div class="reviews_card_head">
+                        <h1>
+                            Асаналиева Айзада,
+                            мама Азамата
+                        </h1>
+                        <p>
+                            01.01.2024
+                        </p>
+                    </div>
+                    <div class="reviews_card_des">
+                        <svg class="firstDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
+                            viewBox="0 0 27 17" fill="none">
+                            <path
+                                d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z"
+                                fill="#53ACBF" />
+                        </svg>
+
+                        <p>Отличная клиника! Была с сыном, врачи все отлично разъясняют. Внимательные сотрудники, и
+                            настоящие специалисты своего дела. Все было на высшем уровне. Рекомендуем!
+                            <svg class="secondDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
+                                viewBox="0 0 27 17" fill="none">
+                                <path
+                                    d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z"
+                                    fill="#53ACBF" />
+                            </svg>
+                        </p>
+                    </div>
+                </div>
+                <div class="reviews_card">
+                    <div class="reviews_card_head">
+                        <h1>
+                            Асаналиева Айзада,
+                            мама Азамата
+                        </h1>
+                        <p>
+                            01.01.2024
+                        </p>
+                    </div>
+                    <div class="reviews_card_des">
+                        <svg class="firstDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
+                            viewBox="0 0 27 17" fill="none">
+                            <path
+                                d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z"
+                                fill="#53ACBF" />
+                        </svg>
+
+                        <p>Отличная клиника! Была с сыном, врачи все отлично разъясняют. Внимательные сотрудники, и
+                            настоящие специалисты своего дела. Все было на высшем уровне. Рекомендуем!
+                            <svg class="secondDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
+                                viewBox="0 0 27 17" fill="none">
+                                <path
+                                    d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z"
+                                    fill="#53ACBF" />
+                            </svg>
+                        </p>
+                    </div>
+                </div>
+                <div class="reviews_card">
+                    <div class="reviews_card_head">
+                        <h1>
+                            Асаналиева Айзада,
+                            мама Азамата
+                        </h1>
+                        <p>
+                            01.01.2024
+                        </p>
+                    </div>
+                    <div class="reviews_card_des">
+                        <svg class="firstDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
+                            viewBox="0 0 27 17" fill="none">
+                            <path
+                                d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z"
+                                fill="#53ACBF" />
+                        </svg>
+
+                        <p>Отличная клиника! Была с сыном, врачи все отлично разъясняют. Внимательные сотрудники, и
+                            настоящие специалисты своего дела. Все было на высшем уровне. Рекомендуем!
+                            <svg class="secondDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
+                                viewBox="0 0 27 17" fill="none">
+                                <path
+                                    d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z"
+                                    fill="#53ACBF" />
+                            </svg>
+                        </p>
+                    </div>
+                </div>
+                <div class="reviews_card">
+                    <div class="reviews_card_head">
+                        <h1>
+                            Асаналиева Айзада,
+                            мама Азамата
+                        </h1>
+                        <p>
+                            01.01.2024
+                        </p>
+                    </div>
+                    <div class="reviews_card_des">
+                        <svg class="firstDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
+                            viewBox="0 0 27 17" fill="none">
+                            <path
+                                d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z"
+                                fill="#53ACBF" />
+                        </svg>
+
+                        <p>Отличная клиника! Была с сыном, врачи все отлично разъясняют. Внимательные сотрудники, и
+                            настоящие специалисты своего дела. Все было на высшем уровне. Рекомендуем!
+                            <svg class="secondDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
+                                viewBox="0 0 27 17" fill="none">
+                                <path
+                                    d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z"
+                                    fill="#53ACBF" />
+                            </svg>
+                        </p>
+                    </div>
+                </div>
+
+            </div> -->
+            <br><br>
+            <a href="./revues.html">
+                <button class="bordered_btn">
+                    Подробнее <svg xmlns="http://www.w3.org/2000/svg" width="17" height="11" viewBox="0 0 17 11"
+                        fill="none">
+                        <path
+                            d="M8.62379 0.76616C8.41904 0.876618 8.2914 1.08666 8.2914 1.31511V4.87237H1.26751C0.912843 4.87237 0.625 5.15354 0.625 5.49998C0.625 5.84642 0.912843 6.12758 1.26751 6.12758H8.2914V9.68485C8.2914 9.91413 8.41904 10.1242 8.62379 10.2338C8.82854 10.3451 9.07868 10.3376 9.27658 10.2162L16.0752 6.03135C16.2619 5.91587 16.375 5.71587 16.375 5.49998C16.375 5.28408 16.2619 5.08408 16.0752 4.96861L9.27658 0.783733C9.17206 0.720135 9.05299 0.6875 8.93391 0.6875C8.82768 0.6875 8.72059 0.714278 8.62379 0.76616Z"
+                            fill="#2F7483" />
+                    </svg>
+                </button>
+            </a>
+            <br><br><br><br>
+            <div class="container">
+                <form class="contact_form">
+
+                    <div class="checked_container">
+                        <div class="switch">
+                            <input type="radio" class="switch-input user_radio_btn" name="type" value="user" id="one"
+                                checked>
+                            <label for="one" class="switch-label switch-label-off">
+                                <span>Бишкек</span>
+                            </label>
+                            </label>
+                            <input type="radio" class="switch-input admin_radio_btn" name="type" value="admin" id="two">
+                            <label for="two" class="switch-label switch-label-on">
+                                <span>Ош</span>
+
+                            </label>
+                            <span class="slider2"></span>
+                        </div>
+                    </div>
+
+                    <div class="form_items">
+                        <div class="form_items_left">
+                            <h1>Связаться через Whats App</h1>
+                            <img src="./assets/images/Layer 0.svg" alt="">
+                        </div>
+                        <div class="form_items_right desctop">
+                            <input placeholder="Имя" class="form_input" type="text">
+                            <input placeholder="Фамилия" class="form_input" type="text">
+                            <input placeholder="Дата и время записи" class="form_input" type="text">
+                            <input placeholder="Номер телефона" class="form_input" type="text">
+                            <textarea class="form_textarea" placeholder="Опишите что вы ищете..." name=""
+                                id=""></textarea>
+                        </div>
+                        <div class="mobile">
+
+                            <input placeholder="ФИО" class="form_input" type="text">
+                            <br><br>
+                            <input placeholder="Дата и время записи" class="form_input" type="text">
+                            <br><br>
+                            <input placeholder="Номер телефона" class="form_input" type="text">
+                        </div>
+                    </div>
+
+                    <button class="from_button">
+                        Записаться
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="22" viewBox="0 0 25 22" fill="none">
+                            <path
+                                d="M22.3292 2.36674C21.8081 1.89613 21.037 1.72081 20.3179 1.90536L3.55065 6.19615C2.792 6.38162 2.25428 6.91405 2.10943 7.59042C1.96146 8.2788 2.47833 9.15264 3.15361 9.51805L8.39638 12.3537C8.9341 12.6443 9.62814 12.5714 10.0731 12.1765L16.0766 6.86053C16.3788 6.5837 16.879 6.5837 17.1812 6.86053C17.4834 7.12813 17.4834 7.56182 17.1812 7.83864L11.1673 13.1555C10.7213 13.5495 10.6379 14.1632 10.9662 14.6393L14.1696 19.2992C14.5447 19.8528 15.1908 20.1666 15.8995 20.1666C15.9828 20.1666 16.0766 20.1666 16.16 20.1574C16.9728 20.0651 17.6189 19.576 17.8586 18.884L22.8294 4.14764C23.0482 3.52017 22.8502 2.83734 22.3292 2.36674Z"
+                                fill="white" />
+                        </svg>
+                    </button>
+                    <br>
+                    <button class="from_button green mobile">
+                        WhatsApp
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                            <path
+                                d="M-0.00976562 13.5187L0.912884 10.1709C0.343543 9.19097 0.0443792 8.08011 0.0449261 6.941C0.0465669 3.37971 2.96437 0.481689 6.54942 0.481689C8.28916 0.482233 9.92226 1.15527 11.1506 2.37641C12.3785 3.59754 13.0545 5.22065 13.0539 6.94697C13.0523 10.5088 10.1345 13.4068 6.54942 13.4068C5.46105 13.4063 4.38855 13.1352 3.43855 12.6203L-0.00976562 13.5187ZM3.59825 11.4507C4.51488 11.9912 5.38995 12.315 6.54723 12.3155C9.52684 12.3155 11.9541 9.90692 11.9557 6.94589C11.9568 3.97887 9.54106 1.57354 6.5516 1.57245C3.56981 1.57245 1.14423 3.98105 1.14314 6.94154C1.14259 8.15018 1.49918 9.05517 2.09805 10.002L1.55168 11.9836L3.59825 11.4507ZM9.826 8.48263C9.78553 8.41527 9.67724 8.37507 9.51426 8.29413C9.35182 8.2132 8.55278 7.82263 8.40347 7.76885C8.25471 7.71507 8.14642 7.68791 8.03758 7.84979C7.92929 8.01112 7.61755 8.37507 7.52293 8.48263C7.42831 8.59018 7.33315 8.60376 7.17071 8.52283C7.00828 8.44189 6.48433 8.27186 5.86358 7.72159C5.38065 7.29354 5.05414 6.765 4.95953 6.60312C4.86491 6.44179 4.94968 6.35433 5.03063 6.27394C5.10391 6.20169 5.19306 6.08544 5.27455 5.99092C5.35714 5.89749 5.38394 5.83013 5.43863 5.72203C5.49277 5.61448 5.46597 5.51996 5.42495 5.43902C5.38394 5.35863 5.05907 4.56391 4.92398 4.2407C4.79162 3.92618 4.65763 3.96855 4.55809 3.96366L4.24635 3.95823C4.13806 3.95823 3.96195 3.99843 3.81319 4.16031C3.66443 4.32218 3.24439 4.71221 3.24439 5.50692C3.24439 6.30164 3.82686 7.0692 3.9078 7.17675C3.9893 7.28431 5.0536 8.91502 6.68396 9.61413C7.07172 9.78036 7.37471 9.87976 7.61044 9.95418C7.99984 10.0769 8.35425 10.0596 8.63427 10.0183C8.94656 9.97211 9.59575 9.62771 9.73138 9.25073C9.86702 8.87319 9.86702 8.54999 9.826 8.48263Z"
+                                fill="white" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            <div class="container">
+                <div class="maps">
+                    <h1 class="section_title">
+                        Карта
+                    </h1>
+                    <div class="flex">
+                        <div class="maps_contact">
+                            <div class="contact_item">
+                                <h1>г. Бишкек
+                                </h1>
+                                <h2>мкр. Джал-23 д.18/2 </h2>
+                                <a href="">
+                                    <h3>+996 704 353737
+                                    </h3>
+                                </a>
+                                <a href="">
+                                    <h3>+996 552 353737
+                                    </h3>
+                                </a>
+
+                            </div>
+                            <br><br>
+                            <div class="contact_item">
+                                <h1>Понедельник-Пятница </h1>
+                                <h2>08:30 - 17:30
+                                </h2>
+                                <br>
+                                <h1>Выходные дни:</h1>
+                                <h2>Cуботта, Воскресенье</h2>
+
+                            </div>
+                        </div>
+                        <div class="maps_map">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d447.3339116641163!2d74.56471681963187!3d42.840298977224826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389ec930686d3955%3A0x54aaf43ce93fc76!2z0KDQtdCw0YbQtdC90YLRgA!5e0!3m2!1sru!2skg!4v1723819573136!5m2!1sru!2skg"
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="top_footer">
+                <div><img src="./assets/images/лого_белый.png" alt=""></div>
+                <div>
+                    <p>Международная сеть клиник
+                        Реацентр Кырыгзстан Лечение
+                        детей с задержками развития,нарушениями психической двигательной систем и другими патологиями
+                        ЦНС</p>
+                </div>
+                <div>
+                    <p>
+                        г. Бишкек
+                        <br>
+                        мкр. Джал-23 д.18/2
+                    </p>
+                    <br>
+                    <p><a href="">
+                            +996 704 353737
+
+                        </a></p>
+                    <p><a href="">
+                            +996 552 353737
+
+
+                        </a></p>
+                </div>
+                <div>
+                    <p>Понедельник-Пятница </p>
+                    <p>08:30 - 17:30
+                    </p>
+                    <br>
+                    <p>Выходные дни:</p>
+                    <p>Cуботта, Воскресенье</p>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="./assets/icon/Social Icons.svg" alt=""> reacenter.bishkek
+                    </a>
+                    <br>
+                    <a href="">
+                        <img src="./assets/icon/Social Icons — копия.svg" alt=""> reacenter.bishkek
+                    </a>
+                    <br>
+                    <a href="">
+                        <img src="./assets/icon/Social Icons — копия 2.svg" alt=""> reacenter.bishkek
+                    </a>
+                </div>
+            </div>
+            <br><br>
+            <div class="bottom_footer">
+
+                <div class="bottom_footer_part">
+                    <h1>Наши партнеры:</h1>
+                    <img src="./assets/images/KHTC-01 2.png" alt="">
+                    <img src="./assets/images/Group.png" alt="">
+                    <img src="./assets/images/Group — копия.png" alt="">
+                </div>
+                <div class="bottom_footer_part">
+                    <img src="./assets/images/image 16.png" alt="">
+                    <img src="./assets/images/image 17.png" alt="">
+                    <img src="./assets/images/Logo_Kyrgyz_State_Medical_Academy.svg 2.png" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+{% extends 'include/homepage.html' %}
+{% load static %}
+{% block content%}
+
+    {% include 'include/header.html'%}
+    <main class="container aboutcont">
+        <section class="user_section">
+            <div class="user_card">
+                <div class="userAvatar">
+                    <img src="{{about.image.url}}"
+                        alt="">
+                </div>
+                <div class="user_info">
+                    <div>
+                        <h1>{{about.name}}</h1>
+                        <p>{{about.rols}}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="about_us">
+            <br><br>
+            <p>
+                {{about.desc_1}}
+            </p>
+            <br><br>
+            <div class="about_us_baner">
+                <img src="{{about.banner.url}}"
+                    alt="">
+            </div>
+            <br><br>
+            <p>
+                {{about.desc_1}}
+
+            </p>
+            <br><br>
+            <ul>
+                {% for about in about.about_service.all %}
+                <li>
+                    {{about.title}}
+                </li>
+                {%endfor%}
+                
+            </ul>
+            <br><br>
+            <h1>Патенты, свидетельства и лицензии Реацентра КР</h1>
+        </section>
+    </main>
+    <script>
+        const mobilebtn = document.getElementById("mobilebtn");
+        const closebtn = document.getElementById("closebtn");
+        const mobile_nav = document.getElementById("mobile_nav");
+
+        mobilebtn.addEventListener("click", () => {
+            mobile_nav.classList.add("open"); // Открыть меню
+        });
+
+        closebtn.addEventListener("click", () => {
+            mobile_nav.classList.remove("open"); // Закрыть меню
+        });
+
+    </script>
+
+    <section class="bluebg">
+        <div class="container">
+            <div class="dock_slider">
+                <div class="slider">
+                    <svg class="swiper-button-prev" xmlns="http://www.w3.org/2000/svg" width="44" height="44"
+                        viewBox="0 0 44 44" fill="none">
+                        <path
+                            d="M21.998 43C10.4165 43 0.998048 33.5794 0.998048 22C0.998048 10.4206 10.4165 1 21.998 1C33.5774 1 42.998 10.4206 42.998 22C42.998 33.5794 33.5774 43 21.998 43Z"
+                            stroke="#53ACBF" stroke-width="2" />
+                        <path
+                            d="M25.0122 30.4898C24.6111 30.4898 24.2079 30.3365 23.9013 30.0299L16.5786 22.7429C16.2825 22.4468 16.1166 22.0457 16.1166 21.6257C16.1166 21.2078 16.2825 20.8067 16.5786 20.5106L23.9013 13.2194C24.5166 12.6062 25.512 12.6062 26.1273 13.2236C26.7405 13.841 26.7384 14.8385 26.1231 15.4517L19.9218 21.6257L26.1231 27.7997C26.7384 28.4129 26.7405 29.4083 26.1273 30.0257C25.8207 30.3365 25.4154 30.4898 25.0122 30.4898Z"
+                            fill="#53ACBF" />
+                    </svg>
+                    <div class="swiper-container">
+
+                        <div class="swiper-wrapper">
+                            {% for about in about.about_doc.all %}
+                            <div class="swiper-slide">
+                                
+                                <img src="{{about.image.url}}" alt="">
+                            </div>
+                            {% endfor %}
+                            
+
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+                        <!-- Add Navigation -->
+
+
+                        <!-- Add Scrollbar -->
+
+                    </div>
+                    <svg class="swiper-button-next" xmlns="http://www.w3.org/2000/svg" width="44" height="44"
+                        viewBox="0 0 44 44" fill="none">
+                        <path
+                            d="M22 1C33.5815 1 43 10.4206 43 22C43 33.5794 33.5815 43 22 43C10.4206 43 1 33.5794 1 22C1 10.4206 10.4206 1 22 1Z"
+                            stroke="#53ACBF" stroke-width="2" />
+                        <path
+                            d="M18.9858 13.5102C19.3869 13.5102 19.7901 13.6635 20.0967 13.9701L27.4194 21.2571C27.7155 21.5532 27.8814 21.9543 27.8814 22.3743C27.8814 22.7922 27.7155 23.1933 27.4194 23.4894L20.0967 30.7806C19.4814 31.3938 18.486 31.3938 17.8707 30.7764C17.2575 30.159 17.2596 29.1615 17.8749 28.5483L24.0762 22.3743L17.8749 16.2003C17.2596 15.5871 17.2575 14.5917 17.8707 13.9743C18.1773 13.6635 18.5826 13.5102 18.9858 13.5102Z"
+                            fill="#53ACBF" />
+                    </svg>
+
+                </div>
+                <div class="contant_avout_us">
+                    <h1>Метод разрешен
+                        Минздравом Кыргызской Республики
+                        и Российской Федерации</h1>
+                    <br>
+                    <p>г. Бишкек
+                        Регистрационный номер лицензии
+                        МЗКР НГМУ №3995</p>
+                    <br>
+                    <p>г. Ош
+                        Регистрационный номер лицензии
+                        МЗКР НГМУ №4133</p>
+                    <br>
+                    <p>Регистрационная удостоверение
+                        на аппарат МИ-KG-1447</p>
+                    <br>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <br>
+    <br>
+    <button class="from_button">
+        Записаться
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="22" viewBox="0 0 25 22" fill="none">
+            <path
+                d="M22.3292 2.36674C21.8081 1.89613 21.037 1.72081 20.3179 1.90536L3.55065 6.19615C2.792 6.38162 2.25428 6.91405 2.10943 7.59042C1.96146 8.2788 2.47833 9.15264 3.15361 9.51805L8.39638 12.3537C8.9341 12.6443 9.62814 12.5714 10.0731 12.1765L16.0766 6.86053C16.3788 6.5837 16.879 6.5837 17.1812 6.86053C17.4834 7.12813 17.4834 7.56182 17.1812 7.83864L11.1673 13.1555C10.7213 13.5495 10.6379 14.1632 10.9662 14.6393L14.1696 19.2992C14.5447 19.8528 15.1908 20.1666 15.8995 20.1666C15.9828 20.1666 16.0766 20.1666 16.16 20.1574C16.9728 20.0651 17.6189 19.576 17.8586 18.884L22.8294 4.14764C23.0482 3.52017 22.8502 2.83734 22.3292 2.36674Z"
+                fill="white" />
+        </svg>
+    </button>
+    <br><br>
+    {% include 'include/footer.html'%}
+{% endblock %}

@@ -1,0 +1,100 @@
+{% extends 'include/homepage.html' %}
+{% load static %}
+{% block content%}
+
+    {% include 'include/header.html'%}
+    <script>
+        const mobilebtn = document.getElementById("mobilebtn");
+        const closebtn = document.getElementById("closebtn");
+        const mobile_nav = document.getElementById("mobile_nav");
+
+        mobilebtn.addEventListener("click", () => {
+            mobile_nav.classList.add("open"); // Открыть меню
+        });
+
+        closebtn.addEventListener("click", () => {
+            mobile_nav.classList.remove("open"); // Закрыть меню
+        });
+
+    </script>
+    <main class="service">
+        <div class="emploes_section">
+            <div class="emploes_section_image">
+                <img src="{{consult.image.url}}"
+                    alt="">
+            </div>
+            <div>
+                <h1>
+                    {{consult.title}}
+                </h1>
+                <br>
+                <p>{{consult.subtitle}}</p>
+            </div>
+        </div>
+        <div class="mobile oloooooo">
+
+            <h1>
+                {{consult.title}}
+            </h1>
+            <br>
+            <p>{{consult.subtitle}}</p>
+
+        </div>
+        <div class="container">
+            <div class="service_instuction">
+                {% for consult in consult.consult_progres.all%}
+                <div class="service_instuction_item">
+                    <div class="service_instuction_item_num">{{consult.id}}</div>
+                    <div>
+                        <p>{{consult.title}} </p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <section class=" container">
+            <h1 class="section_title">
+                Наши услуги
+            </h1>
+            <div class="service_list">
+                {%for service in service %}
+                <a href="{% url 'service_detail' service.id%}" class="service_card">
+                    <div class="service_card_image">
+                        <img src="{{service.image.url}}" alt="">
+                    </div>
+                    <div class="service_card_desc">
+                        <div>
+                            <h1>{{service.title}}</h1>
+                            <p>{{service.desc|truncatewords:7}}</p>
+                        </div>
+                        <button class="next_btn"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                viewBox="0 0 40 40" fill="none">
+                                <path
+                                    d="M20 0C31.03 0 40 8.972 40 20C40 31.028 31.03 40 20 40C8.972 40 0 31.028 0 20C0 8.972 8.972 0 20 0Z"
+                                    fill="#A3EEFF" />
+                                <path
+                                    d="M17.1277 11.9143C17.5097 11.9143 17.8937 12.0603 18.1857 12.3523L25.1597 19.2923C25.4417 19.5743 25.5997 19.9563 25.5997 20.3563C25.5997 20.7543 25.4417 21.1363 25.1597 21.4183L18.1857 28.3623C17.5997 28.9463 16.6517 28.9463 16.0657 28.3583C15.4817 27.7703 15.4837 26.8203 16.0697 26.2363L21.9757 20.3563L16.0697 14.4763C15.4837 13.8923 15.4817 12.9443 16.0657 12.3563C16.3577 12.0603 16.7437 11.9143 17.1277 11.9143Z"
+                                    fill="white" />
+                            </svg></button>
+                    </div>
+                </a>
+                {% endfor %}
+                
+            </div>
+            <a href="">
+
+                <button class="from_button">
+                    Записаться
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="22" viewBox="0 0 25 22" fill="none">
+                        <path
+                            d="M22.3292 2.36674C21.8081 1.89613 21.037 1.72081 20.3179 1.90536L3.55065 6.19615C2.792 6.38162 2.25428 6.91405 2.10943 7.59042C1.96146 8.2788 2.47833 9.15264 3.15361 9.51805L8.39638 12.3537C8.9341 12.6443 9.62814 12.5714 10.0731 12.1765L16.0766 6.86053C16.3788 6.5837 16.879 6.5837 17.1812 6.86053C17.4834 7.12813 17.4834 7.56182 17.1812 7.83864L11.1673 13.1555C10.7213 13.5495 10.6379 14.1632 10.9662 14.6393L14.1696 19.2992C14.5447 19.8528 15.1908 20.1666 15.8995 20.1666C15.9828 20.1666 16.0766 20.1666 16.16 20.1574C16.9728 20.0651 17.6189 19.576 17.8586 18.884L22.8294 4.14764C23.0482 3.52017 22.8502 2.83734 22.3292 2.36674Z"
+                            fill="white" />
+                    </svg>
+                </button>
+            </a>
+        </section>
+    </main>
+    <br><br><br>
+{% include 'include/footer.html'%}
+
+{% endblock %}

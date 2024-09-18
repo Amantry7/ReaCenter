@@ -1,0 +1,146 @@
+{% extends 'include/homepage.html' %}
+{% load static %}
+{% block content%}
+
+    {% include 'include/header.html'%}
+    <script>
+        const mobilebtn = document.getElementById("mobilebtn");
+        const closebtn = document.getElementById("closebtn");
+        const mobile_nav = document.getElementById("mobile_nav");
+
+        mobilebtn.addEventListener("click", () => {
+            mobile_nav.classList.add("open"); // Открыть меню
+        });
+
+        closebtn.addEventListener("click", () => {
+            mobile_nav.classList.remove("open"); // Закрыть меню
+        });
+
+    </script>
+    <main class="emploes_by_id">
+        <div class="emploes_page_section">
+            <div class="emploes_page_section_left">
+                <div class="emploes_page_section_left_image">
+                    <img src="{{emploe.image.url}}"
+                        alt="">
+                </div>
+                <br>
+                <h1>
+                    {{emploe.name}}
+                </h1>
+                <br>
+                <p>
+                    {{emploe.rols}}
+                </p>
+                <br>
+                <div class="emploes_page_section_left_sertificate">
+                    <img src="{{emploe.image_2.url}}"
+                        alt="">
+                </div>
+            </div>
+            <div class="emploes_page_section_rigth">
+                <div class="emploes_page_section_rigth_section">
+                    <h1>Диплом</h1>
+                    <br>
+                    <p>{{emploe.diplom_info}}</p>
+                </div>
+                <div class="blue_line"></div>
+                <div class="emploes_page_section_rigth_section">
+                    <h1>Свидетельства</h1>
+                    <br>
+                    <h4>{{emploe.evidence}}
+                    </h4>
+                </div>
+                <div class="blue_line"></div>
+                <div class="emploes_page_section_rigth_section">
+                    <h1>Сертификаты</h1>
+                    <br>
+                    <h4>{{emploe.certificate}}
+                </div>
+            </div>
+
+
+        </div>
+        <div class="swiper-container4 image_list_stambula">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="certificagte_slider_item">
+                        <img src="https://s3-alpha-sig.figma.com/img/d414/75de/6fea6f377e703f86f7e6c674f3d3d5ac?Expires=1726444800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dZ54Xv5W7xx660Z~7oU-HGt0aN8hH-fcd3-OlodKJaObSkQXVfZshutYfHJlnoR00~hVUObEe8JnlaA9vu7COruAgKsUQPubkjIBY0GcCTnN6Bb33oo5BX7WwQifed1AjXNhSWlPeZ5K6p97kAfG3nQ-Gqw30Vo6BoGTosdwUOPU3ufccEamoqudxRuqPdhIJmFuwdsye775ByV73b8ybZ7T8m99BKqL~OIcKpIJd7Nzkm6oKrg5T619iDCSR~buSkX5aTdRXJYX4fa1YQeDVxm-LMnHN0ybWXnXjgv83345do4fSS4y1kE3GfPLklq405IsZfq1DNW0X1MzOGlJlg__"
+                            alt="">
+                    </div>
+
+                </div>
+                <div class="swiper-slide">
+                    <div class="certificagte_slider_item">
+                        <img src="https://s3-alpha-sig.figma.com/img/d414/75de/6fea6f377e703f86f7e6c674f3d3d5ac?Expires=1726444800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dZ54Xv5W7xx660Z~7oU-HGt0aN8hH-fcd3-OlodKJaObSkQXVfZshutYfHJlnoR00~hVUObEe8JnlaA9vu7COruAgKsUQPubkjIBY0GcCTnN6Bb33oo5BX7WwQifed1AjXNhSWlPeZ5K6p97kAfG3nQ-Gqw30Vo6BoGTosdwUOPU3ufccEamoqudxRuqPdhIJmFuwdsye775ByV73b8ybZ7T8m99BKqL~OIcKpIJd7Nzkm6oKrg5T619iDCSR~buSkX5aTdRXJYX4fa1YQeDVxm-LMnHN0ybWXnXjgv83345do4fSS4y1kE3GfPLklq405IsZfq1DNW0X1MzOGlJlg__"
+                            alt="">
+                    </div>
+
+                </div>
+                <div class="swiper-slide">
+                    <div class="certificagte_slider_item">
+                        <img src="https://s3-alpha-sig.figma.com/img/d414/75de/6fea6f377e703f86f7e6c674f3d3d5ac?Expires=1726444800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dZ54Xv5W7xx660Z~7oU-HGt0aN8hH-fcd3-OlodKJaObSkQXVfZshutYfHJlnoR00~hVUObEe8JnlaA9vu7COruAgKsUQPubkjIBY0GcCTnN6Bb33oo5BX7WwQifed1AjXNhSWlPeZ5K6p97kAfG3nQ-Gqw30Vo6BoGTosdwUOPU3ufccEamoqudxRuqPdhIJmFuwdsye775ByV73b8ybZ7T8m99BKqL~OIcKpIJd7Nzkm6oKrg5T619iDCSR~buSkX5aTdRXJYX4fa1YQeDVxm-LMnHN0ybWXnXjgv83345do4fSS4y1kE3GfPLklq405IsZfq1DNW0X1MzOGlJlg__"
+                            alt="">
+                    </div>
+
+                </div>
+                <div class="swiper-slide">
+                    <div class="certificagte_slider_item">
+                        <img src="https://s3-alpha-sig.figma.com/img/d414/75de/6fea6f377e703f86f7e6c674f3d3d5ac?Expires=1726444800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dZ54Xv5W7xx660Z~7oU-HGt0aN8hH-fcd3-OlodKJaObSkQXVfZshutYfHJlnoR00~hVUObEe8JnlaA9vu7COruAgKsUQPubkjIBY0GcCTnN6Bb33oo5BX7WwQifed1AjXNhSWlPeZ5K6p97kAfG3nQ-Gqw30Vo6BoGTosdwUOPU3ufccEamoqudxRuqPdhIJmFuwdsye775ByV73b8ybZ7T8m99BKqL~OIcKpIJd7Nzkm6oKrg5T619iDCSR~buSkX5aTdRXJYX4fa1YQeDVxm-LMnHN0ybWXnXjgv83345do4fSS4y1kE3GfPLklq405IsZfq1DNW0X1MzOGlJlg__"
+                            alt="">
+                    </div>
+
+                </div>
+                <div class="swiper-slide">
+                    <div class="certificagte_slider_item">
+                        <img src="https://s3-alpha-sig.figma.com/img/d414/75de/6fea6f377e703f86f7e6c674f3d3d5ac?Expires=1726444800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dZ54Xv5W7xx660Z~7oU-HGt0aN8hH-fcd3-OlodKJaObSkQXVfZshutYfHJlnoR00~hVUObEe8JnlaA9vu7COruAgKsUQPubkjIBY0GcCTnN6Bb33oo5BX7WwQifed1AjXNhSWlPeZ5K6p97kAfG3nQ-Gqw30Vo6BoGTosdwUOPU3ufccEamoqudxRuqPdhIJmFuwdsye775ByV73b8ybZ7T8m99BKqL~OIcKpIJd7Nzkm6oKrg5T619iDCSR~buSkX5aTdRXJYX4fa1YQeDVxm-LMnHN0ybWXnXjgv83345do4fSS4y1kE3GfPLklq405IsZfq1DNW0X1MzOGlJlg__"
+                            alt="">
+                    </div>
+
+                </div>
+                <div class="swiper-slide">
+                    <div class="certificagte_slider_item">
+                        <img src="https://s3-alpha-sig.figma.com/img/d414/75de/6fea6f377e703f86f7e6c674f3d3d5ac?Expires=1726444800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dZ54Xv5W7xx660Z~7oU-HGt0aN8hH-fcd3-OlodKJaObSkQXVfZshutYfHJlnoR00~hVUObEe8JnlaA9vu7COruAgKsUQPubkjIBY0GcCTnN6Bb33oo5BX7WwQifed1AjXNhSWlPeZ5K6p97kAfG3nQ-Gqw30Vo6BoGTosdwUOPU3ufccEamoqudxRuqPdhIJmFuwdsye775ByV73b8ybZ7T8m99BKqL~OIcKpIJd7Nzkm6oKrg5T619iDCSR~buSkX5aTdRXJYX4fa1YQeDVxm-LMnHN0ybWXnXjgv83345do4fSS4y1kE3GfPLklq405IsZfq1DNW0X1MzOGlJlg__"
+                            alt="">
+                    </div>
+
+                </div>
+                <div class="swiper-slide">
+                    <div class="certificagte_slider_item">
+                        <img src="https://s3-alpha-sig.figma.com/img/d414/75de/6fea6f377e703f86f7e6c674f3d3d5ac?Expires=1726444800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dZ54Xv5W7xx660Z~7oU-HGt0aN8hH-fcd3-OlodKJaObSkQXVfZshutYfHJlnoR00~hVUObEe8JnlaA9vu7COruAgKsUQPubkjIBY0GcCTnN6Bb33oo5BX7WwQifed1AjXNhSWlPeZ5K6p97kAfG3nQ-Gqw30Vo6BoGTosdwUOPU3ufccEamoqudxRuqPdhIJmFuwdsye775ByV73b8ybZ7T8m99BKqL~OIcKpIJd7Nzkm6oKrg5T619iDCSR~buSkX5aTdRXJYX4fa1YQeDVxm-LMnHN0ybWXnXjgv83345do4fSS4y1kE3GfPLklq405IsZfq1DNW0X1MzOGlJlg__"
+                            alt="">
+                    </div>
+
+                </div>
+                <div class="swiper-slide">
+                    <div class="certificagte_slider_item">
+                        <img src="https://s3-alpha-sig.figma.com/img/d414/75de/6fea6f377e703f86f7e6c674f3d3d5ac?Expires=1726444800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dZ54Xv5W7xx660Z~7oU-HGt0aN8hH-fcd3-OlodKJaObSkQXVfZshutYfHJlnoR00~hVUObEe8JnlaA9vu7COruAgKsUQPubkjIBY0GcCTnN6Bb33oo5BX7WwQifed1AjXNhSWlPeZ5K6p97kAfG3nQ-Gqw30Vo6BoGTosdwUOPU3ufccEamoqudxRuqPdhIJmFuwdsye775ByV73b8ybZ7T8m99BKqL~OIcKpIJd7Nzkm6oKrg5T619iDCSR~buSkX5aTdRXJYX4fa1YQeDVxm-LMnHN0ybWXnXjgv83345do4fSS4y1kE3GfPLklq405IsZfq1DNW0X1MzOGlJlg__"
+                            alt="">
+                    </div>
+
+                </div>
+                <div class="swiper-slide">
+                    <div class="certificagte_slider_item">
+                        <img src="https://s3-alpha-sig.figma.com/img/d414/75de/6fea6f377e703f86f7e6c674f3d3d5ac?Expires=1726444800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dZ54Xv5W7xx660Z~7oU-HGt0aN8hH-fcd3-OlodKJaObSkQXVfZshutYfHJlnoR00~hVUObEe8JnlaA9vu7COruAgKsUQPubkjIBY0GcCTnN6Bb33oo5BX7WwQifed1AjXNhSWlPeZ5K6p97kAfG3nQ-Gqw30Vo6BoGTosdwUOPU3ufccEamoqudxRuqPdhIJmFuwdsye775ByV73b8ybZ7T8m99BKqL~OIcKpIJd7Nzkm6oKrg5T619iDCSR~buSkX5aTdRXJYX4fa1YQeDVxm-LMnHN0ybWXnXjgv83345do4fSS4y1kE3GfPLklq405IsZfq1DNW0X1MzOGlJlg__"
+                            alt="">
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="bggradientwithbrn">
+            <button class="from_button">
+                Записаться
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="22" viewBox="0 0 25 22" fill="none">
+                    <path
+                        d="M22.3292 2.36674C21.8081 1.89613 21.037 1.72081 20.3179 1.90536L3.55065 6.19615C2.792 6.38162 2.25428 6.91405 2.10943 7.59042C1.96146 8.2788 2.47833 9.15264 3.15361 9.51805L8.39638 12.3537C8.9341 12.6443 9.62814 12.5714 10.0731 12.1765L16.0766 6.86053C16.3788 6.5837 16.879 6.5837 17.1812 6.86053C17.4834 7.12813 17.4834 7.56182 17.1812 7.83864L11.1673 13.1555C10.7213 13.5495 10.6379 14.1632 10.9662 14.6393L14.1696 19.2992C14.5447 19.8528 15.1908 20.1666 15.8995 20.1666C15.9828 20.1666 16.0766 20.1666 16.16 20.1574C16.9728 20.0651 17.6189 19.576 17.8586 18.884L22.8294 4.14764C23.0482 3.52017 22.8502 2.83734 22.3292 2.36674Z"
+                        fill="white" />
+                </svg>
+            </button>
+            <br><br><br>
+        </div>
+    </main>
+{% include 'include/footer.html'%}
+
+{% endblock %}
