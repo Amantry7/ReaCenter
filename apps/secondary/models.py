@@ -59,8 +59,6 @@ class AboutDocument(models.Model):
         upload_to='about_doc/',
         verbose_name='Фото'
     )
-    def __str__(self):
-        return self.title
     class Meta:
         verbose_name='Сертификат'
         verbose_name_plural='Сертификаты'

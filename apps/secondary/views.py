@@ -1,12 +1,15 @@
 from django.shortcuts import render, redirect
 
+from apps.setting.models import Setting
 from apps.secondary.models import About, Methods, Institution, ContactRequest
 # Create your views here.
 def about(request):
+    setting = Setting.objects.latest('id')
     about = About.objects.latest('id')
     return render(request, 'aboutUs.html', locals())
 
 def contact(request):
+    setting = Setting.objects.latest('id')
     if request.method == 'POST':
         # Получаем данные из формы
         name = request.POST.get('name')
@@ -31,6 +34,7 @@ def contact(request):
     return render(request, 'contact.html', locals())
 
 def methods(request):
+    setting = Setting.objects.latest('id')
     method = Methods.objects.latest('id')
     top_institution = Institution.objects.filter(text_position='top')
     bottom_institution = Institution.objects.filter(text_position='bottom')
