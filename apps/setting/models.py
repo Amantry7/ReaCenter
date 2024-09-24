@@ -10,25 +10,50 @@ class Treat(models.Model):
     )
     subtitle = models.CharField(
         max_length=255,
-        verbose_name='Подзаголовок'
+        verbose_name='Подзаголовок',
+        blank=True, null=True
     )
+
+    descrition = models.TextField(
+        blank=True,
+        null=True
+    )
+
     def __str__(self):
         return self.title
+
     class Meta:
-        verbose_name='Что мы лечим'
-        verbose_name_plural='Что мы лечим'
-   
+        verbose_name = 'Что мы лечим'
+        verbose_name_plural = 'Что мы лечим'
+
+class TreatImage(models.Model):
+    treat = models.ForeignKey(
+        Treat, related_name='treats_image',
+        on_delete=models.CASCADE
+    )
+    image = models.ImageField(
+        upload_to='treat_image/',
+        verbose_name='Фото'
+    )
+    def __str__(self):
+        return 'Фото дабавлена'
+    class Meta:
+        verbose_name='Фото для что мы лечим'
+        verbose_name_plural='Фото для что мы лечим'
 class TreatResult(models.Model):
     title = models.CharField(
         max_length=244,
         verbose_name='Заголовок'
     )
+
     def __str__(self):
         return self.title
+
     class Meta:
-        verbose_name='Результат'
-        verbose_name_plural='Результаты'
-     
+        verbose_name = 'Результат'
+        verbose_name_plural = 'Результаты'
+
+
 class Service(models.Model):
     title = models.CharField(
         max_length=255,
@@ -41,12 +66,15 @@ class Service(models.Model):
         upload_to='service/',
         verbose_name='Фотография'
     )
+
     def __str__(self):
         return self.title
+
     class Meta:
-        verbose_name='Услуга'
-        verbose_name_plural='Услуги'
-       
+        verbose_name = 'Услуга'
+        verbose_name_plural = 'Услуги'
+
+
 class ServiceImage(models.Model):
     service = models.ForeignKey(
         Service, related_name='service_image',
@@ -56,10 +84,12 @@ class ServiceImage(models.Model):
         upload_to='service_image',
         verbose_name='Фото'
     )
+
     class Meta:
-        verbose_name='Фото услуг'
-        verbose_name_plural='Фото услуги'
- 
+        verbose_name = 'Фото услуг'
+        verbose_name_plural = 'Фото услуги'
+
+
 class ServiceState(models.Model):
     service = models.ForeignKey(
         Service, related_name='service_state',
@@ -69,11 +99,15 @@ class ServiceState(models.Model):
         max_length=255,
         verbose_name='Заголовок'
     )
+
     def __str__(self):
         return self.title
+
     class Meta:
-        verbose_name='Услуги'
-        verbose_name_plural='Услуги'
+        verbose_name = 'Услуги'
+        verbose_name_plural = 'Услуги'
+
+
 class Reviews(models.Model):
     name = models.CharField(
         max_length=255,
@@ -104,7 +138,8 @@ class Reviews(models.Model):
     class Meta:
         verbose_name = 'Отзыв'
         verbose_name_plural = 'Отзывы'
-        
+
+
 class Employe(models.Model):
     name = models.CharField(
         max_length=255,
@@ -135,12 +170,15 @@ class Employe(models.Model):
         verbose_name='Информация о сертификатах',
         blank=True, null=True
     )
+
     def __str__(self):
         return self.name
+
     class Meta:
-        verbose_name='Сотрудник',
-        verbose_name_plural='Сотрудники'
-        
+        verbose_name = 'Сотрудник',
+        verbose_name_plural = 'Сотрудники'
+
+
 class VideoReview(models.Model):
     name = models.CharField(
         max_length=255,
@@ -157,12 +195,15 @@ class VideoReview(models.Model):
         verbose_name='Дата',
         auto_now_add=True
     )
+
     def __str__(self):
         return self.name
+
     class Meta:
-        verbose_name='Видео отзыв'
-        verbose_name_plural='Видео отзывы'
-        
+        verbose_name = 'Видео отзыв'
+        verbose_name_plural = 'Видео отзывы'
+
+
 class WriteReview(models.Model):
     image = models.ImageField(
         upload_to='write_riviews/',
@@ -175,13 +216,16 @@ class WriteReview(models.Model):
     create_at = models.DateField(
         verbose_name='Дата',
         auto_now_add=True
-    ) 
+    )
+
     def __str__(self):
         return self.name
+
     class Meta:
-        verbose_name='Рукописный отзыв'
-        verbose_name_plural='Рукописные отзывы'
-        
+        verbose_name = 'Рукописный отзыв'
+        verbose_name_plural = 'Рукописные отзывы'
+
+
 class Setting(models.Model):
     title = models.CharField(
         max_length=255,
@@ -211,12 +255,15 @@ class Setting(models.Model):
     instagram = models.URLField(
         verbose_name='Ссылка на instagram'
     )
+
     def __str__(self):
         return self.title
+
     class Meta:
-        verbose_name='Настройки'
-        verbose_name_plural='Настройки'
-        
+        verbose_name = 'Настройки'
+        verbose_name_plural = 'Настройки'
+
+
 class SettingPhone(models.Model):
     setting = models.ForeignKey(
         Setting, related_name='setting_phone',
@@ -226,7 +273,9 @@ class SettingPhone(models.Model):
         max_length=255,
         verbose_name='Номер телефона'
     )
+
     def __str__(self):
         return self.phone
+
     class Meta:
-        verbose_name='Номер телефона'
+        verbose_name = 'Номер телефона'

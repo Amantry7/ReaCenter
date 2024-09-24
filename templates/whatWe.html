@@ -33,7 +33,7 @@
         <br><br><br>
         <div class="what_we_list">
             {% for treat in treat %}
-            <a href="" class="what_we_item ">
+            <a href="{% url 'what_we_detail' treat.id %}" class="what_we_item ">
                 <h1>
                     {{treat.title}}
                 </h1>
@@ -68,7 +68,7 @@
                         <path d="M6 10.3571L9.57143 13.9286L16.5 7" stroke="white" stroke-width="2.5"
                             stroke-linejoin="round" />
                     </svg>
-                    <p>{{result.title}}</p>
+                    <p>a{{result.title}}</p>
                 </div>
                 {% endfor %}
                 
