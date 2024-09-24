@@ -750,7 +750,7 @@ a {
 }
 
 .from_button:hover {
- cursor: pointer;
+    cursor: pointer;
 }
 
 .contact_item {
@@ -1239,7 +1239,7 @@ li {
 }
 
 .user_item_avatar {
-    min-width: 136px !important;
+    width: 136px !important;
     height: 136px !important;
     border-radius: 50%;
     background-color: #cccccce4;
@@ -2382,7 +2382,7 @@ li {
     }
 
 
-    
+
 
     .white_btn {
         padding: 8px 24px;
