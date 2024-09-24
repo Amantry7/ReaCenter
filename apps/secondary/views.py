@@ -3,10 +3,13 @@ from django.shortcuts import render, redirect
 from apps.setting.models import Setting
 from apps.secondary.models import About, Methods, Institution, ContactRequest
 # Create your views here.
+
+
 def about(request):
     setting = Setting.objects.latest('id')
     about = About.objects.latest('id')
     return render(request, 'aboutUs.html', locals())
+
 
 def contact(request):
     setting = Setting.objects.latest('id')
@@ -32,6 +35,7 @@ def contact(request):
 
     # Для GET-запросов отображаем страницу с формой
     return render(request, 'contact.html', locals())
+
 
 def methods(request):
     setting = Setting.objects.latest('id')

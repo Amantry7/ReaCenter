@@ -134,11 +134,14 @@
                             <h1>
                                 {{treat.title}}
                             </h1>
+                            {% if treat.subtitle != None%}
                             <h2>
                                 {{treat.subtitle}}
                             </h2>
+                            {% endif %}
+                            <h2></h2>
                         </div>
-                        <button class="next_btn"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35"
+                        <a  href="{% url 'what_we_detail' treat.id%}" class="next_btn" ><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35"
                                 viewBox="0 0 35 35" fill="none">
                                 <path
                                     d="M17.5 0.999999C26.5998 0.999999 34 8.4019 34 17.5C34 26.5981 26.5998 34 17.5 34C8.4019 34 1 26.5981 1 17.5C1 8.4019 8.4019 0.999999 17.5 0.999999Z"
@@ -146,13 +149,13 @@
                                 <path
                                     d="M15.131 10.8292C15.4462 10.8292 15.763 10.9497 16.0039 11.1906L21.7574 16.9161C21.9901 17.1487 22.1204 17.4639 22.1204 17.7939C22.1204 18.1222 21.9901 18.4374 21.7574 18.67L16.0039 24.3988C15.5204 24.8806 14.7383 24.8806 14.2549 24.3955C13.7731 23.9104 13.7747 23.1267 14.2582 22.6449L19.1306 17.7939L14.2582 12.9429C13.7747 12.4611 13.7731 11.679 14.2549 11.1939C14.4958 10.9497 14.8142 10.8292 15.131 10.8292Z"
                                     fill="#53ACBF" />
-                            </svg></button>
+                            </svg></a>  
                     </div>
                    {% endfor %}
                 </div>
 
                 <br><br><br>
-                <a href="./whatWe.html">
+                <a href="{% url 'what_we' %}">
                     <button class="bordered_btn">
                         Подробнее <svg xmlns="http://www.w3.org/2000/svg" width="17" height="11" viewBox="0 0 17 11"
                             fill="none">

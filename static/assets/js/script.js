@@ -76,7 +76,7 @@ const swiper4 = new Swiper('.swiper-container4', {
             spaceBetween: 10, // Уменьшить отступы
         },
         1080: { // Для экранов шириной 1080px и больше
-            slidesPerView: 4, // Показывать 3.5 слайда
+            slidesPerView: 3, // Показывать 3.5 слайда
             centeredSlides: false,
             spaceBetween: 30,
         }
