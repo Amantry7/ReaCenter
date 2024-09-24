@@ -1239,7 +1239,8 @@ li {
 }
 
 .user_item_avatar {
-    width: 136px !important;
+    min-width: 136px !important;
+    width: 136px;
     height: 136px !important;
     border-radius: 50%;
     background-color: #cccccce4;
