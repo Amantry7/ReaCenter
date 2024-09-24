@@ -38,9 +38,11 @@
                     {{treat.title}}
                 </h1>
                 <div>
+                    {% if treat.subtitle != None%}
                     <p>
                         {{treat.subtitle}}
                     </p>
+                    {% endif %}
                     <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
                         <path
                             d="M34 17.499C34 26.5988 26.5981 33.999 17.5 33.999C8.4019 33.999 1 26.5988 1 17.499C1 8.40092 8.4019 0.999023 17.5 0.999023C26.5981 0.999023 34 8.40092 34 17.499Z"
@@ -68,7 +70,7 @@
                         <path d="M6 10.3571L9.57143 13.9286L16.5 7" stroke="white" stroke-width="2.5"
                             stroke-linejoin="round" />
                     </svg>
-                    <p>a{{result.title}}</p>
+                    <p>{{result.title}}</p>
                 </div>
                 {% endfor %}
                 
