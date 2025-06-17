@@ -238,6 +238,11 @@ class Setting(models.Model):
         upload_to='logo/',
         verbose_name='Логотип сайта'
     )
+
+    logo_footer = models.ImageField(
+        upload_to='logo/',
+        verbose_name='Логотип футера'
+    )
     address = models.CharField(
         max_length=244,
         verbose_name='Адрес'
