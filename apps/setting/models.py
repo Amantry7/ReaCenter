@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 # Create your models here.
@@ -14,7 +16,8 @@ class Treat(models.Model):
         blank=True, null=True
     )
 
-    descrition = models.TextField(
+    descrition = RichTextUploadingField(
+        verbose_name='Описание',
         blank=True,
         null=True
     )

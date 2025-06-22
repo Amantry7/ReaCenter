@@ -1,4 +1,7 @@
 from django.contrib import admin
+from django import forms
+from ckeditor.widgets import CKEditorWidget
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
 from apps.setting.models import Treat, Service, Reviews, TreatResult, Employe, VideoReview, WriteReview, ServiceImage, ServiceState, Setting, SettingPhone, TreatImage
 # Register your models here.
@@ -18,8 +21,16 @@ class SettingPhoneTaburInline(admin.TabularInline):
 class TreatImageTaburInline(admin.TabularInline):
     model = TreatImage
     extra = 1
+class TreatAdminForm(forms.ModelForm):
+    descrition = forms.CharField(widget=CKEditorUploadingWidget(), required=False)
+    
+    class Meta:
+        model = Treat
+        fields = '__all__'
+
 @admin.register(Treat)
 class TreatAdmin(admin.ModelAdmin):
+    form = TreatAdminForm
     list_display = ('title', 'subtitle')
     inlines = [TreatImageTaburInline]
 

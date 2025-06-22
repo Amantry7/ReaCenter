@@ -1,4 +1,6 @@
 from django.db import models
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
 class About(models.Model):
@@ -235,4 +237,34 @@ class NewsBannerImage(models.Model):
         verbose_name='Изобрежение для новостей'
         verbose_name_plural='Изобрежение для новостей'
         
-        
+class News(models.Model):
+    title = models.CharField(
+        max_length=255,
+        verbose_name='Заголовок'
+    )
+    image = models.ImageField(
+        upload_to='news_items/',
+        verbose_name='Изображение'
+    )
+    short_description = models.TextField(
+        verbose_name='Краткое описание'
+    )
+    content = RichTextUploadingField(
+        verbose_name='Содержание'
+    )
+    created_at = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name='Дата создания'
+    )
+    is_published = models.BooleanField(
+        default=True,
+        verbose_name='Опубликовано'
+    )
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Новость'
+        verbose_name_plural = 'Новости'
+        ordering = ['-created_at']

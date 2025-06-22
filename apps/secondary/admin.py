@@ -1,6 +1,9 @@
 from django.contrib import admin
+from django import forms
+from ckeditor.widgets import CKEditorWidget
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
-from apps.secondary.models import About, AboutService, AboutDocument, Consultation, ConsultationProgres, Methods, MethodsEva, MethodsDev, Institution, MethodsEmp, ContactRequest, NewsBanner, NewsBannerImage
+from apps.secondary.models import About, AboutService, AboutDocument, Consultation, ConsultationProgres, Methods, MethodsEva, MethodsDev, Institution, MethodsEmp, ContactRequest, NewsBanner, NewsBannerImage, News
 # Register your models here.
 
 class AboutServiceTabularInline(admin.TabularInline):
@@ -30,6 +33,7 @@ class ConsultationProgresTabularInline(admin.TabularInline):
 class NewsBannerImageTabularInline(admin.TabularInline):
     model = NewsBannerImage
     extra = 1
+    
 @admin.register(About)
 class AboutAdmin(admin.ModelAdmin):
     list_display = ('desc_1', 'desc_2')
@@ -55,3 +59,15 @@ class NewsBannerAdmin(admin.ModelAdmin):
     inlines = [NewsBannerImageTabularInline]
     
 admin.site.register(ContactRequest)
+
+class NewsAdminForm(forms.ModelForm):
+    content = forms.CharField(widget=CKEditorUploadingWidget())
+    
+    class Meta:
+        model = News
+        fields = '__all__'
+
+@admin.register(News)
+class NewsAdmin(admin.ModelAdmin):
+    form = NewsAdminForm
+    list_display = ('title', 'created_at', 'is_published')

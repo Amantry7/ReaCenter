@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 from apps.setting.models import Setting, Treat, Service, Reviews
-from apps.secondary.models import About, Methods, Institution, ContactRequest, NewsBanner
+from apps.secondary.models import About, Methods, Institution, ContactRequest, NewsBanner, News
 # Create your views here.
 
 
@@ -54,4 +54,10 @@ def news(request):
     treat = Treat.objects.all()[:6]
     service = Service.objects.all()[:6]
     reviews = Reviews.objects.all()
+    news_list = News.objects.filter(is_published=True)[:6]  # Получаем последние 6 опубликованных новостей
     return render(request, 'news.html', locals())
+
+def news_detail(request, id):
+    setting = Setting.objects.latest('id')
+    news_item = get_object_or_404(News, id=id, is_published=True)
+    return render(request, 'news_detail.html', locals())

@@ -31,25 +31,6 @@
         </div>
         <br><br><br>
         <div class="what_we_list">
-            <!-- <a href="./whtatWeSelect.html" class="what_we_item what_we_item_active">
-                <h1>
-                    РАС
-                </h1>
-                <div>
-                    <p>
-                        Задержки развития с
-                        <br> нарушением коммуникатив...
-                    </p>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
-                        <path
-                            d="M34 17.499C34 26.5988 26.5981 33.999 17.5 33.999C8.4019 33.999 1 26.5988 1 17.499C1 8.40092 8.4019 0.999023 17.5 0.999023C26.5981 0.999023 34 8.40092 34 17.499Z"
-                            stroke="white" stroke-width="2" />
-                        <path
-                            d="M24.1688 15.13C24.1688 15.4452 24.0484 15.762 23.8075 16.0029L18.082 21.7564C17.8493 21.9891 17.5342 22.1194 17.2042 22.1194C16.8758 22.1194 16.5607 21.9891 16.328 21.7564L10.5992 16.0029C10.1174 15.5194 10.1174 14.7373 10.6025 14.2539C11.0876 13.7721 11.8714 13.7737 12.3532 14.2572L17.2042 19.1296L22.0552 14.2572C22.537 13.7737 23.3191 13.7721 23.8042 14.2539C24.0484 14.4948 24.1688 14.8132 24.1688 15.13Z"
-                            fill="white" />
-                    </svg>
-                </div>
-            </a> -->
             {% for treat in treat %}
             <a href="{% url 'what_we_detail' treat.id %}" class="what_we_item 
             {% if treat.id == treat_detail.id %}
@@ -60,11 +41,8 @@
                 </h1>
                 <div>
                     {%if treat.subtitle != None %}
-                    <p>{{treat.subtitle}}       </p>
+                    <p>{{treat.subtitle}}</p>
                     {% endif %}
-                    <p>
-                        
-                    </p>
                     <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
                         <path
                             d="M34 17.499C34 26.5988 26.5981 33.999 17.5 33.999C8.4019 33.999 1 26.5988 1 17.499C1 8.40092 8.4019 0.999023 17.5 0.999023C26.5981 0.999023 34 8.40092 34 17.499Z"
@@ -97,8 +75,55 @@
                 </div>
             </div>
             <br><br>
-            <p>{{treat_detail.descrition}}
-            </p>
+            <div class="ckeditor-content">
+                {{treat_detail.descrition|safe}}
+            </div>
+            <style>
+                .ckeditor-content {
+                    font-family: 'Montserrat', sans-serif;
+                    line-height: 1.6;
+                }
+                .ckeditor-content h1, .ckeditor-content h2, .ckeditor-content h3, 
+                .ckeditor-content h4, .ckeditor-content h5, .ckeditor-content h6 {
+                    margin-bottom: 15px;
+                    font-weight: 600;
+                    color: #333;
+                }
+                .ckeditor-content p {
+                    margin-bottom: 15px;
+                }
+                .ckeditor-content ul, .ckeditor-content ol {
+                    margin-left: 20px;
+                    margin-bottom: 15px;
+                }
+                .ckeditor-content img {
+                    max-width: 100%;
+                    height: auto;
+                    margin: 15px 0;
+                }
+                .ckeditor-content blockquote {
+                    border-left: 4px solid #ddd;
+                    padding-left: 15px;
+                    margin-left: 0;
+                    font-style: italic;
+                }
+                .ckeditor-content table {
+                    border-collapse: collapse;
+                    width: 100%;
+                    margin-bottom: 15px;
+                }
+                .ckeditor-content table td, .ckeditor-content table th {
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                }
+                .ckeditor-content a {
+                    color: #0066cc;
+                    text-decoration: none;
+                }
+                .ckeditor-content a:hover {
+                    text-decoration: underline;
+                }
+            </style>
         </div>
         <br><br><br>
         <br><br><br>
