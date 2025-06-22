@@ -202,3 +202,37 @@ class ContactRequest(models.Model):
     class Meta:
         verbose_name = 'Запрос на контакт'
         verbose_name_plural = 'Запросы на контакт'
+        
+        
+class NewsBanner(models.Model):
+    title = models.CharField(
+        max_length=233,
+        verbose_name='Заголовок'
+    )
+    subtitle = models.CharField(
+        verbose_name='Подзаголовок',
+        max_length=244
+    )
+    description = models.TextField(
+        verbose_name='Описание'
+    )
+    def __str__(self):
+        return self.title
+    class Meta:
+        verbose_name='Баннер новостей'
+        verbose_name_plural='Баннер новостей'
+        
+class NewsBannerImage(models.Model):
+    newsbanner = models.ForeignKey(
+        NewsBanner, related_name='news_banner_image',
+        on_delete=models.CASCADE
+    )
+    image = models.ImageField(
+        verbose_name='Изображение',
+        upload_to='news'
+    )
+    class Meta:
+        verbose_name='Изобрежение для новостей'
+        verbose_name_plural='Изобрежение для новостей'
+        
+        

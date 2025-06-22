@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from apps.secondary.models import About, AboutService, AboutDocument, Consultation, ConsultationProgres, Methods, MethodsEva, MethodsDev, Institution, MethodsEmp, ContactRequest
+from apps.secondary.models import About, AboutService, AboutDocument, Consultation, ConsultationProgres, Methods, MethodsEva, MethodsDev, Institution, MethodsEmp, ContactRequest, NewsBanner, NewsBannerImage
 # Register your models here.
 
 class AboutServiceTabularInline(admin.TabularInline):
@@ -26,6 +26,10 @@ class MethodsEmpTabularInline(admin.TabularInline):
 class ConsultationProgresTabularInline(admin.TabularInline):
     model = ConsultationProgres
     extra = 2
+    
+class NewsBannerImageTabularInline(admin.TabularInline):
+    model = NewsBannerImage
+    extra = 1
 @admin.register(About)
 class AboutAdmin(admin.ModelAdmin):
     list_display = ('desc_1', 'desc_2')
@@ -44,5 +48,10 @@ class MethodsAdmin(admin.ModelAdmin):
 @admin.register(Institution)
 class InstitutionAdmin(admin.ModelAdmin):
     list_display = ('id', 'name')
+    
+@admin.register(NewsBanner)
+class NewsBannerAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title', 'subtitle')
+    inlines = [NewsBannerImageTabularInline]
     
 admin.site.register(ContactRequest)

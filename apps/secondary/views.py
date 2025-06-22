@@ -1,13 +1,17 @@
 from django.shortcuts import render, redirect
 
-from apps.setting.models import Setting
-from apps.secondary.models import About, Methods, Institution, ContactRequest
+from apps.setting.models import Setting, Treat, Service, Reviews
+from apps.secondary.models import About, Methods, Institution, ContactRequest, NewsBanner
 # Create your views here.
 
 
 def about(request):
     setting = Setting.objects.latest('id')
     about = About.objects.latest('id')
+    setting = Setting.objects.latest('id')
+    method = Methods.objects.latest('id')
+    top_institution = Institution.objects.filter(text_position='top')
+    bottom_institution = Institution.objects.filter(text_position='bottom')
     return render(request, 'aboutUs.html', locals())
 
 
@@ -43,3 +47,11 @@ def methods(request):
     top_institution = Institution.objects.filter(text_position='top')
     bottom_institution = Institution.objects.filter(text_position='bottom')
     return render(request, 'metodika.html', locals())
+
+def news(request):
+    setting = Setting.objects.latest('id')
+    newsbanner = NewsBanner.objects.latest('id')
+    treat = Treat.objects.all()[:6]
+    service = Service.objects.all()[:6]
+    reviews = Reviews.objects.all()
+    return render(request, 'news.html', locals())
