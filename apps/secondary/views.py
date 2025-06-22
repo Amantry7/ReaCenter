@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 
 from apps.setting.models import Setting, Treat, Service, Reviews
-from apps.secondary.models import About, Methods, Institution, ContactRequest, NewsBanner, News
+from apps.secondary.models import About, Methods, Institution, ContactRequest, News
 # Create your views here.
 
 
@@ -50,7 +50,6 @@ def methods(request):
 
 def news(request):
     setting = Setting.objects.latest('id')
-    newsbanner = NewsBanner.objects.latest('id')
     treat = Treat.objects.all()[:6]
     service = Service.objects.all()[:6]
     reviews = Reviews.objects.all()
