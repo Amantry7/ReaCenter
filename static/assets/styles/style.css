@@ -1627,7 +1627,7 @@ li {
 }
 
 .emploes_page_section_left_image {
-    background-color: rgba(227, 250, 255, 1);
+    /* background-color: rgba(227, 250, 255, 1); */
     width: 266px;
     height: 300px;
     overflow: hidden;
