@@ -737,6 +737,7 @@ a {
     color: white;
     font-size: 24px;
 
+    max-width: 250px;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -941,7 +942,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
+    margin: 0px auto 0 450px;
 }
 
 .userAvatar {
