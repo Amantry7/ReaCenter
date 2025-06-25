@@ -34,8 +34,10 @@
                 </p>
                 <br>
                 <div class="emploes_page_section_left_sertificate">
+                    {% if emploe.image_2 %}
                     <img src="{{emploe.image_2.url}}"
                         alt="">
+                    {% endif %}
                 </div>
             </div>
             <div class="emploes_page_section_rigth">
