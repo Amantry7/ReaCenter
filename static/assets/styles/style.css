@@ -1513,12 +1513,17 @@ li {
 
 }
 
+.top_emploses_main_card_text {
+    width: 60%;
+}
+
 .top_emploses_main_card_image {
     width: 120px;
     height: 120px;
     border-radius: 50%;
     overflow: hidden;
     background: rgba(227, 250, 255, 1);
+    width: 40%;
 
     img {
         width: 100%;
