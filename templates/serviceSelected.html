@@ -124,10 +124,8 @@
                         </div>
                         <br><br>
                         <div class="stambul_text">
-                            <p>
-                               {{service.desc}}
-
-                            </p>
+                        
+                            {{service.desc|safe}}
                             <br>
                             <ul>
                                 {% for state in service.service_state.all%}

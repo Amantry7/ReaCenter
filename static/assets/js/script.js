@@ -83,5 +83,40 @@ const swiper4 = new Swiper('.swiper-container4', {
     }
 });
 
+const aboutUsDocSwiper = new Swiper('.swiper-container-docs', {
+    direction: 'horizontal',
+    loop: true,
+    slidesPerView: 3, // Показываем 3 слайда на десктопе
+    spaceBetween: 20,
 
+    // Добавляем пагинацию
+    pagination: {
+        el: '.swiper-pagination-docs',
+        clickable: true,
+    },
 
+    // Добавляем навигационные стрелки
+    navigation: {
+        nextEl: '.swiper-button-next-docs',
+        prevEl: '.swiper-button-prev-docs',
+    },
+
+    // Адаптивные настройки
+    breakpoints: {
+        // Для мобильных
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+        },
+        // Для планшетов
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        // Для десктопов
+        1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+        }
+    }
+});

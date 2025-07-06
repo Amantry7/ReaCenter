@@ -16,10 +16,10 @@ class About(models.Model):
         upload_to='about_emp/',
         verbose_name='Фото'
     )
-    desc_1 = models.TextField(
+    desc_1 = RichTextUploadingField(
         verbose_name='Описание 1'
     )
-    desc_2 = models.TextField(
+    desc_2 = RichTextUploadingField(
         verbose_name='Описание 2'
     )
     banner = models.ImageField(
@@ -195,11 +195,12 @@ class ContactRequest(models.Model):
     appointment_date = models.CharField(max_length=255, verbose_name='Дата и время записи')
     phone = models.CharField(max_length=20, verbose_name='Номер телефона')
     description = models.TextField(verbose_name='Описание')
+    city = models.CharField(max_length=50, verbose_name='Город', default='Бишкек')
 
     create_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
 
     def __str__(self):
-        return f"{self.name} {self.last_name}"
+        return f"{self.name} {self.last_name} ({self.city})"
 
     class Meta:
         verbose_name = 'Запрос на контакт'

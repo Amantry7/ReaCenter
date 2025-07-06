@@ -21,7 +21,7 @@
         <section class="about_us">
             <br><br>
             <p>
-                {{about.desc_1}}
+                {{about.desc_1|safe}}
             </p>
             <br><br>
             <div class="about_us_baner">
@@ -30,7 +30,7 @@
             </div>
             <br><br>
             <p>
-                {{about.desc_1}}
+                {{about.desc_2|safe}}
 
             </p>
             <br><br>
@@ -44,12 +44,41 @@
             </ul>
             <br><br>
             <h1>Патенты, свидетельства и лицензии Реацентра КР</h1>
+
+            <!-- Swiper слайдер для документов -->
+            <div class="about_us_doc swiper-container-docs">
+                <div class="swiper-wrapper">
+                    {% for about in about.about_doc.all %}
+                    <div class="swiper-slide">
+                        <div class="about_us_doc_item">
+                            <img src="{{about.image.url}}" alt="" onclick="openDocModal(this.src)">
+                            {% if about.title and about.title != 'None' %}
+                            <h1>{{about.title}}</h1>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {%endfor%}
+                </div>
+                <div class="swiper-pagination-docs"></div>
+                <div class="swiper-button-next-docs"></div>
+                <div class="swiper-button-prev-docs"></div>
+            </div>
         </section>
     </main>
+    
+    <!-- Модальное окно для просмотра документов -->
+    <div id="docModal" class="doc-modal">
+        <span class="doc-modal-close">&times;</span>
+        <img class="doc-modal-content" id="docModalImg">
+    </div>
+    
     <script>
         const mobilebtn = document.getElementById("mobilebtn");
         const closebtn = document.getElementById("closebtn");
         const mobile_nav = document.getElementById("mobile_nav");
+        const docModal = document.getElementById("docModal");
+        const docModalImg = document.getElementById("docModalImg");
+        const docModalClose = document.getElementsByClassName("doc-modal-close")[0];
 
         mobilebtn.addEventListener("click", () => {
             mobile_nav.classList.add("open"); // Открыть меню
@@ -59,6 +88,20 @@
             mobile_nav.classList.remove("open"); // Закрыть меню
         });
 
+        docModalClose.addEventListener("click", () => {
+            docModal.style.display = "none";
+        });
+
+        window.addEventListener("click", (e) => {
+            if (e.target == docModal) {
+                docModal.style.display = "none";
+            }
+        });
+
+        function openDocModal(src) {
+            docModal.style.display = "block";
+            docModalImg.src = src;
+        }
     </script>
 
 <section class="metodik_main container">
@@ -141,8 +184,8 @@
                 d="M22.0073 19.2979C20.5132 19.2979 19.3008 20.5092 19.3008 21.9972C19.3008 23.4909 20.5132 24.7022 22.0073 24.7022C23.4949 24.7022 24.7073 23.4909 24.7073 21.9972C24.7073 20.5092 23.4949 19.2979 22.0073 19.2979ZM22.0073 23.4973C21.185 23.4973 20.5132 22.8257 20.5132 22.0037C20.5067 21.1751 21.1785 20.5092 22.0073 20.5092C22.8296 20.5092 23.5014 21.1807 23.5014 22.0037C23.5014 22.8257 22.8296 23.4973 22.0073 23.4973Z"
                 fill="#24BEE0" />
             <defs>
-                <linearGradient id="paint0_linear_214_7895" x1="5.38776" y1="8.53061" x2="38.1633" y2="35.9184"
-                    gradientUnits="userSpaceOnUse">
+                <linearGradient id="paint0_linear_214_7895" x1="5.38776" y1="8.53061" x2="38.1633"
+                    y2="35.9184" gradientUnits="userSpaceOnUse">
                     <stop stop-color="#24BEE0" />
                     <stop offset="1" stop-color="#53E083" />
                 </linearGradient>

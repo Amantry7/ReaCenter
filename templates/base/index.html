@@ -175,7 +175,7 @@
                 {% for service in service %}
                 <div class="service_card">
                     <div class="service_card_image">
-                        <img src="{% static 'assets/images/Rectangle.png' %}" alt="">
+                        <img src="{{service.image.url}}" alt="">
                     </div>
                     <div class="service_card_desc">
                         <div>

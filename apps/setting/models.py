@@ -62,7 +62,7 @@ class Service(models.Model):
         max_length=255,
         verbose_name='Заголовок'
     )
-    desc = models.TextField(
+    desc = RichTextUploadingField(
         verbose_name='Описание'
     )
     image = models.ImageField(

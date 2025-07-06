@@ -24,6 +24,10 @@ def contact(request):
         appointment_date = request.POST.get('appointment_date')
         phone = request.POST.get('phone')
         description = request.POST.get('description')
+        
+        # Получаем информацию о городе
+        city_type = request.POST.get('type')
+        city = 'Ош' if city_type == 'admin' else 'Бишкек'
 
         # Сохраняем данные в базу данных
         ContactRequest.objects.create(
@@ -31,7 +35,8 @@ def contact(request):
             last_name=last_name,
             appointment_date=appointment_date,
             phone=phone,
-            description=description
+            description=description,
+            city=city
         )
 
         # Перенаправляем на страницу контактов
