@@ -1073,9 +1073,9 @@
             </a>
             <br><br><br><br>
             <div class="container">
-                <form class="contact_form">
-
-                    <!-- <div class="checked_container">
+                <form class="contact_form" method="POST" action="{% url 'contact' %}">
+                    {% csrf_token %}
+                    <div class="checked_container">
                         <div class="switch">
                             <input type="radio" class="switch-input user_radio_btn" name="type" value="user" id="one"
                                 checked>
@@ -1094,44 +1094,43 @@
 
                     <div class="form_items">
                         <div class="form_items_left">
-                            <h1>Связаться через Whats App</h1>
+                            <h1>Связаться с нами</h1>
                             <img src="./assets/images/Layer 0.svg" alt="">
                         </div>
                         <div class="form_items_right desctop">
-                            <input placeholder="Имя" class="form_input" type="text">
-                            <input placeholder="Фамилия" class="form_input" type="text">
-                            <input placeholder="Дата и время записи" class="form_input" type="text">
-                            <input placeholder="Номер телефона" class="form_input" type="text">
-                            <textarea class="form_textarea" placeholder="Опишите что вы ищете..." name=""
-                                id=""></textarea>
+                            <input placeholder="Имя" class="form_input" type="text" name="name" required>
+                            <input placeholder="Фамилия" class="form_input" type="text" name="last_name" required>
+                            <input placeholder="Дата и время записи" class="form_input" type="text" name="appointment_date" required>
+                            <input placeholder="Номер телефона" class="form_input" type="text" name="phone" required>
+                            <textarea class="form_textarea" placeholder="Опишите что вы ищете..." name="description" required></textarea>
                         </div>
                         <div class="mobile">
 
-                            <input placeholder="ФИО" class="form_input" type="text">
+                            <input placeholder="ФИО" class="form_input" type="text" name="name" required>
                             <br><br>
-                            <input placeholder="Дата и время записи" class="form_input" type="text">
+                            <input placeholder="Дата и время записи" class="form_input" type="text" name="appointment_date" required>
                             <br><br>
-                            <input placeholder="Номер телефона" class="form_input" type="text">
+                            <input placeholder="Номер телефона" class="form_input" type="text" name="phone" required>
                         </div>
-                    </div> -->
+                    </div>
 
-                    <a href="https://wa.me/996552353737" class="from_button" target="_blank">
+                    <button type="submit" class="from_button">
                         Записаться
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="22" viewBox="0 0 25 22" fill="none">
                             <path
                                 d="M22.3292 2.36674C21.8081 1.89613 21.037 1.72081 20.3179 1.90536L3.55065 6.19615C2.792 6.38162 2.25428 6.91405 2.10943 7.59042C1.96146 8.2788 2.47833 9.15264 3.15361 9.51805L8.39638 12.3537C8.9341 12.6443 9.62814 12.5714 10.0731 12.1765L16.0766 6.86053C16.3788 6.5837 16.879 6.5837 17.1812 6.86053C17.4834 7.12813 17.4834 7.56182 17.1812 7.83864L11.1673 13.1555C10.7213 13.5495 10.6379 14.1632 10.9662 14.6393L14.1696 19.2992C14.5447 19.8528 15.1908 20.1666 15.8995 20.1666C15.9828 20.1666 16.0766 20.1666 16.16 20.1574C16.9728 20.0651 17.6189 19.576 17.8586 18.884L22.8294 4.14764C23.0482 3.52017 22.8502 2.83734 22.3292 2.36674Z"
                                 fill="white" />
                         </svg>
-                    </a>
+                    </button>
                     <br>
-                    <a href="https://wa.me/996552353737" class="from_button green mobile">
-                        WhatsApp
+                    <button type="submit" class="from_button green mobile">
+                        Записаться
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
                             <path
                                 d="M-0.00976562 13.5187L0.912884 10.1709C0.343543 9.19097 0.0443792 8.08011 0.0449261 6.941C0.0465669 3.37971 2.96437 0.481689 6.54942 0.481689C8.28916 0.482233 9.92226 1.15527 11.1506 2.37641C12.3785 3.59754 13.0545 5.22065 13.0539 6.94697C13.0523 10.5088 10.1345 13.4068 6.54942 13.4068C5.46105 13.4063 4.38855 13.1352 3.43855 12.6203L-0.00976562 13.5187ZM3.59825 11.4507C4.51488 11.9912 5.38995 12.315 6.54723 12.3155C9.52684 12.3155 11.9541 9.90692 11.9557 6.94589C11.9568 3.97887 9.54106 1.57354 6.5516 1.57245C3.56981 1.57245 1.14423 3.98105 1.14314 6.94154C1.14259 8.15018 1.49918 9.05517 2.09805 10.002L1.55168 11.9836L3.59825 11.4507ZM9.826 8.48263C9.78553 8.41527 9.67724 8.37507 9.51426 8.29413C9.35182 8.2132 8.55278 7.82263 8.40347 7.76885C8.25471 7.71507 8.14642 7.68791 8.03758 7.84979C7.92929 8.01112 7.61755 8.37507 7.52293 8.48263C7.42831 8.59018 7.33315 8.60376 7.17071 8.52283C7.00828 8.44189 6.48433 8.27186 5.86358 7.72159C5.38065 7.29354 5.05414 6.765 4.95953 6.60312C4.86491 6.44179 4.94968 6.35433 5.03063 6.27394C5.10391 6.20169 5.19306 6.08544 5.27455 5.99092C5.35714 5.89749 5.38394 5.83013 5.43863 5.72203C5.49277 5.61448 5.46597 5.51996 5.42495 5.43902C5.38394 5.35863 5.05907 4.56391 4.92398 4.2407C4.79162 3.92618 4.65763 3.96855 4.55809 3.96366L4.24635 3.95823C4.13806 3.95823 3.96195 3.99843 3.81319 4.16031C3.66443 4.32218 3.24439 4.71221 3.24439 5.50692C3.24439 6.30164 3.82686 7.0692 3.9078 7.17675C3.9893 7.28431 5.0536 8.91502 6.68396 9.61413C7.07172 9.78036 7.37471 9.87976 7.61044 9.95418C7.99984 10.0769 8.35425 10.0596 8.63427 10.0183C8.94656 9.97211 9.59575 9.62771 9.73138 9.25073C9.86702 8.87319 9.86702 8.54999 9.826 8.48263Z"
                                 fill="white" />
                         </svg>
-                    </a>
+                    </button>
                 </form>
             </div>
             <div class="container">
