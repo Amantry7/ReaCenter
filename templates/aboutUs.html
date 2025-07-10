@@ -59,9 +59,9 @@
                     </div>
                     {%endfor%}
                 </div>
-                <!-- <div class="swiper-pagination-docs"></div>
+                <div class="swiper-pagination-docs"></div>
                 <div class="swiper-button-next-docs"></div>
-                <div class="swiper-button-prev-docs"></div> -->
+                <div class="swiper-button-prev-docs"></div>
             </div>
         </section>
     </main>
@@ -107,6 +107,28 @@
             docModal.style.display = "block";
             docModalImg.src = src;
         }
+        
+        // Initialize document slider when the page is loaded
+        document.addEventListener("DOMContentLoaded", function() {
+            const docsSwiper = new Swiper('.swiper-container-docs', {
+                slidesPerView: 1.2,
+                spaceBetween: 16,
+                grabCursor: true,
+                pagination: {
+                    el: '.swiper-pagination-docs',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next-docs',
+                    prevEl: '.swiper-button-prev-docs',
+                },
+                breakpoints: {
+                    640: { slidesPerView: 1.2 },
+                    768: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 },
+                }
+            });
+        });
     </script>
 
 <section class="metodik_main container">

@@ -8,13 +8,29 @@
     <title>Реацентр</title>
     <link rel="stylesheet" href="{% static 'assets/styles/style.css' %}">
     <link rel="stylesheet" href="{% static 'assets/styles/swiper.min.css' %}">
-</head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      new Swiper('.swiper-container-docs', {
+        slidesPerView: 1.2,
+        spaceBetween: 16,
+        grabCursor: true,
+        breakpoints: {
+          640: { slidesPerView: 1.2 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        }
+      });
+    });
+  </script>
 <body>
     {% block content %}
     {% endblock %}
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="{% static 'assets/js/script.js' %}"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
 
 </html>
