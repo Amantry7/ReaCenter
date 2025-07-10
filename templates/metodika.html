@@ -40,7 +40,7 @@
                 </div>
                 <br>
                 <p>
-                    {{method.desc}}
+                    {{method.desc|safe}}
 
                 </p>
             </div>
@@ -156,7 +156,7 @@
                     </div>
                     <div class="user_item_info">
                         <h1>{{method.name}}</h1>
-                        <p>{{method.desc}}</p>
+                        <p>{{method.desc|safe}}</p>
                     </div>
                 </div>
                 {% endfor %}
@@ -174,7 +174,7 @@
                             fill="#E3FAFF" />
                     </svg>
 
-                    <p>{{method.text}}</p>
+                    <p>{{method.text|safe}}</p>
                 </div>
             </div>
             <br><br>

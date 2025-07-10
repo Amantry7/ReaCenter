@@ -100,10 +100,10 @@ class ConsultationProgres(models.Model):
         verbose_name_plural='Консультация'
         
 class Methods(models.Model):
-    desc = models.TextField(
+    desc = RichTextField(
         verbose_name='Описание'
     )
-    text = models.TextField(
+    text = RichTextField(
         verbose_name='текс для внимание'
     )
     subtitle = models.CharField(
