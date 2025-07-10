@@ -3012,39 +3012,37 @@ li {
     }
 
     /* Стили для пагинации документов */
-    .swiper-pagination-docs {
-        position: absolute;
-        text-align: center;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        bottom: 10px;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .swiper-container-docs {
+        position: relative !important;
+        padding-bottom: 50px !important;
     }
 
     .swiper-button-next-docs,
     .swiper-button-prev-docs {
         position: absolute;
-        top: 50%;
         transform: translateY(-50%);
         z-index: 10;
     }
     .swiper-container-docs {
-        position: relative; /* важно для абсолютного позиционирования пагинации */
-        padding-bottom: 50px; /* чтобы не наезжала пагинация */
+        position: relative !important;
+        padding-bottom: 50px !important;
     }
     
-    .swiper-pagination-docs {
-        position: absolute;
-        bottom: 0; /* расстояние от нижнего края контейнера */
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 10;
+    .swiper-pagination-docs,
+    .swiper-pagination-docs.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+        position: absolute !important;
+        bottom: 0 !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        z-index: 10 !important;
+        width: auto !important;
+    }
+    
+    /* Стили для отдельных буллетов пагинации */
+    .swiper-pagination-docs .swiper-pagination-bullet {
+        margin: 0 4px !important;
     }
 }
