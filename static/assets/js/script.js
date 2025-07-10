@@ -1,3 +1,20 @@
+// Мобильное меню
+document.addEventListener('DOMContentLoaded', function() {
+    const mobilebtn = document.getElementById("mobilebtn");
+    const closebtn = document.getElementById("closebtn");
+    const mobile_nav = document.getElementById("mobile_nav");
+
+    if (mobilebtn && closebtn && mobile_nav) {
+        mobilebtn.addEventListener("click", () => {
+            mobile_nav.classList.add("open"); // Открыть меню
+        });
+
+        closebtn.addEventListener("click", () => {
+            mobile_nav.classList.remove("open"); // Закрыть меню
+        });
+    }
+});
+
 const swiper = new Swiper('.swiper-container', {
     // Optional parameters
     direction: 'horizontal',

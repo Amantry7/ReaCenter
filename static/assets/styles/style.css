@@ -11,6 +11,62 @@
     box-sizing: border-box;
 }
 
+/* Mobile Navigation Styles */
+.mobile_nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    z-index: 1000;
+    padding: 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.mobile_nav.open {
+    left: 0;
+}
+
+.mobile_nav ol {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.mobile_nav ol li a {
+    font-size: 24px;
+    font-weight: 400;
+    color: rgba(47, 116, 131, 1);
+    text-decoration: none;
+}
+
+.mobile_nav ol li a.active {
+    font-weight: 600;
+}
+
+#closebtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+#mobilebtn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
 body {
     font-family: 'Museo\ Sans\ Cyrl', sans-serif;
 
@@ -3011,38 +3067,273 @@ li {
         text-decoration: none;
     }
 
-    /* Стили для пагинации документов */
-    .swiper-container-docs {
-        position: relative !important;
-        padding-bottom: 50px !important;
+/* Responsive Media Queries */
+@media screen and (max-width: 1024px) {
+    .container {
+        padding: 0 50px;
     }
+    
+    .top_nav ol {
+        gap: 20px;
+    }
+    
+    .service_card {
+        width: calc(50% - 24px);
+    }
+    
+    .disease_card {
+        width: calc(50% - 20px);
+    }
+    
+    .bottom_head_section_list_item {
+        width: calc(50% - 15px);
+    }
+}
 
-    .swiper-button-next-docs,
-    .swiper-button-prev-docs {
-        position: absolute;
-        transform: translateY(-50%);
-        z-index: 10;
-    }
-    .swiper-container-docs {
-        position: relative !important;
-        padding-bottom: 50px !important;
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
     
-    .swiper-pagination-docs,
-    .swiper-pagination-docs.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
-        position: absolute !important;
-        bottom: 0 !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        z-index: 10 !important;
-        width: auto !important;
+    #mobilebtn {
+        display: block;
+        z-index: 100;
     }
     
-    /* Стили для отдельных буллетов пагинации */
-    .swiper-pagination-docs .swiper-pagination-bullet {
-        margin: 0 4px !important;
+    .top_nav ol {
+        display: none;
     }
+    
+    .top_head_section {
+        flex-direction: column;
+    }
+    
+    .what_we_news {
+        width: calc(100% - 40px);
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .service_card {
+        width: 100%;
+    }
+    
+    .disease_card {
+        width: 100%;
+    }
+    
+    .bottom_head_section_list_item {
+        width: 100%;
+    }
+    
+    .maps .flex {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .maps_map {
+        width: 100%;
+    }
+    
+    .form_items {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .form_items_left {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .form_input {
+        width: 100%;
+    }
+    
+    .bottom_nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .bottom_nav_flex {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    /* Fix for mobile header layout */
+    .head_logo {
+        max-width: 70%;
+    }
+    
+    /* Fix for mobile text alignment */
+    .top_head_section_left h1,
+    .top_head_section_left h2 {
+        text-align: center;
+    }
+    
+    /* Fix for button alignment */
+    .button,
+    .bordered_btn {
+        margin: 0 auto;
+    }
+}
+
+/* Стили для пагинации документов */
+.swiper-container-docs {
+    position: relative !important;
+    padding-bottom: 50px !important;
+}
+
+.swiper-button-next-docs,
+.swiper-button-prev-docs {
+    position: absolute;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.swiper-pagination-docs,
+.swiper-pagination-docs.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 10 !important;
+    width: auto !important;
+}
+
+/* Стили для отдельных буллетов пагинации */
+.swiper-pagination-docs .swiper-pagination-bullet {
+    margin: 0 4px !important;
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .head_section {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    
+    .top_head_section_left h1 {
+        font-size: 24px;
+        line-height: 28px;
+    }
+    
+    .section_title {
+        font-size: 24px;
+        line-height: 28px;
+    }
+    
+    .what_we_news h1 {
+        font-size: 24px;
+        line-height: 28px;
+    }
+    
+    .white_btn {
+        font-size: 18px;
+        padding: 12px 24px;
+    }
+    
+    .bordered_btn {
+        font-size: 18px;
+    }
+    
+    .from_button {
+        font-size: 18px;
+    }
+    
+    .contact_item h1, .contact_item h2, .contact_item h3 {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    
+    div#mobile_nav {
+        padding-top: 60px;
+    }
+    
+    /* Fix for mobile header and content alignment */
+    .head_logo img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .bottom_nav_bg {
+        padding: 10px 0;
+    }
+    
+    .bottom_nav h3 {
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .bottom_nav_flex {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .head_sosial {
+        margin-top: 10px;
+    }
+    
+    /* Fix for the form layout */
+    .checked_container {
+        margin-bottom: 20px;
+    }
+    
+    .switch {
+        width: 80%;
+    }
+    
+    .form_items_left {
+        padding: 15px;
+    }
+    
+    .form_items_left img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    /* Additional fixes for mobile layout issues */
+    body {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+    }
+    
+    /* Fix for mobile menu button */
+    #mobilebtn {
+        z-index: 100;
+    }
+    
+    /* Fix for blue header section */
+    .bottom_nav_bg {
+        width: 100%;
+    }
+    
+    /* Fix for text alignment in mobile */
+    .top_head_section_left {
+        text-align: center;
+        align-items: center;
+    }
+    
+    /* Fix for container width */
+    .container {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
 }

@@ -4,20 +4,6 @@
 
     {% include 'include/header.html'%}
     
-    <script>
-        const mobilebtn = document.getElementById("mobilebtn");
-        const closebtn = document.getElementById("closebtn");
-        const mobile_nav = document.getElementById("mobile_nav");
-
-        mobilebtn.addEventListener("click", () => {
-            mobile_nav.classList.add("open"); // Открыть меню
-        });
-
-        closebtn.addEventListener("click", () => {
-            mobile_nav.classList.remove("open"); // Закрыть меню
-        });
-
-    </script>
     <main>
         <section class="head_section container">
             <div class="top_head_section">
@@ -639,5 +625,23 @@
         </section>
     </main>
 {% include 'include/footer.html' %}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobilebtn = document.getElementById("mobilebtn");
+        const closebtn = document.getElementById("closebtn");
+        const mobile_nav = document.getElementById("mobile_nav");
+
+        if (mobilebtn && closebtn && mobile_nav) {
+            mobilebtn.addEventListener("click", () => {
+                mobile_nav.classList.add("open"); // Открыть меню
+            });
+
+            closebtn.addEventListener("click", () => {
+                mobile_nav.classList.remove("open"); // Закрыть меню
+            });
+        }
+    });
+</script>
 
 {% endblock %}
