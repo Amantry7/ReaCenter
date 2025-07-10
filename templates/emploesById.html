@@ -43,20 +43,21 @@
                 <div class="emploes_page_section_rigth_section">
                     <h1>Образование</h1>
                     <br>
-                    <p>{{emploe.diplom_info}}</p>
+                    <p>{{emploe.diplom_info|safe}}</p>
                 </div>
                 <div class="blue_line"></div>
                 <div class="emploes_page_section_rigth_section">
                     <h1>Стаж работы</h1>
                     <br>
-                    <h4>{{emploe.evidence}}
+                    <h4>{{emploe.evidence|safe}}
                     </h4>
                 </div>
                 <div class="blue_line"></div>
                 <div class="emploes_page_section_rigth_section">
                     <h1>Прием осуществляет</h1>
                     <br>
-                    <h4>{{emploe.certificate}}
+                    <h4>{{emploe.certificate|safe}}
+                    </h4>
                 </div>
             </div>
 

@@ -161,15 +161,15 @@ class Employe(models.Model):
         verbose_name='Фото 2',
         blank=True, null=True
     )
-    diplom_info = models.TextField(
+    diplom_info = RichTextField(
         verbose_name='Информация о дипломе',
         blank=True, null=True
     )
-    evidence = models.TextField(
+    evidence = RichTextField(
         verbose_name='Информация о свидетельстве',
         blank=True, null=True
     )
-    certificate = models.TextField(
+    certificate = RichTextField(
         verbose_name='Информация о сертификатах',
         blank=True, null=True
     )

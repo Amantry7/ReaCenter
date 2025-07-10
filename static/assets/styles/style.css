@@ -3010,3 +3010,41 @@ li {
         color: #bbb;
         text-decoration: none;
     }
+
+    /* Стили для пагинации документов */
+    .swiper-pagination-docs {
+        position: absolute;
+        text-align: center;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        bottom: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .swiper-button-next-docs,
+    .swiper-button-prev-docs {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+    }
+    .swiper-container-docs {
+        position: relative; /* важно для абсолютного позиционирования пагинации */
+        padding-bottom: 50px; /* чтобы не наезжала пагинация */
+    }
+    
+    .swiper-pagination-docs {
+        position: absolute;
+        bottom: 0; /* расстояние от нижнего края контейнера */
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+    }
+}
