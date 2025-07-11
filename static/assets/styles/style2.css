@@ -903,7 +903,6 @@ footer {
 
 .stambul_text {
     padding: 0 48px;
-    color: #53ACBF;
 }
 
 .user_section {
@@ -1063,6 +1062,40 @@ footer {
 
 .swiper-button-next {
     right: -20px;
+}
+
+.about_us_doc {
+    position: relative;
+    padding: 20px 0 50px;
+    overflow: hidden;
+    margin: 30px 0;
+}
+
+.about_us_doc .swiper-button-next,
+.about_us_doc .swiper-button-prev {
+    color: rgba(36, 190, 224, 1);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+}
+
+.about_us_doc .swiper-button-next {
+    right: 0;
+}
+
+.about_us_doc .swiper-button-prev {
+    left: 0;
+}
+
+.about_us_doc .swiper-button-next:after,
+.about_us_doc .swiper-button-prev:after {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.about_us_doc .swiper-pagination {
+    bottom: 0;
 }
 
 /* .contant_avout_us {
@@ -1932,9 +1965,11 @@ li {
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
-    border-radius: 14px;
-    width: 80%;
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
 }
 
 .real_revue_card {
@@ -2054,7 +2089,6 @@ li {
         text-align: left;
 
     }
-
 }
 
 .dock_image_block {
@@ -2148,780 +2182,867 @@ li {
 .hidden {
     width: 100%;
     overflow: hidden;
-}
 
 
-.image_list_stambula {
-    display: none;
-
-    align-items: center;
-    padding-bottom: 11rem;
-    overflow: hidden;
-}
-
-@media(max-width:1080px) {
     .image_list_stambula {
-        display: flex;
-    }
-
-    .service_instuction_item {
-        width: 100%;
-
-        gap: 20px;
-
-        p {
-            font-size: 10px;
-        }
-    }
-
-    .emploes_section_image {
-        height: 120px;
-        width: 241px;
-    }
-
-    .service .emploes_section {
-        justify-content: center;
-
-        h1,
-        p {
-            display: none;
-        }
-
-    }
-
-    .emploes_section {
-        padding: 1rem;
-    }
-
-    .service_instuction_item_num {
-        font-size: 14px;
-        min-width: 24px;
-        height: 24px;
-    }
-
-    .service_instuction {
-        flex-direction: column;
-    }
-
-    .desctop {
         display: none;
-    }
 
-    .top_footer {
-        flex-wrap: wrap;
-
-        div:nth-child(1) {
-            width: 40%;
-        }
-
-        div:nth-child(2) {
-            width: 50%;
-        }
-
-        div {
-            width: fit-content;
-        }
-    }
-
-    .bottom_footer_part {
-        flex-wrap: wrap;
-    }
-
-    .form_items .mobile {
-        width: 100%;
-    }
-
-    .mobile {
-        display: block;
-
-    }
-
-    .contact_form {
-        padding: 30px;
-    }
-
-    .from_button {
-        padding: 9px 20px;
-        display: flex;
         align-items: center;
-        font-size: 14.4px;
-        font-weight: 400;
-        line-height: 17.28px;
-        text-align: center;
-
-    }
-
-    .maps .flex {
-        flex-direction: column-reverse;
-    }
-
-    .maps_map {
-        width: 100%;
-        height: 200px;
-    }
-
-    .form_items {
-        margin-bottom: 40px
-    }
-
-    .form_input {
-        width: 100%;
-    }
-
-    .service_mobile {
-        display: block;
+        padding-bottom: 11rem;
         overflow: hidden;
     }
 
-    .contact_item {
-
-        h1,
-        h2,
-        h3 {
-            font-size: 16px;
-        }
-    }
-
-    .top_head_section_left h1 {
-        text-align: center;
-    }
-
-    .top_head_section_left h2 {
-        text-align: center;
-    }
-
-    .button {
-        margin: 0 auto;
-    }
-
-    .bottom_head_section_list {
-        display: none;
-    }
-
-    .what_we {
-        margin-top: 11rem;
-    }
-
-    .what_we_news {
-        flex-direction: column;
-        text-align: center !important;
-        padding: 24px;
-        gap: 1rem;
-    }
-
-    .what_we_news p {
-        text-align: center;
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 14.4px;
-
-
-
-    }
-
-    .switch {
-        width: 100%;
-    }
-
-    .form_items_left {
-        display: none
-    }
-
-    .section_title {
-        font-size: 24px;
-    }
-
-    .service_section {
-        display: none;
-    }
-
-    .service_card_desc {
-        h1 {
-
-
-
-
-
-
-
-            font-size: 20px;
+    @media(max-width:1080px) {
+        .image_list_stambula {
+            display: flex;
         }
 
-        p {
+        .service_instuction_item {
+            width: 100%;
+
+            gap: 20px;
+
+            p {
+                font-size: 10px;
+            }
+        }
+
+        .emploes_section_image {
+            height: 120px;
+            width: 241px;
+        }
+
+        .service .emploes_section {
+            justify-content: center;
+
+            h1,
+            p {
+                display: none;
+            }
+
+        }
+
+        .emploes_section {
+            padding: 1rem;
+        }
+
+        .service_instuction_item_num {
+            font-size: 14px;
+            min-width: 24px;
+            height: 24px;
+        }
+
+        .service_instuction {
+            flex-direction: column;
+        }
+
+        .desctop {
+            display: none;
+        }
+
+        .top_footer {
+            flex-wrap: wrap;
+
+            div:nth-child(1) {
+                width: 40%;
+            }
+
+            div:nth-child(2) {
+                width: 50%;
+            }
+
+            div {
+                width: fit-content;
+            }
+        }
+
+        .bottom_footer_part {
+            flex-wrap: wrap;
+        }
+
+        .form_items .mobile {
+            width: 100%;
+        }
+
+        .mobile {
+            display: block;
+
+        }
+
+        .contact_form {
+            padding: 30px;
+        }
+
+        .from_button {
+            padding: 9px 20px;
+            display: flex;
+            align-items: center;
+            font-size: 14.4px;
+            font-weight: 400;
+            line-height: 17.28px;
+            text-align: center;
+
+        }
+
+        .maps .flex {
+            flex-direction: column-reverse;
+        }
+
+        .maps_map {
+            width: 100%;
+            height: 200px;
+        }
+
+        .form_items {
+            margin-bottom: 40px
+        }
+
+        .form_input {
+            width: 100%;
+        }
+
+        .service_mobile {
+            display: block;
+            overflow: hidden;
+        }
+
+        .contact_item {
+
+            h1,
+            h2,
+            h3 {
+                font-size: 16px;
+            }
+        }
+
+        .top_head_section_left h1 {
+            text-align: center;
+        }
+
+        .top_head_section_left h2 {
+            text-align: center;
+        }
+
+        .button {
+            margin: 0 auto;
+        }
+
+        .bottom_head_section_list {
+            display: none;
+        }
+
+        .what_we {
+            margin-top: 11rem;
+        }
+
+        .what_we_news {
+            flex-direction: column;
+            text-align: center !important;
+            padding: 24px;
+            gap: 1rem;
+        }
+
+        .what_we_news p {
+            text-align: center;
             font-size: 12px;
-        }
-    }
+            font-weight: 400;
+            line-height: 14.4px;
 
-    #mobilebtn {
-        display: block;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: rgba(255, 255, 255, 0);
-        border: none;
-    }
 
-    .service_card {
-        width: 100%;
-    }
 
-    .what_we_head {
-        h1 {
-            font-size: 24px;
-            margin: 0;
         }
 
-        h2 {
-            font-size: 14px;
+        .switch {
+            width: 100%;
         }
 
-    }
-
-    .disease_card {
-        width: 100%;
-
-        h1 {
-            font-size: 25px;
-            margin: 0;
+        .form_items_left {
+            display: none
         }
 
-        p {
-            font-size: 12px;
-        }
-    }
-
-
-
-
-    .white_btn {
-        padding: 8px 24px;
-        font-size: 9.6px;
-        font-weight: 400;
-        line-height: 11.52px;
-        gap: 5px;
-        text-align: center;
-
-        svg {
-            height: 7px;
-        }
-
-    }
-
-    .what_we_news h1 {
-        text-align: center;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 16px;
-        text-align: center;
-
-    }
-
-    .noneINDesk {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-    }
-
-
-
-    .main_title {
-        h1 {
+        .section_title {
             font-size: 24px;
         }
 
-        p {
-            font-size: 14px;
+        .service_section {
+            display: none;
         }
-    }
 
-    .what_we_list {
-        gap: 8px;
-    }
+        .service_card_desc {
+            h1 {
 
-    .h80 {
-        height: 0px;
-    }
 
-    .what_we_after_list_item {
-        p {
-            font-size: 10px;
+
+
+
+
+
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 12px;
+            }
         }
-    }
 
-    .emploes_section {
-        p {
-            font-size: 14px;
-            line-height: 1;
+        #mobilebtn {
+            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0);
+            border: none;
         }
-    }
 
-    .selected_item {
-        h1 {
+        .service_card {
+            width: 100%;
+        }
+
+        .what_we_head {
+            h1 {
+                font-size: 24px;
+                margin: 0;
+            }
+
+            h2 {
+                font-size: 14px;
+            }
+
+        }
+
+        .disease_card {
+            width: 100%;
+
+            h1 {
+                font-size: 25px;
+                margin: 0;
+            }
+
+            p {
+                font-size: 12px;
+            }
+        }
+
+
+
+
+        .white_btn {
+            padding: 8px 24px;
+            font-size: 9.6px;
+            font-weight: 400;
+            line-height: 11.52px;
+            gap: 5px;
+            text-align: center;
+
+            svg {
+                height: 7px;
+            }
+
+        }
+
+        .what_we_news h1 {
+            text-align: center;
             font-size: 16px;
-            line-height: 1;
+            font-weight: 400;
+            line-height: 16px;
+            text-align: center;
+
         }
 
-        p {
-            font-size: 14px;
-        }
-    }
-
-    .what_we_after {
-        h3 {
-            font-size: 14px;
-            line-height: 1;
-        }
-    }
-
-    .what_we_item {
-        h1 {
-            font-size: 16px;
-            line-height: 1;
+        .noneINDesk {
+            display: flex;
+            width: 100%;
+            justify-content: center;
         }
 
-        p {
-            font-size: 8px;
-            line-height: 1;
+
+
+        .main_title {
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 14px;
+            }
         }
-    }
 
-    .top_nav ol {
-        display: none;
-    }
+        .what_we_list {
+            gap: 8px;
+        }
 
-    .bottom_nav_flex {
-        display: none;
-    }
+        .h80 {
+            height: 0px;
+        }
 
-    .bottom_nav {
-        justify-content: center;
-    }
+        .what_we_after_list_item {
+            p {
+                font-size: 10px;
+            }
+        }
 
-    .top_head_section {
-        flex-direction: column-reverse;
-    }
+        .emploes_section {
+            p {
+                font-size: 14px;
+                line-height: 1;
+            }
+        }
 
-    .head_section {
-        padding-top: 0;
-    }
+        .selected_item {
+            h1 {
+                font-size: 16px;
+                line-height: 1;
+            }
 
-    .container {
-        padding: 0 40px;
-    }
+            p {
+                font-size: 14px;
+            }
+        }
 
-    .swiper img {
-        /* position: absolute; */
-        margin-top: 1rem;
-        object-fit: cover;
-        width: 100%;
-        left: 0;
-    }
+        .what_we_after {
+            h3 {
+                font-size: 14px;
+                line-height: 1;
+            }
+        }
 
-    /* .top_head_section_left {
+        .what_we_item {
+            h1 {
+                font-size: 16px;
+                line-height: 1;
+            }
+
+            p {
+                font-size: 8px;
+                line-height: 1;
+            }
+        }
+
+        .top_nav ol {
+            display: none;
+        }
+
+        .bottom_nav_flex {
+            display: none;
+        }
+
+        .bottom_nav {
+            justify-content: center;
+        }
+
+        .top_head_section {
+            flex-direction: column-reverse;
+        }
+
+        .head_section {
+            padding-top: 0;
+        }
+
+        .container {
+            padding: 0 40px;
+        }
+
+        .swiper img {
+            /* position: absolute; */
+            margin-top: 1rem;
+            object-fit: cover;
+            width: 100%;
+            left: 0;
+        }
+
+        /* .top_head_section_left {
         margin-top: 300px;
     } */
 
-    .image_list_item {
-        width: 100%;
-    }
-
-    .what_we_news {
-        width: calc(100% - 50px);
-    }
-
-    .about_us {
-
-        padding: 10px;
-
-        h1 {
-            font-size: 16px;
+        .image_list_item {
+            width: 100%;
         }
 
-        p {
-            font-size: 14px
+        .what_we_news {
+            width: calc(100% - 50px);
+        }
+
+        .about_us {
+
+            padding: 10px;
+
+            h1 {
+                font-size: 16px;
+            }
+
+            p {
+                font-size: 14px
+            }
+
+            li {
+                font-size: 14px;
+            }
+        }
+
+        .slider {
+            width: 100%;
+        }
+
+        .metodik_mainn {
+            font-size: 14px;
+        }
+
+        .metodik_section {
+            li {
+                font-size: 14px;
+            }
+        }
+
+        .metodik_iland {
+            left: 50%;
+            top: -64px;
+            transform: translate(-50%, -50%);
+
+            h1 {
+                font-size: 14px;
+                text-wrap: nowrap;
+            }
+        }
+
+        .adresses_list_item {
+            font-size: 10px;
+            padding: 0 2rem;
+            height: 48px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .user_item_avatar {
+            min-width: 80px !important;
+            height: 80px !important;
+        }
+
+        .filials {
+            h1 {
+                font-size: 16px;
+            }
         }
 
         li {
             font-size: 14px;
         }
-    }
 
-    .slider {
-        width: 100%;
-    }
+        .user_item {
 
-    .metodik_mainn {
-        font-size: 14px;
-    }
-
-    .metodik_section {
-        li {
-            font-size: 14px;
-        }
-    }
-
-    .metodik_iland {
-        left: 50%;
-        top: -64px;
-        transform: translate(-50%, -50%);
-
-        h1 {
-            font-size: 14px;
-            text-wrap: nowrap;
-        }
-    }
-
-    .adresses_list_item {
-        font-size: 10px;
-        padding: 0 2rem;
-        height: 48px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .user_item_avatar {
-        min-width: 80px !important;
-        height: 80px !important;
-    }
-
-    .filials {
-        h1 {
-            font-size: 16px;
-        }
-    }
-
-    li {
-        font-size: 14px;
-    }
-
-    .user_item {
-
-        h1,
-        p {
-            font-size: 12px;
-        }
-    }
-
-    ul {
-        padding: 0;
-
-
-
-
-    }
-
-    .stambul {
-        h1 {
-            font-size: 24px;
-        }
-    }
-
-    .service_list {
-        li {
-            font-size: 12px !important;
+            h1,
+            p {
+                font-size: 12px;
+            }
         }
 
-    }
-
-    .oloooooo {
-        margin: 1rem;
-
-        h1 {
-            color: rgba(47, 116, 131, 1);
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 16.8px;
-            text-align: center;
-
-        }
-
-        p {
-
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 16.8px;
-            text-align: center;
-            color: rgba(36, 190, 224, 1);
-
-        }
-    }
-
-    .metodik_section {
         ul {
+            padding: 0;
+
+
+
+
+        }
+
+        .stambul {
+            h1 {
+                font-size: 24px;
+            }
+        }
+
+        .service_list {
+            li {
+                font-size: 12px !important;
+            }
+
+        }
+
+        .oloooooo {
+            margin: 1rem;
+
+            h1 {
+                color: rgba(47, 116, 131, 1);
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 16.8px;
+                text-align: center;
+
+            }
+
+            p {
+
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 16.8px;
+                text-align: center;
+                color: rgba(36, 190, 224, 1);
+
+            }
+        }
+
+        .metodik_section {
+            ul {
+                padding: 0;
+            }
+        }
+
+        .adresses_list {
+            padding: 0;
+        }
+
+        .warning {
+            padding: 0;
+
+            h2 {
+                font-size: 12px;
+            }
+
+            p {
+                font-size: 10px;
+            }
+        }
+
+        .emploes_page_section_rigth_section {
+            h1 {
+                font-size: 16px;
+            }
+
+            p,
+            h4 {
+                font-size: 12px;
+            }
+        }
+
+        .head_title {
+            justify-content: center;
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+
+        .dock_slider {
+            flex-direction: column;
+
+            h1,
+            p {
+                font-size: 16px;
+            }
+        }
+
+        .about_us_baner {
+            height: 160px;
+        }
+
+        .user_info {
+            margin: 0;
+        }
+
+        .user_card {
+            justify-content: flex-start;
+            gap: 1rem;
+            height: auto;
+            border-radius: 0;
+            padding: 1rem;
+
+            h1 {
+                font-size: 16px;
+            }
+
+            p {
+                font-size: 10px;
+            }
+        }
+
+        .userAvatar {
+            position: static;
+            aspect-ratio: 1;
+            height: 101px;
+            width: auto;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .aboutcont {
+            padding: 0 !important;
+        }
+
+        .user_section {
+            padding: 0;
+            margin-top: 0;
+        }
+
+        .emploes_page_section_left_image {
+            width: 100%;
+        }
+
+        .emploes_page_section_left {
+            max-width: 100%;
+
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+
+        .emploes_page_section_left_sertificate {
+            display: none;
+        }
+
+        .emploes_page_section {
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+            padding-bottom: 11rem;
+            gap: 2rem;
+
+        }
+
+        .emploes_page_section_rigth {
+            padding-top: 1rem;
+            border-top: 2px solid #03acf2;
+        }
+
+
+
+        .stambul {
+            padding: 0;
+
+            h1 {
+                padding: 1rem;
+            }
+
+            p {
+                font-size: 12px;
+            }
+        }
+
+        .what_we_after_list {
             padding: 0;
         }
     }
 
-    .adresses_list {
-        padding: 0;
+    .stambul_text {
+        padding: 0 18px;
     }
 
-    .warning {
-        padding: 0;
 
-        h2 {
-            font-size: 12px;
+    @media (max-width: 768px) {
+        .container {
+            padding: 0 20px;
         }
 
-        p {
-            font-size: 10px;
-        }
-    }
-
-    .emploes_page_section_rigth_section {
-        h1 {
-            font-size: 16px;
+        .emploses_main {
+            grid-template-columns: repeat(1, 1fr);
+            grid-row-gap: 16px
         }
 
-        p,
-        h4 {
-            font-size: 12px;
-        }
-    }
-
-    .head_title {
-        justify-content: center;
-
-        h1 {
-            font-size: 24px;
-        }
-    }
-
-    .dock_slider {
-        flex-direction: column;
-
-        h1,
-        p {
-            font-size: 16px;
-        }
-    }
-
-    .about_us_baner {
-        height: 160px;
-    }
-
-    .user_info {
-        margin: 0;
-    }
-
-    .user_card {
-        justify-content: flex-start;
-        gap: 1rem;
-        height: auto;
-        border-radius: 0;
-        padding: 1rem;
-
-        h1 {
-            font-size: 16px;
+        .top_emploses_main_card_image {
+            min-width: 110px;
+            min-height: 70px;
         }
 
-        p {
-            font-size: 10px;
-        }
-    }
+        .emploses_main_card {
+            h1 {
+                font-size: 14px;
+            }
 
-    .userAvatar {
-        position: static;
-        aspect-ratio: 1;
-        height: 101px;
-        width: auto;
-        background-color: rgb(255, 255, 255);
-    }
-
-    .aboutcont {
-        padding: 0 !important;
-    }
-
-    .user_section {
-        padding: 0;
-        margin-top: 0;
-    }
-
-    .emploes_page_section_left_image {
-        width: 100%;
-    }
-
-    .emploes_page_section_left {
-        max-width: 100%;
-
-        h1 {
-            font-size: 24px;
+            p {
+                font-size: 10px;
+            }
         }
 
-        p {
-            font-size: 16px;
-        }
-    }
-
-    .emploes_page_section_left_sertificate {
-        display: none;
-    }
-
-    .emploes_page_section {
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem;
-        padding-bottom: 11rem;
-        gap: 2rem;
-
-    }
-
-    .emploes_page_section_rigth {
-        padding-top: 1rem;
-        border-top: 2px solid #03acf2;
-    }
-
-
-
-    .stambul {
-        padding: 0;
-
-        h1 {
-            padding: 1rem;
+        .video_section {
+            h1 {
+                font-size: 24px;
+            }
         }
 
-        p {
-            font-size: 12px;
-        }
-    }
-
-    .what_we_after_list {
-        padding: 0;
-    }
-}
-
-.stambul_text {
-    padding: 0 18px;
-}
-
-
-@media (max-width: 768px) {
-    .container {
-        padding: 0 20px;
-    }
-
-    .emploses_main {
-        grid-template-columns: repeat(1, 1fr);
-        grid-row-gap: 16px
-    }
-
-    .top_emploses_main_card_image {
-        min-width: 110px;
-        min-height: 70px;
-    }
-
-    .emploses_main_card {
-        h1 {
-            font-size: 14px;
+        .video_card_image {
+            height: 145px;
         }
 
-        p {
-            font-size: 10px;
-        }
-    }
-
-    .video_section {
-        h1 {
-            font-size: 24px;
-        }
-    }
-
-    .video_card_image {
-        height: 145px;
-    }
-
-    .btn_on {
-        height: 60px;
-    }
-
-    .dock_image_block {
-        height: auto;
-        width: 100%;
-    }
-
-    .flexx {
-        flex-direction: column;
-
-    }
-
-    .revue_form {
-        padding: 1rem;
-
-        h1 {
-            font-size: 24px;
-        }
-    }
-
-    .firstDot {
-        height: 10px;
-    }
-
-    .real_revue_card {
-        span {
-            font-size: 8px;
+        .btn_on {
+            height: 60px;
         }
 
-        h1 {
-            font-size: 12px;
-        }
-    }
-
-    .real_revue_title h1 {
-        font-size: 24px;
-    }
-
-    .secondDot {
-        height: 10px;
-    }
-
-    .swiper-slide .reviews_card {
-        p {
-            line-height: 1;
-            font-size: 10px;
-        }
-
-        h1 {
-            line-height: 1;
-            font-size: 12px;
-        }
-    }
-
-    .video_card_title {
-        h1 {
-            font-size: 12px;
-            line-height: 1;
-        }
-
-        span {
-            font-size: 10px;
-        }
-    }
-
-    .emploses_main_card_btn {
-        button {
-            line-height: 1;
+        .dock_image_block {
             height: auto;
-            font-size: 10px;
-            padding: 4px 12px;
+            width: 100%;
+        }
+
+        .flexx {
+            flex-direction: column;
+
+        }
+
+        .revue_form {
+            padding: 1rem;
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+
+        .firstDot {
+            height: 10px;
+        }
+
+        .real_revue_card {
+            span {
+                font-size: 8px;
+            }
+
+            h1 {
+                font-size: 12px;
+            }
+        }
+
+        .real_revue_title h1 {
+            font-size: 24px;
+        }
+
+        .secondDot {
+            height: 10px;
+        }
+
+        .swiper-slide .reviews_card {
+            p {
+                line-height: 1;
+                font-size: 10px;
+            }
+
+            h1 {
+                line-height: 1;
+                font-size: 12px;
+            }
+        }
+
+        .video_card_title {
+            h1 {
+                font-size: 12px;
+                line-height: 1;
+            }
+
+            span {
+                font-size: 10px;
+            }
+        }
+
+        .emploses_main_card_btn {
+            button {
+                line-height: 1;
+                height: auto;
+                font-size: 10px;
+                padding: 4px 12px;
+            }
+        }
+
+        .servicesex {
+            padding: 0;
+            transform: scale(0.9);
         }
     }
 
-    .servicesex {
-        padding: 0;
-        transform: scale(0.9);
+    .head_logo img {
+        width: 100%;
+        height: 50px;
+        object-fit: contain;
     }
-}
 
-.head_logo img {
-    width: 100%;
-    height: 50px;
-    object-fit: contain;
-}
+    .footer_logo img {
+        width: 100%;
+        height: 50px;
+        object-fit: contain;
+    }
 
-.footer_logo img {
-    width: 100%;
-    height: 50px;
-    object-fit: contain;
+    .about_us_doc_item img {
+        width: 100%;
+        height: 300px;
+        object-fit: contain;
+        margin-bottom: 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+    }
+
+    .about_us_doc_item img:hover {
+        transform: scale(1.05);
+    }
+
+    /* Модальное окно для просмотра изображений */
+    .doc-modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .doc-modal-content {
+        margin: auto;
+        display: block;
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+    }
+
+    .doc-modal-close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .doc-modal-close:hover,
+    .doc-modal-close:focus {
+        color: #bbb;
+        text-decoration: none;
+    }
+
+    /* Стили для пагинации документов */
+    .swiper-container-docs {
+        position: relative !important;
+        padding-bottom: 50px !important;
+    }
+
+    .swiper-button-next-docs,
+    .swiper-button-prev-docs {
+        position: absolute;
+        transform: translateY(-50%);
+        z-index: 10;
+    }
+    .swiper-container-docs {
+        position: relative !important;
+        padding-bottom: 50px !important;
+    }
+    
+    .swiper-pagination-docs,
+    .swiper-pagination-docs.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+        position: absolute !important;
+        bottom: 0 !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        z-index: 10 !important;
+        width: auto !important;
+    }
+    
+    /* Стили для отдельных буллетов пагинации */
+    .swiper-pagination-docs .swiper-pagination-bullet {
+        margin: 0 4px !important;
+    }
 }

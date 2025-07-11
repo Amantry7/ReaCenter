@@ -85,7 +85,7 @@
                     <div class="service_card_desc">
                         <div>
                             <h1>{{rec_service.title}}</h1>
-                            <p>{{rec_service.desc|truncatewords:7}} </p>
+                            <p>{{ rec_service.desc|truncatewords:7|safe }} </p>
                         </div>
                         <button class="next_btn"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
                                 viewBox="0 0 40 40" fill="none">
@@ -146,7 +146,7 @@
                     <div class="service_card_desc">
                         <div>
                             <h1>{{service.title}} </h1>
-                            <p>{{service.desc|truncatewords:7}}</p>
+                            <p>{{service.desc|truncatewords:7|safe }}</p>
                         </div>
                         <button class="next_btn"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
                                 viewBox="0 0 40 40" fill="none">
