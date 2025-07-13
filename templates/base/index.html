@@ -48,7 +48,11 @@
                 </div>
                 <div class="top_head_section_right">
                     <div class="swiper">
-                        <img src="{% static 'assets/images/slider main.png' %}" alt="">
+                        {% if main_slider %}
+                            <img src="{{ main_slider.image.url }}" alt="{% if main_slider.title %}{{ main_slider.title }}{% else %}Слайд{% endif %}">
+                        {% else %}
+                            <img src="{% static 'assets/images/slider main.png' %}" alt="">
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -173,14 +177,14 @@
             </h1>
             <div class="service_list">
                 {% for service in service %}
-                <div class="service_card">
+                <div class="service_card" onclick="window.location.href = '{% url 'service_detail' service.id%}';">
                     <div class="service_card_image">
                         <img src="{{service.image.url}}" alt="">
                     </div>
                     <div class="service_card_desc">
                         <div>
                             <h1>{{service.title}} </h1>
-                            <p>{{service.desc|truncatewords:7}} </p>
+                            <p>{{service.desc|truncatewords:7|safe}} </p>
                         </div>
                         <button class="next_btn"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
                                 viewBox="0 0 40 40" fill="none">
@@ -196,7 +200,7 @@
                 {% endfor %}
             </div>
 
-            <a href="{% url "service" %}">
+            <a href="{% url 'service' %}">
                 <button class="bordered_btn">
                     Все услуги <svg xmlns="http://www.w3.org/2000/svg" width="17" height="11" viewBox="0 0 17 11"
                         fill="none">
@@ -371,28 +375,31 @@
                 Отзывы
             </h1>
             <br><br>
-            <div class="hidden">
-                <div class="swiper-container3">
-                    <div class="swiper-wrapper">
-                    {% for reviews in reviews %}
-                        <div class="swiper-slide">
-                            <div class="reviews_card">
-                                <div class="reviews_card_head">
-                                    <h1>
-                                        {{reviews.name}}
-                                    </h1>
-                                    <p>
-                                        {{reviews.create_at}}
-                                    </p>
-                                </div>
-                                <div class="reviews_card_des">
-                                    <svg class="firstDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
-                                        viewBox="0 0 27 17" fill="none">
-                                        <path
-                                            d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z"
-                                            fill="#53ACBF" />
-                                    </svg>
-
+            <div class="top_head_section_right">
+                    <div class="swiper">
+                        {% if main_slider %}
+                            <img src="{{ main_slider.image.url }}" alt="{% if main_slider.title %}{{ main_slider.title }}{% else %}Слайд{% endif %}">
+                        {% else %}
+                            <img src="{% static 'assets/images/slider main.png' %}" alt="">
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="hidden">
+                    <div class="swiper-container3">
+                        <div class="swiper-wrapper">
+                        {% for reviews in reviews %}
+                            <div class="swiper-slide">
+                                <div class="reviews_card">
+                                    <div class="reviews_card_head">
+                                        <h1>
+                                            {{reviews.name}}
+                                        </h1>
+                                        <p>
+                                            {{reviews.create_at}}
+                                        </p>
+                                    </div>
+                                    <div class="reviews_card_des">
+                                        <svg class="firstDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
                                     <p>{{reviews.text}}
                                         <svg class="secondDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
                                             viewBox="0 0 27 17" fill="none">

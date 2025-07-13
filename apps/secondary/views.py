@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 
-from apps.setting.models import Setting, Treat, Service, Reviews
+from apps.setting.models import Setting, Treat, Service, Reviews, MainSlider
 from apps.secondary.models import About, Methods, Institution, ContactRequest, News
 # Create your views here.
 
@@ -59,6 +59,10 @@ def news(request):
     service = Service.objects.all()[:6]
     reviews = Reviews.objects.all()
     news_list = News.objects.filter(is_published=True)[:6]  # Получаем последние 6 опубликованных новостей
+    try:
+        main_slider = MainSlider.objects.first()
+    except MainSlider.DoesNotExist:
+        main_slider = None
     return render(request, 'news.html', locals())
 
 def news_detail(request, id):

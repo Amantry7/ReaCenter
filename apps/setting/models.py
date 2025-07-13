@@ -287,3 +287,22 @@ class SettingPhone(models.Model):
 
     class Meta:
         verbose_name = 'Номер телефона'
+
+
+class MainSlider(models.Model):
+    title = models.CharField(
+        max_length=255,
+        verbose_name='Заголовок',
+        blank=True, null=True
+    )
+    image = models.ImageField(
+        upload_to='main_slider/',
+        verbose_name='Изображение слайдера'
+    )
+    
+    def __str__(self):
+        return self.title if self.title else 'Слайд главной страницы'
+    
+    class Meta:
+        verbose_name = 'Слайд главной страницы'
+        verbose_name_plural = 'Слайд главной страницы'

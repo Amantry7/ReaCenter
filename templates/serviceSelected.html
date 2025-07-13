@@ -3,6 +3,37 @@
 {% block content%}
 
     {% include 'include/header.html'%}
+    <style>
+        .image_list_stambul {
+            width: 100%;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .swiper-wrapper {
+            width: 100% !important;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        .swiper-slide {
+            width: auto !important;
+            max-width: 280px;
+            margin-right: 15px;
+        }
+        .image_list_item img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        @media (max-width: 768px) {
+            .swiper-slide {
+                max-width: 200px;
+            }
+        }
+        .stambul_text p {
+            color: rgba(83, 172, 191, 1) !important;
+        }
+    </style>
     <script>
         const mobilebtn = document.getElementById("mobilebtn");
         const closebtn = document.getElementById("closebtn");
@@ -53,72 +84,20 @@
             </div>
         </div>
         <section class="servicesex container">
-            <h1 class="section_title">
-                Наши услуги
-            </h1>
             <div class="service_list">
-                <a href="" class="service_card service_card_active">
-                    <div class="service_card_image">
-                        <img src="{{service.image.url}}" alt="">
-                    </div>
-                    <div class="service_card_desc">
-                        <div>
-                            <h1>{{service.title}}</h1>
-                            <p>{{service.desc|truncatewords:7}}</p>
-                        </div>
-                        <button class="next_btn"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
-                                viewBox="0 0 40 40" fill="none">
-                                <path
-                                    d="M20 0C31.03 0 40 8.972 40 20C40 31.028 31.03 40 20 40C8.972 40 0 31.028 0 20C0 8.972 8.972 0 20 0Z"
-                                    fill="#A3EEFF" />
-                                <path
-                                    d="M17.1277 11.9143C17.5097 11.9143 17.8937 12.0603 18.1857 12.3523L25.1597 19.2923C25.4417 19.5743 25.5997 19.9563 25.5997 20.3563C25.5997 20.7543 25.4417 21.1363 25.1597 21.4183L18.1857 28.3623C17.5997 28.9463 16.6517 28.9463 16.0657 28.3583C15.4817 27.7703 15.4837 26.8203 16.0697 26.2363L21.9757 20.3563L16.0697 14.4763C15.4837 13.8923 15.4817 12.9443 16.0657 12.3563C16.3577 12.0603 16.7437 11.9143 17.1277 11.9143Z"
-                                    fill="white" />
-                            </svg></button>
-                    </div>
-                </a>
-                {% for rec_service in rec_service %}
-                <a href="{% url 'service_detail' service.id%}" class="service_card">
-                    <div class="service_card_image">
-                        <img src="{{rec_service.image.url}}" alt="">
-                    </div>
-                    <div class="service_card_desc">
-                        <div>
-                            <h1>{{rec_service.title}}</h1>
-                            <p>{{ rec_service.desc|truncatewords:7|safe }} </p>
-                        </div>
-                        <button class="next_btn"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
-                                viewBox="0 0 40 40" fill="none">
-                                <path
-                                    d="M20 0C31.03 0 40 8.972 40 20C40 31.028 31.03 40 20 40C8.972 40 0 31.028 0 20C0 8.972 8.972 0 20 0Z"
-                                    fill="#A3EEFF" />
-                                <path
-                                    d="M17.1277 11.9143C17.5097 11.9143 17.8937 12.0603 18.1857 12.3523L25.1597 19.2923C25.4417 19.5743 25.5997 19.9563 25.5997 20.3563C25.5997 20.7543 25.4417 21.1363 25.1597 21.4183L18.1857 28.3623C17.5997 28.9463 16.6517 28.9463 16.0657 28.3583C15.4817 27.7703 15.4837 26.8203 16.0697 26.2363L21.9757 20.3563L16.0697 14.4763C15.4837 13.8923 15.4817 12.9443 16.0657 12.3563C16.3577 12.0603 16.7437 11.9143 17.1277 11.9143Z"
-                                    fill="white" />
-                            </svg></button>
-                    </div>
-                </a>
-                {% endfor %}
                 <div>
                     <div class="stambul  ololo">
                         <h1>{{service.title}}</h1>
                         <br><br>
-                        <div
-                            class="swiper-container4 image_list_stambul swiper-initialized swiper-horizontal swiper-ios swiper-backface-hidden">
-                            <div class="swiper-wrapper" id="swiper-wrapper-eeb84fdd4cdf7fd10" aria-live="polite"
-                                style="transition-duration: 0ms; transform: translate3d(-1507.23px, 0px, 0px); transition-delay: 0ms;">
+                        <div class="swiper-container4 image_list_stambul swiper-initialized swiper-horizontal swiper-ios swiper-backface-hidden">
+                            <div class="swiper-wrapper" id="swiper-wrapper-eeb84fdd4cdf7fd10" aria-live="polite">
                                 {% for image in service.service_image.all %}
-                                <div class="swiper-slide" role="group" aria-label="8 / 9" data-swiper-slide-index="7"
-                                    style="width: 280.769px; margin-right: 30px;">
+                                <div class="swiper-slide" role="group">
                                     <div class="image_list_item">
-                                        <img src="{{image.image.url}}"
-                                            alt="">
+                                        <img src="{{image.image.url}}" alt="">
                                     </div>
-
                                 </div>
                                 {% endfor %}
-                             
-
                             </div>
                             <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
                         </div>
@@ -163,8 +142,6 @@
 
 
             </div>
-            <a href="">
-
                 <a href="https://wa.me/996552353737" class="from_button" target="_blank">
                     Записаться
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="22" viewBox="0 0 25 22" fill="none">
@@ -173,7 +150,6 @@
                             fill="white" />
                     </svg>
                 </a>
-            </a>
         </section>
     </main>
     <br><br><br>

@@ -99,7 +99,11 @@
                 </div>
                 <div class="top_head_section_right">
                     <div class="swiper">
-                        <img src="{% static 'assets/images/slider main.png' %}" alt="">
+                        {% if main_slider %}
+                            <img src="{{ main_slider.image.url }}" alt="{% if main_slider.title %}{{ main_slider.title }}{% else %}Слайд{% endif %}">
+                        {% else %}
+                            <img src="{% static 'assets/images/slider main.png' %}" alt="">
+                        {% endif %}
                     </div>
                 </div>
             </div>
