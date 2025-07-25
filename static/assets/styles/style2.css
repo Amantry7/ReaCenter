@@ -262,7 +262,7 @@ body {
 
 .what_we_head {
     h1 {
-        color: #4FAAE7;        font-size: 32px;
+        color: #0049a8;        font-size: 32px;
         font-weight: 600;
         line-height: 38.4px;
         text-align: center;
@@ -295,7 +295,7 @@ body {
     padding-top: 2rem;
 
     h1 {
-        color: #4FAAE7;        font-size: 32px;
+        color: #0049a8;        font-size: 32px;
         font-weight: 600;
         line-height: 38.4px;
         text-align: left;
@@ -356,7 +356,7 @@ a {
 
 .section_title {
     margin: 0 auto;
-    color: #4FAAE7;    font-size: 32px;
+    color: #0049a8;    font-size: 32px;
     font-weight: 600;
     line-height: 38.4px;
     text-align: center;
@@ -415,7 +415,7 @@ a {
     }
 
     p {
-        color: #4FAAE7;        font-size: 16px;
+        color: #0049a8;        font-size: 16px;
         font-weight: 400;
         line-height: 19.2px;
         text-align: left;
@@ -666,7 +666,7 @@ a {
     border: none;
     width: calc(50% - 32px);
     background-color: white;
-    color: #4FAAE7;    font-size: 16px;
+    color: #0049a8;    font-size: 16px;
     font-weight: 400;
     line-height: 19.2px;
     padding: 16px 20px;
@@ -675,7 +675,7 @@ a {
 }
 
 .form_input::placeholder {
-    color: #4FAAE7;    font-size: 16px;
+    color: #0049a8;    font-size: 16px;
     font-weight: 400;
     line-height: 19.2px;
     padding: 16px 20px;
@@ -702,7 +702,7 @@ a {
 
     width: 100%;
     background-color: white;
-    color: #4FAAE7;    font-size: 16px;
+    color: #0049a8;    font-size: 16px;
     font-weight: 400;
     line-height: 19.2px;
     padding: 16px 20px;
@@ -711,7 +711,7 @@ a {
 }
 
 .form_textarea::placeholder {
-    color: #4FAAE7;    font-size: 16px;
+    color: #0049a8;    font-size: 16px;
     font-weight: 400;
     line-height: 19.2px;
     padding: 16px 20px;
@@ -854,7 +854,7 @@ footer {
         font-weight: 600;
         line-height: 48px;
         text-align: left;
-        color: #4FAAE7;    }
+        color: #0049a8;    }
 
     p {
         font-size: 20px;
@@ -974,7 +974,7 @@ footer {
     }
 
     h1 {
-        color: #4FAAE7;        font-size: 32px;
+        color: #0049a8;        font-size: 32px;
         font-weight: 600;
         line-height: 38.4px;
         text-align: center;
@@ -1115,7 +1115,7 @@ footer {
 
     h1 {
 
-        color: #4FAAE7;        font-size: 32px;
+        color: #0049a8;        font-size: 32px;
         font-weight: 600;
         line-height: 38.4px;
         text-align: center;
@@ -1163,7 +1163,7 @@ footer {
     padding: 23px 32px;
 
     h1 {
-        color: #4FAAE7;        font-size: 24px;
+        color: #0049a8;        font-size: 24px;
         font-weight: 600;
         line-height: 28.8px;
         text-align: left;
@@ -1189,7 +1189,7 @@ ul {
 }
 
 li {
-    color: #4FAAE7;    font-size: 24px;
+    color: #0049a8;    font-size: 24px;
     font-weight: 400;
     line-height: 28.8px;
     text-align: justified;
@@ -1206,7 +1206,7 @@ li {
     h1 {
         margin: 0 auto;
         text-align: center;
-        color: #4FAAE7;        font-size: 24px;
+        color: #0049a8;        font-size: 24px;
         font-weight: 600;
         line-height: 28.8px;
         text-align: left;
@@ -1294,7 +1294,7 @@ li {
     }
 
     h2 {
-        color: #4FAAE7;        font-size: 24px;
+        color: #0049a8;        font-size: 24px;
         font-weight: 600;
         line-height: 28.8px;
         text-align: left;
@@ -1317,7 +1317,7 @@ li {
 
 .main_title {
     h1 {
-        color: #4FAAE7;        font-size: 32px;
+        color: #0049a8;        font-size: 32px;
         font-weight: 600;
         line-height: 38.4px;
         text-align: left;
@@ -1325,7 +1325,7 @@ li {
     }
 
     p {
-        color: #4FAAE7;        font-size: 20px;
+        color: #0049a8;        font-size: 20px;
         font-weight: 400;
         line-height: 24px;
         text-align: justified;
@@ -1353,10 +1353,10 @@ li {
         font-weight: 600;
         line-height: 38.4px;
         text-align: left;
-        color: #4FAAE7;    }
+        color: #0049a8;    }
 
     p {
-        color: #4FAAE7;        font-size: 16px;
+        color: #0049a8;        font-size: 16px;
         font-weight: 400;
         line-height: 19.2px;
         text-align: left;
@@ -1387,7 +1387,7 @@ li {
         line-height: 28.8px;
         text-align: center;
 
-        color: #4FAAE7;    }
+        color: #0049a8;    }
 }
 
 .what_we_after_list {
@@ -1418,7 +1418,7 @@ li {
 
 .selected_item {
     h1 {
-        color: #4FAAE7;        font-size: 32px;
+        color: #0049a8;        font-size: 32px;
         font-weight: 600;
         line-height: 38.4px;
         text-align: center;
@@ -1426,7 +1426,7 @@ li {
     }
 
     p {
-        color: #4FAAE7;        font-size: 20px;
+        color: #0049a8;        font-size: 20px;
         font-weight: 400;
         line-height: 24px;
         text-align: justified;
@@ -1461,7 +1461,7 @@ li {
     padding: 3rem;
 
     p {
-        color: #4FAAE7;
+        color: #0049a8;
         font-size: 24px;
         font-weight: 400;
         line-height: 28.8px;
@@ -1503,7 +1503,7 @@ li {
     }
 
     p {
-        color: #4FAAE7;        font-size: 16px;
+        color: #0049a8;        font-size: 16px;
         font-weight: 400;
         line-height: 19.2px;
         text-align: left;
@@ -1537,7 +1537,7 @@ li {
     justify-content: end;
 
     button {
-        color: #4FAAE7;        border: 1px solid #4FAAE7;        height: 35px;
+        color: #0049a8;        border: 1px solid #0049a8;        height: 35px;
         border-radius: 35px;
         background-color: white;
         padding: 8px 24px;
@@ -1649,7 +1649,7 @@ li {
     }
 
     p {
-        color: #4FAAE7;        font-size: 20px;
+        color: #0049a8;        font-size: 20px;
         font-weight: 400;
         line-height: 24px;
         text-align: left;
@@ -1676,7 +1676,7 @@ li {
     max-width: 550px;
 
     h1 {
-        color: #4FAAE7;        font-size: 32px;
+        color: #0049a8;        font-size: 32px;
         font-weight: 600;
         line-height: 38.4px;
         text-align: left;
@@ -1684,7 +1684,7 @@ li {
     }
 
     p {
-        color: #4FAAE7;        font-size: 16px;
+        color: #0049a8;        font-size: 16px;
         font-weight: 400;
         line-height: 19.2px;
         text-align: justified;
@@ -1692,7 +1692,7 @@ li {
     }
 
     h4 {
-        color: #4FAAE7;        font-size: 16px;
+        color: #0049a8;        font-size: 16px;
         font-weight: 400;
         line-height: 19.2px;
         text-align: justified;
@@ -1726,7 +1726,7 @@ li {
         margin: 1rem 0;
 
         a {
-            color: #4FAAE7;            font-size: 16px;
+            color: #0049a8;            font-size: 16px;
             font-weight: 400;
             line-height: 19.2px;
             text-align: left;
@@ -1951,7 +1951,7 @@ li {
 }
 
 #reviewDate {
-    color: #4FAAE7;    font-size: 16px;
+    color: #0049a8;    font-size: 16px;
     font-weight: 400;
     line-height: 19.2px;
     text-align: left;
@@ -1959,7 +1959,7 @@ li {
 }
 
 #reviewText {
-    color: #4FAAE7;
+    color: #0049a8;
     font-size: 16px;
     font-weight: 400;
     line-height: 19.2px;
@@ -2005,7 +2005,7 @@ li {
 
 .real_revue_title h1 {
     padding: 60px;
-    color: #4FAAE7;    font-size: 32px;
+    color: #0049a8;    font-size: 32px;
     font-weight: 600;
     line-height: 38.4px;
     text-align: center;
@@ -2033,7 +2033,7 @@ li {
     }
 
     span {
-        color: #4FAAE7;        font-size: 16px;
+        color: #0049a8;        font-size: 16px;
         font-weight: 400;
         line-height: 19.2px;
         text-align: left;
@@ -2058,7 +2058,7 @@ li {
     padding-bottom: 60px;
 
     h1 {
-        color: #4FAAE7;        font-size: 32px;
+        color: #0049a8;        font-size: 32px;
         font-weight: 600;
         line-height: 38.4px;
         text-align: center;
@@ -2077,7 +2077,7 @@ li {
 
     textarea::placeholder,
     input::placeholder {
-        color: #4FAAE7;        font-size: 16px;
+        color: #0049a8;        font-size: 16px;
         font-weight: 400;
         line-height: 19.2px;
         text-align: left;
