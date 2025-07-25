@@ -1,0 +1,144 @@
+/* Animations for Scientific Work Page */
+
+/* Fade in animation for sections */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scale animation for cards on hover */
+@keyframes scaleUp {
+    to {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+}
+
+/* Apply animations to sections */
+.scientific-work-section {
+    opacity: 1; /* Start visible */
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Stagger the animations for each section */
+.scientific-work-section:nth-child(1) { animation-delay: 0.1s; }
+.scientific-work-section:nth-child(2) { animation-delay: 0.3s; }
+.scientific-work-section:nth-child(3) { animation-delay: 0.5s; }
+.scientific-work-section:nth-child(4) { animation-delay: 0.7s; }
+.scientific-work-section:nth-child(5) { animation-delay: 0.9s; }
+.scientific-work-section:nth-child(6) { animation-delay: 1.1s; }
+
+/* Header animation */
+.scientific-work-header {
+    opacity: 1; /* Start visible */
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Card hover animations */
+.scientific-material-card {
+    transition: all 0.3s ease;
+}
+
+.scientific-material-card:hover {
+    animation: scaleUp 0.3s ease-out forwards;
+}
+
+/* Image hover effect */
+.scientific-material-image {
+    overflow: hidden;
+}
+
+.scientific-material-image img {
+    transition: transform 0.5s ease;
+}
+
+.scientific-material-card:hover .scientific-material-image img {
+    transform: scale(1.05);
+}
+
+/* Download button animation */
+.download-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.download-btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease;
+}
+
+.download-btn:hover:before {
+    left: 100%;
+}
+
+.download-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Add a reveal animation for card content */
+.scientific-material-info {
+    transition: all 0.3s ease;
+}
+
+.scientific-material-card:hover .scientific-material-info {
+    transform: translateY(-5px);
+}
+
+/* Add animation for section titles */
+.scientific-work-subtitle {
+    position: relative;
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.scientific-work-subtitle:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #007bff;
+    transition: width 0.4s ease;
+}
+
+.scientific-work-section:hover .scientific-work-subtitle:after {
+    width: 100%;
+}
+
+/* Add animation for section descriptions */
+.scientific-work-description {
+    opacity: 1; /* Start visible */
+    animation: fadeIn 1s ease-out 0.5s forwards;
+    text-align: center;
+    margin: 0 auto 30px;
+    max-width: 90%;
+}
+
+/* Add scroll reveal animations using Intersection Observer API */
+.reveal {
+    opacity: 1; /* Start visible */
+    transform: translateY(0); /* Start in final position */
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}

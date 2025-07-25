@@ -3,7 +3,10 @@ from django import forms
 from ckeditor.widgets import CKEditorWidget
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
-from apps.secondary.models import About, AboutService, AboutDocument, Consultation, ConsultationProgres, Methods, MethodsEva, MethodsDev, Institution, MethodsEmp, ContactRequest, NewsBanner, NewsBannerImage, News
+from apps.secondary.models import (About, AboutService, AboutDocument, Consultation, ConsultationProgres, 
+    Methods, MethodsEva, MethodsDev, Institution, MethodsEmp, ContactRequest, NewsBanner, 
+    NewsBannerImage, News, ScientificWorkIntro, ScientificManual, ScientificPatent, 
+    ScientificPermission, ScientificPublication, ScientificJournal)
 # Register your models here.
 
 class AboutServiceTabularInline(admin.TabularInline):
@@ -71,3 +74,34 @@ class NewsAdminForm(forms.ModelForm):
 class NewsAdmin(admin.ModelAdmin):
     form = NewsAdminForm
     list_display = ('title', 'created_at', 'is_published')
+
+# Scientific Work Admin Registration
+@admin.register(ScientificWorkIntro)
+class ScientificWorkIntroAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+
+@admin.register(ScientificManual)
+class ScientificManualAdmin(admin.ModelAdmin):
+    list_display = ('title', 'description', 'order')
+    list_editable = ('order',)
+    
+@admin.register(ScientificPatent)
+class ScientificPatentAdmin(admin.ModelAdmin):
+    list_display = ('patent_number', 'title', 'description', 'order')
+    list_editable = ('order',)
+    
+@admin.register(ScientificPermission)
+class ScientificPermissionAdmin(admin.ModelAdmin):
+    list_display = ('title', 'type', 'description', 'order')
+    list_editable = ('order',)
+    list_filter = ('type',)
+    
+@admin.register(ScientificPublication)
+class ScientificPublicationAdmin(admin.ModelAdmin):
+    list_display = ('title', 'description', 'order')
+    list_editable = ('order',)
+    
+@admin.register(ScientificJournal)
+class ScientificJournalAdmin(admin.ModelAdmin):
+    list_display = ('title', 'order')
+    list_editable = ('order',)
