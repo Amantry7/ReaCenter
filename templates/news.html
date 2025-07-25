@@ -1,6 +1,8 @@
 {% extends 'include/homepage.html' %}
 {% load static %}
 {% block content%}
+    <!-- Add CSS for no news animation -->
+    <link rel="stylesheet" href="{% static 'assets/styles/no_news_animation.css' %}" />
     {% include 'include/header.html'%}
 
     <script>
@@ -184,8 +186,30 @@
                 </div>
                 {% endfor %}
                 {% else %}
-                <div class="service_card">
-                    <p class="no_news">Пока нет опубликованных новостей</p>
+                <div class="no_news_container">
+                    <!-- Animated background bubbles -->
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                    
+                    <!-- Icon with bounce animation -->
+                    <div class="no_news_icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 5v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                            <line x1="12" y1="11" x2="12" y2="17"></line>
+                            <line x1="12" y1="8" x2="12" y2="8"></line>
+                        </svg>
+                    </div>
+                    
+                    <!-- Message with fade-in animation -->
+                    <div class="no_news_message">Пока нет опубликованных новостей</div>
+                    
+                    <!-- Subtext with fade-in animation -->
+                    <div class="no_news_subtext">Следите за обновлениями, скоро здесь появятся интересные новости</div>
+                    
+                    <!-- Button with hover effect -->
+                    <a href="/" class="no_news_button">На главную</a>
                 </div>
                 {% endif %}
             </div>
