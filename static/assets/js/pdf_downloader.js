@@ -18,32 +18,39 @@ document.addEventListener('DOMContentLoaded', function() {
             // Получаем заголовок материала
             const title = infoBlock.querySelector('h3').textContent.trim();
             
-            // Формируем имя файла на основе заголовка
-            const fileName = title.replace(/[^\w\s]/gi, '').replace(/\s+/g, '_') + '.pdf';
-            
-            // Определяем тип материала на основе родительских классов
-            let folderName = 'manuals';
-            const cardElement = button.closest('.scientific-material-card');
-            
-            if (cardElement) {
-                if (cardElement.classList.contains('patent-card')) {
-                    folderName = 'patents';
-                } else if (cardElement.classList.contains('permission-card')) {
-                    folderName = 'permissions';
-                } else if (cardElement.classList.contains('publication-card')) {
-                    folderName = 'publications';
-                } else if (cardElement.classList.contains('journal-card')) {
-                    folderName = 'journals';
+            // Проверяем, есть ли уже установленный атрибут data-pdf
+            // Если атрибут уже установлен в HTML, используем его
+            // Иначе, формируем путь на основе заголовка
+            if (!button.hasAttribute('data-pdf')) {
+                // Формируем имя файла на основе заголовка
+                const fileName = title.replace(/[^\w\s]/gi, '').replace(/\s+/g, '_') + '.pdf';
+                
+                // Определяем тип материала на основе родительских классов
+                let folderName = 'manuals';
+                const cardElement = button.closest('.scientific-material-card');
+                
+                if (cardElement) {
+                    if (cardElement.classList.contains('patent-card')) {
+                        folderName = 'patents';
+                    } else if (cardElement.classList.contains('permission-card')) {
+                        folderName = 'permissions';
+                    } else if (cardElement.classList.contains('publication-card')) {
+                        folderName = 'publications';
+                    } else if (cardElement.classList.contains('journal-card')) {
+                        folderName = 'journals';
+                    }
                 }
+                
+                // Формируем путь к PDF файлу
+                const pdfPath = `/static/assets/documents/scientific/${folderName}/${fileName}`;
+                
+                // Устанавливаем атрибуты для кнопки
+                button.setAttribute('data-pdf', pdfPath);
+                button.setAttribute('data-title', fileName);
             }
             
-            // Формируем путь к PDF файлу
-            const pdfPath = `/static/assets/documents/scientific/${folderName}/${fileName}`;
-            
-            // Устанавливаем атрибуты для кнопки
+            // Устанавливаем href для совместимости
             button.setAttribute('href', 'javascript:void(0)');
-            button.setAttribute('data-pdf', pdfPath);
-            button.setAttribute('data-title', fileName);
             
             // Добавляем обработчик события клика
             button.addEventListener('click', function() {
