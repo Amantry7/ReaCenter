@@ -19,7 +19,7 @@ body {
 .container {
     /* max-width: 1200px;
     margin: 0 auto; */
-    padding: 0 100px;
+    padding: 19px 100px;
 }
 
 .top_nav {
@@ -87,7 +87,8 @@ body {
 }
 
 .bottom_nav_bg {
-    background-color: #0049a8;    padding: 14px 0;
+    background-color: #0049a8;
+    padding: 14px 0;
 }
 
 .top_head_section {
@@ -102,7 +103,8 @@ body {
         font-weight: 600;
         line-height: 38.4px;
         text-align: left;
-        color: #0049a8;    }
+        color: #0049a8;
+    }
 
     h2 {
         color: #0049a8;
@@ -132,7 +134,11 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    justify-content: end;
+    justify-content: center;
+}
+
+.bottom_head_section {
+    margin-top: 30px;
 }
 
 
@@ -167,7 +173,8 @@ body {
         font-weight: 400;
         line-height: 28.8px;
         text-align: left;
-        color: #0049a8;    }
+        color: #0049a8;
+    }
 
     h2 {
         color: #0049a8;
@@ -262,7 +269,8 @@ body {
 
 .what_we_head {
     h1 {
-        color: #0049a8;        font-size: 32px;
+        color: #0049a8;
+        font-size: 32px;
         font-weight: 600;
         line-height: 38.4px;
         text-align: center;
@@ -295,7 +303,8 @@ body {
     padding-top: 2rem;
 
     h1 {
-        color: #0049a8;        font-size: 32px;
+        color: #0049a8;
+        font-size: 32px;
         font-weight: 600;
         line-height: 38.4px;
         text-align: left;
@@ -334,9 +343,9 @@ a {
     background-color: #ffffff00;
     border-radius: 30px;
     text-decoration: none;
-    color: #2f7483;
-    border: 1px solid #2f7483;
-    font-size: 24px;
+    color: #0049a8;
+    border: 1px solid #0049a8;
+    font-size: 20px;
     font-weight: 400;
     line-height: 28.8px;
     text-align: center;
@@ -356,7 +365,8 @@ a {
 
 .section_title {
     margin: 0 auto;
-    color: #0049a8;    font-size: 32px;
+    color: #0049a8;
+    font-size: 32px;
     font-weight: 600;
     line-height: 38.4px;
     text-align: center;
@@ -370,6 +380,7 @@ a {
     border-radius: 30px;
     overflow: hidden;
     transition: all 0.2s;
+    position: relative;
 }
 
 .service_card:hover {
@@ -415,7 +426,8 @@ a {
     }
 
     p {
-        color: #0049a8;        font-size: 16px;
+        color: #0049a8;
+        font-size: 16px;
         font-weight: 400;
         line-height: 19.2px;
         text-align: left;
@@ -451,9 +463,9 @@ a {
 
     h1 {
         color: #0049a8;
-        font-size: 24px;
-        font-weight: 400;
-        line-height: 28.8px;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 20px;
         padding: 0 !important;
         text-align: left;
         margin-bottom: 2rem;
@@ -461,7 +473,8 @@ a {
     }
 
     p {
-        color: #0049a8;        font-size: 16px;
+        color: #0049a8;
+        font-size: 16px;
         font-weight: 400;
         line-height: 19.2px;
         text-align: left;
@@ -488,7 +501,8 @@ a {
     }
 
     p {
-        color: #0049a8;        font-size: 16px;
+        color: #0049a8;
+        font-size: 16px;
         font-weight: 400;
         line-height: 19.2px;
         text-align: left;
@@ -508,7 +522,7 @@ a {
 .firstDot {
     position: absolute;
     top: -20px;
-    left: -15px;
+    left: 0;
 }
 
 .secondDot {
@@ -646,9 +660,9 @@ a {
 
     h1 {
         color: #0049a8;
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 400;
-        line-height: 24px;
+        line-height: 22px;
         text-align: left;
         width: 157px;
         margin-bottom: 1rem;
@@ -666,7 +680,8 @@ a {
     border: none;
     width: calc(50% - 32px);
     background-color: white;
-    color: #0049a8;    font-size: 16px;
+    color: #0049a8;
+    font-size: 16px;
     font-weight: 400;
     line-height: 19.2px;
     padding: 16px 20px;
@@ -675,7 +690,8 @@ a {
 }
 
 .form_input::placeholder {
-    color: #0049a8;    font-size: 16px;
+    color: #0049a8;
+    font-size: 16px;
     font-weight: 400;
     line-height: 19.2px;
     padding: 16px 20px;
@@ -700,9 +716,10 @@ a {
 .form_textarea {
     border: none;
 
-    width: 100%;
+    width: 96%;
     background-color: white;
-    color: #0049a8;    font-size: 16px;
+    color: #0049a8;
+    font-size: 16px;
     font-weight: 400;
     line-height: 19.2px;
     padding: 16px 20px;
@@ -711,7 +728,8 @@ a {
 }
 
 .form_textarea::placeholder {
-    color: #0049a8;    font-size: 16px;
+    color: #0049a8;
+    font-size: 16px;
     font-weight: 400;
     line-height: 19.2px;
     padding: 16px 20px;
@@ -771,7 +789,8 @@ a {
 }
 
 .maps_map {
-    border: 1px solid #0049a8;    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+    border: 1px solid #0049a8;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
     border-radius: 24px;
     overflow: hidden;
     width: 80%;
@@ -854,7 +873,8 @@ footer {
         font-weight: 600;
         line-height: 48px;
         text-align: left;
-        color: #0049a8;    }
+        color: #0049a8;
+    }
 
     p {
         font-size: 20px;
@@ -887,7 +907,7 @@ footer {
 
 .stambul_text {
     padding: 0 48px;
-    color: #53ACBF;
+    color: #0049a8;
 }
 
 .user_section {
@@ -910,7 +930,8 @@ footer {
         font-weight: 400;
         line-height: 28.8px;
         text-align: left;
-        color: #0049a8;    }
+        color: #0049a8;
+    }
 
     p {
         color: #0049a8;
@@ -1006,7 +1027,8 @@ footer {
     }
 
     h1 {
-        color: #0049a8;        font-size: 32px;
+        color: #0049a8;
+        font-size: 32px;
         font-weight: 600;
         line-height: 38.4px;
         text-align: center;
@@ -1115,7 +1137,8 @@ footer {
 
     h1 {
 
-        color: #0049a8;        font-size: 32px;
+        color: #0049a8;
+        font-size: 32px;
         font-weight: 600;
         line-height: 38.4px;
         text-align: center;
@@ -1163,7 +1186,8 @@ footer {
     padding: 23px 32px;
 
     h1 {
-        color: #0049a8;        font-size: 24px;
+        color: #0049a8;
+        font-size: 24px;
         font-weight: 600;
         line-height: 28.8px;
         text-align: left;
@@ -1189,7 +1213,8 @@ ul {
 }
 
 li {
-    color: #0049a8;    font-size: 24px;
+    color: #0049a8;
+    font-size: 24px;
     font-weight: 400;
     line-height: 28.8px;
     text-align: justified;
@@ -1206,7 +1231,8 @@ li {
     h1 {
         margin: 0 auto;
         text-align: center;
-        color: #0049a8;        font-size: 24px;
+        color: #0049a8;
+        font-size: 24px;
         font-weight: 600;
         line-height: 28.8px;
         text-align: left;
@@ -1215,7 +1241,8 @@ li {
 }
 
 .adresses_list_item {
-    border: 2px solid #0049a8;    border-radius: 8px;
+    border: 2px solid #0049a8;
+    border-radius: 8px;
     padding: 28px 64px;
 }
 
@@ -1294,7 +1321,8 @@ li {
     }
 
     h2 {
-        color: #0049a8;        font-size: 24px;
+        color: #0049a8;
+        font-size: 24px;
         font-weight: 600;
         line-height: 28.8px;
         text-align: left;
@@ -1317,7 +1345,8 @@ li {
 
 .main_title {
     h1 {
-        color: #0049a8;        font-size: 32px;
+        color: #0049a8;
+        font-size: 32px;
         font-weight: 600;
         line-height: 38.4px;
         text-align: left;
@@ -1325,7 +1354,8 @@ li {
     }
 
     p {
-        color: #0049a8;        font-size: 20px;
+        color: #0049a8;
+        font-size: 20px;
         font-weight: 400;
         line-height: 24px;
         text-align: justified;
@@ -1353,10 +1383,12 @@ li {
         font-weight: 600;
         line-height: 38.4px;
         text-align: left;
-        color: #0049a8;    }
+        color: #0049a8;
+    }
 
     p {
-        color: #0049a8;        font-size: 16px;
+        color: #0049a8;
+        font-size: 16px;
         font-weight: 400;
         line-height: 19.2px;
         text-align: left;
@@ -1387,7 +1419,8 @@ li {
         line-height: 28.8px;
         text-align: center;
 
-        color: #0049a8;    }
+        color: #0049a8;
+    }
 }
 
 .what_we_after_list {
@@ -1400,14 +1433,16 @@ li {
 .what_we_after_list_item {
     min-width: 30%;
     border-radius: 16px;
-    border: 1px solid #0049a8;    display: flex;
+    border: 1px solid #0049a8;
+    display: flex;
     align-items: center;
     padding: 1rem;
     gap: 1rem;
     flex-grow: 1;
 
     p {
-        color: #0049a8;        font-size: 16px;
+        color: #0049a8;
+        font-size: 16px;
         font-weight: 400;
         line-height: 19.2px;
         text-align: left;
@@ -1418,7 +1453,8 @@ li {
 
 .selected_item {
     h1 {
-        color: #0049a8;        font-size: 32px;
+        color: #0049a8;
+        font-size: 32px;
         font-weight: 600;
         line-height: 38.4px;
         text-align: center;
@@ -1426,7 +1462,8 @@ li {
     }
 
     p {
-        color: #0049a8;        font-size: 20px;
+        color: #0049a8;
+        font-size: 20px;
         font-weight: 400;
         line-height: 24px;
         text-align: justified;
@@ -1472,7 +1509,7 @@ li {
 
 .bgwhitesame {
     padding: 4rem 0;
-    background-color: rgba(207, 125, 78, 0.08);
+    /* background-color: rgba(207, 125, 78, 0.08); */
 }
 
 .emploses_main {
@@ -1489,7 +1526,7 @@ li {
 .emploses_main_card {
     border-radius: 24px;
     background-color: white;
-
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
     padding: 40px;
 
     h1 {
@@ -1503,7 +1540,8 @@ li {
     }
 
     p {
-        color: #0049a8;        font-size: 16px;
+        color: #0049a8;
+        font-size: 16px;
         font-weight: 400;
         line-height: 19.2px;
         text-align: left;
@@ -1537,7 +1575,9 @@ li {
     justify-content: end;
 
     button {
-        color: #0049a8;        border: 1px solid #0049a8;        height: 35px;
+        color: #0049a8;
+        border: 1px solid #0049a8;
+        height: 35px;
         border-radius: 35px;
         background-color: white;
         padding: 8px 24px;
@@ -1649,7 +1689,8 @@ li {
     }
 
     p {
-        color: #0049a8;        font-size: 20px;
+        color: #0049a8;
+        font-size: 20px;
         font-weight: 400;
         line-height: 24px;
         text-align: left;
@@ -1676,7 +1717,8 @@ li {
     max-width: 550px;
 
     h1 {
-        color: #0049a8;        font-size: 32px;
+        color: #0049a8;
+        font-size: 32px;
         font-weight: 600;
         line-height: 38.4px;
         text-align: left;
@@ -1684,7 +1726,8 @@ li {
     }
 
     p {
-        color: #0049a8;        font-size: 16px;
+        color: #0049a8;
+        font-size: 16px;
         font-weight: 400;
         line-height: 19.2px;
         text-align: justified;
@@ -1692,7 +1735,8 @@ li {
     }
 
     h4 {
-        color: #0049a8;        font-size: 16px;
+        color: #0049a8;
+        font-size: 16px;
         font-weight: 400;
         line-height: 19.2px;
         text-align: justified;
@@ -1702,7 +1746,8 @@ li {
 
 .blue_line {
     max-width: 600px;
-    border: 1px solid #0049a8;    margin: 60px 0;
+    border: 1px solid #0049a8;
+    margin: 60px 0;
 }
 
 .mobile_nav {
@@ -1726,14 +1771,16 @@ li {
         margin: 1rem 0;
 
         a {
-            color: #0049a8;            font-size: 16px;
+            color: #0049a8;
+            font-size: 16px;
             font-weight: 400;
             line-height: 19.2px;
             text-align: left;
         }
 
         .active {
-            color: #0049a8;        }
+            color: #0049a8;
+        }
     }
 
 }
@@ -1791,7 +1838,8 @@ li {
     padding: 24px;
 
     p {
-        color: #0049a8;        font-size: 16px;
+        color: #0049a8;
+        font-size: 16px;
         font-weight: 400;
         line-height: 19.2px;
         text-align: left;
@@ -1803,7 +1851,7 @@ li {
     min-width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #2f7483;
+    background-color: #0049a8;
     color: white;
     display: flex;
     align-items: center;
@@ -1949,7 +1997,8 @@ li {
 }
 
 #reviewDate {
-    color: #0049a8;    font-size: 16px;
+    color: #0049a8;
+    font-size: 16px;
     font-weight: 400;
     line-height: 19.2px;
     text-align: left;
@@ -2003,7 +2052,8 @@ li {
 
 .real_revue_title h1 {
     padding: 60px;
-    color: #0049a8;    font-size: 32px;
+    color: #0049a8;
+    font-size: 32px;
     font-weight: 600;
     line-height: 38.4px;
     text-align: center;
@@ -2031,7 +2081,8 @@ li {
     }
 
     span {
-        color: #0049a8;        font-size: 16px;
+        color: #0049a8;
+        font-size: 16px;
         font-weight: 400;
         line-height: 19.2px;
         text-align: left;
@@ -2057,7 +2108,8 @@ li {
     padding-bottom: 60px;
 
     h1 {
-        color: #0049a8;        font-size: 32px;
+        color: #0049a8;
+        font-size: 32px;
         font-weight: 600;
         line-height: 38.4px;
         text-align: center;
@@ -2076,7 +2128,8 @@ li {
 
     textarea::placeholder,
     input::placeholder {
-        color: #0049a8;        font-size: 16px;
+        color: #0049a8;
+        font-size: 16px;
         font-weight: 400;
         line-height: 19.2px;
         text-align: left;
@@ -3186,23 +3239,23 @@ li {
         grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
         gap: 20px;
     }
-    
+
     .scientific-work-header h1 {
         font-size: 28px;
     }
-    
+
     .scientific-work-subtitle {
         font-size: 24px;
     }
-    
+
     .scientific-work-intro {
         font-size: 16px;
     }
-    
+
     .scientific-material-image {
         height: 180px;
     }
-    
+
     .scientific-material-info h3 {
         font-size: 16px;
     }
@@ -3212,11 +3265,11 @@ li {
     .scientific-materials-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .scientific-work-container {
         padding: 20px 0;
     }
-    
+
     .scientific-work-section {
         margin-bottom: 40px;
     }

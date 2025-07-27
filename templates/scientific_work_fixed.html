@@ -1,0 +1,348 @@
+{% extends 'include/homepage.html' %}
+{% load static %}
+{% block content%}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'assets/css/scientific_animations.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/image_lightbox.css' %}">
+<script src="{% static 'assets/js/scientific_work.js' %}"></script>
+<script src="{% static 'assets/js/pdf_downloader.js' %}"></script>
+<script src="{% static 'assets/js/scientific_animations.js' %}"></script>
+<script src="{% static 'assets/js/image_lightbox.js' %}"></script>
+{% endblock %}
+
+    {% include 'include/header.html'%}
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const mobilebtn = document.getElementById("mobilebtn");
+            const closebtn = document.getElementById("closebtn");
+            const mobile_nav = document.getElementById("mobile_nav");
+
+            if (mobilebtn) {
+                mobilebtn.addEventListener("click", () => {
+                    mobile_nav.classList.add("open"); // Открыть меню
+                });
+            }
+
+            if (closebtn) {
+                closebtn.addEventListener("click", () => {
+                    mobile_nav.classList.remove("open"); // Закрыть меню
+                });
+            }
+        });
+    </script>
+    
+    <main class="container scientific-work-container">
+        <!-- Заголовок страницы -->
+        <section class="scientific-work-header">
+            <h1 class="section_title">{% if scientific_intro %}{{ scientific_intro.title }}{% else %}Научная работа{% endif %}</h1>
+            <div class="scientific-work-intro">
+                {% if scientific_intro %}
+                    {{ scientific_intro.content|safe }}
+                {% else %}
+                    <p>«РеаЦентр» является клинической базой Медицинского университета РЕАВИЗ. Наши врачи-рефлексотерапевты проводят учебно-методическую работу для врачей рефлексотерапевтов и детских неврологов совместно с Медицинскими университетами.</p>
+                {% endif %}
+            </div>
+        </section>
+
+        <!-- Навигация по странице -->
+        <section class="scientific-work-navigation">
+            <h2 class="scientific-work-subtitle">Содержание</h2>
+            <div class="scientific-work-nav-links">
+                <a href="#manuals" class="scientific-work-nav-link">Учебно-методические пособия</a>
+                <a href="#patents" class="scientific-work-nav-link">Патенты</a>
+                <a href="#permissions" class="scientific-work-nav-link">Свидетельства и разрешения</a>
+                <a href="#publications" class="scientific-work-nav-link">Научные публикации</a>
+                <a href="#journals" class="scientific-work-nav-link">Журналы</a>
+            </div>
+        </section>
+
+        <!-- Секция с учебно-методическими пособиями -->
+        <section id="manuals" class="scientific-work-section">
+            <h2 class="scientific-work-subtitle">Учебно-методические пособия</h2>
+            <div class="scientific-materials-grid">
+                {% if scientific_manuals %}
+                    {% for manual in scientific_manuals %}
+                    <div class="scientific-material-card">
+                        <div class="scientific-material-image">
+                            <img src="{{ manual.image.url }}" alt="{{ manual.title }}">
+                        </div>
+                        <div class="scientific-material-info">
+                            <h3>{{ manual.title }}</h3>
+                            <p>{{ manual.description }}</p>
+                            <a href="javascript:void(0)" class="download-btn" data-pdf="{{ manual.pdf_file.url }}" data-title="{{ manual.title|slugify }}.pdf">Скачать</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <!-- Пособие 1 -->
+                    <div class="scientific-material-card">
+                        <div class="scientific-material-image">
+                            <img src="{% static 'assets/images/scientific/book1.jpg' %}" alt="Миотоновая рефлексотерапия">
+                        </div>
+                        <div class="scientific-material-info">
+                            <h3>Миотоновая рефлексотерапия</h3>
+                            <p>Учебно-методическое пособие для врачей</p>
+                            <a href="javascript:void(0)" class="download-btn" data-pdf="{% static 'assets/documents/scientific/myotonova.pdf' %}" data-title="Миотоновая_рефлексотерапия.pdf">Скачать</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Пособие 2 -->
+                    <div class="scientific-material-card">
+                        <div class="scientific-material-image">
+                            <img src="{% static 'assets/images/scientific/book2.jpg' %}" alt="Электропунктурная диагностика">
+                        </div>
+                        <div class="scientific-material-info">
+                            <h3>Электропунктурная диагностика</h3>
+                            <p>Учебно-методическое пособие для врачей</p>
+                            <a href="javascript:void(0)" class="download-btn" data-pdf="{% static 'assets/documents/scientific/electropuncture.pdf' %}" data-title="Электропунктурная_диагностика.pdf">Скачать</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Пособие 3 -->
+                    <div class="scientific-material-card">
+                        <div class="scientific-material-image">
+                            <img src="{% static 'assets/images/scientific/book3.jpg' %}" alt="Система реабилитации">
+                        </div>
+                        <div class="scientific-material-info">
+                            <h3>Система реабилитации</h3>
+                            <p>Учебно-методическое пособие для врачей</p>
+                            <a href="javascript:void(0)" class="download-btn" data-pdf="{% static 'assets/documents/scientific/rehabilitation.pdf' %}" data-title="Система_реабилитации.pdf">Скачать</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Пособие 4 -->
+                    <div class="scientific-material-card">
+                        <div class="scientific-material-image">
+                            <img src="{% static 'assets/images/scientific/book4.jpg' %}" alt="Аутизм у детей">
+                        </div>
+                        <div class="scientific-material-info">
+                            <h3>Аутизм у детей</h3>
+                            <p>Клиника, диагностика, коррекция</p>
+                            <a href="javascript:void(0)" class="download-btn" data-pdf="{% static 'assets/documents/scientific/autism.pdf' %}" data-title="Аутизм_у_детей.pdf">Скачать</a>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </section>
+
+        <!-- Секция с патентами -->
+        <section id="patents" class="scientific-work-section">
+            <h2 class="scientific-work-subtitle">Патенты</h2>
+            <div class="scientific-materials-grid">
+                {% if scientific_patents %}
+                    {% for patent in scientific_patents %}
+                    <div class="scientific-material-card patent-card">
+                        <div class="scientific-material-image">
+                            <img src="{{ patent.image.url }}" alt="Патент №{{ patent.patent_number }}">
+                        </div>
+                        <div class="scientific-material-info">
+                            <h3>Патент №{{ patent.patent_number }}</h3>
+                            <p>{{ patent.description }}</p>
+                            <a href="javascript:void(0)" class="download-btn" data-pdf="{{ patent.pdf_file.url }}" data-title="Патент_{{ patent.patent_number }}.pdf">Скачать</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <!-- Патент 1 -->
+                    <div class="scientific-material-card patent-card">
+                        <div class="scientific-material-image">
+                            <img src="{% static 'assets/images/scientific/patent1.jpg' %}" alt="Патент №1230537">
+                        </div>
+                        <div class="scientific-material-info">
+                            <h3>Патент №1230537</h3>
+                            <p>Способ лечения заикания</p>
+                            <a href="javascript:void(0)" class="download-btn" data-pdf="{% static 'assets/documents/scientific/patents/patent1230537.pdf' %}" data-title="Патент_1230537.pdf">Скачать</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Патент 2 -->
+                    <div class="scientific-material-card patent-card">
+                        <div class="scientific-material-image">
+                            <img src="{% static 'assets/images/scientific/patent2.jpg' %}" alt="Патент №2833894">
+                        </div>
+                        <div class="scientific-material-info">
+                            <h3>Патент №2833894</h3>
+                            <p>Способ лечения заикания</p>
+                            <a href="javascript:void(0)" class="download-btn" data-pdf="{% static 'assets/documents/scientific/patents/patent2833894.pdf' %}" data-title="Патент_2833894.pdf">Скачать</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Патент 3 -->
+                    <div class="scientific-material-card patent-card">
+                        <div class="scientific-material-image">
+                            <img src="{% static 'assets/images/scientific/patent3.jpg' %}" alt="Патент №2718754">
+                        </div>
+                        <div class="scientific-material-info">
+                            <h3>Патент №2718754</h3>
+                            <p>Способ лечения расстройств аутистического спектра</p>
+                            <a href="javascript:void(0)" class="download-btn" data-pdf="{% static 'assets/documents/scientific/patents/patent2718754.pdf' %}" data-title="Патент_2718754.pdf">Скачать</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Патент 4 -->
+                    <div class="scientific-material-card patent-card">
+                        <div class="scientific-material-image">
+                            <img src="{% static 'assets/images/scientific/patent4.jpg' %}" alt="Патент №2401097">
+                        </div>
+                        <div class="scientific-material-info">
+                            <h3>Патент №2401097</h3>
+                            <p>Способ лечения для церебрального паралича</p>
+                            <a href="javascript:void(0)" class="download-btn" data-pdf="{% static 'assets/documents/scientific/patents/patent2401097.pdf' %}" data-title="Патент_2401097.pdf">Скачать</a>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </section>
+
+        <!-- Секция с разрешениями -->
+        <section id="permissions" class="scientific-work-section">
+            <h2 class="scientific-work-subtitle">Свидетельства и Разрешения</h2>
+            <div class="scientific-materials-grid">
+                {% if scientific_permissions or scientific_certificates %}
+                    {% for permission in scientific_permissions %}
+                    <div class="scientific-material-card permission-card">
+                        <div class="scientific-material-image">
+                            <img src="{{ permission.image.url }}" alt="{{ permission.title }}">
+                        </div>
+                        <div class="scientific-material-info">
+                            <h3>{{ permission.title }}</h3>
+                            <p>{{ permission.description }}</p>
+                            <a href="javascript:void(0)" class="download-btn" data-pdf="{{ permission.pdf_file.url }}" data-title="{{ permission.title|slugify }}.pdf">Скачать</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+                    {% for certificate in scientific_certificates %}
+                    <div class="scientific-material-card permission-card">
+                        <div class="scientific-material-image">
+                            <img src="{{ certificate.image.url }}" alt="{{ certificate.title }}">
+                        </div>
+                        <div class="scientific-material-info">
+                            <h3>{{ certificate.title }}</h3>
+                            <p>{{ certificate.description }}</p>
+                            <a href="javascript:void(0)" class="download-btn" data-pdf="{{ certificate.pdf_file.url }}" data-title="{{ certificate.title|slugify }}.pdf">Скачать</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <!-- Разрешение 1 -->
+                    <div class="scientific-material-card permission-card">
+                        <div class="scientific-material-image">
+                            <img src="{% static 'assets/images/scientific/permission1.jpg' %}" alt="Разрешение">
+                        </div>
+                        <div class="scientific-material-info">
+                            <h3>Разрешение</h3>
+                            <p>На применение методики</p>
+                            <a href="javascript:void(0)" class="download-btn" data-pdf="{% static 'assets/documents/scientific/permissions/permission1.pdf' %}" data-title="Разрешение_на_применение_методики.pdf">Скачать</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Разрешение 2 -->
+                    <div class="scientific-material-card permission-card">
+                        <div class="scientific-material-image">
+                            <img src="{% static 'assets/images/scientific/permission2.jpg' %}" alt="Разрешение">
+                        </div>
+                        <div class="scientific-material-info">
+                            <h3>Разрешение</h3>
+                            <p>На применение методики</p>
+                            <a href="javascript:void(0)" class="download-btn" data-pdf="{% static 'assets/documents/scientific/permissions/permission2.pdf' %}" data-title="Разрешение_на_применение_методики_2.pdf">Скачать</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Свидетельство -->
+                    <div class="scientific-material-card permission-card">
+                        <div class="scientific-material-image">
+                            <img src="{% static 'assets/images/scientific/certificate.jpg' %}" alt="Свидетельство">
+                        </div>
+                        <div class="scientific-material-info">
+                            <h3>Свидетельство</h3>
+                            <p>О регистрации методики</p>
+                            <a href="javascript:void(0)" class="download-btn" data-pdf="{% static 'assets/documents/scientific/permissions/certificate.pdf' %}" data-title="Свидетельство_о_регистрации.pdf">Скачать</a>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </section>
+
+        <!-- Секция с публикациями -->
+        <section id="publications" class="scientific-work-section">
+            <h2 class="scientific-work-subtitle">Опубликованные научные и клинические исследования</h2>
+            <p class="scientific-work-description">
+                Результаты клинических исследований с применением МИОТОНОВОЙ РЕФЛЕКСОТЕРАПИИ у детей с органическими поражениями ЦНС и задержкой развития. Опубликованы в рецензируемых научных журналах ВАК и размещены в РИНЦ.
+            </p>
+            <div class="scientific-materials-grid">
+                {% if scientific_publications %}
+                    {% for publication in scientific_publications %}
+                    <div class="scientific-material-card publication-card">
+                        <div class="scientific-material-image">
+                            <img src="{{ publication.image.url }}" alt="{{ publication.title }}">
+                        </div>
+                        <div class="scientific-material-info">
+                            <h3>{{ publication.title }}</h3>
+                            <p>{{ publication.description }}</p>
+                            <a href="javascript:void(0)" class="download-btn" data-pdf="{{ publication.pdf_file.url }}" data-title="{{ publication.title|slugify }}.pdf">Скачать</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <!-- Здесь можно добавить статичные публикации при необходимости -->
+                {% endif %}
+            </div>
+        </section>
+
+        <!-- Секция с журналами -->
+        <section id="journals" class="scientific-work-section">
+            <h2 class="scientific-work-subtitle">Научные журналы</h2>
+            <div class="scientific-materials-grid">
+                {% if scientific_journals %}
+                    {% for journal in scientific_journals %}
+                    <div class="scientific-material-card journal-card">
+                        <div class="scientific-material-image">
+                            <img src="{{ journal.image.url }}" alt="{{ journal.title }}">
+                        </div>
+                        <div class="scientific-material-info">
+                            <h3>{{ journal.title }}</h3>
+                            {% if journal.pdf_file %}
+                            <a href="javascript:void(0)" class="download-btn" data-pdf="{{ journal.pdf_file.url }}" data-title="{{ journal.title|slugify }}.pdf">Скачать PDF</a>
+                            {% else %}
+                            <a href="#" class="download-btn">Скачать PDF</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <!-- Здесь можно добавить статичные журналы при необходимости -->
+                {% endif %}
+            </div>
+        </section>
+    </main>
+
+    <!-- Кнопка "Вернуться наверх" -->
+    <div id="back-to-top" class="back-to-top">
+        <a href="#" title="Вернуться наверх">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 19V5"/>
+                <path d="m5 12 7-7 7 7"/>
+            </svg>
+        </a>
+    </div>
+
+    <script>
+        // Скрипт для кнопки "Вернуться наверх"
+        document.addEventListener('DOMContentLoaded', function() {
+            var backToTop = document.getElementById('back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('show');
+                } else {
+                    backToTop.classList.remove('show');
+                }
+            });
+        });
+    </script>
+
+    {% include 'include/footer.html'%}
+
+{% endblock %}

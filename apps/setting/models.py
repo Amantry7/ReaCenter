@@ -16,7 +16,7 @@ class Treat(models.Model):
         blank=True, null=True
     )
 
-    descrition = RichTextUploadingField(
+    description = RichTextUploadingField(
         verbose_name='Описание',
         blank=True,
         null=True

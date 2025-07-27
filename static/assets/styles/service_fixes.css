@@ -20,21 +20,25 @@
 .service_card_desc {
     padding: 24px;
     display: flex;
-    align-items: flex-start; /* Changed to flex-start to show text from top */
+    align-items: flex-start;
+    /* Changed to flex-start to show text from top */
     justify-content: space-between;
     gap: 10px;
-    min-height: 150px; /* Changed from fixed height to minimum height */
-    position: relative; /* For absolute positioning of button */
-    padding-bottom: 60px; /* Extra padding at bottom for button */
+    min-height: 150px;
+    /* Changed from fixed height to minimum height */
+    padding-bottom: 60px;
+    /* Extra padding at bottom for button */
 }
 
 /* Improve text display in service cards */
-.service_card_desc > div {
+.service_card_desc>div {
     flex: 1;
-    overflow: visible; /* Changed from hidden to visible */
+    overflow: visible;
+    /* Changed from hidden to visible */
     display: flex;
     flex-direction: column;
-    height: auto; /* Changed from 100% to auto */
+    height: auto;
+    /* Changed from 100% to auto */
 }
 
 /* Ensure text is properly displayed */
@@ -59,31 +63,33 @@
 @media (max-width: 768px) {
     .service_card_desc {
         padding: 15px;
-        min-height: 120px; /* Adjusted minimum height on mobile */
-        padding-bottom: 50px; /* Space for button */
+        min-height: 120px;
+        /* Adjusted minimum height on mobile */
+        padding-bottom: 50px;
+        /* Space for button */
     }
-    
+
     .next_btn {
         min-width: 30px;
         min-height: 30px;
     }
-    
+
     .next_btn svg {
         width: 30px;
         height: 30px;
     }
-    
+
     .service_card_desc .next_btn {
         right: 15px;
         bottom: 15px;
     }
-    
+
     /* Smaller text on mobile */
     .service_card_desc h1 {
         font-size: 20px;
         margin-bottom: 8px;
     }
-    
+
     .service_card_desc p {
         font-size: 14px;
     }
