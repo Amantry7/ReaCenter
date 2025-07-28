@@ -3,6 +3,8 @@
 {% block content%}
     <!-- Add animation styles -->
     <link rel="stylesheet" href="{% static 'assets/styles/animations.css' %}">
+    <!-- Add slider styles -->
+    <link rel="stylesheet" href="{% static 'assets/styles/slider.css' %}">
     <!-- Add animation script -->
     <script src="{% static 'assets/js/animations.js' %}" defer></script>
 
@@ -23,42 +25,35 @@
 
     </script>
     <main>
-        <section class="head_section container">
-            <div class="top_head_section">
-                <div class="top_head_section_left">
-                    <div class="bottom_head_section_list_item noneINDesk">
-                        <img src="{% static 'assets/images/Group.svg' %}" alt="">
-                        <h2>
-                            Метод успешно применяется
-                            при лечении неврологических
-                            нарушений у детей свыше 30 лет
-                        </h2>
+        <section class="head_section">
+            <div class="full-width-slider-container">
+                <div class="swiper-main">
+                    <div class="swiper-wrapper">
+                        {% for slide in slider %}
+                        <div class="swiper-slide">
+                            <img class="slide-bg-image" src="{{ slide.image.url }}" alt="{% if slide.title %}{{ slide.title }}{% else %}Слайд{% endif %}">
+                            <div class="slide-content">
+                                <div class="slide-text">
+                                    <h1 class="slide-title slide-in-left">{% if slide.title %}{{ slide.title }}{% else %}Лечение детей <br>с задержками развития{% endif %}</h1>
+                                    <h2 class="slide-subtitle slide-in-right">{% if slide.subtitle %}{{ slide.subtitle }}{% else %}нарушениями психической двигательной систем и другими патологиями ЦНС{% endif %}</h2>
+                                    <a href="https://wa.me/996552353737" target="_blank" class="button">
+                                        Записаться
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="10" viewBox="0 0 15 10" fill="none">
+                                            <path d="M7.56968 0.0749141C7.37592 0.180113 7.25512 0.380149 7.25512 0.597719V3.98559H0.608039C0.272401 3.98559 0 4.25337 0 4.58331C0 4.91325 0.272401 5.18103 0.608039 5.18103H7.25512V8.5689C7.25512 8.78727 7.37592 8.98731 7.56968 9.09171C7.76344 9.19771 8.00017 9.19053 8.18745 9.07497L14.6213 5.08938C14.798 4.9794 14.9051 4.78893 14.9051 4.58331C14.9051 4.3777 14.798 4.18722 14.6213 4.07724L8.18745 0.0916503C8.08854 0.0310814 7.97585 0 7.86316 0C7.76263 0 7.66129 0.0255027 7.56968 0.0749141Z" fill="white" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
                     </div>
-                    <h1 class="slide-in-left">
-                        Лечение детей <br>
-                        с задержками развития,
-                    </h1>
-                    <h2 class="slide-in-right">
-                        нарушениями психической двигательной систем и другими патологиями ЦНС
-                    </h2>
-                    <a href="https://wa.me/996552353737" target="_blank" class="button">
-                        Записаться
-                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="10" viewBox="0 0 15 10" fill="none">
-                            <path
-                                d="M7.56968 0.0749141C7.37592 0.180113 7.25512 0.380149 7.25512 0.597719V3.98559H0.608039C0.272401 3.98559 0 4.25337 0 4.58331C0 4.91325 0.272401 5.18103 0.608039 5.18103H7.25512V8.5689C7.25512 8.78727 7.37592 8.98731 7.56968 9.09171C7.76344 9.19771 8.00017 9.19053 8.18745 9.07497L14.6213 5.08938C14.798 4.9794 14.9051 4.78893 14.9051 4.58331C14.9051 4.3777 14.798 4.18722 14.6213 4.07724L8.18745 0.0916503C8.08854 0.0310814 7.97585 0 7.86316 0C7.76263 0 7.66129 0.0255027 7.56968 0.0749141Z"
-                                fill="white" />
-                        </svg>
-                    </a>
+                    <!-- Navigation buttons -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <!-- Pagination -->
+                    <div class="swiper-pagination"></div>
                 </div>
-                <div class="top_head_section_right">
-                    <div class="swiper">
-                        {% if main_slider %}
-                            <img src="{{ main_slider.image.url }}" alt="{% if main_slider.title %}{{ main_slider.title }}{% else %}Слайд{% endif %}">
-                        {% else %}
-                            <img src="{% static 'assets/images/slider main.png' %}" alt="">
-                        {% endif %}
-                    </div>
-                </div>
+            </div>
             </div>
             <br>
             <div class="bottom_head_section">

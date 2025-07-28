@@ -1,0 +1,159 @@
+/* Full-width Slider Styles */
+.full-width-slider-container {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.swiper-main {
+    width: 100vw;
+    height: 500px;
+    border-radius: 0;
+    overflow: hidden;
+    position: relative;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+}
+
+.swiper-main .swiper-slide {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 20px;
+}
+
+/* Slide content layout */
+.slide-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.slide-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+    padding: 0 20px;
+    max-width: 50%;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    margin: 20px;
+}
+
+/* Full-width background image */
+.slide-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    transition: transform 0.8s ease;
+}
+
+.swiper-main .swiper-slide-active .slide-bg-image {
+    transform: scale(1.05);
+}
+
+/* Text styling */
+.slide-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #0049a8;
+}
+
+.slide-subtitle {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* Navigation Arrows */
+.swiper-main .swiper-button-next,
+.swiper-main .swiper-button-prev {
+    color: #fff;
+    background: rgba(0, 73, 168, 0.7);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.swiper-main .swiper-button-next:after,
+.swiper-main .swiper-button-prev:after {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.swiper-main .swiper-button-next:hover,
+.swiper-main .swiper-button-prev:hover {
+    background: rgba(0, 73, 168, 1);
+    transform: scale(1.1);
+}
+
+/* Pagination */
+.swiper-main .swiper-pagination {
+    position: absolute;
+    bottom: 15px !important;
+}
+
+.swiper-main .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.swiper-main .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #0049a8;
+    width: 20px;
+    border-radius: 5px;
+}
+
+/* Slide animations */
+.swiper-main .swiper-slide {
+    opacity: 0.7;
+    transition: opacity 0.5s ease;
+}
+
+.swiper-main .swiper-slide-active {
+    opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .swiper-main .swiper-button-next,
+    .swiper-main .swiper-button-prev {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .swiper-main .swiper-button-next:after,
+    .swiper-main .swiper-button-prev:after {
+        font-size: 14px;
+    }
+    
+    .swiper-main .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .swiper-main .swiper-pagination-bullet-active {
+        width: 16px;
+    }
+}

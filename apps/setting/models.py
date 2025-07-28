@@ -306,3 +306,27 @@ class MainSlider(models.Model):
     class Meta:
         verbose_name = 'Слайд главной страницы'
         verbose_name_plural = 'Слайд главной страницы'
+
+
+class Slider(models.Model):
+    title = models.CharField(
+        max_length=255,
+        verbose_name='Заголовок',
+        blank=True, null=True
+    )
+    subtitle = models.CharField(
+        max_length=255,
+        verbose_name='Подзаголовок',
+        blank=True, null=True
+    )
+    image = models.ImageField(
+        upload_to='slider/',
+        verbose_name='Изображение слайдера'
+    )
+    
+    def __str__(self):
+        return self.title if self.title else 'Слайд главной страницы'
+    
+    class Meta:
+        verbose_name = 'Слайд'
+        verbose_name_plural = 'Слайды'

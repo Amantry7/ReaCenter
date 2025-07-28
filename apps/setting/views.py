@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 
-from apps.setting.models import Treat, Service, Reviews, TreatResult, Employe, VideoReview, WriteReview, Setting, MainSlider
+from apps.setting.models import Treat, Service, Reviews, TreatResult, Employe, VideoReview, WriteReview, Setting, MainSlider, Slider
 from apps.secondary.models import Consultation
 # Create your views here.
 
@@ -14,6 +14,7 @@ def index(request):
         main_slider = MainSlider.objects.first()
     except MainSlider.DoesNotExist:
         main_slider = None
+    slider = Slider.objects.all()
     return render(request, 'base/index.html', locals())
 
 
