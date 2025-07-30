@@ -20,72 +20,39 @@
     <main>
         <section class="video_section">
             <h1>Видео отзывы</h1>
-            <div class="swiper-container2">
-                <div class="swiper-wrapper">
-                    {% for video in video_review %}
-                    <div class="swiper-slide">
-                        <div class="video_card" data-video-id="{{ video.video|slice:'-11:' }}">
-                            <div class="video_card_image">
-                                <img src="{{ video.banner.url }}" alt="">
-                                <svg class="btn_on" xmlns="http://www.w3.org/2000/svg" width="91" height="101"
-                                    viewBox="0 0 91 101" fill="none">
-                                    <path
-                                        d="M84.5329 40.3102C92.5314 44.9293 92.5314 56.4745 84.5328 61.0936L18.6328 99.1503C10.6328 103.77 0.631694 97.9968 0.631694 88.7586L0.631697 12.6452C0.631698 3.40702 10.6328 -2.3664 18.6328 2.25353L84.5329 40.3102Z"
-                                        fill="white" fill-opacity="0.8" />
-                                </svg>
-                            </div>
-                            <br>
-                            <div class="video_card_title">
-                                <h1>{{ video.name }}</h1>
-                                <span>{{ video.create_at }}</span>
-                            </div>
+            <div class="video-reviews-container">
+                {% for video in video_review %}
+                <div class="video-review-card">
+                    <div class="video-thumbnail" data-video-id="{{ video.video|slice:'-11:' }}">
+                        <img src="{{ video.banner.url }}" alt="">
+                        <div class="play-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 91 101" fill="none">
+                                <path d="M84.5329 40.3102C92.5314 44.9293 92.5314 56.4745 84.5328 61.0936L18.6328 99.1503C10.6328 103.77 0.631694 97.9968 0.631694 88.7586L0.631697 12.6452C0.631698 3.40702 10.6328 -2.3664 18.6328 2.25353L84.5329 40.3102Z" fill="white" fill-opacity="0.8" />
+                            </svg>
                         </div>
                     </div>
-                    {% endfor %}
-                
+                    <div class="video-info">
+                        <div class="video-author">{{ video.name }}</div>
+                        <div class="video-date">{{ video.create_at }}</div>
+                    </div>
                 </div>
+                {% endfor %}
             </div>
 
         </section>
         <section class="video_section">
-            <br><br>
             <h1>Отзывы</h1>
-            <div class="swiper-container2">
-                <div class="swiper-wrapper">
-                    {% for review in review %}
-                    <div class="swiper-slide">
-                        <div class="reviews_card" data-title="{{review.name}}" data-date="{{review.create_at}}"
-                            data-text="{{review.text}}">
-                            <div class="reviews_card_head">
-                                <h1>
-                                    {{review.name}} 
-                                </h1>
-                                <p>
-                                    {{review.create_at}}
-                                </p>
-                            </div>
-                            <div class="reviews_card_des">
-                                <svg class="firstDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
-                                    viewBox="0 0 27 17" fill="none">
-                                    <path
-                                        d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z"
-                                        fill="#0049a8" />
-                                </svg>
-
-                                <p>{{review.text}}
-                                    <svg class="secondDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
-                                        viewBox="0 0 27 17" fill="none">
-                                        <path
-                                            d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z"
-                                            fill="#0049a8" />
-                                    </svg>
-                                </p>
-                            </div>
-                        </div>
+            <div class="reviews-container">
+                {% for review in review %}
+                <div class="review-card">
+                    <div class="review-quote">“</div>
+                    <div class="review-header">
+                        <div class="review-name">{{review.name}}</div>
+                        <div class="review-date">{{review.create_at}}</div>
                     </div>
-                    {% endfor %}
-
+                    <div class="review-content">{{review.text}}</div>
                 </div>
+                {% endfor %}
             </div>
             <div id="videoModal" class="modal">
                 <div class="modal-content">
@@ -156,24 +123,37 @@
 
             <br><br><br><br>
         </section>
-        <section class="real_revue">
-            <div class="real_revue_title">
-                <h1>Рукописные отзывы</h1>
+        <section class="handwritten-reviews-section">
+            <h1>Рукописные отзывы</h1>
+            <div class="handwritten-reviews-container">
+                {% for handwritten in handwritten_review %}
+                <div class="handwritten-review-item">
+                    <div class="handwritten-review-content">
+                        <img src="{{ handwritten.image.url }}" alt="Рукописный отзыв">
+                    </div>
+                    <div class="handwritten-review-author">
+                        <h3>{{ handwritten.name }}</h3>
+                        <span>{{ handwritten.create_at }}</span>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
+        </section>
+        
+        <section class="real_revue">
             <div class="swiper-container2">
                 <div class="swiper-wrapper">
                     {% for write in write_review %}
                     <div class="swiper-slide">
                         <div class="real_revue_card" data-title="{{write.name}}" data-date="{{write.create_at}}"
                             data-image="{{write.image.url}}">
-                            <div class="dock_image_block">
-                                <img src="{{write.image.url}}"
-                                    alt="">
+                            <div class="handwritten-review-content">
+                                <img src="{{write.image.url}}" alt="">
                             </div>
-                            <br>
-                            <h1>{{write.name}}</h1>
-                            <br>
-                            <span>{{write.create_at}}</span>
+                            <div class="handwritten-review-author">
+                                <h3>{{write.name}}</h3>
+                                <span>{{write.create_at}}</span>
+                            </div>
                         </div>
                     </div>
                     {% endfor %}
@@ -216,9 +196,9 @@
 
     <script>// Получаем элементы
         // Получаем элементы
-        document.querySelectorAll('.video_card').forEach(card => {
-            card.addEventListener('click', () => {
-                const videoId = card.getAttribute('data-video-id');
+        document.querySelectorAll('.video-thumbnail').forEach(thumbnail => {
+            thumbnail.addEventListener('click', () => {
+                const videoId = thumbnail.getAttribute('data-video-id');
                 const youtubeVideo = document.getElementById("youtubeVideo");
                 const modal = document.getElementById("videoModal");
     
@@ -316,3 +296,4 @@
 
     </script>
 {% endblock %}
+

@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="{% static 'assets/styles/animations.css' %}">
     <!-- Add slider styles -->
     <link rel="stylesheet" href="{% static 'assets/styles/slider.css' %}">
+    <!-- Add reviews styles -->
+    <link rel="stylesheet" href="{% static 'assets/styles/reviews.css' %}">
     <!-- Add animation script -->
     <script src="{% static 'assets/js/animations.js' %}" defer></script>
 
@@ -26,9 +28,10 @@
     </script>
     <main>
         <section class="head_section">
-            <div class="full-width-slider-container">
-                <div class="swiper-main">
-                    <div class="swiper-wrapper">
+            <div class="container">
+                <div class="full-width-slider-container">
+                    <div class="swiper-main">
+                        <div class="swiper-wrapper">
                         {% for slide in slider %}
                         <div class="swiper-slide">
                             <img class="slide-bg-image" src="{{ slide.image.url }}" alt="{% if slide.title %}{{ slide.title }}{% else %}Слайд{% endif %}">
@@ -54,8 +57,6 @@
                     <div class="swiper-pagination"></div>
                 </div>
             </div>
-            </div>
-            <br>
             <div class="bottom_head_section">
                 <div class="bottom_head_section_list fade-in-scroll">
                     <div class="bottom_head_section_list_item">
@@ -372,41 +373,19 @@
             <h1 class="section_title fade-in-scroll">
                 Отзывы
             </h1>
-            <br><br>
-            <div class="top_head_section_right">
-                
-                </div>
-                <div class="hidden">
-                    <div class="swiper-container3">
-                        <div class="swiper-wrapper">
-                        {% for reviews in reviews %}
-                            <div class="swiper-slide">
-                                <div class="reviews_card fade-in-scroll">
-                                    <div class="reviews_card_head">
-                                        <h1>
-                                            {{reviews.name}}
-                                        </h1>
-                                        <p>
-                                            {{reviews.create_at}}
-                                        </p>
-                                    </div>
-                                    <div class="reviews_card_des">
-                                        <svg class="firstDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
-                                    <p>{{reviews.text}}
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="17"
-                                            viewBox="0 0 27 17" fill="none">
-                                            <path
-                                                d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z"
-                                                fill="#0049a8" />
-                                        </svg>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        {% endfor %}
+            <div class="reviews-container">
+                {% for reviews in reviews %}
+                <div class="review-card">
+                    <div class="review-quote">&ldquo;</div>
+                    <div class="review-header">
+                        <div class="review-name">{{ reviews.name }}</div>
+                        <div class="review-date">{{ reviews.create_at }}</div>
+                    </div>
+                    <div class="review-content">
+                        <p>{{ reviews.text }}</p>
                     </div>
                 </div>
+                {% endfor %}
             </div>
             <br><br>
             <a href="{% url 'review' %}">

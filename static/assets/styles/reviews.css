@@ -1,0 +1,227 @@
+/* Reviews Section Styles */
+.reviews {
+    padding: 60px 0;
+    background-color: #BEEFFC;
+    text-align: center;
+}
+
+.section_title, .video_section h1 {
+    color: #0049a8;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Text Reviews Styles */
+.reviews-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.review-card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    width: calc(50% - 15px);
+    min-width: 300px;
+    position: relative;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.review-quote {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 60px;
+    color: #0049a8;
+    opacity: 0.2;
+    font-family: serif;
+    line-height: 0.5;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.review-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0049a8;
+}
+
+.review-date {
+    font-size: 14px;
+    color: #03acf2;
+}
+
+.review-content {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Video Reviews Styles */
+.video_section {
+    padding: 60px 0;
+    background-color: #BEEFFC;
+}
+
+/* Handwritten Reviews Styles */
+.handwritten-reviews-section {
+    background-color: #f9f9f9;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.handwritten-reviews-section h1 {
+    color: #0049a8;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.handwritten-reviews-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.handwritten-review-item, .real_revue_card {
+    width: 350px;
+    max-width: 350px;
+    margin-bottom: 30px;
+}
+
+.handwritten-review-content {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+.handwritten-review-content img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.handwritten-review-author {
+    text-align: left;
+    padding: 0 10px;
+}
+
+.handwritten-review-author h3 {
+    color: #0049a8;
+    font-size: 18px;
+    margin: 0 0 5px 0;
+}
+
+.handwritten-review-author span {
+    color: #888;
+    font-size: 14px;
+}
+
+.video-reviews-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.video-review-card {
+    width: calc(33.33% - 10px);
+    min-width: 250px;
+    max-width: 280px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.video-review-card:hover {
+    transform: translateY(-5px);
+}
+
+.video-thumbnail {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.video-thumbnail img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.video-thumbnail:hover .play-button {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-info {
+    padding: 15px 20px;
+    background-color: #fff;
+}
+
+.video-author {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0049a8;
+    margin-bottom: 5px;
+}
+
+.video-date {
+    font-size: 14px;
+    color: #03acf2;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+    .video-review-card {
+        width: calc(50% - 15px);
+    }
+}
+
+@media (max-width: 768px) {
+    .review-card,
+    .video-review-card {
+        width: 100%;
+    }
+}
