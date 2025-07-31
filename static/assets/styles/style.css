@@ -91,10 +91,10 @@ body {
     padding: 14px 0;
 }
 
+/* Стили для верхней секции с слайдером */
 .top_head_section {
     display: flex;
     gap: 40px;
-
 }
 
 .top_head_section_left {
@@ -1085,6 +1085,40 @@ footer {
     gap: 1rem;
 }
 
+/* Удаляем дублирующиеся стили */
+
+.top_head_section_right {
+    width: 50%;
+}
+
+@media (max-width: 768px) {
+    .top_head_section_right {
+        width: 100%;
+    }
+
+    .top_head_section_right .swiper-slide img {
+        width: 100%;
+        height: 90%;
+        object-fit: cover;
+    }
+}
+
+.top_head_section_right .swiper {
+    width: 100%;
+    overflow: hidden;
+    height: 350px;
+}
+
+.top_head_section_right .swiper-slide {
+    height: 100%;
+}
+
+.top_head_section_right .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .slider {
     position: relative;
     display: flex;
@@ -1834,7 +1868,8 @@ li {
 .service_instuction_item {
     width: calc(50% - 32px);
     display: flex;
-    gap: 40px;
+    flex-direction: column;
+    gap: 20px;
     padding: 24px;
 
     p {
@@ -1843,8 +1878,63 @@ li {
         font-weight: 400;
         line-height: 19.2px;
         text-align: left;
-
     }
+}
+
+.service_instuction_item_image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Стили для элементов с номерами */
+.numbered-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 45%;
+    margin: 20px 2.5%;
+}
+
+.numbered-item-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #0049a8;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.numbered-item-text {
+    color: #0049a8;
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: center;
+    padding: 0 15px;
+}
+
+
+.service_instuction_item_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service_instuction_item .service_instuction_item_num {
+    margin-right: 20px;
+}
+
+.service_instuction_item>div:last-child {
+    display: flex;
+    align-items: center;
 }
 
 .service_instuction_item_num {

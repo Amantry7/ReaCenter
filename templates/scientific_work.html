@@ -51,10 +51,8 @@
     <div class="scientific-tabs-container">
         <div class="scientific-tabs">
             <button class="scientific-tab-btn active" data-tab="manuals">Учебно-методические пособия</button>
-            <button class="scientific-tab-btn" data-tab="patents">Патенты</button>
-            <button class="scientific-tab-btn" data-tab="permissions">Свидетельства и разрешения</button>
+            <button class="scientific-tab-btn" data-tab="patents">Патенты, свидетельства и разрешения</button>
             <button class="scientific-tab-btn" data-tab="publications">Научные публикации</button>
-            <button class="scientific-tab-btn" data-tab="journals">Журналы</button>
         </div>
     </div>
 
@@ -129,10 +127,11 @@
                 </div>
             </div>
 
-            <!-- Секция с патентами -->
+            <!-- Секция с патентами, свидетельствами и разрешениями -->
             <div id="patents" class="scientific-tab-content">
-                <h2 class="scientific-work-subtitle">Патенты</h2>
+                <h2 class="scientific-work-subtitle">Патенты, свидетельства и разрешения</h2>
                 <div class="scientific-materials-grid">
+                    <!-- Патенты -->
                     {% if scientific_patents %}
                         {% for patent in scientific_patents %}
                         <div class="scientific-material-card patent-card">
@@ -195,13 +194,8 @@
                             </div>
                         </div>
                     {% endif %}
-                </div>
-            </div>
-
-            <!-- Секция с разрешениями -->
-            <div id="permissions" class="scientific-tab-content">
-                <h2 class="scientific-work-subtitle">Свидетельства и Разрешения</h2>
-                <div class="scientific-materials-grid">
+                    
+                    <!-- Свидетельства и разрешения -->
                     {% if scientific_permissions or scientific_certificates %}
                         {% for permission in scientific_permissions %}
                         <div class="scientific-material-card permission-card">

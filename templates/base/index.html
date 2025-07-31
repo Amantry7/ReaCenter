@@ -52,11 +52,23 @@
                 </div>
                 <div class="top_head_section_right">
                     <div class="swiper">
-                        {% if main_slider %}
-                            <img src="{{ main_slider.image.url }}" alt="{% if main_slider.title %}{{ main_slider.title }}{% else %}Слайд{% endif %}">
-                        {% else %}
-                            <img src="{% static 'assets/images/slider main.png' %}" alt="">
-                        {% endif %}
+                        <div class="swiper-wrapper">
+                            {% if main_sliders %}
+                                {% for slider in main_sliders %}
+                                <div class="swiper-slide">
+                                    <img src="{{ slider.image.url }}" alt="{% if slider.title %}{{ slider.title }}{% else %}Слайд{% endif %}">
+                                </div>
+                                {% endfor %}
+                            {% elif main_slider %}
+                                <div class="swiper-slide">
+                                    <img src="{{ main_slider.image.url }}" alt="{% if main_slider.title %}{{ main_slider.title }}{% else %}Слайд{% endif %}">
+                                </div>
+                            {% else %}
+                                <div class="swiper-slide">
+                                    <img src="{% static 'assets/images/slider main.png' %}" alt="">
+                                </div>
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -523,5 +535,23 @@
         </section>
     </main>
 {% include 'include/footer.html' %}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mainSwiper = new Swiper('.top_head_section_right .swiper', {
+            direction: 'horizontal',
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            speed: 1000,
+        });
+    });
+</script>
 
 {% endblock %}

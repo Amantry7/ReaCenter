@@ -299,10 +299,15 @@ class MainSlider(models.Model):
         upload_to='main_slider/',
         verbose_name='Изображение слайдера'
     )
+    order = models.PositiveIntegerField(
+        default=0,
+        verbose_name='Порядок отображения'
+    )
     
     def __str__(self):
         return self.title if self.title else 'Слайд главной страницы'
     
     class Meta:
         verbose_name = 'Слайд главной страницы'
-        verbose_name_plural = 'Слайд главной страницы'
+        verbose_name_plural = 'Слайды главной страницы'
+        ordering = ['order']

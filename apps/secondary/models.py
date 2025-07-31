@@ -94,6 +94,11 @@ class ConsultationProgres(models.Model):
         max_length=255,
         verbose_name='Заголовок'
     )
+    image = models.ImageField(
+        upload_to='consult_progres/',
+        verbose_name='Изображение',
+        blank=True, null=True
+    )
     def __str__(self):
         return self.title
     class Meta:

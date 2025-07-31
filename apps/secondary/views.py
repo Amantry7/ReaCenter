@@ -61,10 +61,8 @@ def news(request):
     service = Service.objects.all()[:6]
     reviews = Reviews.objects.all()
     news_list = News.objects.filter(is_published=True)[:6]  # Получаем последние 6 опубликованных новостей
-    try:
-        main_slider = MainSlider.objects.first()
-    except MainSlider.DoesNotExist:
-        main_slider = None
+    main_sliders = MainSlider.objects.all()
+    main_slider = MainSlider.objects.first() if MainSlider.objects.exists() else None
     return render(request, 'news.html', locals())
 
 def news_detail(request, id):

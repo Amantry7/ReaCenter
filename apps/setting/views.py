@@ -10,10 +10,8 @@ def index(request):
     treat = Treat.objects.all()[:6]
     service = Service.objects.all()[:6]
     reviews = Reviews.objects.all()
-    try:
-        main_slider = MainSlider.objects.first()
-    except MainSlider.DoesNotExist:
-        main_slider = None
+    main_sliders = MainSlider.objects.all()
+    main_slider = MainSlider.objects.first() if MainSlider.objects.exists() else None
     return render(request, 'base/index.html', locals())
 
 
