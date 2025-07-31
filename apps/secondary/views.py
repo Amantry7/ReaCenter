@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 
 from apps.setting.models import Setting, Treat, Service, Reviews, MainSlider
-from apps.secondary.models import About, Methods, Institution, ContactRequest, News
+from apps.secondary.models import (About, Methods, Institution, ContactRequest, News, 
+    ScientificWorkIntro, ScientificManual, ScientificPatent, ScientificPermission, 
+    ScientificPublication, ScientificJournal)
 # Create your views here.
 
 
@@ -69,3 +71,22 @@ def news_detail(request, id):
     setting = Setting.objects.latest('id')
     news_item = get_object_or_404(News, id=id, is_published=True)
     return render(request, 'news_detail.html', locals())
+
+def scientific_work(request):
+    setting = Setting.objects.latest('id')
+    
+    # Get scientific work intro content
+    try:
+        scientific_intro = ScientificWorkIntro.objects.first()
+    except ScientificWorkIntro.DoesNotExist:
+        scientific_intro = None
+    
+    # Get all scientific materials
+    scientific_manuals = ScientificManual.objects.all().order_by('order')
+    scientific_patents = ScientificPatent.objects.all().order_by('order')
+    scientific_permissions = ScientificPermission.objects.filter(type='permission').order_by('order')
+    scientific_certificates = ScientificPermission.objects.filter(type='certificate').order_by('order')
+    scientific_publications = ScientificPublication.objects.all().order_by('order')
+    scientific_journals = ScientificJournal.objects.all().order_by('order')
+    
+    return render(request, 'scientific_work.html', locals())
