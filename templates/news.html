@@ -72,7 +72,7 @@
         });
     </script>
     <main>
-        <section class="head_section container">    
+        <section class="head_section container">
             <div class="top_head_section">
                 <div class="top_head_section_left">
                     <div class="bottom_head_section_list_item noneINDesk">
@@ -83,14 +83,14 @@
                             нарушений у детей свыше 30 лет
                         </h2>
                     </div>
-                    <h1>
+                    <h1 class="slide-in-left">
                         Лечение детей <br>
                         с задержками развития,
                     </h1>
-                    <h2>
+                    <h2 class="slide-in-right">
                         нарушениями психической двигательной систем и другими патологиями ЦНС
                     </h2>
-                    <a href="https://wa.me/996552353737" target="_blank" class="button ">
+                    <a href="https://wa.me/996552353737" target="_blank" class="button">
                         Записаться
                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="10" viewBox="0 0 15 10" fill="none">
                             <path
@@ -101,17 +101,29 @@
                 </div>
                 <div class="top_head_section_right">
                     <div class="swiper">
-                        {% if main_slider %}
-                            <img src="{{ main_slider.image.url }}" alt="{% if main_slider.title %}{{ main_slider.title }}{% else %}Слайд{% endif %}">
-                        {% else %}
-                            <img src="{% static 'assets/images/slider main.png' %}" alt="">
-                        {% endif %}
+                        <div class="swiper-wrapper">
+                            {% if main_sliders %}
+                                {% for slider in main_sliders %}
+                                <div class="swiper-slide">
+                                    <img src="{{ slider.image.url }}" alt="{% if slider.title %}{{ slider.title }}{% else %}Слайд{% endif %}">
+                                </div>
+                                {% endfor %}
+                            {% elif main_slider %}
+                                <div class="swiper-slide">
+                                    <img src="{{ main_slider.image.url }}" alt="{% if main_slider.title %}{{ main_slider.title }}{% else %}Слайд{% endif %}">
+                                </div>
+                            {% else %}
+                                <div class="swiper-slide">
+                                    <img src="{% static 'assets/images/slider main.png' %}" alt="">
+                                </div>
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
             </div>
             <br>
             <div class="bottom_head_section">
-                <div class="bottom_head_section_list">
+                <div class="bottom_head_section_list fade-in-scroll">
                     <div class="bottom_head_section_list_item">
                         <h1>Почему наши пациенты доверяют нам?</h1>
                     </div>
@@ -293,6 +305,23 @@
         // Вызываем функцию после загрузки и при изменении размера окна
         equalizeNewsItemsHeight();
         window.addEventListener('resize', equalizeNewsItemsHeight);
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mainSwiper = new Swiper('.top_head_section_right .swiper', {
+            direction: 'horizontal',
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            speed: 1000,
+        });
     });
 </script>
 <style>
