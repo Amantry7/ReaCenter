@@ -21,6 +21,12 @@ class Treat(models.Model):
         blank=True,
         null=True
     )
+    
+    description2 = RichTextUploadingField(
+        verbose_name='Описание',
+        blank=True,
+        null=True
+    )
 
     def __str__(self):
         return self.title

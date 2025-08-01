@@ -22,7 +22,7 @@ class TreatImageTaburInline(admin.TabularInline):
     model = TreatImage
     extra = 1
 class TreatAdminForm(forms.ModelForm):
-    descrition = forms.CharField(widget=CKEditorUploadingWidget(), required=False)
+    description = forms.CharField(widget=CKEditorUploadingWidget(), required=False)
     
     class Meta:
         model = Treat
