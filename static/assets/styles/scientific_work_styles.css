@@ -108,7 +108,7 @@
 }
 
 .scientific-material-image {
-    height: 200px;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -203,7 +203,7 @@
         width: 100%;
         text-align: center;
     }
-    
+
     /* Стили для табов на мобильных устройствах */
     .scientific-tabs {
         flex-direction: column;
@@ -211,7 +211,7 @@
         border-bottom: none;
         padding: 0 10px;
     }
-    
+
     .scientific-tab-btn {
         width: 100%;
         border: 1px solid #e5e5e5;
@@ -220,17 +220,17 @@
         bottom: 0;
         text-align: left;
     }
-    
+
     .scientific-tab-btn.active {
         border-bottom: 1px solid #e5e5e5;
         border-left: 3px solid #0049a8;
         background-color: #f0f5ff;
     }
-    
+
     .scientific-tab-content {
         padding: 15px 10px;
     }
-    
+
     .scientific-tab-content-container {
         padding: 0 10px;
     }
@@ -244,7 +244,7 @@
         font-size: 20px;
         padding-left: 10px;
     }
-    
+
     .scientific-material-card {
         margin-bottom: 15px;
     }

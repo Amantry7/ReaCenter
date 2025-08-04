@@ -5,6 +5,14 @@
 <link rel="stylesheet" href="{% static 'assets/css/scientific_animations.css' %}">
 <link rel="stylesheet" href="{% static 'assets/css/image_lightbox.css' %}">
 <link rel="stylesheet" href="{% static 'assets/styles/scientific_work_styles.css' %}">
+<style>
+    .scientific-material-image img {
+        aspect-ratio: 1 / 1.414; /* Пропорции формата А4 */
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+</style>
 <script src="{% static 'assets/js/scientific_work.js' %}"></script>
 <script src="{% static 'assets/js/pdf_downloader.js' %}"></script>
 <script src="{% static 'assets/js/scientific_animations.js' %}"></script>
@@ -70,7 +78,9 @@
                             </div>
                             <div class="scientific-material-info">
                                 <h3>{{ manual.title }}</h3>
+                                {% if manual.description %}
                                 <p>{{ manual.description }}</p>
+                                {% endif %}
                                 {% if manual.pdf_file %}
                                 <a href="javascript:void(0)" class="download-btn" data-pdf="{{ manual.pdf_file.url }}" data-title="{{ manual.title|slugify }}.pdf">Скачать</a>
                                 {% endif %}
@@ -86,7 +96,9 @@
                             <div class="scientific-material-info">
                                 <h3>Миотоновая рефлексотерапия</h3>
                                 <p>Учебно-методическое пособие для врачей</p>
+                                {% if true %}
                                 <a href="javascript:void(0)" class="download-btn" data-pdf="{% static 'assets/documents/scientific/myotonova.pdf' %}" data-title="Миотоновая_рефлексотерапия.pdf">Скачать</a>
+                                {% endif %}
                             </div>
                         </div>
                         
@@ -98,7 +110,9 @@
                             <div class="scientific-material-info">
                                 <h3>Электропунктурная диагностика</h3>
                                 <p>Учебно-методическое пособие для врачей</p>
+                                {% if true %}
                                 <a href="javascript:void(0)" class="download-btn" data-pdf="{% static 'assets/documents/scientific/electropuncture.pdf' %}" data-title="Электропунктурная_диагностика.pdf">Скачать</a>
+                                {% endif %}
                             </div>
                         </div>
                         
@@ -110,7 +124,9 @@
                             <div class="scientific-material-info">
                                 <h3>Система реабилитации</h3>
                                 <p>Учебно-методическое пособие для врачей</p>
+                                {% if true %}
                                 <a href="javascript:void(0)" class="download-btn" data-pdf="{% static 'assets/documents/scientific/rehabilitation.pdf' %}" data-title="Система_реабилитации.pdf">Скачать</a>
+                                {% endif %}
                             </div>
                         </div>
                         
@@ -122,7 +138,9 @@
                             <div class="scientific-material-info">
                                 <h3>Аутизм у детей</h3>
                                 <p>Клиника, диагностика, коррекция</p>
+                                {% if true %}
                                 <a href="javascript:void(0)" class="download-btn" data-pdf="{% static 'assets/documents/scientific/autism.pdf' %}" data-title="Аутизм_у_детей.pdf">Скачать</a>
+                                {% endif %}
                             </div>
                         </div>
                     {% endif %}
@@ -142,7 +160,9 @@
                             </div>
                             <div class="scientific-material-info">
                                 <h3>Патент №{{ patent.patent_number }}</h3>
+                                {% if patent.description %}
                                 <p>{{ patent.description }}</p>
+                                {% endif %}
                                 {% if patent.pdf_file %}
                                 <a href="javascript:void(0)" class="download-btn" data-pdf="{{ patent.pdf_file.url }}" data-title="Патент_{{ patent.patent_number }}.pdf">Скачать</a>
                                 {% endif %}
@@ -208,7 +228,9 @@
                             </div>
                             <div class="scientific-material-info">
                                 <h3>{{ permission.title }}</h3>
+                                {% if permission.description %}
                                 <p>{{ permission.description }}</p>
+                                {% endif %}
                                 {% if permission.pdf_file %}
                                 <a href="javascript:void(0)" class="download-btn" data-pdf="{{ permission.pdf_file.url }}" data-title="{{ permission.title|slugify }}.pdf">Скачать</a>
                                 {% endif %}
@@ -223,7 +245,9 @@
                             </div>
                             <div class="scientific-material-info">
                                 <h3>{{ certificate.title }}</h3>
+                                {% if certificate.description %}
                                 <p>{{ certificate.description }}</p>
+                                {% endif %}
                                 {% if certificate.pdf_file %}
                                 <a href="javascript:void(0)" class="download-btn" data-pdf="{{ certificate.pdf_file.url }}" data-title="{{ certificate.title|slugify }}.pdf">Скачать</a>
                                 {% endif %}
@@ -285,7 +309,9 @@
                             </div>
                             <div class="scientific-material-info">
                                 <h3>{{ publication.title }}</h3>
+                                {% if publication.description %}
                                 <p>{{ publication.description }}</p>
+                                {% endif %}
                                 {% if publication.pdf_file %}
                                 <a href="javascript:void(0)" class="download-btn" data-pdf="{{ publication.pdf_file.url }}" data-title="{{ publication.title|slugify }}.pdf">Скачать</a>
                                 {% endif %}

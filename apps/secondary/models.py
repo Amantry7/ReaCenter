@@ -293,7 +293,7 @@ class ScientificWorkIntro(models.Model):
 class ScientificManual(models.Model):
     """Model for educational manuals in the Scientific Work page"""
     title = models.CharField(max_length=255, verbose_name='Заголовок')
-    description = models.CharField(max_length=255, verbose_name='Описание')
+    description = models.CharField(max_length=255, verbose_name='Описание', blank=True, null=True)
     image = models.ImageField(upload_to='scientific/manuals/', verbose_name='Изображение')
     pdf_file = models.FileField(upload_to='scientific/manuals/pdf/', verbose_name='PDF файл', blank=True, null=True)
     order = models.PositiveIntegerField(default=0, verbose_name='Порядок отображения')
@@ -311,7 +311,7 @@ class ScientificPatent(models.Model):
     """Model for patents in the Scientific Work page"""
     patent_number = models.CharField(max_length=50, verbose_name='Номер патента')
     title = models.CharField(max_length=255, verbose_name='Заголовок')
-    description = models.CharField(max_length=255, verbose_name='Описание')
+    description = models.CharField(max_length=255, verbose_name='Описание', blank=True, null=True)
     image = models.ImageField(upload_to='scientific/patents/', verbose_name='Изображение')
     pdf_file = models.FileField(upload_to='scientific/patents/pdf/', verbose_name='PDF файл', blank=True, null=True)
     order = models.PositiveIntegerField(default=0, verbose_name='Порядок отображения')
@@ -334,7 +334,7 @@ class ScientificPermission(models.Model):
     
     type = models.CharField(max_length=20, choices=PERMISSION_TYPES, default='permission', verbose_name='Тип документа')
     title = models.CharField(max_length=255, verbose_name='Заголовок')
-    description = models.CharField(max_length=255, verbose_name='Описание')
+    description = models.CharField(max_length=255, verbose_name='Описание', blank=True, null=True)
     image = models.ImageField(upload_to='scientific/permissions/', verbose_name='Изображение')
     pdf_file = models.FileField(upload_to='scientific/permissions/pdf/', verbose_name='PDF файл', blank=True, null=True)
     order = models.PositiveIntegerField(default=0, verbose_name='Порядок отображения')
@@ -351,7 +351,7 @@ class ScientificPermission(models.Model):
 class ScientificPublication(models.Model):
     """Model for scientific publications in the Scientific Work page"""
     title = models.CharField(max_length=255, verbose_name='Заголовок')
-    description = models.CharField(max_length=255, verbose_name='Описание')
+    description = models.CharField(max_length=255, verbose_name='Описание', blank=True, null=True)
     image = models.ImageField(upload_to='scientific/publications/', verbose_name='Изображение')
     pdf_file = models.FileField(upload_to='scientific/publications/pdf/', verbose_name='PDF файл', blank=True, null=True)
     order = models.PositiveIntegerField(default=0, verbose_name='Порядок отображения')
