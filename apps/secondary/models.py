@@ -295,7 +295,7 @@ class ScientificManual(models.Model):
     title = models.CharField(max_length=255, verbose_name='Заголовок')
     description = models.CharField(max_length=255, verbose_name='Описание')
     image = models.ImageField(upload_to='scientific/manuals/', verbose_name='Изображение')
-    pdf_file = models.FileField(upload_to='scientific/manuals/pdf/', verbose_name='PDF файл')
+    pdf_file = models.FileField(upload_to='scientific/manuals/pdf/', verbose_name='PDF файл', blank=True, null=True)
     order = models.PositiveIntegerField(default=0, verbose_name='Порядок отображения')
     
     def __str__(self):
@@ -313,7 +313,7 @@ class ScientificPatent(models.Model):
     title = models.CharField(max_length=255, verbose_name='Заголовок')
     description = models.CharField(max_length=255, verbose_name='Описание')
     image = models.ImageField(upload_to='scientific/patents/', verbose_name='Изображение')
-    pdf_file = models.FileField(upload_to='scientific/patents/pdf/', verbose_name='PDF файл')
+    pdf_file = models.FileField(upload_to='scientific/patents/pdf/', verbose_name='PDF файл', blank=True, null=True)
     order = models.PositiveIntegerField(default=0, verbose_name='Порядок отображения')
     
     def __str__(self):
@@ -336,7 +336,7 @@ class ScientificPermission(models.Model):
     title = models.CharField(max_length=255, verbose_name='Заголовок')
     description = models.CharField(max_length=255, verbose_name='Описание')
     image = models.ImageField(upload_to='scientific/permissions/', verbose_name='Изображение')
-    pdf_file = models.FileField(upload_to='scientific/permissions/pdf/', verbose_name='PDF файл')
+    pdf_file = models.FileField(upload_to='scientific/permissions/pdf/', verbose_name='PDF файл', blank=True, null=True)
     order = models.PositiveIntegerField(default=0, verbose_name='Порядок отображения')
     
     def __str__(self):
@@ -353,7 +353,7 @@ class ScientificPublication(models.Model):
     title = models.CharField(max_length=255, verbose_name='Заголовок')
     description = models.CharField(max_length=255, verbose_name='Описание')
     image = models.ImageField(upload_to='scientific/publications/', verbose_name='Изображение')
-    pdf_file = models.FileField(upload_to='scientific/publications/pdf/', verbose_name='PDF файл')
+    pdf_file = models.FileField(upload_to='scientific/publications/pdf/', verbose_name='PDF файл', blank=True, null=True)
     order = models.PositiveIntegerField(default=0, verbose_name='Порядок отображения')
     
     def __str__(self):

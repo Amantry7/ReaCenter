@@ -71,7 +71,9 @@
                             <div class="scientific-material-info">
                                 <h3>{{ manual.title }}</h3>
                                 <p>{{ manual.description }}</p>
+                                {% if manual.pdf_file %}
                                 <a href="javascript:void(0)" class="download-btn" data-pdf="{{ manual.pdf_file.url }}" data-title="{{ manual.title|slugify }}.pdf">Скачать</a>
+                                {% endif %}
                             </div>
                         </div>
                         {% endfor %}
@@ -141,7 +143,9 @@
                             <div class="scientific-material-info">
                                 <h3>Патент №{{ patent.patent_number }}</h3>
                                 <p>{{ patent.description }}</p>
+                                {% if patent.pdf_file %}
                                 <a href="javascript:void(0)" class="download-btn" data-pdf="{{ patent.pdf_file.url }}" data-title="Патент_{{ patent.patent_number }}.pdf">Скачать</a>
+                                {% endif %}
                             </div>
                         </div>
                         {% endfor %}
@@ -205,7 +209,9 @@
                             <div class="scientific-material-info">
                                 <h3>{{ permission.title }}</h3>
                                 <p>{{ permission.description }}</p>
+                                {% if permission.pdf_file %}
                                 <a href="javascript:void(0)" class="download-btn" data-pdf="{{ permission.pdf_file.url }}" data-title="{{ permission.title|slugify }}.pdf">Скачать</a>
+                                {% endif %}
                             </div>
                         </div>
                         {% endfor %}
@@ -218,7 +224,9 @@
                             <div class="scientific-material-info">
                                 <h3>{{ certificate.title }}</h3>
                                 <p>{{ certificate.description }}</p>
+                                {% if certificate.pdf_file %}
                                 <a href="javascript:void(0)" class="download-btn" data-pdf="{{ certificate.pdf_file.url }}" data-title="{{ certificate.title|slugify }}.pdf">Скачать</a>
+                                {% endif %}
                             </div>
                         </div>
                         {% endfor %}
@@ -278,7 +286,9 @@
                             <div class="scientific-material-info">
                                 <h3>{{ publication.title }}</h3>
                                 <p>{{ publication.description }}</p>
+                                {% if publication.pdf_file %}
                                 <a href="javascript:void(0)" class="download-btn" data-pdf="{{ publication.pdf_file.url }}" data-title="{{ publication.title|slugify }}.pdf">Скачать</a>
+                                {% endif %}
                             </div>
                         </div>
                         {% endfor %}
@@ -302,8 +312,6 @@
                                 <h3>{{ journal.title }}</h3>
                                 {% if journal.pdf_file %}
                                 <a href="javascript:void(0)" class="download-btn" data-pdf="{{ journal.pdf_file.url }}" data-title="{{ journal.title|slugify }}.pdf">Скачать PDF</a>
-                                {% else %}
-                                <a href="#" class="download-btn">Скачать PDF</a>
                                 {% endif %}
                             </div>
                         </div>
