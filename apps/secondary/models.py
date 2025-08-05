@@ -254,10 +254,10 @@ class News(models.Model):
         verbose_name='Изображение'
     )
     short_description = models.TextField(
-        verbose_name='Краткое описание'
+        verbose_name='Краткое описание', blank=True, null=True
     )
     content = RichTextUploadingField(
-        verbose_name='Содержание'
+        verbose_name='Содержание', blank=True, null=True
     )
     created_at = models.DateTimeField(
         auto_now_add=True,
