@@ -1,5 +1,6 @@
 {% extends 'include/homepage.html' %}
 {% load static %}
+{% load picture_tags %}
 {% block content%}
     <!-- Add CSS for no news animation -->
     <link rel="stylesheet" href="{% static 'assets/styles/no_news_animation.css' %}" />
@@ -105,16 +106,20 @@
                             {% if main_sliders %}
                                 {% for slider in main_sliders %}
                                 <div class="swiper-slide">
-                                    <img src="{{ slider.image.url }}" alt="{% if slider.title %}{{ slider.title }}{% else %}Слайд{% endif %}">
+                                    {% if forloop.first %}
+                                        {% render_picture slider.image alt=slider.title fetchpriority="high" decoding="async" lazy=False %}
+                                    {% else %}
+                                        {% render_picture slider.image alt=slider.title lazy=True decoding="async" %}
+                                    {% endif %}
                                 </div>
                                 {% endfor %}
                             {% elif main_slider %}
                                 <div class="swiper-slide">
-                                    <img src="{{ main_slider.image.url }}" alt="{% if main_slider.title %}{{ main_slider.title }}{% else %}Слайд{% endif %}">
+                                    {% render_picture main_slider.image alt=main_slider.title fetchpriority="high" decoding="async" lazy=False %}
                                 </div>
                             {% else %}
                                 <div class="swiper-slide">
-                                    <img src="{% static 'assets/images/slider main.png' %}" alt="">
+                                    <img src="{% static 'assets/images/slider main.png' %}" alt="" fetchpriority="high" decoding="async">
                                 </div>
                             {% endif %}
                         </div>
@@ -178,7 +183,7 @@
                 {% for news_item in news_list %}
                 <div class="service_card">
                     <div class="service_card_image">
-                        <img src="{{ news_item.image.url }}" alt="{{ news_item.title }}">
+                        {% render_picture news_item.image alt=news_item.title lazy=True decoding="async" %}
                     </div>
                     <div class="service_card_desc">
                         <div>

@@ -3,6 +3,7 @@
     src: url('/assets/font/Museo\ Sans\ Cyrl/museosanscyrl_100.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 * {

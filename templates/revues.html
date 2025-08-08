@@ -1,5 +1,6 @@
 {% extends 'include/homepage.html' %}
 {% load static %}
+{% load picture_tags %}
 {% block content%}
 
     {% include 'include/header.html'%}
@@ -26,7 +27,7 @@
                     <div class="swiper-slide">
                         <div class="video_card" data-video-id="{{ video.video|slice:'-11:' }}">
                             <div class="video_card_image">
-                                <img src="{{ video.banner.url }}" alt="">
+                                {% render_picture video.banner alt=video.name lazy=True decoding="async" %}
                                 <svg class="btn_on" xmlns="http://www.w3.org/2000/svg" width="91" height="101"
                                     viewBox="0 0 91 101" fill="none">
                                     <path
@@ -167,8 +168,7 @@
                         <div class="real_revue_card" data-title="{{write.name}}" data-date="{{write.create_at}}"
                             data-image="{{write.image.url}}">
                             <div class="dock_image_block">
-                                <img src="{{write.image.url}}"
-                                    alt="">
+                                {% render_picture write.image alt=write.name lazy=True decoding="async" %}
                             </div>
                             <br>
                             <h1>{{write.name}}</h1>

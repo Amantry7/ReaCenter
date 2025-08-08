@@ -1,5 +1,6 @@
 {% extends 'include/homepage.html' %}
 {% load static %}
+{% load picture_tags %}
 {% block content%}
     <!-- Add animation styles -->
     <link rel="stylesheet" href="{% static 'assets/styles/animations.css' %}">
@@ -56,17 +57,22 @@
                             {% if main_sliders %}
                                 {% for slider in main_sliders %}
                                 <div class="swiper-slide">
-                                    <img src="{{ slider.image.url }}" alt="{% if slider.title %}{{ slider.title }}{% else %}Слайд{% endif %}">
-                                </div>
+                                    {% if forloop.first %}
+                                        {% render_picture slider.image alt=slider.title fetchpriority="high" decoding="async" lazy=False %}
+                                    {% else %}
+                                        {% render_picture slider.image alt=slider.title lazy=True decoding="async" %}
+                                    {% endif %}
+                                  </div>
                                 {% endfor %}
                             {% elif main_slider %}
                                 <div class="swiper-slide">
-                                    <img src="{{ main_slider.image.url }}" alt="{% if main_slider.title %}{{ main_slider.title }}{% else %}Слайд{% endif %}">
-                                </div>
+                                    {% render_picture main_slider.image alt=main_slider.title fetchpriority="high" decoding="async" lazy=False %}
+                                  </div>
                             {% else %}
                                 <div class="swiper-slide">
-                                    <img src="{% static 'assets/images/slider main.png' %}" alt="">
-                                </div>
+                                    <img src="{% static 'assets/images/slider main.png' %}" alt=""
+                                         fetchpriority="high" decoding="async">
+                                  </div>
                             {% endif %}
                         </div>
                     </div>
@@ -194,7 +200,7 @@
                 {% for service in service %}
                 <div class="service_card stagger-item" onclick='window.location.href="{% url "service_detail" service.id %}";'>
                     <div class="service_card_image">
-                        <img src="{{service.image.url}}" alt="">
+                        {% render_picture service.image alt=service.title lazy=True decoding="async" %}
                     </div>
                     <div class="service_card_desc">
                         <div>
@@ -237,7 +243,7 @@
                     <div class="swiper-slide">
                         <div class="service_card stagger-item">
                             <div class="service_card_image">
-                                <img src="{% static 'assets/images/Rectangle.png' %}" alt="">
+                                <img src="{% static 'assets/images/Rectangle.png' %}" alt="" loading="lazy" decoding="async">
                             </div>
                             <div class="service_card_desc">
                                 <div>
@@ -260,7 +266,7 @@
                     <div class="swiper-slide">
                         <div class="service_card stagger-item">
                             <div class="service_card_image">
-                                <img src="{% static 'assets/images/news/news-2.jpg' %}" alt="">
+                                <img src="{% static 'assets/images/news/news-2.jpg' %}" alt="" loading="lazy" decoding="async">
                             </div>
                             <div class="service_card_desc">
                                 <div>
@@ -283,7 +289,7 @@
                     <div class="swiper-slide">
                         <div class="service_card stagger-item">
                             <div class="service_card_image">
-                                <img src="{% static 'assets/images/news/news-3.jpg' %}" alt="">
+                                <img src="{% static 'assets/images/news/news-3.jpg' %}" alt="" loading="lazy" decoding="async">
                             </div>
                             <div class="service_card_desc">
                                 <div>
@@ -306,7 +312,7 @@
                     <div class="swiper-slide">
                         <div class="service_card stagger-item">
                             <div class="service_card_image">
-                                <img src="{% static 'assets/images/news/news-4.jpg' %}" alt="">
+                                <img src="{% static 'assets/images/news/news-4.jpg' %}" alt="" loading="lazy" decoding="async">
                             </div>
                             <div class="service_card_desc">
                                 <div>
@@ -329,7 +335,7 @@
                     <div class="swiper-slide">
                         <div class="service_card stagger-item">
                             <div class="service_card_image">
-                                <img src="{% static 'assets/images/news/news-5.jpg' %}" alt="">
+                                <img src="{% static 'assets/images/news/news-5.jpg' %}" alt="" loading="lazy" decoding="async">
                             </div>
                             <div class="service_card_desc">
                                 <div>
@@ -351,7 +357,7 @@
                     <div class="swiper-slide">
                         <div class="service_card stagger-item">
                             <div class="service_card_image">
-                                <img src="{% static 'assets/images/news/news-6.jpg' %}" alt="">
+                                <img src="{% static 'assets/images/news/news-6.jpg' %}" alt="" loading="lazy" decoding="async">
                             </div>
                             <div class="service_card_desc">
                                 <div>

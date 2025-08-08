@@ -1,5 +1,6 @@
 {% extends 'include/homepage.html' %}
 {% load static %}
+{% load picture_tags %}
 {% block content%}
     {% include 'include/header.html'%}
     <br><br><br><script>
@@ -66,8 +67,7 @@
                     {% for image in treat_detail.treats_image.all %}
                     <div class="swiper-slide">
                         <div class="image_list_item">
-                            <img src="{{image.image.url}}"
-                                alt="">
+                            {% render_picture image.image alt=treat_detail.subtitle lazy=True decoding="async" %}
                         </div>
                     </div>
                     {% endfor %}
