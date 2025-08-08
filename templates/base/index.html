@@ -28,7 +28,7 @@
             <div class="top_head_section">
                 <div class="top_head_section_left">
                     <div class="bottom_head_section_list_item noneINDesk">
-                        <img src="{% static 'assets/images/Group.svg' %}" alt="">
+                        {% render_static_picture 'assets/images/Group.svg' alt='' lazy=True decoding="async" %}
                         <h2>
                             Метод успешно применяется
                             при лечении неврологических
@@ -70,8 +70,7 @@
                                   </div>
                             {% else %}
                                 <div class="swiper-slide">
-                                    <img src="{% static 'assets/images/slider main.png' %}" alt=""
-                                         fetchpriority="high" decoding="async">
+                                    {% render_static_picture 'assets/images/slider main.png' alt='' fetchpriority="high" decoding="async" lazy=False %}
                                   </div>
                             {% endif %}
                         </div>
@@ -98,7 +97,7 @@
                         <path d="M1 1C1.8 1.8 6.66667 8 9 11L1 20.5" stroke="#0049a8" stroke-linecap="round" />
                     </svg>
                     <div class="bottom_head_section_list_item">
-                        <img src="{% static 'assets/images/Group.svg' %}" alt="">
+                        {% render_static_picture 'assets/images/Group.svg' alt='' lazy=True decoding="async" %}
                         <h2>
                             Метод успешно применяется
                             при лечении неврологических
@@ -198,7 +197,7 @@
             </h1>
             <div class="service_list">
                 {% for service in service %}
-                <div class="service_card stagger-item" onclick='window.location.href="{% url "service_detail" service.id %}";'>
+                <div class="service_card stagger-item" onclick="window.location.href='{% url 'service_detail' service.id %}'">
                     <div class="service_card_image">
                         {% render_picture service.image alt=service.title lazy=True decoding="async" %}
                     </div>
@@ -243,7 +242,7 @@
                     <div class="swiper-slide">
                         <div class="service_card stagger-item">
                             <div class="service_card_image">
-                                <img src="{% static 'assets/images/Rectangle.png' %}" alt="" loading="lazy" decoding="async">
+                                {% render_static_picture 'assets/images/Rectangle.png' alt='' lazy=True decoding="async" %}
                             </div>
                             <div class="service_card_desc">
                                 <div>
@@ -266,7 +265,7 @@
                     <div class="swiper-slide">
                         <div class="service_card stagger-item">
                             <div class="service_card_image">
-                                <img src="{% static 'assets/images/news/news-2.jpg' %}" alt="" loading="lazy" decoding="async">
+                                {% render_static_picture 'assets/images/news/news-2.jpg' alt='' lazy=True decoding="async" %}
                             </div>
                             <div class="service_card_desc">
                                 <div>
@@ -289,7 +288,7 @@
                     <div class="swiper-slide">
                         <div class="service_card stagger-item">
                             <div class="service_card_image">
-                                <img src="{% static 'assets/images/news/news-3.jpg' %}" alt="" loading="lazy" decoding="async">
+                                {% render_static_picture 'assets/images/news/news-3.jpg' alt='' lazy=True decoding="async" %}
                             </div>
                             <div class="service_card_desc">
                                 <div>
@@ -312,7 +311,7 @@
                     <div class="swiper-slide">
                         <div class="service_card stagger-item">
                             <div class="service_card_image">
-                                <img src="{% static 'assets/images/news/news-4.jpg' %}" alt="" loading="lazy" decoding="async">
+                                {% render_static_picture 'assets/images/news/news-4.jpg' alt='' lazy=True decoding="async" %}
                             </div>
                             <div class="service_card_desc">
                                 <div>
@@ -335,7 +334,7 @@
                     <div class="swiper-slide">
                         <div class="service_card stagger-item">
                             <div class="service_card_image">
-                                <img src="{% static 'assets/images/news/news-5.jpg' %}" alt="" loading="lazy" decoding="async">
+                                {% render_static_picture 'assets/images/news/news-5.jpg' alt='' lazy=True decoding="async" %}
                             </div>
                             <div class="service_card_desc">
                                 <div>
@@ -357,7 +356,7 @@
                     <div class="swiper-slide">
                         <div class="service_card stagger-item">
                             <div class="service_card_image">
-                                <img src="{% static 'assets/images/news/news-6.jpg' %}" alt="" loading="lazy" decoding="async">
+                                {% render_static_picture 'assets/images/news/news-6.jpg' alt='' lazy=True decoding="async" %}
                             </div>
                             <div class="service_card_desc">
                                 <div>
@@ -466,7 +465,7 @@
                     <div class="form_items">
                         <div class="form_items_left">
                             <h1>Связаться через Whats App</h1>
-                            <img src="{% static 'assets/images/Layer 0.svg' %}" alt="">
+                            {% render_static_picture 'assets/images/Layer 0.svg' alt='' lazy=True decoding="async" %}
                         </div>
                         <div class="form_items_right desctop">
                             <input placeholder="Имя" class="form_input" type="text" name="name" required>
