@@ -86,7 +86,8 @@
     position: absolute;
     pointer-events: none;
     background-repeat: no-repeat;
-    z-index: 0;
+    z-index: -1;
+    /* keep circles behind section content */
 }
 
 /* top-right extra */

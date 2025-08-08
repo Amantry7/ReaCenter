@@ -13,6 +13,7 @@
 
 body {
     font-family: 'Museo\ Sans\ Cyrl', sans-serif;
+    overflow-x: hidden; /* prevent horizontal scroll from decorative pseudo-elements */
 
 }
 
@@ -153,6 +154,7 @@ body {
 .head_section {
     padding-top: 60px;
     padding-bottom: 60px;
+    overflow: hidden; /* prevent decorative circles from leaking into header */
 }
 
 .bottom_head_section_list {

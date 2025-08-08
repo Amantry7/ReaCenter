@@ -192,7 +192,7 @@
             </h1>
             <div class="service_list">
                 {% for service in service %}
-                <div class="service_card stagger-item" onclick="window.location.href = '{% url 'service_detail' service.id%}';">
+                <div class="service_card stagger-item" onclick='window.location.href="{% url "service_detail" service.id %}";'>
                     <div class="service_card_image">
                         <img src="{{service.image.url}}" alt="">
                     </div>
