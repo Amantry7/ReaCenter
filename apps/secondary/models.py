@@ -263,6 +263,10 @@ class News(models.Model):
         auto_now_add=True,
         verbose_name='Дата создания'
     )
+    published_at = models.DateField(
+        verbose_name='Дата публикации',
+        blank=True, null=True
+    )
     is_published = models.BooleanField(
         default=True,
         verbose_name='Опубликовано'
@@ -274,7 +278,7 @@ class News(models.Model):
     class Meta:
         verbose_name = 'Новость'
         verbose_name_plural = 'Новости'
-        ordering = ['-created_at']
+        ordering = ['-published_at', '-created_at']
 
 # Scientific Work Page Models
 class ScientificWorkIntro(models.Model):
@@ -363,6 +367,86 @@ class ScientificPublication(models.Model):
         verbose_name = 'Научная публикация'
         verbose_name_plural = 'Научные публикации'
         ordering = ['order']
+
+
+class ScientificPublicationsSection(models.Model):
+    """Editable header/description for Publications section on Scientific Work page"""
+    title = models.CharField(max_length=255, verbose_name='Заголовок раздела', default='Опубликованные научные и клинические исследования')
+    description = models.TextField(verbose_name='Описание раздела', blank=True, null=True,
+                                   help_text='Текст под заголовком в разделе публикаций')
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Секция публикаций (заголовок и описание)'
+        verbose_name_plural = 'Секция публикаций (заголовок и описание)'
+
+
+class ScientificManualsSection(models.Model):
+    """Editable header/description for Manuals section on Scientific Work page"""
+    title = models.CharField(
+        max_length=255,
+        verbose_name='Заголовок раздела',
+        default='Учебно-методические пособия'
+    )
+    description = models.TextField(
+        verbose_name='Описание раздела',
+        blank=True,
+        null=True,
+        help_text='Текст под заголовком в разделе учебно-методических пособий'
+    )
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Секция пособий (заголовок и описание)'
+        verbose_name_plural = 'Секция пособий (заголовок и описание)'
+
+
+class ScientificPatentsSection(models.Model):
+    """Editable header/description for Patents/Permissions section on Scientific Work page"""
+    title = models.CharField(
+        max_length=255,
+        verbose_name='Заголовок раздела',
+        default='Патенты, свидетельства и разрешения'
+    )
+    description = models.TextField(
+        verbose_name='Описание раздела',
+        blank=True,
+        null=True,
+        help_text='Текст под заголовком в разделе патентов/разрешений'
+    )
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Секция патентов (заголовок и описание)'
+        verbose_name_plural = 'Секция патентов (заголовок и описание)'
+
+
+class ScientificJournalsSection(models.Model):
+    """Editable header/description for Journals section on Scientific Work page"""
+    title = models.CharField(
+        max_length=255,
+        verbose_name='Заголовок раздела',
+        default='Научные журналы'
+    )
+    description = models.TextField(
+        verbose_name='Описание раздела',
+        blank=True,
+        null=True,
+        help_text='Текст под заголовком в разделе научных журналов'
+    )
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Секция журналов (заголовок и описание)'
+        verbose_name_plural = 'Секция журналов (заголовок и описание)'
 
 
 class ScientificJournal(models.Model):

@@ -1,5 +1,6 @@
 {% extends 'include/homepage.html' %}
 {% load static %}
+{% load picture_tags %}
 {% block content%}
 
     {% include 'include/header.html'%}
@@ -14,8 +15,7 @@
         <section class="user_section">
             <div class="user_card">
                 <div class="userAvatar">
-                    <img src="{{about.image.url}}"
-                        alt="">
+                    {% render_picture about.image alt=about.name %}
                 </div>
                 <div class="user_info">
                     <div>
@@ -32,8 +32,7 @@
             </p>
             <br><br>
             <div class="about_us_baner">
-                <img src="{{about.banner.url}}"
-                    alt="">
+                {% render_picture about.banner alt="" %}
             </div>
             <br><br>
             <p>
@@ -58,7 +57,9 @@
                     {% for doc in about.about_doc.all %}
                     <div class="swiper-slide">
                         <div class="about_us_doc_item">
-                            <img src="{{doc.image.url}}" alt="" onclick="openDocModal(this.src)">
+                            <div class="about_us_doc_img" onclick="openDocModal('{{ doc.image.url }}')">
+                                {% render_picture doc.image alt=doc.title %}
+                            </div>
                             {% if doc.title and doc.title != 'None' %}
                             <h1>{{doc.title}}</h1>
                             {% endif %}
@@ -280,8 +281,7 @@
         {% for method in method.methods_emp.all%}
         <div class="user_item">
             <div class="user_item_avatar">
-                <img src="{{method.image.url}}"
-                    alt="">
+                {% render_picture method.image alt=method.name %}
             </div>
             <div class="user_item_info">
                 <h1>{{method.name}}</h1>

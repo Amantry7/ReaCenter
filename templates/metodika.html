@@ -1,5 +1,6 @@
 {% extends 'include/homepage.html' %}
 {% load static %}
+{% load picture_tags %}
 {% block content%}
 
     {% include 'include/header.html'%}
@@ -151,8 +152,7 @@
                 {% for method in method.methods_emp.all%}
                 <div class="user_item">
                     <div class="user_item_avatar">
-                        <img src="{{method.image.url}}"
-                            alt="">
+                        {% render_picture method.image alt=method.name lazy=True decoding="async" %}
                     </div>
                     <div class="user_item_info">
                         <h1>{{method.name}}</h1>

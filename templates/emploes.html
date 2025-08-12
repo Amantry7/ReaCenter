@@ -1,5 +1,6 @@
 {% extends "include/homepage.html" %}
 {% load static %}
+{% load picture_tags %}
 {% block content%}
     
     {% include 'include/header.html'%}
@@ -33,7 +34,7 @@
                     <a href="{% url 'emploe_detail' emploe.id%}" class="emploses_main_card">
                         <div class="top_emploses_main_card">
                             <div class="top_emploses_main_card_image">
-                                <img src="{{emploe.image.url}}" alt="">
+                                {% render_picture emploe.image alt=emploe.name lazy=True decoding="async" %}
                             </div>
                             <div class="top_emploses_main_card_text">
                                 <h1>

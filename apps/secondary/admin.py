@@ -6,7 +6,8 @@ from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from apps.secondary.models import (About, AboutService, AboutDocument, Consultation, ConsultationProgres, 
     Methods, MethodsEva, MethodsDev, Institution, MethodsEmp, ContactRequest, NewsBanner, 
     NewsBannerImage, News, ScientificWorkIntro, ScientificManual, ScientificPatent, 
-    ScientificPermission, ScientificPublication, ScientificJournal)
+    ScientificPermission, ScientificPublication, ScientificPublicationsSection, 
+    ScientificManualsSection, ScientificPatentsSection, ScientificJournalsSection, ScientificJournal)
 # Register your models here.
 
 class AboutServiceTabularInline(admin.TabularInline):
@@ -73,7 +74,7 @@ class NewsAdminForm(forms.ModelForm):
 @admin.register(News)
 class NewsAdmin(admin.ModelAdmin):
     form = NewsAdminForm
-    list_display = ('title', 'created_at', 'is_published')
+    list_display = ('title', 'published_at', 'created_at', 'is_published')
 
 # Scientific Work Admin Registration
 @admin.register(ScientificWorkIntro)
@@ -101,6 +102,22 @@ class ScientificPublicationAdmin(admin.ModelAdmin):
     list_display = ('title', 'description', 'order')
     list_editable = ('order',)
     
+@admin.register(ScientificPublicationsSection)
+class ScientificPublicationsSectionAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+
+@admin.register(ScientificManualsSection)
+class ScientificManualsSectionAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+
+@admin.register(ScientificPatentsSection)
+class ScientificPatentsSectionAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+
+@admin.register(ScientificJournalsSection)
+class ScientificJournalsSectionAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+
 @admin.register(ScientificJournal)
 class ScientificJournalAdmin(admin.ModelAdmin):
     list_display = ('title', 'order')

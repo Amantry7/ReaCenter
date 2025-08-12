@@ -1,5 +1,6 @@
 {% extends 'include/homepage.html' %}
 {% load static %}
+{% load picture_tags %}
 {% block content%}
     {% include 'include/header.html'%}
     <br><br><br>
@@ -104,12 +105,12 @@
             </h1>
             <br>
             <p>
-                {{ news_item.created_at|date:"d.m.Y" }}
+                {% if news_item.published_at %}{{ news_item.published_at|date:"d.m.Y" }}{% else %}{{ news_item.created_at|date:"d.m.Y" }}{% endif %}
             </p>
         </div>
         <br><br>
         <div class="news_image">
-            <img src="{{ news_item.image.url }}" alt="{{ news_item.title }}">
+            {% render_picture news_item.image alt=news_item.title fetchpriority="high" decoding="async" lazy=False %}
         </div>
         <br><br>
         <div class="news_content">

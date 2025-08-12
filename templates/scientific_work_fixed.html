@@ -1,5 +1,6 @@
 {% extends 'include/homepage.html' %}
 {% load static %}
+{% load picture_tags %}
 {% block content%}
 {% block extra_head %}
 <link rel="stylesheet" href="{% static 'assets/css/scientific_animations.css' %}">
@@ -65,7 +66,7 @@
                     {% for manual in scientific_manuals %}
                     <div class="scientific-material-card">
                         <div class="scientific-material-image">
-                            <img src="{{ manual.image.url }}" alt="{{ manual.title }}">
+                            {% render_picture manual.image alt=manual.title lazy=True decoding="async" %}
                         </div>
                         <div class="scientific-material-info">
                             <h3>{{ manual.title }}</h3>
@@ -78,7 +79,7 @@
                     <!-- Пособие 1 -->
                     <div class="scientific-material-card">
                         <div class="scientific-material-image">
-                            <img src="{% static 'assets/images/scientific/book1.jpg' %}" alt="Миотоновая рефлексотерапия">
+                            {% render_static_picture 'assets/images/scientific/book1.jpg' alt='Миотоновая рефлексотерапия' lazy=True decoding="async" %}
                         </div>
                         <div class="scientific-material-info">
                             <h3>Миотоновая рефлексотерапия</h3>
@@ -90,7 +91,7 @@
                     <!-- Пособие 2 -->
                     <div class="scientific-material-card">
                         <div class="scientific-material-image">
-                            <img src="{% static 'assets/images/scientific/book2.jpg' %}" alt="Электропунктурная диагностика">
+                            {% render_static_picture 'assets/images/scientific/book2.jpg' alt='Электропунктурная диагностика' lazy=True decoding="async" %}
                         </div>
                         <div class="scientific-material-info">
                             <h3>Электропунктурная диагностика</h3>
@@ -102,7 +103,7 @@
                     <!-- Пособие 3 -->
                     <div class="scientific-material-card">
                         <div class="scientific-material-image">
-                            <img src="{% static 'assets/images/scientific/book3.jpg' %}" alt="Система реабилитации">
+                            {% render_static_picture 'assets/images/scientific/book3.jpg' alt='Система реабилитации' lazy=True decoding="async" %}
                         </div>
                         <div class="scientific-material-info">
                             <h3>Система реабилитации</h3>
@@ -114,7 +115,7 @@
                     <!-- Пособие 4 -->
                     <div class="scientific-material-card">
                         <div class="scientific-material-image">
-                            <img src="{% static 'assets/images/scientific/book4.jpg' %}" alt="Аутизм у детей">
+                            {% render_static_picture 'assets/images/scientific/book4.jpg' alt='Аутизм у детей' lazy=True decoding="async" %}
                         </div>
                         <div class="scientific-material-info">
                             <h3>Аутизм у детей</h3>
@@ -134,7 +135,7 @@
                     {% for patent in scientific_patents %}
                     <div class="scientific-material-card patent-card">
                         <div class="scientific-material-image">
-                            <img src="{{ patent.image.url }}" alt="Патент №{{ patent.patent_number }}">
+                            {% render_picture patent.image alt=patent.patent_number lazy=True decoding="async" %}
                         </div>
                         <div class="scientific-material-info">
                             <h3>Патент №{{ patent.patent_number }}</h3>
@@ -147,7 +148,7 @@
                     <!-- Патент 1 -->
                     <div class="scientific-material-card patent-card">
                         <div class="scientific-material-image">
-                            <img src="{% static 'assets/images/scientific/patent1.jpg' %}" alt="Патент №1230537">
+                            {% render_static_picture 'assets/images/scientific/patent1.jpg' alt='Патент №1230537' lazy=True decoding="async" %}
                         </div>
                         <div class="scientific-material-info">
                             <h3>Патент №1230537</h3>
@@ -159,7 +160,7 @@
                     <!-- Патент 2 -->
                     <div class="scientific-material-card patent-card">
                         <div class="scientific-material-image">
-                            <img src="{% static 'assets/images/scientific/patent2.jpg' %}" alt="Патент №2833894">
+                            {% render_static_picture 'assets/images/scientific/patent2.jpg' alt='Патент №2833894' lazy=True decoding="async" %}
                         </div>
                         <div class="scientific-material-info">
                             <h3>Патент №2833894</h3>
@@ -171,7 +172,7 @@
                     <!-- Патент 3 -->
                     <div class="scientific-material-card patent-card">
                         <div class="scientific-material-image">
-                            <img src="{% static 'assets/images/scientific/patent3.jpg' %}" alt="Патент №2718754">
+                            {% render_static_picture 'assets/images/scientific/patent3.jpg' alt='Патент №2718754' lazy=True decoding="async" %}
                         </div>
                         <div class="scientific-material-info">
                             <h3>Патент №2718754</h3>
@@ -183,7 +184,7 @@
                     <!-- Патент 4 -->
                     <div class="scientific-material-card patent-card">
                         <div class="scientific-material-image">
-                            <img src="{% static 'assets/images/scientific/patent4.jpg' %}" alt="Патент №2401097">
+                            {% render_static_picture 'assets/images/scientific/patent4.jpg' alt='Патент №2401097' lazy=True decoding="async" %}
                         </div>
                         <div class="scientific-material-info">
                             <h3>Патент №2401097</h3>
@@ -203,7 +204,7 @@
                     {% for permission in scientific_permissions %}
                     <div class="scientific-material-card permission-card">
                         <div class="scientific-material-image">
-                            <img src="{{ permission.image.url }}" alt="{{ permission.title }}">
+                            {% render_picture permission.image alt=permission.title lazy=True decoding="async" %}
                         </div>
                         <div class="scientific-material-info">
                             <h3>{{ permission.title }}</h3>
@@ -216,7 +217,7 @@
                     {% for certificate in scientific_certificates %}
                     <div class="scientific-material-card permission-card">
                         <div class="scientific-material-image">
-                            <img src="{{ certificate.image.url }}" alt="{{ certificate.title }}">
+                            {% render_picture certificate.image alt=certificate.title lazy=True decoding="async" %}
                         </div>
                         <div class="scientific-material-info">
                             <h3>{{ certificate.title }}</h3>
@@ -229,7 +230,7 @@
                     <!-- Разрешение 1 -->
                     <div class="scientific-material-card permission-card">
                         <div class="scientific-material-image">
-                            <img src="{% static 'assets/images/scientific/permission1.jpg' %}" alt="Разрешение">
+                            {% render_static_picture 'assets/images/scientific/permission1.jpg' alt='Разрешение' lazy=True decoding="async" %}
                         </div>
                         <div class="scientific-material-info">
                             <h3>Разрешение</h3>
@@ -241,7 +242,7 @@
                     <!-- Разрешение 2 -->
                     <div class="scientific-material-card permission-card">
                         <div class="scientific-material-image">
-                            <img src="{% static 'assets/images/scientific/permission2.jpg' %}" alt="Разрешение">
+                            {% render_static_picture 'assets/images/scientific/permission2.jpg' alt='Разрешение' lazy=True decoding="async" %}
                         </div>
                         <div class="scientific-material-info">
                             <h3>Разрешение</h3>
@@ -253,7 +254,7 @@
                     <!-- Свидетельство -->
                     <div class="scientific-material-card permission-card">
                         <div class="scientific-material-image">
-                            <img src="{% static 'assets/images/scientific/certificate.jpg' %}" alt="Свидетельство">
+                            {% render_static_picture 'assets/images/scientific/certificate.jpg' alt='Свидетельство' lazy=True decoding="async" %}
                         </div>
                         <div class="scientific-material-info">
                             <h3>Свидетельство</h3>
@@ -276,7 +277,7 @@
                     {% for publication in scientific_publications %}
                     <div class="scientific-material-card publication-card">
                         <div class="scientific-material-image">
-                            <img src="{{ publication.image.url }}" alt="{{ publication.title }}">
+                            {% render_picture publication.image alt=publication.title lazy=True decoding="async" %}
                         </div>
                         <div class="scientific-material-info">
                             <h3>{{ publication.title }}</h3>
@@ -299,7 +300,7 @@
                     {% for journal in scientific_journals %}
                     <div class="scientific-material-card journal-card">
                         <div class="scientific-material-image">
-                            <img src="{{ journal.image.url }}" alt="{{ journal.title }}">
+                            {% render_picture journal.image alt=journal.title lazy=True decoding="async" %}
                         </div>
                         <div class="scientific-material-info">
                             <h3>{{ journal.title }}</h3>

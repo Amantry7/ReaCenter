@@ -1,4 +1,5 @@
 {% load static %}
+{% load picture_tags %}
 <!-- Added navigation adjustments CSS -->
 <link rel="stylesheet" href="{% static 'assets/styles/nav_adjustments.css' %}">
 <header>
@@ -41,7 +42,7 @@
         </button>
         <div class="head_logo">
             <a href="/">
-                <img src="{{setting.logo.url}}" alt="">
+                {% render_picture setting.logo alt=setting.title lazy=False fetchpriority="high" decoding="async" %}
             </a>
         </div>
         <div></div>
@@ -62,17 +63,17 @@
                 <h3>{{setting.title}}</h3>
                 <div class="bottom_nav_flex">
                     <div>
-                        <img src="{% static 'assets/images/logo_formikro_blue 1.png' %}" alt="">
+                        {% render_static_picture 'assets/images/logo_formikro_blue 1.png' alt=setting.title lazy=True decoding="async" %}
                     </div>
                     <div class="head_sosial">
                         <a href="{{setting.youtube}}" class="head_sosial_icon">
-                            <img src="{% static 'assets/icon/Social Icons.svg' %}" alt="">
+                            {% render_static_picture 'assets/icon/Social Icons.svg' alt='' lazy=True decoding="async" %}
                         </a>
                         <a href="{{setting.facebook}}" class="head_sosial_icon">
-                            <img src="{% static 'assets/icon/Social Icons — копия.svg' %}" alt="">
+                            {% render_static_picture 'assets/icon/Social Icons — копия.svg' alt='' lazy=True decoding="async" %}
                         </a>
                         <a href="{{setting.instagram}}" class="head_sosial_icon">
-                            <img src="{% static 'assets/icon/Social Icons — копия 2.svg' %}" alt="">
+                            {% render_static_picture 'assets/icon/Social Icons — копия 2.svg' alt='' lazy=True decoding="async" %}
                         </a>
                     </div>
                 </div>

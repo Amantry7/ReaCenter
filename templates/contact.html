@@ -1,5 +1,6 @@
 {% extends 'include/homepage.html' %}
 {% load static %}
+{% load picture_tags %}
 {% block content%}
 
     {% include 'include/header.html'%}
@@ -42,7 +43,7 @@
                     <div class="form_items">
                         <div class="form_items_left">
                             <h1>Связаться с нами</h1>
-                            <img src="{% static 'assets/images/Layer 0.svg' %}" alt="">
+                            {% render_static_picture 'assets/images/Layer 0.svg' alt='' lazy=True decoding="async" %}
                         </div>
                         <div class="form_items_right">
                             <input placeholder="Имя" class="form_input" type="text" name="name" required>

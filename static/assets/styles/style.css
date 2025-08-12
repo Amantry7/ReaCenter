@@ -3,6 +3,7 @@
     src: url('/assets/font/Museo\ Sans\ Cyrl/museosanscyrl_100.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 * {
@@ -13,7 +14,8 @@
 
 body {
     font-family: 'Museo\ Sans\ Cyrl', sans-serif;
-    overflow-x: hidden; /* prevent horizontal scroll from decorative pseudo-elements */
+    overflow-x: hidden;
+    /* prevent horizontal scroll from decorative pseudo-elements */
 
 }
 
@@ -154,7 +156,8 @@ body {
 .head_section {
     padding-top: 60px;
     padding-bottom: 60px;
-    overflow: hidden; /* prevent decorative circles from leaking into header */
+    overflow: hidden;
+    /* prevent decorative circles from leaking into header */
 }
 
 .bottom_head_section_list {
@@ -1538,7 +1541,6 @@ li {
         font-size: 24px;
         font-weight: 400;
         line-height: 28.8px;
-        text-align: center;
 
     }
 }

@@ -1,5 +1,6 @@
 {% extends 'include/homepage.html' %}
 {% load static %}
+{% load picture_tags %}
 {% block content%}
 
     {% include 'include/header.html'%}
@@ -21,8 +22,7 @@
         <div class="emploes_page_section">
             <div class="emploes_page_section_left">
                 <div class="emploes_page_section_left_image">
-                    <img src="{{emploe.image.url}}"
-                        alt="">
+                    {% render_picture emploe.image alt=emploe.name lazy=True decoding="async" %}
                 </div>
                 <br>
                 <h1>
@@ -35,7 +35,7 @@
                 <br>
                 <div class="emploes_page_section_left_sertificate">
                     {% if emploe.image_2 %}
-                        <img src="{{emploe.image_2.url}}" alt="">
+                        {% render_picture emploe.image_2 alt=emploe.name lazy=True decoding="async" %}
                     {% endif %}
                 </div>
             </div>

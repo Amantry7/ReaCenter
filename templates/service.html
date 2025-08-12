@@ -1,5 +1,6 @@
 {% extends 'include/homepage.html' %}
 {% load static %}
+{% load picture_tags %}
 {% block content%}
 
     {% include 'include/header.html'%}
@@ -20,8 +21,7 @@
     <main class="service">
         <div class="emploes_section">
             <div class="emploes_section_image">
-                <img src="{{consult.image.url}}"
-                    alt="">
+                {% render_picture consult.image alt=consult.title fetchpriority="high" decoding="async" lazy=False %}
             </div>
             <div>
                 <h1>
@@ -46,7 +46,7 @@
                 <div class="service_instuction_item">
                     {% if forloop.counter <= 2 and consult.image %}
                     <div class="service_instuction_item_image">
-                        <img src="{{ consult.image.url }}" alt="{{ consult.title }}">
+                        {% render_picture consult.image alt=consult.title lazy=True decoding="async" %}
                     </div>
                     {% endif %}
                     <div>
@@ -66,7 +66,7 @@
                 {%for service in service %}
                 <a href="{% url 'service_detail' service.id%}" class="service_card">
                     <div class="service_card_image">
-                        <img src="{{service.image.url}}" alt="">
+                        {% render_picture service.image alt=service.title lazy=True decoding="async" %}
                     </div>
                     <div class="service_card_desc">
                         <div>

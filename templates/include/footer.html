@@ -1,8 +1,9 @@
 {% load static%}
+{% load picture_tags %}
 <footer>
     <div class="container">
         <div class="top_footer">
-            <div class="footer_logo"><img src="{{setting.logo_footer.url}}" alt=""></div>
+            <div class="footer_logo">{% render_picture setting.logo_footer alt=setting.title lazy=False decoding="async" %}</div>
             <div>
                 <p>{{setting.desc}}</p>
             </div>
@@ -25,15 +26,15 @@
             </div>
             <div>
                 <a href="{{setting.youtube}}">
-                    <img src="{% static 'assets/icon/Social Icons.svg' %}" alt="">
+                    {% render_static_picture 'assets/icon/Social Icons.svg' alt='' lazy=True decoding="async" %}
                 </a>
                 <br>
                 <a href="{{setting.facebook}}">
-                    <img src="{% static 'assets/icon/Social Icons — копия.svg' %}" alt="">
+                    {% render_static_picture 'assets/icon/Social Icons — копия.svg' alt='' lazy=True decoding="async" %}
                 </a>
                 <br>
                 <a href="{{setting.instagram}}">
-                    <img src="{% static 'assets/icon/Social Icons — копия 2.svg' %}" alt="">
+                    {% render_static_picture 'assets/icon/Social Icons — копия 2.svg' alt='' lazy=True decoding="async" %}
                 </a>
             </div>
         </div>
@@ -42,14 +43,14 @@
 
             <div class="bottom_footer_part">
                 <h1>Наши партнеры:</h1>
-                <img src="{% static 'assets/images/KHTC-01 2.png' %}" alt="">
-                <img src="{% static 'assets/images/Group.png' %}" alt="">
-                <img src="{% static 'assets/images/Group — копия.png' %}" alt="">
+                {% render_static_picture 'assets/images/KHTC-01 2.png' alt='KHTC' lazy=True decoding="async" %}
+                {% render_static_picture 'assets/images/Group.png' alt='Partner' lazy=True decoding="async" %}
+                {% render_static_picture 'assets/images/Group — копия.png' alt='Partner' lazy=True decoding="async" %}
             </div>
             <div class="bottom_footer_part">
-                {% comment %} <img src="{% static 'assets/images/image 16.png' %}" alt="">
-                <img src="{% static 'assets/images/image 17.png' %}" alt=""> {% endcomment %}
-                <img src="{% static 'assets/images/Logo_Kyrgyz_State_Medical_Academy.svg' %}" alt="">
+                {% comment %} {% render_static_picture 'assets/images/image 16.png' alt='' lazy=True decoding="async" %}
+                {% render_static_picture 'assets/images/image 17.png' alt='' lazy=True decoding="async" %} {% endcomment %}
+                {% render_static_picture 'assets/images/Logo_Kyrgyz_State_Medical_Academy.svg' alt='' lazy=True decoding="async" %}
             </div>
         </div>
     </div>
