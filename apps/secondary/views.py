@@ -3,7 +3,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from apps.setting.models import Setting, Treat, Service, Reviews, MainSlider
 from apps.secondary.models import (About, Methods, Institution, ContactRequest, News, 
     ScientificWorkIntro, ScientificManual, ScientificPatent, ScientificPermission, 
-    ScientificPublication, ScientificJournal)
+    ScientificPublication, ScientificPublicationsSection, ScientificManualsSection, 
+    ScientificPatentsSection, ScientificJournalsSection, ScientificJournal)
 # Create your views here.
 
 
@@ -86,5 +87,9 @@ def scientific_work(request):
     scientific_certificates = ScientificPermission.objects.filter(type='certificate').order_by('order')
     scientific_publications = ScientificPublication.objects.all().order_by('order')
     scientific_journals = ScientificJournal.objects.all().order_by('order')
+    publications_section = ScientificPublicationsSection.objects.first()
+    manuals_section = ScientificManualsSection.objects.first()
+    patents_section = ScientificPatentsSection.objects.first()
+    journals_section = ScientificJournalsSection.objects.first()
     
     return render(request, 'scientific_work.html', locals())

@@ -59,9 +59,9 @@
         <!-- Табы для навигации по странице -->
     <div class="scientific-tabs-container">
         <div class="scientific-tabs">
-            <button class="scientific-tab-btn active" data-tab="manuals">Учебно-методические пособия</button>
-            <button class="scientific-tab-btn" data-tab="patents">Патенты, свидетельства и разрешения</button>
-            <button class="scientific-tab-btn" data-tab="publications">Научные публикации</button>
+            <button class="scientific-tab-btn active" data-tab="manuals">{{ manuals_section.title|default:"Учебно-методические пособия" }}</button>
+            <button class="scientific-tab-btn" data-tab="patents">{{ patents_section.title|default:"Патенты, свидетельства и разрешения" }}</button>
+            <button class="scientific-tab-btn" data-tab="publications">{{ publications_section.title|default:"Научные публикации" }}</button>
         </div>
     </div>
 
@@ -69,7 +69,16 @@
         <div class="scientific-tab-content-container">
             <!-- Секция с учебно-методическими пособиями -->
             <div id="manuals" class="scientific-tab-content active">
-                <h2 class="scientific-work-subtitle">Учебно-методические пособия</h2>
+                <h2 class="scientific-work-subtitle">
+                    {% if manuals_section and manuals_section.title %}
+                        {{ manuals_section.title }}
+                    {% else %}
+                        Учебно-методические пособия
+                    {% endif %}
+                </h2>
+                {% if manuals_section and manuals_section.description %}
+                <p class="scientific-work-description">{{ manuals_section.description }}</p>
+                {% endif %}
                 <div class="scientific-materials-grid">
                     {% if scientific_manuals %}
                         {% for manual in scientific_manuals %}
@@ -150,7 +159,16 @@
 
             <!-- Секция с патентами, свидетельствами и разрешениями -->
             <div id="patents" class="scientific-tab-content">
-                <h2 class="scientific-work-subtitle">Патенты, свидетельства и разрешения</h2>
+                <h2 class="scientific-work-subtitle">
+                    {% if patents_section and patents_section.title %}
+                        {{ patents_section.title }}
+                    {% else %}
+                        Патенты, свидетельства и разрешения
+                    {% endif %}
+                </h2>
+                {% if patents_section and patents_section.description %}
+                <p class="scientific-work-description">{{ patents_section.description }}</p>
+                {% endif %}
                 <div class="scientific-materials-grid">
                     <!-- Патенты -->
                     {% if scientific_patents %}
@@ -311,9 +329,19 @@
 
             <!-- Секция с публикациями -->
             <div id="publications" class="scientific-tab-content">
-                <h2 class="scientific-work-subtitle">Опубликованные научные и клинические исследования</h2>
+                <h2 class="scientific-work-subtitle">
+                    {% if publications_section and publications_section.title %}
+                        {{ publications_section.title }}
+                    {% else %}
+                        Опубликованные научные и клинические исследования
+                    {% endif %}
+                </h2>
                 <p class="scientific-work-description">
-                    Результаты клинических исследований с применением МИОТОНОВОЙ РЕФЛЕКСОТЕРАПИИ у детей с органическими поражениями ЦНС и задержкой развития. Опубликованы в рецензируемых научных журналах ВАК и размещены в РИНЦ.
+                    {% if publications_section and publications_section.description %}
+                        {{ publications_section.description }}
+                    {% else %}
+                        Результаты клинических исследований с применением МИОТОНОВОЙ РЕФЛЕКСОТЕРАПИИ у детей с органическими поражениями ЦНС и задержкой развития. Опубликованы в рецензируемых научных журналах ВАК и размещены в РИНЦ.
+                    {% endif %}
                 </p>
                 <div class="scientific-materials-grid">
                     {% if scientific_publications %}
@@ -341,7 +369,16 @@
 
             <!-- Секция с журналами -->
             <div id="journals" class="scientific-tab-content">
-                <h2 class="scientific-work-subtitle">Научные журналы</h2>
+                <h2 class="scientific-work-subtitle">
+                    {% if journals_section and journals_section.title %}
+                        {{ journals_section.title }}
+                    {% else %}
+                        Научные журналы
+                    {% endif %}
+                </h2>
+                {% if journals_section and journals_section.description %}
+                <p class="scientific-work-description">{{ journals_section.description }}</p>
+                {% endif %}
                 <div class="scientific-materials-grid">
                     {% if scientific_journals %}
                         {% for journal in scientific_journals %}

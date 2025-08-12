@@ -5,27 +5,26 @@
 
     {% include 'include/header.html'%}
     <script>
-        const mobilebtn = document.getElementById("mobilebtn");
-        const closebtn = document.getElementById("closebtn");
-        const mobile_nav = document.getElementById("mobile_nav");
-
-        mobilebtn.addEventListener("click", () => {
-            mobile_nav.classList.add("open"); // Открыть меню
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobilebtn = document.getElementById('mobilebtn');
+            const closebtn = document.getElementById('closebtn');
+            const mobile_nav = document.getElementById('mobile_nav');
+            if (mobilebtn && mobile_nav) {
+                mobilebtn.addEventListener('click', () => mobile_nav.classList.add('open'));
+            }
+            if (closebtn && mobile_nav) {
+                closebtn.addEventListener('click', () => mobile_nav.classList.remove('open'));
+            }
         });
-
-        closebtn.addEventListener("click", () => {
-            mobile_nav.classList.remove("open"); // Закрыть меню
-        });
-
     </script>
-    <main>
+    <main class="container">
         <section class="video_section section-circles section-circles-tl circle-img--pink">
-            <h1>Видео отзывы</h1>
+            <h1 class="section_title">Видео отзывы</h1>
             <div class="swiper-container2">
                 <div class="swiper-wrapper">
                     {% for video in video_review %}
                     <div class="swiper-slide">
-                        <div class="video_card" data-video-id="{{ video.video|slice:'-11:' }}">
+                        <div class="video_card" data-video-id="{{ video.video|slice:'-11:' }}" aria-label="Видео отзыв: {{ video.name }}" role="button" tabindex="0">
                             <div class="video_card_image">
                                 {% render_picture video.banner alt=video.name lazy=True decoding="async" %}
                                 <svg class="btn_on" xmlns="http://www.w3.org/2000/svg" width="91" height="101"
@@ -38,7 +37,7 @@
                             <br>
                             <div class="video_card_title">
                                 <h1>{{ video.name }}</h1>
-                                <span>{{ video.create_at }}</span>
+                                <span>{{ video.create_at|date:"d.m.Y" }}</span>
                             </div>
                         </div>
                     </div>
@@ -50,19 +49,19 @@
         </section>
         <section class="video_section section-circles section-circles-tr circle-img--blue">
             <br><br>
-            <h1>Отзывы</h1>
+            <h1 class="section_title">Отзывы</h1>
             <div class="swiper-container2">
                 <div class="swiper-wrapper">
                     {% for review in review %}
                     <div class="swiper-slide">
-                        <div class="reviews_card" data-title="{{review.name}}" data-date="{{review.create_at}}"
-                            data-text="{{review.text}}">
+                        <div class="reviews_card" data-title="{{ review.name }}" data-date="{{ review.create_at|date:'d.m.Y' }}"
+                            data-text="{{ review.text }}" role="button" tabindex="0" aria-label="Отзыв: {{ review.name }}">
                             <div class="reviews_card_head">
                                 <h1>
-                                    {{review.name}} 
+                                    {{ review.name }} 
                                 </h1>
                                 <p>
-                                    {{review.create_at}}
+                                    {{ review.create_at|date:"d.m.Y" }}
                                 </p>
                             </div>
                             <div class="reviews_card_des">
@@ -88,10 +87,11 @@
 
                 </div>
             </div>
-            <div id="videoModal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
+            <div id="videoModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle" aria-hidden="true">
+                <div class="modal-content" role="document">
+                    <button class="close" type="button" aria-label="Закрыть">&times;</button>
                     <div class="custom-video-player">
+                        <h2 id="videoModalTitle" class="visually-hidden">Видео отзыв</h2>
                         <iframe id="youtubeVideo" width="100%" height="315" src="" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
@@ -99,14 +99,10 @@
                 </div>
             </div>
             <!-- Модальное окно -->
-            <div id="reviewModal" class="modal">
-                <div style="
-                max-width: 600px;
-            " class="modal-content  ">
-                    <span class="close-review-modal">&times;</span>
-                    <div style="
-                    padding: 2rem;
-                " class="reviews-card ">
+            <div id="reviewModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="reviewTitle" aria-hidden="true">
+                <div class="modal-content" style="max-width: 640px;">
+                    <button class="close-review-modal" type="button" aria-label="Закрыть">&times;</button>
+                    <div class="reviews-card" style="padding: 2rem;">
                         <div class="reviews_card_head">
                             <h2 id="reviewTitle">
                                 Асаналиева Айзада,
@@ -140,9 +136,9 @@
                     </div>
                 </div>
             </div>
-            <div id="documentModal" class="modal">
-                <div class="real_revue_card">
-                    <span class="close-document-modal">&times;</span>
+            <div id="documentModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="documentTitle" aria-hidden="true">
+                <div class="real_revue_card" role="document">
+                    <button class="close-document-modal" type="button" aria-label="Закрыть">&times;</button>
 
                     <div style="background: rgba(191, 236, 245);padding-bottom: 1rem;">
                         <img id="documentImage" src="" style="max-width: 500px;" width="100%"
@@ -159,7 +155,7 @@
         </section>
         <section class="real_revue section-circles section-circles-bl circle-img--pink-outline">
             <div class="real_revue_title">
-                <h1>Рукописные отзывы</h1>
+                <h1 class="section_title">Рукописные отзывы</h1>
             </div>
             <div class="swiper-container2">
                 <div class="swiper-wrapper">
@@ -173,7 +169,7 @@
                             <br>
                             <h1>{{write.name}}</h1>
                             <br>
-                            <span>{{write.create_at}}</span>
+                            <span>{{ write.create_at|date:"d.m.Y" }}</span>
                         </div>
                     </div>
                     {% endfor %}
@@ -214,105 +210,90 @@
     <br><br><br><br>
     {% include 'include/footer.html'%}
 
-    <script>// Получаем элементы
-        // Получаем элементы
-        document.querySelectorAll('.video_card').forEach(card => {
-            card.addEventListener('click', () => {
-                const videoId = card.getAttribute('data-video-id');
-                const youtubeVideo = document.getElementById("youtubeVideo");
-                const modal = document.getElementById("videoModal");
-    
-                // Вставляем URL с параметрами автозапуска видео
-                youtubeVideo.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-                modal.style.display = "flex";
+    <script>
+        // Утилиты модалок
+        function openModal(modal) {
+            if (!modal) return;
+            modal.style.display = 'flex';
+            modal.setAttribute('aria-hidden', 'false');
+        }
+        function closeModal(modal) {
+            if (!modal) return;
+            modal.style.display = 'none';
+            modal.setAttribute('aria-hidden', 'true');
+        }
+
+        // Видео модалка
+        (function initVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const closeBtn = modal ? modal.querySelector('.close') : null;
+            const iframe = document.getElementById('youtubeVideo');
+            document.querySelectorAll('.video_card').forEach(card => {
+                const open = () => {
+                    const videoId = card.getAttribute('data-video-id');
+                    if (iframe && videoId) {
+                        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                    }
+                    openModal(modal);
+                };
+                card.addEventListener('click', open);
+                card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
             });
-        });
-
-        // Закрываем модальное окно при клике на крестик
-        document.getElementsByClassName("close")[0].addEventListener('click', () => {
-            const modal = document.getElementById("videoModal");
-            const youtubeVideo = document.getElementById("youtubeVideo");
-
-            modal.style.display = "none";
-            youtubeVideo.src = ""; // Очищаем src для остановки видео
-        });
-
-        // Закрываем модальное окно при клике вне его области
-        window.addEventListener("click", (event) => {
-            const modal = document.getElementById("videoModal");
-            const youtubeVideo = document.getElementById("youtubeVideo");
-
-            if (event.target == modal) {
-                modal.style.display = "none";
-                youtubeVideo.src = ""; // Очищаем src для остановки видео
+            if (closeBtn) closeBtn.addEventListener('click', () => { if (iframe) iframe.src = ''; closeModal(modal); });
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) { if (iframe) iframe.src = ''; closeModal(modal); }
+                });
+                modal.querySelector('.modal-content')?.addEventListener('click', (e) => e.stopPropagation());
             }
-        });
-        // Привязываем модалку только к инфо-карточкам
-        // Пример данных отзывов
-        // Привязка модального окна к каждой карточке отзыва
-        document.querySelectorAll('.reviews_card').forEach(card => {
-            card.addEventListener('click', () => {
-                const modal = document.getElementById("reviewModal");
-                const reviewTitle = document.getElementById("reviewTitle");
-                const reviewDate = document.getElementById("reviewDate");
-                const reviewText = document.getElementById("reviewText");
+        })();
 
-                // Извлечение данных из data-атрибутов
-                reviewTitle.textContent = card.getAttribute('data-title');
-                reviewDate.textContent = card.getAttribute('data-date');
-                reviewText.textContent = card.getAttribute('data-text');
-
-                // Отображаем модальное окно
-                modal.style.display = "flex";
+        // Текстовые отзывы модалка
+        (function initReviewModal() {
+            const modal = document.getElementById('reviewModal');
+            const closeBtn = modal ? modal.querySelector('.close-review-modal') : null;
+            const reviewTitle = document.getElementById('reviewTitle');
+            const reviewDate = document.getElementById('reviewDate');
+            const reviewText = document.getElementById('reviewText');
+            document.querySelectorAll('.reviews_card').forEach(card => {
+                const open = () => {
+                    if (reviewTitle) reviewTitle.textContent = card.getAttribute('data-title') || '';
+                    if (reviewDate) reviewDate.textContent = card.getAttribute('data-date') || '';
+                    if (reviewText) reviewText.textContent = card.getAttribute('data-text') || '';
+                    openModal(modal);
+                };
+                card.addEventListener('click', open);
+                card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
             });
-        });
-
-        // Закрытие модального окна при клике на крестик
-        document.getElementsByClassName("close-review-modal")[0].addEventListener('click', () => {
-            const modal = document.getElementById("reviewModal");
-            modal.style.display = "none";
-        });
-
-        // Закрытие модального окна при клике вне его области
-        window.addEventListener("click", (event) => {
-            const modal = document.getElementById("reviewModal");
-            if (event.target == modal) {
-                modal.style.display = "none";
+            if (closeBtn) closeBtn.addEventListener('click', () => closeModal(modal));
+            if (modal) {
+                modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(modal); });
+                modal.querySelector('.modal-content')?.addEventListener('click', (e) => e.stopPropagation());
             }
-        });
+        })();
 
-
-        // Привязка модального окна к каждой карточке документа
-        document.querySelectorAll('.real_revue_card').forEach(card => {
-            card.addEventListener('click', () => {
-                const modal = document.getElementById("documentModal");
-                const documentTitle = document.getElementById("documentTitle");
-                const documentDate = document.getElementById("documentDate");
-                const documentImage = document.getElementById("documentImage");
-
-                // Извлечение данных из data-атрибутов
-                documentTitle.textContent = card.getAttribute('data-title');
-                documentDate.textContent = card.getAttribute('data-date');
-                documentImage.src = card.getAttribute('data-image');
-
-                // Отображаем модальное окно
-                modal.style.display = "flex";
+        // Документы модалка
+        (function initDocumentModal() {
+            const modal = document.getElementById('documentModal');
+            const closeBtn = modal ? modal.querySelector('.close-document-modal') : null;
+            const documentTitle = document.getElementById('documentTitle');
+            const documentDate = document.getElementById('documentDate');
+            const documentImage = document.getElementById('documentImage');
+            document.querySelectorAll('.real_revue_card').forEach(card => {
+                const open = () => {
+                    if (documentTitle) documentTitle.textContent = card.getAttribute('data-title') || '';
+                    if (documentDate) documentDate.textContent = card.getAttribute('data-date') || '';
+                    if (documentImage) documentImage.src = card.getAttribute('data-image') || '';
+                    openModal(modal);
+                };
+                card.addEventListener('click', open);
+                card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
             });
-        });
-
-        // Закрытие модального окна при клике на крестик
-        document.getElementsByClassName("close-document-modal")[0].addEventListener('click', () => {
-            const modal = document.getElementById("documentModal");
-            modal.style.display = "none";
-        });
-
-        // Закрытие модального окна при клике вне его области
-        window.addEventListener("click", (event) => {
-            const modal = document.getElementById("documentModal");
-            if (event.target == modal) {
-                modal.style.display = "none";
+            if (closeBtn) closeBtn.addEventListener('click', () => closeModal(modal));
+            if (modal) {
+                modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(modal); });
+                modal.querySelector('.real_revue_card')?.addEventListener('click', (e) => e.stopPropagation());
             }
-        });
-
+        })();
     </script>
 {% endblock %}

@@ -105,7 +105,7 @@
             </h1>
             <br>
             <p>
-                {{ news_item.created_at|date:"d.m.Y" }}
+                {% if news_item.published_at %}{{ news_item.published_at|date:"d.m.Y" }}{% else %}{{ news_item.created_at|date:"d.m.Y" }}{% endif %}
             </p>
         </div>
         <br><br>

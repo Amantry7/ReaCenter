@@ -32,7 +32,7 @@
             }
         }
         .stambul_text p {
-            color: rgba(83, 172, 191, 1) !important;
+            color: #0049a8 !important;
         }
     </style>
     <script>
@@ -75,9 +75,15 @@
             <div class="service_instuction">
                 {% for consult in consult.consult_progres.all%}
                 <div class="service_instuction_item">
-                    <div class="service_instuction_item_num">{{consult.id}}</div>
+                    {% if forloop.counter <= 2 and consult.image %}
+                    <div class="service_instuction_item_image">
+                        {% render_picture consult.image alt=consult.title lazy=True decoding="async" %}
+                    </div>
+                    {% endif %}
                     <div>
-                        <p>{{consult.title}} </p>
+
+                    <div class="service_instuction_item_num">{{consult.id}}</div>
+                        <p>{{consult.title}} </p>
                     </div>
                 </div>
                 {% endfor %}
