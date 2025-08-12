@@ -24,6 +24,21 @@
                 });
             }
             
+            // Инициализация главного слайдера на странице
+            var mainSwiper = new Swiper('.top_head_section_right .swiper', {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                }
+            });
+            
             // Инициализация слайдера для баннера новостей
             var swiperNews = new Swiper('.swiper-container4', {
                 slidesPerView: 'auto',
