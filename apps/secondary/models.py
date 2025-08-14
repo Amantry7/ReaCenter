@@ -198,7 +198,6 @@ class Institution(models.Model):
 class ContactRequest(models.Model):
     name = models.CharField(max_length=255, verbose_name='Имя')
     last_name = models.CharField(max_length=255, verbose_name='Фамилия')
-    appointment_date = models.CharField(max_length=255, verbose_name='Дата и время записи')
     phone = models.CharField(max_length=20, verbose_name='Номер телефона')
     description = models.TextField(verbose_name='Описание')
     city = models.CharField(max_length=50, verbose_name='Город', default='Бишкек')
