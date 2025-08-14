@@ -311,3 +311,31 @@ class MainSlider(models.Model):
         verbose_name = 'Слайд главной страницы'
         verbose_name_plural = 'Слайды главной страницы'
         ordering = ['order']
+
+
+class WhatsAppQR(models.Model):
+    title = models.CharField(
+        max_length=255,
+        verbose_name='Название',
+        default='QR-код WhatsApp'
+    )
+    qr_image = models.ImageField(
+        upload_to='whatsapp_qr/',
+        verbose_name='QR-код WhatsApp'
+    )
+    description = models.TextField(
+        verbose_name='Описание',
+        blank=True,
+        null=True
+    )
+    is_active = models.BooleanField(
+        default=True,
+        verbose_name='Активен'
+    )
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = 'QR-код WhatsApp'
+        verbose_name_plural = 'QR-коды WhatsApp'

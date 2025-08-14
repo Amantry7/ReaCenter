@@ -5,6 +5,7 @@ from django.utils.safestring import mark_safe
 from django.templatetags.static import static
 from django.contrib.staticfiles.storage import staticfiles_storage
 import os
+from apps.setting.models import WhatsAppQR
 
 register = template.Library()
 
@@ -113,3 +114,22 @@ def render_static_picture(static_path, alt="", css_class="", width=None, height=
         html = f"<picture><source srcset=\"{webp_url}\" type=\"image/webp\">{img_tag}</picture>"
         return mark_safe(html)
     return mark_safe(img_tag)
+
+
+@register.simple_tag
+def render_whatsapp_qr(alt="", css_class="", width=None, height=None, fetchpriority=None, lazy=True, decoding="async"):
+    """
+    Renders WhatsApp QR code from the database. Falls back to static image if no active QR code is found.
+    Usage: {% render_whatsapp_qr alt='WhatsApp QR' %}
+    """
+    try:
+        # Get active WhatsApp QR code from database
+        qr = WhatsAppQR.objects.filter(is_active=True).first()
+        if qr and qr.qr_image:
+            # Use the database image
+            return render_picture(qr.qr_image, alt, css_class, width, height, fetchpriority, lazy, decoding)
+    except Exception:
+        pass
+    
+    # Fallback to static image if no active QR code in database
+    return render_static_picture('assets/images/Layer 0.svg', alt, css_class, width, height, fetchpriority, lazy, decoding)
