@@ -36,7 +36,7 @@
             <a href="{% url 'what_we_detail' treat.id %}" class="treat_card">
                 <div class="treat_card_image">
                     {% if treat.image %}
-                        <img src="{{ treat.image.url }}" alt="{{ treat.title }}">
+                        {% render_picture treat.image alt=treat.title lazy=True decoding="async" %}
                     {% else %}
                         <div class="treat_card_placeholder"></div>
                     {% endif %}
