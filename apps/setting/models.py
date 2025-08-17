@@ -15,7 +15,11 @@ class Treat(models.Model):
         verbose_name='Подзаголовок',
         blank=True, null=True
     )
-
+    image = models.ImageField(
+        upload_to='treat/',
+        verbose_name='Изображение',
+        blank=True, null=True
+    )
     description2 = RichTextUploadingField(
         verbose_name='Описание',
         blank=True,

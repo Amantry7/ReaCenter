@@ -31,26 +31,21 @@
             </p>
         </div>
         <br><br><br>
-        <div class="what_we_list">
+        <div class="treat_cards_grid">
             {% for treat in treat %}
-            <a href="{% url 'what_we_detail' treat.id %}" class="what_we_item ">
-                <h1>
-                    {{treat.title}}
-                </h1>
-                <div>
-                    {% if treat.subtitle != None%}
-                    <p>
-                        {{treat.subtitle}}
-                    </p>
+            <a href="{% url 'what_we_detail' treat.id %}" class="treat_card">
+                <div class="treat_card_image">
+                    {% if treat.image %}
+                        <img src="{{ treat.image.url }}" alt="{{ treat.title }}">
+                    {% else %}
+                        <div class="treat_card_placeholder"></div>
                     {% endif %}
-                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
-                        <path
-                            d="M34 17.499C34 26.5988 26.5981 33.999 17.5 33.999C8.4019 33.999 1 26.5988 1 17.499C1 8.40092 8.4019 0.999023 17.5 0.999023C26.5981 0.999023 34 8.40092 34 17.499Z"
-                            stroke="white" stroke-width="2" />
-                        <path
-                            d="M24.1688 15.13C24.1688 15.4452 24.0484 15.762 23.8075 16.0029L18.082 21.7564C17.8493 21.9891 17.5342 22.1194 17.2042 22.1194C16.8758 22.1194 16.5607 21.9891 16.328 21.7564L10.5992 16.0029C10.1174 15.5194 10.1174 14.7373 10.6025 14.2539C11.0876 13.7721 11.8714 13.7737 12.3532 14.2572L17.2042 19.1296L22.0552 14.2572C22.537 13.7737 23.3191 13.7721 23.8042 14.2539C24.0484 14.4948 24.1688 14.8132 24.1688 15.13Z"
-                            fill="white" />
-                    </svg>
+                </div>
+                <div class="treat_card_content">
+                    <h3>{{ treat.title }}</h3>
+                    {% if treat.subtitle %}
+                        <p>{{ treat.subtitle }}</p>
+                    {% endif %}
                 </div>
             </a>
             {% endfor %}
