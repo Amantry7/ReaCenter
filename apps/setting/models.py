@@ -250,22 +250,78 @@ class Setting(models.Model):
         upload_to='logo/',
         verbose_name='Логотип футера'
     )
+    
+    # Первая клиника (Ново-Вокзальная)
     address = models.CharField(
         max_length=244,
-        verbose_name='Адрес'
+        verbose_name='Адрес первой клиники'
     )
     schedul = models.CharField(
         max_length=244,
-        verbose_name='График работы'
+        verbose_name='График работы первой клиники'
     )
+    email_1 = models.EmailField(
+        verbose_name='Email первой клиники',
+        blank=True,
+        null=True
+    )
+    
+    # Вторая клиника (Платонова)
+    address_2 = models.CharField(
+        max_length=244,
+        verbose_name='Адрес второй клиники',
+        blank=True,
+        null=True
+    )
+    schedul_2 = models.CharField(
+        max_length=244,
+        verbose_name='График работы второй клиники',
+        blank=True,
+        null=True
+    )
+    email_2 = models.EmailField(
+        verbose_name='Email второй клиники',
+        blank=True,
+        null=True
+    )
+    
+    # Социальные сети
     youtube = models.URLField(
-        verbose_name='Ссылка на youtube'
+        verbose_name='Ссылка на youtube',
+        blank=True,
+        null=True
     )
     facebook = models.URLField(
-        verbose_name='Cсылка на facebook'
+        verbose_name='Cсылка на facebook',
+        blank=True,
+        null=True
     )
     instagram = models.URLField(
-        verbose_name='Ссылка на instagram'
+        verbose_name='Ссылка на instagram',
+        blank=True,
+        null=True
+    )
+    whatsapp = models.URLField(
+        verbose_name='Ссылка на WhatsApp',
+        blank=True,
+        null=True
+    )
+    vk = models.URLField(
+        verbose_name='Ссылка на VK',
+        blank=True,
+        null=True
+    )
+    telegram = models.URLField(
+        verbose_name='Ссылка на Telegram',
+        blank=True,
+        null=True
+    )
+    
+    # Карта
+    map_embed_url = models.TextField(
+        verbose_name='Ссылка на карту (embed)',
+        blank=True,
+        null=True
     )
 
     def __str__(self):
