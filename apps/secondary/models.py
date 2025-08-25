@@ -112,8 +112,7 @@ class Methods(models.Model):
     text = RichTextField(
         verbose_name='текс для внимание'
     )
-    subtitle = models.CharField(
-        max_length=255,
+    subtitle = models.TextField(
         verbose_name='Последний текст'
     )
     def __str__(self):
@@ -161,8 +160,7 @@ class MethodsEmp(models.Model):
         max_length=255,
         verbose_name='ФИО'
     )
-    desc = models.CharField(
-        max_length=255,
+    desc = models.TextField(
         verbose_name='Описание'
     )
     image = models.ImageField(
