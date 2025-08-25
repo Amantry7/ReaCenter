@@ -3282,8 +3282,14 @@ li {
 
 
 @media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+    
     .container {
         padding: 0 20px;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     /* Адаптивные стили для карточек лечения */
@@ -3319,6 +3325,27 @@ li {
 }
 
 @media (max-width: 768px) {
+    .emploes_section_2 {
+        padding: 20px 0;
+        overflow-x: hidden;
+        
+        .container {
+            max-width: 100%;
+            padding: 0 15px;
+        }
+        
+        p {
+            font-size: 16px;
+            line-height: 20px;
+            padding: 0;
+            margin: 0;
+            word-wrap: break-word;
+            br {
+                display: none;
+            }
+        }
+    }
+
     .emploses_main {
         grid-template-columns: repeat(1, 1fr);
         grid-row-gap: 16px
@@ -3337,6 +3364,45 @@ li {
         p {
             font-size: 10px;
         }
+    }
+}
+
+@media (max-width: 480px) {
+    .emploes_section_2 {
+        .container {
+            padding: 0 10px;
+        }
+        
+        p {
+            font-size: 14px;
+            line-height: 18px;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+    }
+
+    .emploses_main_card {
+        padding: 20px;
+        margin: 0 10px;
+    }
+
+    .top_emploses_main_card {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .top_emploses_main_card_text {
+        width: 100%;
+    }
+
+    .top_emploses_main_card_image {
+        width: 80px !important;
+        height: 80px !important;
+        min-width: 80px;
+        min-height: 80px;
+        margin: 0 auto;
     }
 }
 

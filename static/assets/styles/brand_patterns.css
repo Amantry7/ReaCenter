@@ -36,7 +36,7 @@
 }
 
 .bg-circle-dark-tr {
-    background-image: image-set(url('../images/circles/dark-blue-circle.webp') type('image/webp'), url('../images/circles/dark-blue-circle.png') type('image/png'));
+    background-image: url('../images/circles/dark-blue-circle.png');
     background-repeat: no-repeat;
     background-position: right -80px top -40px;
     background-size: clamp(160px, 20vw, 320px);
@@ -198,7 +198,7 @@
 }
 
 .circle-img--dark-blue {
-    --circle-img: image-set(url('../images/circles/dark-blue-circle.webp') type('image/webp'), url('../images/circles/dark-blue-circle.png') type('image/png'));
+    --circle-img: url('../images/circles/dark-blue-circle.png');
 }
 
 .circle-img--pink {
@@ -219,7 +219,7 @@
 }
 
 .bg-circles--dark-blue {
-    --circle-img: image-set(url('../images/circles/dark-blue-circle.webp') type('image/webp'), url('../images/circles/dark-blue-circle.png') type('image/png'));
+    --circle-img: url('../images/circles/dark-blue-circle.png');
 }
 
 .bg-circles--pink {
@@ -228,4 +228,24 @@
 
 .bg-circles--pink-outline {
     --circle-img: image-set(url('../images/circles/pink-circle-without-shapes.webp') type('image/webp'), url('../images/circles/pink-circle-without-shapes.png') type('image/png'));
+}
+
+/* Мобильная адаптация для кругов */
+@media (max-width: 768px) {
+    .section-circles-br:before {
+        display: none;
+    }
+    
+    .section-circles-tr:after,
+    .section-circles-tl:after,
+    .section-circles-bl:before {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-circles:before,
+    .section-circles:after {
+        display: none;
+    }
 }
