@@ -126,8 +126,7 @@ class MethodsEva(models.Model):
         Methods, related_name='methods_eva',
         on_delete=models.CASCADE
     )
-    title = models.CharField(
-        max_length=255,
+    title = models.TextField(
         verbose_name='Заголовок'
     )
     def __str__(self):
@@ -141,8 +140,7 @@ class MethodsDev(models.Model):
         Methods, related_name='methods_dev',
         on_delete=models.CASCADE
     )
-    title = models.CharField(
-        max_length=255,
+    title = models.TextField(
         verbose_name='Заголовок'
     )
     def __str__(self):
