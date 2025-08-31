@@ -196,12 +196,35 @@ class VideoReview(models.Model):
         verbose_name='Баннер видео'
     )
     video = models.URLField(
-        verbose_name='Видео'
+        verbose_name='Ссылка на YouTube видео'
     )
     create_at = models.DateField(
         verbose_name='Дата',
         auto_now_add=True
     )
+
+    def get_youtube_id(self):
+        """Извлекает ID видео из YouTube URL"""
+        import re
+        if not self.video:
+            return None
+        
+        # Паттерны для различных форматов YouTube URL
+        patterns = [
+            r'(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})',
+            r'youtube\.com\/v\/([a-zA-Z0-9_-]{11})',
+        ]
+        
+        for pattern in patterns:
+            match = re.search(pattern, self.video)
+            if match:
+                return match.group(1)
+        
+        # Если это уже ID (11 символов)
+        if len(self.video) == 11 and re.match(r'^[a-zA-Z0-9_-]+$', self.video):
+            return self.video
+            
+        return None
 
     def __str__(self):
         return self.name

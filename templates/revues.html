@@ -29,7 +29,7 @@
                 <div class="swiper-wrapper">
                     {% for video in video_review %}
                     <div class="swiper-slide">
-                        <div class="video_card review-card" data-video-id="{{ video.video|slice:'-11:' }}" aria-label="Видео отзыв: {{ video.name }}" role="button" tabindex="0">
+                        <div class="video_card review-card" data-video-id="{{ video.get_youtube_id }}" aria-label="Видео отзыв: {{ video.name }}" role="button" tabindex="0">
                             <div class="video_card_image">
                                 {% render_picture video.banner alt=video.name lazy=True decoding="async" %}
                                 <div class="play-button-overlay">
