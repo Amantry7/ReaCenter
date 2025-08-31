@@ -127,13 +127,27 @@
             <div class="what_we_news">
                 <div>
                     <h1>новости</h1>
-                    <p>
-                        Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение
-                        нашей
-                        деятельности играет важную роль в формировании системы обучения кадров...</p>
+                    {% if latest_news %}
+                        <p>
+                            <a href="{% url 'news_detail' latest_news.id %}" style="color: #24BEE0; text-decoration: none; font-weight: 600; transition: color 0.3s ease;" onmouseover="this.style.color='#1a9bc0'" onmouseout="this.style.color='#24BEE0'">
+                                {{ latest_news.title }}
+                            </a>
+                        </p>
+                        {% if latest_news.short_description %}
+                            <p style="margin-top: 10px; font-size: 14px; color: #fff; line-height: 1.5;">
+                                {{ latest_news.short_description|truncatewords:20 }}
+                            </p>
+                        {% endif %}
+                    {% else %}
+                        <p>
+                            Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение
+                            нашей
+                            деятельности играет важную роль в формировании системы обучения кадров...
+                        </p>
+                    {% endif %}
                 </div>
                 <a href="{% url 'news' %}" class="white_btn">
-                    Читать подробнее <svg xmlns="http://www.w3.org/2000/svg" width="11" height="19" viewBox="0 0 11 19"
+                    Смотреть все новости <svg xmlns="http://www.w3.org/2000/svg" width="11" height="19" viewBox="0 0 11 19"
                         fill="none">
                         <path
                             d="M1.65346 0C2.0749 0 2.49854 0.164282 2.82068 0.492849L10.5146 8.30192C10.8257 8.61923 11 9.04907 11 9.49916C11 9.947 10.8257 10.3768 10.5146 10.6941L2.82068 18.5077C2.17419 19.1648 1.12833 19.1648 0.481837 18.5032C-0.162447 17.8416 -0.160241 16.7726 0.48625 16.1155L7.00191 9.49916L0.48625 2.88283C-0.160241 2.2257 -0.162447 1.15898 0.481837 0.497351C0.80398 0.164284 1.22983 0 1.65346 0Z"
