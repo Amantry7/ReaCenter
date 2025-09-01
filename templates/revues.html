@@ -18,7 +18,7 @@
         });
     </script>
     <main>
-        <div class="container">
+        <div class="container-revues">
         <section class="video_section section-circles section-circles-tl circle-img--pink">
             <div class="section-container">
             <h1 class="section_title" style="color: #0049a8;">Видео отзывы</h1>
@@ -235,6 +235,23 @@
             padding: 2rem 1rem;
         }
         
+        /* Полная ширина для секций с отзывами */
+        .video_section .section-container,
+        .real_revue .section-container {
+            max-width: none;
+            padding: 2rem 0;
+        }
+        
+        .video_section .section_title,
+        .video_section .section-description,
+        .real_revue .section_title,
+        .real_revue .section-description {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 1rem;
+        }
+        
         .section_title {
             color: #0049a8;
             font-size: 2.5rem;
@@ -387,11 +404,41 @@
         
         .swiper-container2 {
             padding: 1rem 0 3rem;
+            overflow: hidden;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        .video_section .swiper-container2,
+        .real_revue .swiper-container2 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        
+        .swiper-container2 .swiper-wrapper {
+            display: flex;
+            align-items: stretch;
         }
         
         .swiper-slide {
             height: auto;
             padding: 0.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .swiper-pagination {
+            position: relative;
+            margin-top: 20px;
+        }
+        
+        .swiper-pagination-bullet {
+            background-color: #0049a8;
+            opacity: 0.3;
+        }
+        
+        .swiper-pagination-bullet-active {
+            opacity: 1;
         }
         
         .modal {

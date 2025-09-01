@@ -25,6 +25,10 @@ body {
     padding: 19px 100px;
 }
 
+.container-revues {
+    padding: 0;
+}
+
 .top_nav {
     display: flex;
     align-items: center;
