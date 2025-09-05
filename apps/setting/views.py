@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 
 from apps.setting.models import Treat, Service, Reviews, TreatResult, Employe, VideoReview, WriteReview, Setting, MainSlider
-from apps.secondary.models import Consultation
+from apps.secondary.models import Consultation, News
 # Create your views here.
 
 
@@ -12,6 +12,7 @@ def index(request):
     reviews = Reviews.objects.all()
     main_sliders = MainSlider.objects.all()
     main_slider = MainSlider.objects.first() if MainSlider.objects.exists() else None
+    latest_news = News.objects.filter(is_published=True).first()
     return render(request, 'base/index.html', locals())
 
 

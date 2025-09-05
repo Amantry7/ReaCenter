@@ -24,6 +24,21 @@
                 });
             }
             
+            // Инициализация главного слайдера на странице
+            var mainSwiper = new Swiper('.top_head_section_right .swiper', {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                }
+            });
+            
             // Инициализация слайдера для баннера новостей
             var swiperNews = new Swiper('.swiper-container4', {
                 slidesPerView: 'auto',
@@ -77,7 +92,7 @@
             <div class="top_head_section">
                 <div class="top_head_section_left">
                     <div class="bottom_head_section_list_item noneINDesk">
-                        {% render_static_picture 'assets/images/Group.svg' alt='' lazy=True decoding="async" %}
+                        {% render_static_picture 'assets/images/Group-30.svg' alt='' lazy=True decoding="async" %}
                         <h2>
                             Метод успешно применяется
                             при лечении неврологических
@@ -139,14 +154,14 @@
                         <h2>
                             Уникальный метод лечения разрешен
                             Минздравом Кыргызской Республики
-                            и Российкий Федерации
+                            и Российской Федерации
                         </h2>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="21" viewBox="0 0 10 21" fill="none">
                         <path d="M1 1C1.8 1.8 6.66667 8 9 11L1 20.5" stroke="#0049a8" stroke-linecap="round" />
                     </svg>
                     <div class="bottom_head_section_list_item">
-                        {% render_static_picture 'assets/images/Group.svg' alt='' lazy=True decoding="async" %}
+                        {% render_static_picture 'assets/images/Group-30.svg' alt='' lazy=True decoding="async" %}
                         <h2>
                             Метод успешно применяется
                             при лечении неврологических

@@ -112,8 +112,7 @@ class Methods(models.Model):
     text = RichTextField(
         verbose_name='текс для внимание'
     )
-    subtitle = models.CharField(
-        max_length=255,
+    subtitle = models.TextField(
         verbose_name='Последний текст'
     )
     def __str__(self):
@@ -127,8 +126,7 @@ class MethodsEva(models.Model):
         Methods, related_name='methods_eva',
         on_delete=models.CASCADE
     )
-    title = models.CharField(
-        max_length=255,
+    title = models.TextField(
         verbose_name='Заголовок'
     )
     def __str__(self):
@@ -142,8 +140,7 @@ class MethodsDev(models.Model):
         Methods, related_name='methods_dev',
         on_delete=models.CASCADE
     )
-    title = models.CharField(
-        max_length=255,
+    title = models.TextField(
         verbose_name='Заголовок'
     )
     def __str__(self):
@@ -161,8 +158,7 @@ class MethodsEmp(models.Model):
         max_length=255,
         verbose_name='ФИО'
     )
-    desc = models.CharField(
-        max_length=255,
+    desc = models.TextField(
         verbose_name='Описание'
     )
     image = models.ImageField(
@@ -198,7 +194,6 @@ class Institution(models.Model):
 class ContactRequest(models.Model):
     name = models.CharField(max_length=255, verbose_name='Имя')
     last_name = models.CharField(max_length=255, verbose_name='Фамилия')
-    appointment_date = models.CharField(max_length=255, verbose_name='Дата и время записи')
     phone = models.CharField(max_length=20, verbose_name='Номер телефона')
     description = models.TextField(verbose_name='Описание')
     city = models.CharField(max_length=50, verbose_name='Город', default='Бишкек')

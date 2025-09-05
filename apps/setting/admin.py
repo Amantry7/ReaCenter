@@ -3,7 +3,7 @@ from django import forms
 from ckeditor.widgets import CKEditorWidget
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
-from apps.setting.models import Treat, Service, Reviews, TreatResult, Employe, VideoReview, WriteReview, ServiceImage, ServiceState, Setting, SettingPhone, TreatImage, MainSlider
+from apps.setting.models import Treat, Service, Reviews, TreatResult, Employe, VideoReview, WriteReview, ServiceImage, ServiceState, Setting, SettingPhone, TreatImage, MainSlider, WhatsAppQR
 # Register your models here.
 
 class ServiceImageTaburInline(admin.TabularInline):
@@ -67,3 +67,8 @@ class SettingAdmin(admin.ModelAdmin):
 @admin.register(MainSlider)
 class MainSliderAdmin(admin.ModelAdmin):
     list_display = ('__str__',)
+
+@admin.register(WhatsAppQR)
+class WhatsAppQRAdmin(admin.ModelAdmin):
+    list_display = ('title', 'is_active')
+    list_editable = ('is_active',)

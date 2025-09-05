@@ -17,24 +17,30 @@
             }
         });
     </script>
-    <main class="container">
+    <main>
+        <div class="container-revues">
         <section class="video_section section-circles section-circles-tl circle-img--pink">
-            <h1 class="section_title">Видео отзывы</h1>
+            <div class="section-container">
+            <h1 class="section_title" style="color: #0049a8;">Видео отзывы</h1>
+            <div class="section-description">
+                <p>Отзывы наших пациентов о работе клиники и специалистов</p>
+            </div>
             <div class="swiper-container2">
                 <div class="swiper-wrapper">
                     {% for video in video_review %}
                     <div class="swiper-slide">
-                        <div class="video_card" data-video-id="{{ video.video|slice:'-11:' }}" aria-label="Видео отзыв: {{ video.name }}" role="button" tabindex="0">
+                        <div class="video_card review-card" data-video-id="{{ video.get_youtube_id }}" aria-label="Видео отзыв: {{ video.name }}" role="button" tabindex="0">
                             <div class="video_card_image">
                                 {% render_picture video.banner alt=video.name lazy=True decoding="async" %}
-                                <svg class="btn_on" xmlns="http://www.w3.org/2000/svg" width="91" height="101"
-                                    viewBox="0 0 91 101" fill="none">
-                                    <path
-                                        d="M84.5329 40.3102C92.5314 44.9293 92.5314 56.4745 84.5328 61.0936L18.6328 99.1503C10.6328 103.77 0.631694 97.9968 0.631694 88.7586L0.631697 12.6452C0.631698 3.40702 10.6328 -2.3664 18.6328 2.25353L84.5329 40.3102Z"
-                                        fill="white" fill-opacity="0.8" />
-                                </svg>
+                                <div class="play-button-overlay">
+                                    <svg class="btn_on" xmlns="http://www.w3.org/2000/svg" width="70" height="70"
+                                        viewBox="0 0 91 101" fill="none">
+                                        <path
+                                            d="M84.5329 40.3102C92.5314 44.9293 92.5314 56.4745 84.5328 61.0936L18.6328 99.1503C10.6328 103.77 0.631694 97.9968 0.631694 88.7586L0.631697 12.6452C0.631698 3.40702 10.6328 -2.3664 18.6328 2.25353L84.5329 40.3102Z"
+                                            fill="white" fill-opacity="0.9" />
+                                    </svg>
+                                </div>
                             </div>
-                            <br>
                             <div class="video_card_title">
                                 <h1>{{ video.name }}</h1>
                                 <span>{{ video.create_at|date:"d.m.Y" }}</span>
@@ -42,50 +48,51 @@
                         </div>
                     </div>
                     {% endfor %}
-                
                 </div>
+                <div class="swiper-pagination"></div>
             </div>
 
         </section>
         <section class="video_section section-circles section-circles-tr circle-img--blue">
+            <div class="section-container">
             <br><br>
             <h1 class="section_title">Отзывы</h1>
+            <div class="section-description">
+                <p>Что говорят наши пациенты о нас</p>
+            </div>
             <div class="swiper-container2">
                 <div class="swiper-wrapper">
                     {% for review in review %}
                     <div class="swiper-slide">
-                        <div class="reviews_card" data-title="{{ review.name }}" data-date="{{ review.create_at|date:'d.m.Y' }}"
+                        <div class="reviews_card review-card" data-title="{{ review.name }}" data-date="{{ review.create_at|date:'d.m.Y' }}"
                             data-text="{{ review.text }}" role="button" tabindex="0" aria-label="Отзыв: {{ review.name }}">
                             <div class="reviews_card_head">
-                                <h1>
-                                    {{ review.name }} 
-                                </h1>
-                                <p>
-                                    {{ review.create_at|date:"d.m.Y" }}
-                                </p>
+                                <h1>{{ review.name }}</h1>
+                                <p>{{ review.create_at|date:"d.m.Y" }}</p>
                             </div>
                             <div class="reviews_card_des">
-                                <svg class="firstDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
-                                    viewBox="0 0 27 17" fill="none">
-                                    <path
-                                        d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z"
-                                        fill="#0049a8" />
-                                </svg>
-
-                                <p>{{review.text}}
-                                    <svg class="secondDot" xmlns="http://www.w3.org/2000/svg" width="27" height="17"
-                                        viewBox="0 0 27 17" fill="none">
-                                        <path
-                                            d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z"
-                                            fill="#0049a8" />
+                                <div class="quote-icon quote-icon-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="27" height="17" viewBox="0 0 27 17" fill="none">
+                                        <path d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z" fill="#0049a8" />
                                     </svg>
-                                </p>
+                                </div>
+                                <div class="review-text">
+                                    <p>{{review.text|truncatechars:150}}</p>
+                                </div>
+                                <div class="quote-icon quote-icon-end">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="27" height="17" viewBox="0 0 27 17" fill="none">
+                                        <path d="M21.6506 0.00221634C20.79 0.00221634 19.9969 0.494457 19.6256 1.25828L17.2294 6.07886C16.9931 6.55413 16.875 7.06334 16.875 7.58953V15.2787C16.875 16.2123 17.6344 16.9761 18.5625 16.9761H25.3125C26.2406 16.9761 27 16.2123 27 15.2787V8.48915C27 7.55558 26.2406 6.79176 25.3125 6.79176H21.9375L23.6756 3.29514C24.435 1.78447 23.3381 0.00221634 21.6506 0.00221634ZM4.77563 0.00221634C3.915 0.00221634 3.12187 0.494457 2.75062 1.25828L0.354374 6.07886C0.118124 6.55413 0 7.06334 0 7.58953V15.2787C0 16.2123 0.759375 16.9761 1.6875 16.9761L8.4375 16.9761C9.36563 16.9761 10.125 16.2123 10.125 15.2787V8.48915C10.125 7.55558 9.36563 6.79176 8.4375 6.79176H5.0625L6.80062 3.29514C7.56 1.78447 6.46313 0.00221634 4.77563 0.00221634Z" fill="#0049a8" />
+                                    </svg>
+                                </div>
+                                <div class="read-more-link">
+                                    <span>Читать полностью</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                     {% endfor %}
-
                 </div>
+                <div class="swiper-pagination"></div>
             </div>
             <div id="videoModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle" aria-hidden="true">
                 <div class="modal-content" role="document">
@@ -137,43 +144,53 @@
                 </div>
             </div>
             <div id="documentModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="documentTitle" aria-hidden="true">
-                <div class="real_revue_card" role="document">
+                <div class="modal-content" role="document">
                     <button class="close-document-modal" type="button" aria-label="Закрыть">&times;</button>
-
-                    <div style="background: rgba(191, 236, 245);padding-bottom: 1rem;">
-                        <img id="documentImage" src="" style="max-width: 500px;" width="100%"
-                            alt="Изображение документа">
-                        <h1 id="documentTitle">Асаналиева Айзада, мама Азамата</h1>
-                        <span id="documentDate" class="document-date">01.01.2024</span>
+                    <div class="document-content">
+                        <img id="documentImage" src="" alt="Изображение документа">
+                        <div class="document-info">
+                            <h1 id="documentTitle">Рукописный отзыв</h1>
+                            <span id="documentDate" class="document-date"></span>
+                        </div>
                     </div>
-
                 </div>
             </div>
 
 
             <br><br><br><br>
         </section>
-        <section class="real_revue section-circles section-circles-bl circle-img--pink-outline">
+        </div>
+    </main>
+
+    <section class="real_revue section-circles section-circles-bl circle-img--pink-outline">
+        <div class="section-container">
             <div class="real_revue_title">
                 <h1 class="section_title">Рукописные отзывы</h1>
+                <div class="section-description">
+                    <p>Отзывы, написанные нашими пациентами</p>
+                </div>
             </div>
             <div class="swiper-container2">
                 <div class="swiper-wrapper">
                     {% for write in write_review %}
                     <div class="swiper-slide">
-                        <div class="real_revue_card" data-title="{{write.name}}" data-date="{{write.create_at}}"
-                            data-image="{{write.image.url}}">
-                            <div class="dock_image_block">
+                        <div class="real_revue_card review-card" data-title="{{write.name}}" data-date="{{write.create_at}}"
+                            data-image="{{write.image.url}}" role="button" tabindex="0" aria-label="Рукописный отзыв: {{write.name}}">
+                            <div class="handwritten-review-image">
                                 {% render_picture write.image alt=write.name lazy=True decoding="async" %}
+                                <div class="handwritten-overlay">
+                                    <span class="view-document">Посмотреть</span>
+                                </div>
                             </div>
-                            <br>
-                            <h1>{{write.name}}</h1>
-                            <br>
-                            <span>{{ write.create_at|date:"d.m.Y" }}</span>
+                            <div class="handwritten-review-info">
+                                <h3>{{write.name}}</h3>
+                                <span class="review-date">{{ write.create_at|date:"d.m.Y" }}</span>
+                            </div>
                         </div>
                     </div>
                     {% endfor %}
                 </div>
+                <div class="swiper-pagination"></div>
             </div>
             <br><br><br>
             <form class="revue_form" method="POST">
@@ -196,19 +213,478 @@
                     </svg></button>
             </form>
             
-        </section>
-    </main>
-    <br><br><br><br>
-    <a href="https://wa.me/996552353737" class="from_button" target="_blank">
-        Записаться
-        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="22" viewBox="0 0 25 22" fill="none">
-            <path
-                d="M22.3292 2.36674C21.8081 1.89613 21.037 1.72081 20.3179 1.90536L3.55065 6.19615C2.792 6.38162 2.25428 6.91405 2.10943 7.59042C1.96146 8.2788 2.47833 9.15264 3.15361 9.51805L8.39638 12.3537C8.9341 12.6443 9.62814 12.5714 10.0731 12.1765L16.0766 6.86053C16.3788 6.5837 16.879 6.5837 17.1812 6.86053C17.4834 7.12813 17.4834 7.56182 17.1812 7.83864L11.1673 13.1555C10.7213 13.5495 10.6379 14.1632 10.9662 14.6393L14.1696 19.2992C14.5447 19.8528 15.1908 20.1666 15.8995 20.1666C15.9828 20.1666 16.0766 20.1666 16.16 20.1574C16.9728 20.0651 17.6189 19.576 17.8586 18.884L22.8294 4.14764C23.0482 3.52017 22.8502 2.83734 22.3292 2.36674Z"
-                fill="white" />
-        </svg>
-    </a>
-    <br><br><br><br>
+        </div>
+    </section>
+    <div class="contact-button-container">
+        <a href="https://wa.me/996552353737" class="from_button" target="_blank">
+            Записаться
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="22" viewBox="0 0 25 22" fill="none">
+                <path
+                    d="M22.3292 2.36674C21.8081 1.89613 21.037 1.72081 20.3179 1.90536L3.55065 6.19615C2.792 6.38162 2.25428 6.91405 2.10943 7.59042C1.96146 8.2788 2.47833 9.15264 3.15361 9.51805L8.39638 12.3537C8.9341 12.6443 9.62814 12.5714 10.0731 12.1765L16.0766 6.86053C16.3788 6.5837 16.879 6.5837 17.1812 6.86053C17.4834 7.12813 17.4834 7.56182 17.1812 7.83864L11.1673 13.1555C10.7213 13.5495 10.6379 14.1632 10.9662 14.6393L14.1696 19.2992C14.5447 19.8528 15.1908 20.1666 15.8995 20.1666C15.9828 20.1666 16.0766 20.1666 16.16 20.1574C16.9728 20.0651 17.6189 19.576 17.8586 18.884L22.8294 4.14764C23.0482 3.52017 22.8502 2.83734 22.3292 2.36674Z"
+                    fill="white" />
+            </svg>
+        </a>
+    </div>
     {% include 'include/footer.html'%}
+
+    <style>
+        /* Стили для страницы отзывов */
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        /* Полная ширина для секций с отзывами */
+        .video_section .section-container,
+        .real_revue .section-container {
+            max-width: none;
+            padding: 2rem 0;
+        }
+        
+        .video_section .section_title,
+        .video_section .section-description,
+        .real_revue .section_title,
+        .real_revue .section-description {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 1rem;
+        }
+        
+        .section_title {
+            color: #0049a8;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .section-description {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            color: #555;
+        }
+        
+        .review-card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 73, 168, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            height: 100%;
+        }
+        
+        .review-card:hover, .review-card:focus {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 73, 168, 0.2);
+        }
+        
+        .video_card_image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px 12px 0 0;
+            aspect-ratio: 16/9;
+            background-color: #000;
+        }
+        
+        .play-button-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+        
+        .video_card:hover .play-button-overlay {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        
+        .btn_on {
+            transition: transform 0.3s ease;
+        }
+        
+        .video_card:hover .btn_on {
+            transform: scale(1.1);
+        }
+        
+        .video_card_title {
+            padding: 1rem;
+            background-color: #0049a8;
+            color: white;
+            border-radius: 0 0 12px 12px;
+        }
+        
+        .video_card_title h1 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .video_card_title span {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .reviews_card_head {
+            background-color: #0049a8;
+            color: white;
+            padding: 1rem;
+            border-radius: 12px 12px 0 0;
+        }
+        
+        .reviews_card_head h1 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .reviews_card_head p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .reviews_card_des {
+            padding: 1rem;
+            position: relative;
+            background-color: #f8f9fa;
+            border-radius: 0 0 12px 12px;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .quote-icon {
+            position: absolute;
+            opacity: 0.5;
+        }
+        
+        .quote-icon-start {
+            top: 10px;
+            left: 10px;
+        }
+        
+        .quote-icon-end {
+            bottom: 40px;
+            right: 10px;
+        }
+        
+        .review-text {
+            margin: 20px 0;
+            padding: 0 15px;
+            flex-grow: 1;
+        }
+        
+        .review-text p {
+            line-height: 1.5;
+            color: #333;
+        }
+        
+        .read-more-link {
+            text-align: center;
+            margin-top: auto;
+            padding-top: 10px;
+        }
+        
+        .read-more-link span {
+            color: #0049a8;
+            font-weight: 600;
+            cursor: pointer;
+            transition: color 0.3s;
+            border-bottom: 1px dashed #0049a8;
+        }
+        
+        .read-more-link span:hover {
+            color: #003b85;
+        }
+        
+        .swiper-container2 {
+            padding: 1rem 0 3rem;
+            overflow: hidden;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        .video_section .swiper-container2,
+        .real_revue .swiper-container2 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        
+        .swiper-container2 .swiper-wrapper {
+            display: flex;
+            align-items: stretch;
+        }
+        
+        .swiper-slide {
+            height: auto;
+            padding: 0.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .swiper-pagination {
+            position: relative;
+            margin-top: 20px;
+        }
+        
+        .swiper-pagination-bullet {
+            background-color: #0049a8;
+            opacity: 0.3;
+        }
+        
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+        }
+        
+        .modal {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        .modal-content {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .close, .close-review-modal, .close-document-modal {
+            background-color: #0049a8;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            font-size: 1.5rem;
+            line-height: 1;
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            z-index: 10;
+        }
+        
+        .revue_form {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .revue_form h1 {
+            color: #0049a8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .revue_form input, .revue_form textarea {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 0.8rem;
+            width: 100%;
+        }
+        
+        .revue_form button {
+            background-color: #0049a8;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 0.8rem 2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .revue_form button:hover {
+            background-color: #003b85;
+        }
+        
+        .flexx {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .contact-button-container {
+            display: flex;
+            justify-content: center;
+            padding: 2rem 0;
+        }
+        
+        .from_button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: #0049a8;
+            color: white;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .from_button:hover {
+            background-color: #003b85;
+            transform: translateY(-3px);
+        }
+        
+        .video_section, .real_revue {
+            padding: 3rem 0;
+        }
+        
+        .video_section.section-circles-tl {
+            background-color: #f0f8ff;
+        }
+        
+        .video_section.section-circles-tr {
+            background-color: #0049a8;
+        }
+        
+        .video_section.section-circles-tr .section_title,
+        .video_section.section-circles-tr .section-description p {
+            color: white;
+        }
+        
+        .real_revue {
+            background-color: #f8f9fa;
+        }
+        
+        .handwritten-review-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px 12px 0 0;
+            aspect-ratio: 3/4;
+            background-color: #f0f0f0;
+        }
+        
+        .handwritten-review-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .real_revue_card:hover .handwritten-review-image img {
+            transform: scale(1.05);
+        }
+        
+        .handwritten-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 73, 168, 0.8);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .real_revue_card:hover .handwritten-overlay,
+        .real_revue_card:focus .handwritten-overlay {
+            transform: translateY(0);
+        }
+        
+        .view-document {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+        
+        .view-document:after {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        
+        .handwritten-review-info {
+            padding: 15px;
+            background-color: white;
+            border-radius: 0 0 12px 12px;
+        }
+        
+        .handwritten-review-info h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.1rem;
+            color: #0049a8;
+        }
+        
+        .review-date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        #documentModal .modal-content {
+            padding: 0;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        #documentModal img {
+            max-width: 100%;
+            display: block;
+        }
+        
+        .document-content {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .document-content img {
+            width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+            background-color: #f8f9fa;
+        }
+        
+        .document-info {
+            background-color: #f8f9fa;
+            padding: 15px;
+        }
+        
+        .document-info h1 {
+            margin: 0 0 5px 0;
+            font-size: 1.5rem;
+            color: #0049a8;
+        }
+        
+        .document-date {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .flexx {
+                flex-direction: column;
+            }
+            
+            .section_title {
+                font-size: 2rem;
+            }
+        }
+        
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            padding: 0;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+    </style>
 
     <script>
         // Утилиты модалок
@@ -292,7 +768,7 @@
             if (closeBtn) closeBtn.addEventListener('click', () => closeModal(modal));
             if (modal) {
                 modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(modal); });
-                modal.querySelector('.real_revue_card')?.addEventListener('click', (e) => e.stopPropagation());
+                modal.querySelector('.modal-content')?.addEventListener('click', (e) => e.stopPropagation());
             }
         })();
     </script>

@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{% static 'assets/styles/service_fixes.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/styles/mobile_animation_fixes.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/styles/brand_patterns.css' %}" />
+    {% block extra_css %}{% endblock %}
 
 </head>
 <script>
@@ -36,8 +37,8 @@
 <body>
     {% block content %}
     {% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="{% static 'assets/js/script.js' %}" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
 
 
 </html>

@@ -15,7 +15,11 @@ class Treat(models.Model):
         verbose_name='Подзаголовок',
         blank=True, null=True
     )
-
+    image = models.ImageField(
+        upload_to='treat/',
+        verbose_name='Изображение',
+        blank=True, null=True
+    )
     description2 = RichTextUploadingField(
         verbose_name='Описание',
         blank=True,
@@ -192,12 +196,35 @@ class VideoReview(models.Model):
         verbose_name='Баннер видео'
     )
     video = models.URLField(
-        verbose_name='Видео'
+        verbose_name='Ссылка на YouTube видео'
     )
     create_at = models.DateField(
         verbose_name='Дата',
         auto_now_add=True
     )
+
+    def get_youtube_id(self):
+        """Извлекает ID видео из YouTube URL"""
+        import re
+        if not self.video:
+            return None
+        
+        # Паттерны для различных форматов YouTube URL
+        patterns = [
+            r'(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})',
+            r'youtube\.com\/v\/([a-zA-Z0-9_-]{11})',
+        ]
+        
+        for pattern in patterns:
+            match = re.search(pattern, self.video)
+            if match:
+                return match.group(1)
+        
+        # Если это уже ID (11 символов)
+        if len(self.video) == 11 and re.match(r'^[a-zA-Z0-9_-]+$', self.video):
+            return self.video
+            
+        return None
 
     def __str__(self):
         return self.name
@@ -246,22 +273,78 @@ class Setting(models.Model):
         upload_to='logo/',
         verbose_name='Логотип футера'
     )
+    
+    # Первая клиника (Ново-Вокзальная)
     address = models.CharField(
         max_length=244,
-        verbose_name='Адрес'
+        verbose_name='Адрес первой клиники'
     )
     schedul = models.CharField(
         max_length=244,
-        verbose_name='График работы'
+        verbose_name='График работы первой клиники'
     )
+    email_1 = models.EmailField(
+        verbose_name='Email первой клиники',
+        blank=True,
+        null=True
+    )
+    
+    # Вторая клиника (Платонова)
+    address_2 = models.CharField(
+        max_length=244,
+        verbose_name='Адрес второй клиники',
+        blank=True,
+        null=True
+    )
+    schedul_2 = models.CharField(
+        max_length=244,
+        verbose_name='График работы второй клиники',
+        blank=True,
+        null=True
+    )
+    email_2 = models.EmailField(
+        verbose_name='Email второй клиники',
+        blank=True,
+        null=True
+    )
+    
+    # Социальные сети
     youtube = models.URLField(
-        verbose_name='Ссылка на youtube'
+        verbose_name='Ссылка на youtube',
+        blank=True,
+        null=True
     )
     facebook = models.URLField(
-        verbose_name='Cсылка на facebook'
+        verbose_name='Cсылка на facebook',
+        blank=True,
+        null=True
     )
     instagram = models.URLField(
-        verbose_name='Ссылка на instagram'
+        verbose_name='Ссылка на instagram',
+        blank=True,
+        null=True
+    )
+    whatsapp = models.URLField(
+        verbose_name='Ссылка на WhatsApp',
+        blank=True,
+        null=True
+    )
+    vk = models.URLField(
+        verbose_name='Ссылка на VK',
+        blank=True,
+        null=True
+    )
+    telegram = models.URLField(
+        verbose_name='Ссылка на Telegram',
+        blank=True,
+        null=True
+    )
+    
+    # Карта
+    map_embed_url = models.TextField(
+        verbose_name='Ссылка на карту (embed)',
+        blank=True,
+        null=True
     )
 
     def __str__(self):
@@ -311,3 +394,31 @@ class MainSlider(models.Model):
         verbose_name = 'Слайд главной страницы'
         verbose_name_plural = 'Слайды главной страницы'
         ordering = ['order']
+
+
+class WhatsAppQR(models.Model):
+    title = models.CharField(
+        max_length=255,
+        verbose_name='Название',
+        default='QR-код WhatsApp'
+    )
+    qr_image = models.ImageField(
+        upload_to='whatsapp_qr/',
+        verbose_name='QR-код WhatsApp'
+    )
+    description = models.TextField(
+        verbose_name='Описание',
+        blank=True,
+        null=True
+    )
+    is_active = models.BooleanField(
+        default=True,
+        verbose_name='Активен'
+    )
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = 'QR-код WhatsApp'
+        verbose_name_plural = 'QR-коды WhatsApp'
