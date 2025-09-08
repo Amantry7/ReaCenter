@@ -1,0 +1,223 @@
+/* Стили для страницы контактов */
+.contact_section {
+    padding: 20px 0;
+    background-color: white;
+}
+
+.contact_main_title {
+    color: #0049a8;
+    font-size: 28px;
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.contact_content {
+    display: flex;
+    gap: 20px;
+    height: 500px;
+    align-items: flex-start;
+}
+
+.contact_map_container {
+    width: 60%;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: none;
+    border: 1px solid #ddd;
+}
+
+.contact_info_container {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact_clinic_info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.clinic_card {
+    background: white;
+    border: none;
+    padding: 15px 0;
+    box-shadow: none;
+    display: block;
+}
+
+.clinic_address h3 {
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 2px;
+    line-height: 1.2;
+}
+
+.clinic_address p {
+    color: #000;
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.clinic_appointment h4 {
+    color: #000;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.clinic_appointment p {
+    color: #000;
+    font-size: 12px;
+    margin-bottom: 3px;
+    line-height: 1.3;
+}
+
+.phone_number {
+    color: #0066cc;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    display: block;
+    margin: 3px 0;
+}
+
+.phone_number:hover {
+    text-decoration: underline;
+}
+
+.schedule_info {
+    color: #000;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.clinic_hours h4 {
+    color: #000;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+.clinic_hours p {
+    color: #000;
+    font-size: 12px;
+    margin-bottom: 2px;
+    line-height: 1.2;
+}
+
+.clinic_contact p {
+    color: #000;
+    font-size: 12px;
+    margin: 8px 0;
+}
+
+.social_buttons {
+    display: flex;
+    gap: 5px;
+    margin: 8px 0;
+}
+
+.social_btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: none;
+}
+
+.social_btn:hover {
+    transform: none;
+}
+
+.social_btn.whatsapp {
+    background-color: #25D366;
+    color: white;
+}
+
+.social_btn.vk {
+    background-color: #4C75A3;
+    color: white;
+}
+
+.social_btn.telegram {
+    background-color: #0088cc;
+    color: white;
+}
+
+.social_btn.youtube {
+    background-color: #FF0000;
+    color: white;
+}
+
+.social_btn.facebook {
+    background-color: #1877F2;
+    color: white;
+}
+
+.social_btn.instagram {
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+    color: white;
+}
+
+.appointment_btn {
+    background: #f0f0f0;
+    color: #000;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: normal;
+    cursor: pointer;
+    transition: none;
+    margin-top: 8px;
+    width: fit-content;
+}
+
+.appointment_btn:hover {
+    background: #e0e0e0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .contact_content {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .contact_map_container {
+        height: 300px;
+    }
+    
+    .clinic_card {
+        padding: 20px;
+    }
+    
+    .container {
+        padding: 19px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact_main_title {
+        font-size: 24px;
+    }
+    
+    .social_buttons {
+        justify-content: center;
+    }
+    
+    .appointment_btn {
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,251 @@
+/* Brand pattern circles for white backgrounds */
+/* Usage: add class "bg-circles-bg" to <body> or any block with white background */
+
+.bg-circles-bg {
+    /* two decorative images: top-right and bottom-left */
+    --circle-img: image-set(url('../images/circles/circles.webp') type('image/webp'), url('../images/circles/circles.png') type('image/png'));
+    background-image: var(--circle-img), var(--circle-img);
+    background-repeat: no-repeat, no-repeat;
+    background-position: right -80px top -40px, left -80px bottom -40px;
+    background-size: clamp(220px, 28vw, 420px), clamp(220px, 28vw, 420px);
+}
+
+/* Variants for single-corner placement */
+.bg-circles-tr {
+    --circle-img: image-set(url('../images/circles/circles.webp') type('image/webp'), url('../images/circles/circles.png') type('image/png'));
+    background-image: var(--circle-img);
+    background-repeat: no-repeat;
+    background-position: right -80px top -40px;
+    background-size: clamp(220px, 28vw, 420px);
+}
+
+.bg-circles-bl {
+    --circle-img: image-set(url('../images/circles/circles.webp') type('image/webp'), url('../images/circles/circles.png') type('image/png'));
+    background-image: var(--circle-img);
+    background-repeat: no-repeat;
+    background-position: left -80px bottom -40px;
+    background-size: clamp(220px, 28vw, 420px);
+}
+
+/* Dark/blue/pink individual circles if lighter composition is needed */
+.bg-circle-blue-tr {
+    background-image: image-set(url('../images/circles/blue-circle.webp') type('image/webp'), url('../images/circles/blue-circle.png') type('image/png'));
+    background-repeat: no-repeat;
+    background-position: right -80px top -40px;
+    background-size: clamp(180px, 22vw, 360px);
+}
+
+.bg-circle-dark-tr {
+    background-image: url('../images/circles/dark-blue-circle.png');
+    background-repeat: no-repeat;
+    background-position: right -80px top -40px;
+    background-size: clamp(160px, 20vw, 320px);
+}
+
+.bg-circle-pink-bl {
+    background-image: image-set(url('../images/circles/pink-circle.webp') type('image/webp'), url('../images/circles/pink-circle.png') type('image/png'));
+    background-repeat: no-repeat;
+    background-position: left -80px bottom -40px;
+    background-size: clamp(160px, 20vw, 320px);
+}
+
+/* Make sure it doesn’t interfere with section-specific backgrounds */
+.bg-circles-bg,
+.bg-circles-tr,
+.bg-circles-bl,
+.bg-circle-blue-tr,
+.bg-circle-dark-tr,
+.bg-circle-pink-bl {
+    background-clip: border-box;
+}
+
+/* Mobile tuning */
+@media (max-width: 768px) {
+
+    .bg-circles-bg,
+    .bg-circles-tr,
+    .bg-circles-bl,
+    .bg-circle-blue-tr,
+    .bg-circle-dark-tr,
+    .bg-circle-pink-bl {
+        background-position: right -60px top -30px, left -60px bottom -30px;
+    }
+}
+
+/* ===============================
+   Section helpers via pseudo-elements
+   Позволяют добавлять ДОПОЛНИТЕЛЬНЫЕ круги поверх основного фона
+   =============================== */
+.section-circles {
+    position: relative;
+}
+
+.section-circles:before,
+.section-circles:after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    z-index: -1;
+    /* keep circles behind section content */
+}
+
+/* top-right extra */
+.section-circles-tr:after {
+    background-image: var(--circle-img, image-set(url('../images/circles/circles.webp') type('image/webp'), url('../images/circles/circles.png') type('image/png')));
+    background-size: clamp(180px, 20vw, 360px);
+    width: clamp(180px, 22vw, 360px);
+    height: clamp(180px, 22vw, 360px);
+    right: -60px;
+    top: -40px;
+}
+
+/* bottom-left extra */
+.section-circles-bl:before {
+    background-image: var(--circle-img, image-set(url('../images/circles/circles.webp') type('image/webp'), url('../images/circles/circles.png') type('image/png')));
+    background-size: clamp(180px, 22vw, 360px);
+    width: clamp(180px, 22vw, 360px);
+    height: clamp(180px, 22vw, 360px);
+    left: -60px;
+    bottom: -40px;
+}
+
+/* top-left extra */
+.section-circles-tl:after {
+    background-image: var(--circle-img, image-set(url('../images/circles/circles.webp') type('image/webp'), url('../images/circles/circles.png') type('image/png')));
+    background-size: clamp(160px, 18vw, 300px);
+    width: clamp(160px, 20vw, 300px);
+    height: clamp(160px, 20vw, 300px);
+    left: -50px;
+    top: -40px;
+}
+
+/* bottom-right extra */
+.section-circles-br:before {
+    background-image: var(--circle-img, image-set(url('../images/circles/circles.webp') type('image/webp'), url('../images/circles/circles.png') type('image/png')));
+    background-size: clamp(200px, 24vw, 380px);
+    width: clamp(200px, 24vw, 380px);
+    height: clamp(200px, 24vw, 380px);
+    right: -70px;
+    bottom: -50px;
+}
+
+@media (max-width: 768px) {
+    .section-circles-tr:after {
+        right: -40px;
+        top: -30px;
+    }
+
+    .section-circles-bl:before {
+        left: -40px;
+        bottom: -30px;
+    }
+
+    .section-circles-tl:after {
+        left: -30px;
+        top: -20px;
+    }
+
+    .section-circles-br:before {
+        right: -40px;
+        bottom: -30px;
+    }
+}
+
+/* ===============================
+   Именованные маппинги по файлам
+   Добавляйте один из этих классов к секции или body, чтобы выбрать конкретный файл
+   =============================== */
+
+/* Rotation animation for circles (except combo) */
+@keyframes circles-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Apply rotation to all circle pseudo-elements unless combo image is used */
+.section-circles.section-circles-tr:not(.circle-img--combo):after,
+.section-circles.section-circles-tl:not(.circle-img--combo):after,
+.section-circles.section-circles-br:not(.circle-img--combo):before,
+.section-circles.section-circles-bl:not(.circle-img--combo):before {
+    animation: circles-rotate 60s linear infinite;
+    transform-origin: 50% 50%;
+    will-change: transform;
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+
+    .section-circles.section-circles-tr:not(.circle-img--combo):after,
+    .section-circles.section-circles-tl:not(.circle-img--combo):after,
+    .section-circles.section-circles-br:not(.circle-img--combo):before,
+    .section-circles.section-circles-bl:not(.circle-img--combo):before {
+        animation: none;
+    }
+}
+
+.circle-img--combo {
+    --circle-img: image-set(url('../images/circles/circles.webp') type('image/webp'), url('../images/circles/circles.png') type('image/png'));
+}
+
+.circle-img--blue {
+    --circle-img: image-set(url('../images/circles/blue-circle.webp') type('image/webp'), url('../images/circles/blue-circle.png') type('image/png'));
+}
+
+.circle-img--dark-blue {
+    --circle-img: url('../images/circles/dark-blue-circle.png');
+}
+
+.circle-img--pink {
+    --circle-img: image-set(url('../images/circles/pink-circle.webp') type('image/webp'), url('../images/circles/pink-circle.png') type('image/png'));
+}
+
+.circle-img--pink-outline {
+    --circle-img: image-set(url('../images/circles/pink-circle-without-shapes.webp') type('image/webp'), url('../images/circles/pink-circle-without-shapes.png') type('image/png'));
+}
+
+/* Варианты для body с двумя углами, привязанные к конкретному файлу */
+.bg-circles--combo {
+    --circle-img: image-set(url('../images/circles/circles.webp') type('image/webp'), url('../images/circles/circles.png') type('image/png'));
+}
+
+.bg-circles--blue {
+    --circle-img: image-set(url('../images/circles/blue-circle.webp') type('image/webp'), url('../images/circles/blue-circle.png') type('image/png'));
+}
+
+.bg-circles--dark-blue {
+    --circle-img: url('../images/circles/dark-blue-circle.png');
+}
+
+.bg-circles--pink {
+    --circle-img: image-set(url('../images/circles/pink-circle.webp') type('image/webp'), url('../images/circles/pink-circle.png') type('image/png'));
+}
+
+.bg-circles--pink-outline {
+    --circle-img: image-set(url('../images/circles/pink-circle-without-shapes.webp') type('image/webp'), url('../images/circles/pink-circle-without-shapes.png') type('image/png'));
+}
+
+/* Мобильная адаптация для кругов */
+@media (max-width: 768px) {
+    .section-circles-br:before {
+        display: none;
+    }
+    
+    .section-circles-tr:after,
+    .section-circles-tl:after,
+    .section-circles-bl:before {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-circles:before,
+    .section-circles:after {
+        display: none;
+    }
+}
