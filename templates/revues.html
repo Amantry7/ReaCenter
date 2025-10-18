@@ -28,10 +28,14 @@
             <div class="swiper-container2">
                 <div class="swiper-wrapper">
                     {% for video in video_review %}
-                    <div class="swiper-slide">
-                        <div class="video_card review-card" data-video-id="{{ video.get_youtube_id }}" aria-label="Видео отзыв: {{ video.name }}" role="button" tabindex="0">
-                            <div class="video_card_image">
-                                {% render_picture video.banner alt=video.name lazy=True decoding="async" %}
+                    <div class="swiper-slide {% if video.is_shorts %}swiper-slide-shorts{% endif %}">
+                        <div class="video_card review-card {% if video.is_shorts %}video_card-shorts{% endif %}" data-video-id="{{ video.get_youtube_id }}" aria-label="Видео отзыв: {{ video.name }}" role="button" tabindex="0">
+                            <div class="video_card_image {% if video.is_shorts %}video_card_image-shorts{% endif %}">
+                                {% if video.banner %}
+                                    {% render_picture video.banner alt=video.name lazy=True decoding="async" %}
+                                {% else %}
+                                    <img src="{{ video.get_youtube_thumbnail }}" alt="{{ video.name }}" loading="lazy" decoding="async">
+                                {% endif %}
                                 <div class="play-button-overlay">
                                     <svg class="btn_on" xmlns="http://www.w3.org/2000/svg" width="70" height="70"
                                         viewBox="0 0 91 101" fill="none">
@@ -425,6 +429,27 @@
             padding: 0.5rem;
             display: flex;
             flex-direction: column;
+            width: auto; /* Для поддержки slidesPerView: 'auto' */
+        }
+        
+        /* Обычные видео карточки */
+        .video_section .swiper-slide:not(.swiper-slide-shorts) {
+            width: 400px;
+        }
+        
+        /* Shorts карточки */
+        .video_section .swiper-slide-shorts {
+            width: 280px;
+        }
+        
+        @media (max-width: 768px) {
+            .video_section .swiper-slide:not(.swiper-slide-shorts) {
+                width: 300px;
+            }
+            
+            .video_section .swiper-slide-shorts {
+                width: 200px;
+            }
         }
         
         .swiper-pagination {

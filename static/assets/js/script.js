@@ -23,18 +23,18 @@ const swiper = new Swiper('.swiper-container', {
 const swiper2 = new Swiper('.swiper-container2', {
     direction: 'horizontal',
     loop: true,
-    slidesPerView: 1.5, // Показывать 3.5 слайда по умолчанию
+    slidesPerView: 'auto', // Автоматический размер для поддержки разных форматов (Shorts и обычные)
     centeredSlides: true, // Центрировать активный слайд
     spaceBetween: 30, // Отступ между слайдами
 
     breakpoints: {
         1079: { // Для экранов шириной 1079px и меньше
-            slidesPerView: 1.5, // Показывать 1 слайд
-            centeredSlides: true, // Отключить центрирование
-            spaceBetween: 10, // Уменьшить отступы
+            slidesPerView: 'auto', // Автоматический размер
+            centeredSlides: true,
+            spaceBetween: 20, // Уменьшить отступы
         },
         1080: { // Для экранов шириной 1080px и больше
-            slidesPerView: 3.5, // Показывать 3.5 слайда
+            slidesPerView: 'auto', // Автоматический размер для смешанных форматов
             centeredSlides: true,
             spaceBetween: 30,
         }

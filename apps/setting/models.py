@@ -193,7 +193,9 @@ class VideoReview(models.Model):
     )
     banner = models.ImageField(
         upload_to='video_reviews/',
-        verbose_name='Баннер видео'
+        verbose_name='Баннер видео (необязательно, если не указан - будет использовано превью из YouTube)',
+        blank=True,
+        null=True
     )
     video = models.URLField(
         verbose_name='Ссылка на YouTube видео'
@@ -204,15 +206,16 @@ class VideoReview(models.Model):
     )
 
     def get_youtube_id(self):
-        """Извлекает ID видео из YouTube URL"""
+        """Извлекает ID видео из YouTube URL (поддерживает обычные видео и Shorts)"""
         import re
         if not self.video:
             return None
         
-        # Паттерны для различных форматов YouTube URL
+        # Паттерны для различных форматов YouTube URL (включая Shorts)
         patterns = [
             r'(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})',
             r'youtube\.com\/v\/([a-zA-Z0-9_-]{11})',
+            r'youtube\.com\/shorts\/([a-zA-Z0-9_-]{11})',  # Поддержка Shorts
         ]
         
         for pattern in patterns:
@@ -225,6 +228,22 @@ class VideoReview(models.Model):
             return self.video
             
         return None
+    
+    def get_youtube_thumbnail(self):
+        """Получает URL превью из YouTube"""
+        video_id = self.get_youtube_id()
+        if video_id:
+            # Используем максимальное качество превью (maxresdefault)
+            # Если недоступно, YouTube автоматически вернет hqdefault
+            return f'https://img.youtube.com/vi/{video_id}/maxresdefault.jpg'
+        return None
+    
+    def is_shorts(self):
+        """Определяет, является ли видео YouTube Shorts"""
+        import re
+        if not self.video:
+            return False
+        return bool(re.search(r'youtube\.com\/shorts\/', self.video))
 
     def __str__(self):
         return self.name

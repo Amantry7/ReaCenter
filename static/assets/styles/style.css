@@ -2387,6 +2387,62 @@ li {
     }
 }
 
+/* Стили для YouTube Shorts формата */
+.swiper-slide-shorts {
+    max-width: 280px !important;
+    width: 280px !important;
+}
+
+.video_card-shorts {
+    max-width: 280px;
+}
+
+.video_card_image-shorts {
+    height: 500px !important;
+    aspect-ratio: 9 / 16;
+    border-radius: 1rem;
+}
+
+.video_card-shorts .video_card_title {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+.video_card-shorts .video_card_title h1 {
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.video_card-shorts .video_card_title span {
+    font-size: 14px;
+}
+
+/* Адаптивные стили для Shorts на мобильных */
+@media (max-width: 768px) {
+    .swiper-slide-shorts {
+        max-width: 200px !important;
+        width: 200px !important;
+    }
+    
+    .video_card-shorts {
+        max-width: 200px;
+    }
+    
+    .video_card_image-shorts {
+        height: 355px !important;
+    }
+    
+    .video_card-shorts .video_card_title h1 {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    
+    .video_card-shorts .video_card_title span {
+        font-size: 12px;
+    }
+}
+
 /* Стили для модального окна */
 .modal {
     display: none;

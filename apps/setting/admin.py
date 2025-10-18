@@ -53,7 +53,29 @@ class EmploeAdmin(admin.ModelAdmin):
     
 @admin.register(VideoReview)
 class VideoReviewAdmin(admin.ModelAdmin):
-    list_display = ('name', 'video')
+    list_display = ('name', 'video', 'create_at')
+    readonly_fields = ('preview_thumbnail',)
+    fieldsets = (
+        ('Основная информация', {
+            'fields': ('name', 'video'),
+            'description': 'Поддерживаются обычные YouTube видео и YouTube Shorts. Примеры ссылок:<br>'
+                          '• https://www.youtube.com/watch?v=VIDEO_ID<br>'
+                          '• https://youtu.be/VIDEO_ID<br>'
+                          '• https://www.youtube.com/shorts/VIDEO_ID'
+        }),
+        ('Превью', {
+            'fields': ('banner', 'preview_thumbnail'),
+            'description': 'Баннер необязателен. Если не загружен, будет автоматически использовано превью из YouTube.'
+        }),
+    )
+    
+    def preview_thumbnail(self, obj):
+        """Показывает превью видео в админке"""
+        if obj.get_youtube_thumbnail():
+            return f'<img src="{obj.get_youtube_thumbnail()}" style="max-width: 300px; height: auto;" />'
+        return 'Превью недоступно'
+    preview_thumbnail.short_description = 'Превью из YouTube'
+    preview_thumbnail.allow_tags = True
     
 @admin.register(WriteReview)
 class WriteReviewAdmin(admin.ModelAdmin):
